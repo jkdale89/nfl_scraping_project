@@ -1,0 +1,19 @@
+{
+  "name": "nfl_scraping_project",
+  "version": "1.0.0",
+  "description": "This project attempts to scrape data on historical nfl gambling lines and results, then eventually to visualize this with d3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkdale89/nfl_scraping_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jkdale89/nfl_scraping_project/issues"
+  },
+  "homepage": "https://github.com/jkdale89/nfl_scraping_project#readme"
+}
