@@ -12,17 +12,23 @@ request(url, function(error, response, html){
     if(!error){
         var $ = cheerio.load(html);
 
-    var favorite, dawg, time, spread, total, odds;
-    var json = {time: "", favorite: "", spread: "", dawg: "", total: "", odds: ""};
+    var data = $("b:contains('Closing Las Vegas NFL Odds From Week 1, 2013')").parent().parent().parent().parent().find("tr:has(td)");
+    var result = [];
+    result.length = data.length;
 
-    var data = $("b:contains('Closing Las Vegas NFL Odds From Week 1, 2006')").parent().parent().parent().parent().find("tr");
-    // json.time = data.children("td:nth-child(1)").text();
-    // json.favorite = data.children("td:nth-child(2)").text();
-    // json.spread = data.children("td:nth-child(3)").text();
-    // json.dawg = data.children("td:nth-child(4)").text();
-    // json.total = data.children("td:nth-child(5)").text();
-    // json.odds = data.children("td:nth-child(6)").text();
-
+    for(var i = 0; i < result.length; i ++){
+      result[i] =
+      {
+        "Time" : data.eq(i).children().eq(0).text(),
+        "Favorite" : data.eq(i).children().eq(1).text(),
+        "Spread" : data.eq(i).children().eq(2).text(),
+        "Dawg" : data.eq(i).children().eq(3).text(),
+        "Total" : data.eq(i).children().eq(4).text(),
+        "Odds" : data.eq(i).children().eq(5).text()
+      }
+    }
+    result.shift();
+    console.log(result);
 }
 
 // To write to the system we will use the built in 'fs' library.
@@ -32,14 +38,14 @@ request(url, function(error, response, html){
 // Parameter 3 :  callback function - a callback function to let us know the status of our function
 
 // fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
-fs.writeFile('output.json', data, function(err){
+fs.writeFile('w1_2013.json', JSON.stringify(result, null, 6), function(err){
 
     console.log('File successfully written! - Check your project directory for the output.json file');
 
 })
 
 // Finally, we'll just send out a message to the browser reminding you that this app does not have a UI.
-res.send('Check your console!')
+res.send(data.text())
 
     });
 })
