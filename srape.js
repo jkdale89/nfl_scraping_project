@@ -6,14 +6,14 @@ var app     = express();
 
 app.get('/scrape', function(req, res){
 
-url = "http://www.footballlocks.com/nfl_odds_week_1.shtml";
+url = "http://www.footballlocks.com/nfl_odds_week_17.shtml";
 
 request(url, function(error, response, html){
     if(!error){
         var $ = cheerio.load(html);
         for(var i = 2006; i < 2015; i++){
           var year_str = i.toString();
-          var data = $("b:contains('Closing Las Vegas NFL Odds From Week 1, " + year_str + "')").parent().parent().parent().parent().find("tr:has(td)");
+          var data = $("b:contains('Closing Las Vegas NFL Odds From Week 17, " + year_str + "')").parent().parent().parent().parent().find("tr:has(td)");
           var result = [];
           result.length = data.length;
           for(var j = 0; j < 18; j ++){
@@ -28,7 +28,7 @@ request(url, function(error, response, html){
           }
         result.shift();
         console.log(result);
-        fs.writeFile("w1_" + year_str + ".json", JSON.stringify(result, null, 6), function(err){
+        fs.writeFile("w17_" + year_str + ".json", JSON.stringify(result, null, 6), function(err){
           console.log('File successfully written! - Check your project directory for the output.json file');
         })
       }
