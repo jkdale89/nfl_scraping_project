@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/jkdale89/nfl_scraping_project/issues"
   },
-  "homepage": "https://github.com/jkdale89/nfl_scraping_project#readme"
+  "homepage": "https://github.com/jkdale89/nfl_scraping_project#readme",
+  "dependencies": {
+    "hbs": "^4.0.0",
+    "jquery": "^2.2.3",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.4.17"
+  }
 }
