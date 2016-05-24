@@ -1,0 +1,14 @@
+{
+  "name": "gamblingApp",
+  "description": "A web scraping app for nfl gambling lines",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.5",
+    "jquery": "~2.1.1",
+    "angular-route": "1.4.x",
+    "angular-resource": "1.4.x",
+    "angular-ui-router": "~0.2.15"
+  }
+}
