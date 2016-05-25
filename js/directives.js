@@ -9,26 +9,17 @@
   var
     footer = function() {
       return {
-        restrict: 'EA',
-        templateUrl: 'views/partials/navigation/footer.html',
+        restrict: 'E',
+        templateUrl: 'views/partials/footer.html',
         replace: false,
         link: function($scope, element, attr) {}
       }
     },
 
-    settingsNavigation = function(){
+    hed = function(){
       return {
         restrict: 'EA',
-        templateUrl: 'views/partials/navigation/settingsNavigation.html',
-        controller: 'MainCtrl',
-        replace: false
-      }
-    },
-
-    siteNavigation = function(){
-      return {
-        restrict: 'EA',
-        templateUrl: 'views/partials/navigation/siteNavigation.html',
+        templateUrl: 'views/partials/header.html',
         controller: 'MainCtrl',
         replace: false
       }
@@ -39,6 +30,5 @@
   // to insert the pie.html into the element. This gives direction to our html and separates our concerns
   angular.module('Directives', [])
     .directive('footer', footer)
-    .directive('settingsNavigation', settingsNavigation)
-    .directive('siteNavigation', siteNavigation)
+    .directive('hed', hed)
 }());

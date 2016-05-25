@@ -53,7 +53,7 @@ var fs = require('fs'),
   }
 }
 
-fs.writeFile("clean_lines.json", JSON.stringify(newLines, null, 6), function(err){
+fs.writeFile("./json/clean_lines.json", JSON.stringify(newLines, null, 6), function(err){
   console.log("check clean_lines.json for output");
 })
 
@@ -77,12 +77,32 @@ fs.writeFile("clean_lines.json", JSON.stringify(newLines, null, 6), function(err
         // establish variables for losing team, losing score
         , loserArr = scoreArray[1].split(" ")
         , loser = loserArr[1]
-        , losingScore = loserArr[2];
+        , losingScore = loserArr[2]
 
-        newObj.awayNickname = awayArray.pop();
+        //Reconcile the NYG and NYJ with the lines files
+        // if the nickname is "NYG", change team name to "NY Giants"
+        // if the nickname is "NYG", change the team name to "NY Jets"
+        , awayNickname = awayArray.pop()
+        , homeNickname = homeArray.pop();
+
         newObj.awayTeam = awayArray.join(" ");
-        newObj.homeNickname = homeArray.pop();
         newObj.homeTeam = homeArray.join(" ");
+
+        if(awayNickname === "NYG") {
+          newObj.awayTeam = "NY Giants"
+        }
+        if(awayNickname === "NYJ"){
+          newObj.awayTeam = "NY Jets"
+        }
+        if(homeNickname === "NYG"){
+          newObj.homeTeam = "NY Giants"
+        }
+        if(homeNickname === "NYJ"){
+          newObj.homeTeam === "NY Jets"
+        }
+
+        newObj.awayNickname = awayNickname;
+        newObj.homeNickname = homeNickname;
         newObj.winner = winner;
         newObj.winningScore = parseInt(winningScore);
         newObj.loser = loser;
@@ -95,6 +115,6 @@ fs.writeFile("clean_lines.json", JSON.stringify(newLines, null, 6), function(err
       }
     }
 
-  fs.writeFile("clean_results.json", JSON.stringify(newResults, null, 6), function(err) {
+  fs.writeFile("./json/clean_results.json", JSON.stringify(newResults, null, 6), function(err) {
     console.log("check clean_results.json for the output.")
   });
