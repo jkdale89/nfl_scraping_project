@@ -21,15 +21,17 @@
 }
 
 ._nav {
-  background: #000066;
+  background: linear-gradient(to bottom,#fff 0,rgba(255,255,255,.9) 100%);
+  padding-left: 20%;
+  padding-right: 20%;
   height: 50px;
   width: 100%;
 }
 
 ._nav div {
-  color: white;
+  color: #000066;
   font-size: 16px;
-  padding-left: 10%;
+  cursor: pointer;
   line-height: 4;
   width: 33%;
   display: inline-block;

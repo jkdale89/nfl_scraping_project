@@ -23,6 +23,15 @@
         controller: 'MainCtrl',
         replace: false
       }
+    },
+
+    main = function(){
+      return {
+        restrict: 'EA',
+        templateUrl: 'views/partials/main.html',
+        controller: 'MainCtrl',
+        replace: false
+      }
     }
 
 
@@ -31,4 +40,5 @@
   angular.module('Directives', [])
     .directive('footer', footer)
     .directive('hed', hed)
+    .directive('main', main)
 }());

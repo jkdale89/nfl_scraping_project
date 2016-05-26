@@ -4,7 +4,8 @@ angular.module('gambleApp', [
   'ngRoute',
   'Controllers',
   'Services',
-  'Directives'
+  'Directives',
+  'ui.bootstrap'
 ])
 
   .config(['$routeProvider',
