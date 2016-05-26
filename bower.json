@@ -10,6 +10,7 @@
     "angular-route": "1.4.x",
     "angular-resource": "1.4.x",
     "angular-ui-router": "~0.2.15",
-    "d3": "^3.5.17"
+    "d3": "^3.5.17",
+    "bootstrap": "^3.3.6"
   }
 }
