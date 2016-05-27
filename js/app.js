@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gambleApp', [
+angular.module('betweenTheLines', [
   'ngRoute',
   'Controllers',
   'Services',
