@@ -1,7 +1,8 @@
 var fs = require('fs')
     , games = require("./js/games.js")
+    , teams_key = require("./teams_key")
     , len = games.length
-    , teamsArr = [];
+    , teamsArr = []
 
   // we're trying to loop through each game, and extract team's year to date information
   // both straight up, and against the spread
@@ -32,6 +33,9 @@ var fs = require('fs')
         teamsArr[games[i].loser].point_diff_ats = 0,
         teamsArr[games[i].loser].record = 0,
         teamsArr[games[i].loser].record_ats = 0
+    }
+    if(teamsArr[games[i].winner]){
+
     }
   }
 
