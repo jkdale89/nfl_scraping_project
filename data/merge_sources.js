@@ -21,7 +21,7 @@ var fs = require('fs'),
               ? lines[i].dog : lines[i].favorite,
           // the loser ATS is the team that didn't cover...
           lines[i].loser_ats =
-            lines[i].winner_ats === lines[i].favorite ? lines[i].dog : lines[i].dog,
+            lines[i].winner_ats === lines[i].favorite ? lines[i].dog : lines[i].favorite,
 
           lines[i].favorite_diff_ats =
             (lines[i].favorite === lines[i].winner) ?
