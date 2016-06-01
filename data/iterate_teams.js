@@ -6,7 +6,7 @@ var fs = require('fs')
 
 
     //let's test populating one season, for one team
-
+var sort_games = function(week, year){
     //first, we're iterating through the entire game file
     for(var i = 0; i < no_games; i++){
       //we'll start with just the 2006 season
@@ -67,35 +67,44 @@ var fs = require('fs')
         }
       }
     }
-
-arr.shift();
-
-for(var i = 0; i < arr.length; i++){
-  // find the bye week, and don't iterate it
-  if(arr[i-1] && (arr[i].week == arr[i-1].week)){
-    arr[i].wins_ats = arr[i-2] ? arr[i-2].wins_ats + (1 * (arr[i].ats > 0)) : (1 * (arr[i].ats > 0)),
-    arr[i].losses_ats = arr[i-2] ? arr[i-2].losses_ats + (1 * (arr[i].ats < 0)) : (1 * (arr[i].ats < 0)),
-    arr[i].ties_ats = arr[i-2] ? arr[i-2].ties_ats + (1 * (arr[i].ats === 0)) : (1 * (arr[i].ats === 0)),
-    arr[i].record_ats = arr[i].wins_ats + "-" + arr[i].losses_ats + "-" + arr[i].ties_ats,
-    arr[i].wins = arr[i-2] ? arr[i-2].wins + (1 * (arr[i].winner)) : (1 * (arr[i].winner)),
-    arr[i].losses = arr[i-2] ? arr[i-2].losses + (1 * !(arr[i].winner)) : (1 * !(arr[i].winner)),
-    arr[i].record = arr[i].wins + "-" + arr[i].losses;
+    arr.shift();
+    return arr;
   }
-  else {
-    arr[i].wins_ats = arr[i-1] ? arr[i-1].wins_ats + (1 * (arr[i].ats > 0)) : (1 * (arr[i].ats > 0)),
-    arr[i].losses_ats = arr[i-1] ? arr[i-1].losses_ats + (1 * (arr[i].ats < 0)) : (1 * (arr[i].ats < 0)),
-    arr[i].ties_ats = arr[i-1] ? arr[i-1].ties_ats + (1 * (arr[i].ats === 0)) : (1 * (arr[i].ats === 0)),
-    arr[i].record_ats = arr[i].wins_ats + "-" + arr[i].losses_ats + "-" + arr[i].ties_ats,
-    arr[i].wins = arr[i-1] ? arr[i-1].wins + (1 * (arr[i].winner)) : (1 * (arr[i].winner)),
-    arr[i].losses = arr[i-1] ? arr[i-1].losses + (1 * !(arr[i].winner)) : (1 * !(arr[i].winner)),
-    arr[i].record = arr[i].wins + "-" + arr[i].losses;
+
+  var pop_cumulatives = function(season){
+
+    for(var i = 0; i < season.length; i++){
+      // find the bye week, and don't iterate it
+      if(season[i-1] && (season[i].week == season[i-1].week)){
+        season[i].wins_ats = season[i-2] ? season[i-2].wins_ats + (1 * (season[i].ats > 0)) : (1 * (season[i].ats > 0)),
+        season[i].losses_ats = season[i-2] ? season[i-2].losses_ats + (1 * (season[i].ats < 0)) : (1 * (season[i].ats < 0)),
+        season[i].ties_ats = season[i-2] ? season[i-2].ties_ats + (1 * (season[i].ats === 0)) : (1 * (season[i].ats === 0)),
+        season[i].record_ats = season[i].wins_ats + "-" + season[i].losses_ats + "-" + season[i].ties_ats,
+        season[i].wins = season[i-2] ? season[i-2].wins + (1 * (season[i].winner)) : (1 * (season[i].winner)),
+        season[i].losses = season[i-2] ? season[i-2].losses + (1 * !(season[i].winner)) : (1 * !(season[i].winner)),
+        season[i].record = season[i].wins + "-" + season[i].losses;
+      }
+      else {
+        season[i].wins_ats = season[i-1] ? season[i-1].wins_ats + (1 * (season[i].ats > 0)) : (1 * (season[i].ats > 0)),
+        season[i].losses_ats = season[i-1] ? season[i-1].losses_ats + (1 * (season[i].ats < 0)) : (1 * (season[i].ats < 0)),
+        season[i].ties_ats = season[i-1] ? season[i-1].ties_ats + (1 * (season[i].ats === 0)) : (1 * (season[i].ats === 0)),
+        season[i].record_ats = season[i].wins_ats + "-" + season[i].losses_ats + "-" + season[i].ties_ats,
+        season[i].wins = season[i-1] ? season[i-1].wins + (1 * (season[i].winner)) : (1 * (season[i].winner)),
+        season[i].losses = season[i-1] ? season[i-1].losses + (1 * !(season[i].winner)) : (1 * !(season[i].winner)),
+        season[i].record = season[i].wins + "-" + season[i].losses;
+      }
+    }
+    master["Cleveland"] = {};
+    master["Cleveland"]["2006"] = season;
   }
-}
 
 
-master["Cleveland"] = {};
+sort_games();
+pop_cumulatives(arr);
 
-master["Cleveland"]["2006"] = arr;
+
+// console.log(master);
+
 
 fs.writeFile("test.json", JSON.stringify(master, null, 6), function(err){
   console.log("check test.json i guess?")
