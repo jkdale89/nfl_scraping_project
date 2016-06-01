@@ -290,14 +290,14 @@
       {
             "favorite": "Carolina",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 35,
             "ml_fav": "-$175",
             "ml_dog": "+$155",
             "week": 10,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaCarolina102007"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta102007"
       },
       {
             "favorite": "New Orleans",
@@ -552,7 +552,7 @@
             "idj": "St. LouisNew Orleans102009"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1.5,
             "dog": "Carolina",
             "total": 44,
@@ -561,7 +561,7 @@
             "week": 10,
             "year": 2009,
             "home": "Carolina",
-            "idj": "Carolinaanta102009"
+            "idj": "CarolinaAtlanta102009"
       },
       {
             "favorite": "Miami",
@@ -960,7 +960,7 @@
             "idj": "Kansas CityDenver102011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "New Orleans",
             "total": 53,
@@ -969,7 +969,7 @@
             "week": 10,
             "year": 2012,
             "home": "New Orleans",
-            "idj": "New Orleansanta102012"
+            "idj": "New OrleansAtlanta102012"
       },
       {
             "favorite": "Detroit",
@@ -1320,7 +1320,7 @@
             "idj": "BaltimoreTennessee102014"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 47,
@@ -1329,7 +1329,7 @@
             "week": 10,
             "year": 2014,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta102014"
+            "idj": "Tampa BayAtlanta102014"
       },
       {
             "favorite": "Arizona",
@@ -1598,14 +1598,14 @@
       {
             "favorite": "Baltimore",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 41,
             "ml_fav": "-$190",
             "ml_dog": "+$165",
             "week": 11,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaBaltimore112006"
+            "home": "Baltimore",
+            "idj": "BaltimoreAtlanta112006"
       },
       {
             "favorite": "Philadelphia",
@@ -2138,14 +2138,14 @@
       {
             "favorite": "NY Giants",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$350",
             "ml_dog": "+$290",
             "week": 11,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNY Giants112009"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta112009"
       },
       {
             "favorite": "Minnesota",
@@ -2304,7 +2304,7 @@
             "idj": "New OrleansSeattle112010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "St. Louis",
             "total": 43,
@@ -2313,7 +2313,7 @@
             "week": 11,
             "year": 2010,
             "home": "St. Louis",
-            "idj": "St. Louisanta112010"
+            "idj": "St. LouisAtlanta112010"
       },
       {
             "favorite": "San Francisco",
@@ -2810,14 +2810,14 @@
       {
             "favorite": "Tampa Bay",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$135",
             "ml_dog": "+$115",
             "week": 11,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaTampa Bay112013"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta112013"
       },
       {
             "favorite": "Detroit",
@@ -2928,7 +2928,7 @@
             "idj": "San DiegoOakland112014"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2.5,
             "dog": "Carolina",
             "total": 47,
@@ -2937,7 +2937,7 @@
             "week": 11,
             "year": 2014,
             "home": "Carolina",
-            "idj": "Carolinaanta112014"
+            "idj": "CarolinaAtlanta112014"
       },
       {
             "favorite": "Miami",
@@ -4320,7 +4320,7 @@
             "idj": "JacksonvilleTennessee122012"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Tampa Bay",
             "total": 51,
@@ -4329,7 +4329,7 @@
             "week": 12,
             "year": 2012,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta122012"
+            "idj": "Tampa BayAtlanta122012"
       },
       {
             "favorite": "Seattle",
@@ -4943,7 +4943,7 @@
             "idj": "ClevelandKansas City132006"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Washington",
             "total": 38,
@@ -4952,7 +4952,7 @@
             "week": 13,
             "year": 2006,
             "home": "Washington",
-            "idj": "Washingtonanta132006"
+            "idj": "WashingtonAtlanta132006"
       },
       {
             "favorite": "New England",
@@ -5029,14 +5029,14 @@
       {
             "favorite": "St. Louis",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 40,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 13,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaSt. Louis132007"
+            "home": "St. Louis",
+            "idj": "St. LouisAtlanta132007"
       },
       {
             "favorite": "Dallas",
@@ -5281,14 +5281,14 @@
       {
             "favorite": "San Diego",
             "spread": -6.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$290",
             "ml_dog": "+$240",
             "week": 13,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaSan Diego132008"
+            "home": "San Diego",
+            "idj": "San DiegoAtlanta132008"
       },
       {
             "favorite": "Oakland",
@@ -5603,7 +5603,7 @@
             "idj": "MinnesotaBuffalo132010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 43,
@@ -5612,7 +5612,7 @@
             "week": 13,
             "year": 2010,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta132010"
+            "idj": "Tampa BayAtlanta132010"
       },
       {
             "favorite": "San Diego",
@@ -5795,7 +5795,7 @@
             "idj": "WashingtonNY Jets132011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "Houston",
             "total": 38,
@@ -5804,7 +5804,7 @@
             "week": 13,
             "year": 2011,
             "home": "Houston",
-            "idj": "Houstonanta132011"
+            "idj": "HoustonAtlanta132011"
       },
       {
             "favorite": "New Orleans",
@@ -6205,14 +6205,14 @@
       {
             "favorite": "Buffalo",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$210",
             "ml_dog": "+$180",
             "week": 13,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaBuffalo132013"
+            "home": "Buffalo",
+            "idj": "BuffaloAtlanta132013"
       },
       {
             "favorite": "San Francisco",
@@ -6469,14 +6469,14 @@
       {
             "favorite": "Tampa Bay",
             "spread": null,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$110",
             "ml_dog": " -$110",
             "week": 13,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaTampa Bay132015"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta132015"
       },
       {
             "favorite": "NY Jets",
@@ -6767,7 +6767,7 @@
             "idj": "DallasNew Orleans142006"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Tampa Bay",
             "total": 37,
@@ -6776,7 +6776,7 @@
             "week": 14,
             "year": 2006,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta142006"
+            "idj": "Tampa BayAtlanta142006"
       },
       {
             "favorite": "NY Giants",
@@ -6997,14 +6997,14 @@
       {
             "favorite": "New Orleans",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 52,
             "ml_fav": "-$165",
             "ml_dog": "+$145",
             "week": 14,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaNew Orleans142008"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta142008"
       },
       {
             "favorite": "NY Jets",
@@ -7295,7 +7295,7 @@
             "idj": "AtlantaNew Orleans142009"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -7.5,
             "dog": "Carolina",
             "total": 41,
@@ -7304,7 +7304,7 @@
             "week": 14,
             "year": 2010,
             "home": "Carolina",
-            "idj": "Carolinaanta142010"
+            "idj": "CarolinaAtlanta142010"
       },
       {
             "favorite": "New England",
@@ -7499,7 +7499,7 @@
             "idj": "WashingtonNew England142011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Carolina",
             "total": 47,
@@ -7508,7 +7508,7 @@
             "week": 14,
             "year": 2011,
             "home": "Carolina",
-            "idj": "Carolinaanta142011"
+            "idj": "CarolinaAtlanta142011"
       },
       {
             "favorite": "Tampa Bay",
@@ -7775,7 +7775,7 @@
             "idj": "IndianapolisTennessee142012"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Carolina",
             "total": 47,
@@ -7784,7 +7784,7 @@
             "week": 14,
             "year": 2012,
             "home": "Carolina",
-            "idj": "Carolinaanta142012"
+            "idj": "CarolinaAtlanta142012"
       },
       {
             "favorite": "Chicago",
@@ -7969,14 +7969,14 @@
       {
             "favorite": "Green Bay",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$185",
             "ml_dog": "+$165",
             "week": 14,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaGreen Bay142013"
+            "home": "Green Bay",
+            "idj": "Green BayAtlanta142013"
       },
       {
             "favorite": "Indianapolis",
@@ -8173,14 +8173,14 @@
       {
             "favorite": "Carolina",
             "spread": -8.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$380",
             "ml_dog": "+$320",
             "week": 14,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaCarolina142015"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta142015"
       },
       {
             "favorite": "Cleveland",
@@ -8605,14 +8605,14 @@
       {
             "favorite": "Tampa Bay",
             "spread": -13,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 37,
             "ml_fav": "-$750",
             "ml_dog": "+$550",
             "week": 15,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaTampa Bay152007"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta152007"
       },
       {
             "favorite": "Green Bay",
@@ -8941,14 +8941,14 @@
       {
             "favorite": "NY Jets",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 36,
             "ml_fav": "-$250",
             "ml_dog": "+$210",
             "week": 15,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNY Jets152009"
+            "home": "NY Jets",
+            "idj": "NY JetsAtlanta152009"
       },
       {
             "favorite": "Kansas City",
@@ -9083,7 +9083,7 @@
             "idj": "BaltimoreNew Orleans152010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -5.5,
             "dog": "Seattle",
             "total": 46,
@@ -9092,7 +9092,7 @@
             "week": 15,
             "year": 2010,
             "home": "Seattle",
-            "idj": "Seattleanta152010"
+            "idj": "SeattleAtlanta152010"
       },
       {
             "favorite": "Pittsburgh",
@@ -10009,14 +10009,14 @@
       {
             "favorite": "Jacksonville",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 15,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaJacksonville152015"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleAtlanta152015"
       },
       {
             "favorite": "Buffalo",
@@ -10393,14 +10393,14 @@
       {
             "favorite": "Arizona",
             "spread": -11,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 44,
             "ml_fav": "-$600",
             "ml_dog": "+$425",
             "week": 16,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaArizona162007"
+            "home": "Arizona",
+            "idj": "ArizonaAtlanta162007"
       },
       {
             "favorite": "Seattle",
@@ -10561,14 +10561,14 @@
       {
             "favorite": "Minnesota",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 16,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaMinnesota162008"
+            "home": "Minnesota",
+            "idj": "MinnesotaAtlanta162008"
       },
       {
             "favorite": "NY Jets",
@@ -11135,7 +11135,7 @@
             "idj": "Kansas CityOakland162011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Detroit",
             "total": 50,
@@ -11144,7 +11144,7 @@
             "week": 16,
             "year": 2012,
             "home": "Detroit",
-            "idj": "Detroitanta162012"
+            "idj": "DetroitAtlanta162012"
       },
       {
             "favorite": "Green Bay",
@@ -11617,14 +11617,14 @@
       {
             "favorite": "New Orleans",
             "spread": -6,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 56,
             "ml_fav": "-$260",
             "ml_dog": "+$220",
             "week": 16,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaNew Orleans162014"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta162014"
       },
       {
             "favorite": "Green Bay",
@@ -11977,14 +11977,14 @@
       {
             "favorite": "Philadelphia",
             "spread": -6.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 42,
             "ml_fav": "-$330",
             "ml_dog": "+$250",
             "week": 17,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaPhiladelphia172006"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta172006"
       },
       {
             "favorite": "Tennessee",
@@ -12251,7 +12251,7 @@
             "idj": "St. LouisSan Francisco172010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 42,
@@ -12260,7 +12260,7 @@
             "week": 17,
             "year": 2010,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta172010"
+            "idj": "Tampa BayAtlanta172010"
       },
       {
             "favorite": "Arizona",
@@ -12937,14 +12937,14 @@
       {
             "favorite": "Carolina",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 38,
             "ml_fav": "-$230",
             "ml_dog": "+$190",
             "week": 1,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaCarolina12006"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta12006"
       },
       {
             "favorite": "Philadelphia",
@@ -13201,14 +13201,14 @@
       {
             "favorite": "Minnesota",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 35,
             "ml_fav": "-$160",
             "ml_dog": "+$140",
             "week": 1,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaMinnesota12007"
+            "home": "Minnesota",
+            "idj": "MinnesotaAtlanta12007"
       },
       {
             "favorite": "New England",
@@ -13643,7 +13643,7 @@
             "idj": "BuffaloMiami12010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Pittsburgh",
             "total": 39,
@@ -13652,7 +13652,7 @@
             "week": 1,
             "year": 2010,
             "home": "Pittsburgh",
-            "idj": "Pittsburghanta12010"
+            "idj": "PittsburghAtlanta12010"
       },
       {
             "favorite": "Chicago",
@@ -13799,7 +13799,7 @@
             "idj": "Tampa BayDetroit12011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "Chicago",
             "total": 40,
@@ -13808,7 +13808,7 @@
             "week": 1,
             "year": 2011,
             "home": "Chicago",
-            "idj": "Chicagoanta12011"
+            "idj": "ChicagoAtlanta12011"
       },
       {
             "favorite": "Kansas City",
@@ -13943,7 +13943,7 @@
             "idj": "DetroitSt. Louis12012"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2.5,
             "dog": "Kansas City",
             "total": 43,
@@ -13952,7 +13952,7 @@
             "week": 1,
             "year": 2012,
             "home": "Kansas City",
-            "idj": "Kansas Cityanta12012"
+            "idj": "Kansas CityAtlanta12012"
       },
       {
             "favorite": "Green Bay",
@@ -14161,14 +14161,14 @@
       {
             "favorite": "New Orleans",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 55,
             "ml_fav": "-$190",
             "ml_dog": "+$170",
             "week": 1,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaNew Orleans12013"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta12013"
       },
       {
             "favorite": "Tampa Bay",
@@ -14857,14 +14857,14 @@
       {
             "favorite": "Jacksonville",
             "spread": -10.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 34,
             "ml_fav": "-$625",
             "ml_dog": "+$450",
             "week": 2,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaJacksonville22007"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleAtlanta22007"
       },
       {
             "favorite": "St. Louis",
@@ -15001,14 +15001,14 @@
       {
             "favorite": "Tampa Bay",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 37,
             "ml_fav": "-$310",
             "ml_dog": "+$250",
             "week": 2,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaTampa Bay22008"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta22008"
       },
       {
             "favorite": "New England",
@@ -16009,14 +16009,14 @@
       {
             "favorite": "Cincinnati",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 49,
             "ml_fav": "-$250",
             "ml_dog": "+$210",
             "week": 2,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaCincinnati22014"
+            "home": "Cincinnati",
+            "idj": "CincinnatiAtlanta22014"
       },
       {
             "favorite": "Green Bay",
@@ -16165,14 +16165,14 @@
       {
             "favorite": "NY Giants",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 50,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 2,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaNY Giants22015"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta22015"
       },
       {
             "favorite": "Baltimore",
@@ -16813,14 +16813,14 @@
       {
             "favorite": "New England",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$240",
             "ml_dog": "+$200",
             "week": 3,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNew England32009"
+            "home": "New England",
+            "idj": "New EnglandAtlanta32009"
       },
       {
             "favorite": "New Orleans",
@@ -16993,14 +16993,14 @@
       {
             "favorite": "New Orleans",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 49,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 3,
             "year": 2010,
-            "home": "anta",
-            "idj": "antaNew Orleans32010"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta32010"
       },
       {
             "favorite": "San Francisco",
@@ -17113,14 +17113,14 @@
       {
             "favorite": "Tampa Bay",
             "spread": -1,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$120",
             "ml_dog": "+$100",
             "week": 3,
             "year": 2011,
-            "home": "anta",
-            "idj": "antaTampa Bay32011"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta32011"
       },
       {
             "favorite": "Arizona",
@@ -17365,14 +17365,14 @@
       {
             "favorite": "San Diego",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$165",
             "ml_dog": "+$145",
             "week": 3,
             "year": 2012,
-            "home": "anta",
-            "idj": "antaSan Diego32012"
+            "home": "San Diego",
+            "idj": "San DiegoAtlanta32012"
       },
       {
             "favorite": "Houston",
@@ -17437,14 +17437,14 @@
       {
             "favorite": "Miami",
             "spread": -2.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 3,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaMiami32013"
+            "home": "Miami",
+            "idj": "MiamiAtlanta32013"
       },
       {
             "favorite": "San Francisco",
@@ -17857,14 +17857,14 @@
       {
             "favorite": "Dallas",
             "spread": null,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$110",
             "ml_dog": " -$110",
             "week": 3,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaDallas32015"
+            "home": "Dallas",
+            "idj": "DallasAtlanta32015"
       },
       {
             "favorite": "Cleveland",
@@ -18361,14 +18361,14 @@
       {
             "favorite": "Carolina",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 39,
             "ml_fav": "-$300",
             "ml_dog": "+$250",
             "week": 4,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaCarolina42008"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta42008"
       },
       {
             "favorite": "Indianapolis",
@@ -18767,7 +18767,7 @@
             "idj": "ChicagoCarolina42011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Seattle",
             "total": 39,
@@ -18776,7 +18776,7 @@
             "week": 4,
             "year": 2011,
             "home": "Seattle",
-            "idj": "Seattleanta42011"
+            "idj": "SeattleAtlanta42011"
       },
       {
             "favorite": "Houston",
@@ -19187,7 +19187,7 @@
             "idj": "San FranciscoPhiladelphia42014"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Minnesota",
             "total": 47,
@@ -19196,7 +19196,7 @@
             "week": 4,
             "year": 2014,
             "home": "Minnesota",
-            "idj": "Minnesotaanta42014"
+            "idj": "MinnesotaAtlanta42014"
       },
       {
             "favorite": "New Orleans",
@@ -19609,14 +19609,14 @@
       {
             "favorite": "Tennessee",
             "spread": -7.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 41,
             "ml_fav": "-$380",
             "ml_dog": "+$300",
             "week": 5,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaTennessee52007"
+            "home": "Tennessee",
+            "idj": "TennesseeAtlanta52007"
       },
       {
             "favorite": "Houston",
@@ -19801,14 +19801,14 @@
       {
             "favorite": "Green Bay",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 42,
             "ml_fav": "-$230",
             "ml_dog": "+$190",
             "week": 5,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaGreen Bay52008"
+            "home": "Green Bay",
+            "idj": "Green BayAtlanta52008"
       },
       {
             "favorite": "NY Giants",
@@ -19897,14 +19897,14 @@
       {
             "favorite": "San Francisco",
             "spread": -1,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 39,
             "ml_fav": "-$115",
             "ml_dog": "-$105",
             "week": 5,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaSan Francisco52009"
+            "home": "San Francisco",
+            "idj": "San FranciscoAtlanta52009"
       },
       {
             "favorite": "New England",
@@ -20063,7 +20063,7 @@
             "idj": "DetroitSt. Louis52010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Cleveland",
             "total": 41,
@@ -20072,7 +20072,7 @@
             "week": 5,
             "year": 2010,
             "home": "Cleveland",
-            "idj": "Clevelandanta52010"
+            "idj": "ClevelandAtlanta52010"
       },
       {
             "favorite": "Cincinnati",
@@ -20315,7 +20315,7 @@
             "idj": "St. LouisArizona52012"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Washington",
             "total": 51,
@@ -20324,7 +20324,7 @@
             "week": 5,
             "year": 2012,
             "home": "Washington",
-            "idj": "Washingtonanta52012"
+            "idj": "WashingtonAtlanta52012"
       },
       {
             "favorite": "Chicago",
@@ -20641,14 +20641,14 @@
       {
             "favorite": "NY Giants",
             "spread": -4,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 50,
             "ml_fav": "-$210",
             "ml_dog": "+$180",
             "week": 5,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaNY Giants52014"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta52014"
       },
       {
             "favorite": "New Orleans",
@@ -21553,14 +21553,14 @@
       {
             "favorite": "Philadelphia",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 6,
             "year": 2010,
-            "home": "anta",
-            "idj": "antaPhiladelphia62010"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta62010"
       },
       {
             "favorite": "Baltimore",
@@ -22453,14 +22453,14 @@
       {
             "favorite": "New Orleans",
             "spread": -7.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$370",
             "ml_dog": "+$300",
             "week": 7,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaNew Orleans72007"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta72007"
       },
       {
             "favorite": "Dallas",
@@ -22777,14 +22777,14 @@
       {
             "favorite": "Dallas",
             "spread": -5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$235",
             "ml_dog": "+$195",
             "week": 7,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaDallas72009"
+            "home": "Dallas",
+            "idj": "DallasAtlanta72009"
       },
       {
             "favorite": "NY Giants",
@@ -23089,14 +23089,14 @@
       {
             "favorite": "Detroit",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$230",
             "ml_dog": "+$195",
             "week": 7,
             "year": 2011,
-            "home": "anta",
-            "idj": "antaDetroit72011"
+            "home": "Detroit",
+            "idj": "DetroitAtlanta72011"
       },
       {
             "favorite": "Chicago",
@@ -23651,7 +23651,7 @@
             "idj": "DetroitMinnesota72015"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Tennessee",
             "total": 45,
@@ -23660,7 +23660,7 @@
             "week": 7,
             "year": 2015,
             "home": "Tennessee",
-            "idj": "Tennesseeanta72015"
+            "idj": "TennesseeAtlanta72015"
       },
       {
             "favorite": "Washington",
@@ -23881,14 +23881,14 @@
       {
             "favorite": "Cincinnati",
             "spread": -4,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$200",
             "ml_dog": "+$175",
             "week": 8,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaCincinnati82006"
+            "home": "Cincinnati",
+            "idj": "CincinnatiAtlanta82006"
       },
       {
             "favorite": "Cleveland",
@@ -24097,14 +24097,14 @@
       {
             "favorite": "Philadelphia",
             "spread": -9,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$400",
             "ml_dog": "+$330",
             "week": 8,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaPhiladelphia82008"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta82008"
       },
       {
             "favorite": "Miami",
@@ -24625,14 +24625,14 @@
       {
             "favorite": "Philadelphia",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 8,
             "year": 2012,
-            "home": "anta",
-            "idj": "antaPhiladelphia82012"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta82012"
       },
       {
             "favorite": "Detroit",
@@ -24781,14 +24781,14 @@
       {
             "favorite": "Arizona",
             "spread": -2.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$140",
             "ml_dog": "+$120",
             "week": 8,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaArizona82013"
+            "home": "Arizona",
+            "idj": "ArizonaAtlanta82013"
       },
       {
             "favorite": "Green Bay",
@@ -25247,7 +25247,7 @@
             "idj": "San DiegoCleveland92006"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -5.5,
             "dog": "Detroit",
             "total": 47,
@@ -25256,7 +25256,7 @@
             "week": 9,
             "year": 2006,
             "home": "Detroit",
-            "idj": "Detroitanta92006"
+            "idj": "DetroitAtlanta92006"
       },
       {
             "favorite": "Pittsburgh",
@@ -25487,7 +25487,7 @@
             "idj": "CincinnatiJacksonville92008"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Oakland",
             "total": 41,
@@ -25496,7 +25496,7 @@
             "week": 9,
             "year": 2008,
             "home": "Oakland",
-            "idj": "Oaklandanta92008"
+            "idj": "OaklandAtlanta92008"
       },
       {
             "favorite": "NY Giants",
@@ -25859,7 +25859,7 @@
             "idj": "BaltimoreMiami92010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6.5,
             "dog": "Indianapolis",
             "total": 44,
@@ -25868,7 +25868,7 @@
             "week": 9,
             "year": 2011,
             "home": "Indianapolis",
-            "idj": "Indianapolisanta92011"
+            "idj": "IndianapolisAtlanta92011"
       },
       {
             "favorite": "New Orleans",
@@ -26185,14 +26185,14 @@
       {
             "favorite": "Carolina",
             "spread": -8.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$440",
             "ml_dog": "+$360",
             "week": 9,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaCarolina92013"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta92013"
       },
       {
             "favorite": "Seattle",
@@ -26531,7 +26531,7 @@
             "idj": "CarolinaGreen Bay92015"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -8.5,
             "dog": "San Francisco",
             "total": 43,
@@ -26540,7 +26540,7 @@
             "week": 9,
             "year": 2015,
             "home": "San Francisco",
-            "idj": "San Franciscoanta92015"
+            "idj": "San FranciscoAtlanta92015"
       },
       {
             "favorite": "NY Giants",

@@ -7,7 +7,8 @@ var fs = require('fs'),
 
 // var reformat_lines = function(){
   for(var i = 0; i < lines.length; i++){
-    var cur = lines[i];
+
+    var cur = lines[i]
     if(cur["Favorite"] === "") {
       i ++
     }
@@ -26,14 +27,13 @@ var fs = require('fs'),
 
       // console.log(fav.indexOf("At") + "is the index of At");
       // console.log(dog.indexOf("At") + "is the index of At");
-
-      if((fav.indexOf("At") + 1) === 1){
+      if((fav.indexOf("At ") + 1) === 1){
         fav = fav.slice(3, fav.length);
         home = fav;
         away = dog;
       }
 
-      if((dog.indexOf("At") + 1) === 1) {
+      if((dog.indexOf("At ") + 1) === 1) {
         dog = dog.slice(3, dog.length);
         home = dog;
         away = fav;

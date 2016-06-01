@@ -1,5 +1,4 @@
-module.exports =
-[
+module.exports = [
       {
             "favorite": "Miami",
             "spread": -1.5,
@@ -531,14 +530,24 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 35,
             "ml_fav": "-$175",
             "ml_dog": "+$155",
             "week": 10,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaCarolina102007"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta102007",
+            "winner": "Atlanta",
+            "loser": "Carolina",
+            "winningScore": 20,
+            "losingScore": 13,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Carolina",
+            "favorite_diff_ats": -10.5,
+            "dog_diff_ats": 10.5,
+            "over": false,
+            "over_differential": -2
       },
       {
             "favorite": "New Orleans",
@@ -858,7 +867,17 @@ module.exports =
             "week": 10,
             "year": 2009,
             "home": "NY Jets",
-            "idj": "NY JetsJacksonville102009"
+            "idj": "NY JetsJacksonville102009",
+            "winner": "Jacksonville",
+            "loser": "NY Jets",
+            "winningScore": 24,
+            "losingScore": 22,
+            "winner_ats": "Jacksonville",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -8.5,
+            "dog_diff_ats": 8.5,
+            "over": true,
+            "over_differential": 5
       },
       {
             "favorite": "San Francisco",
@@ -993,7 +1012,7 @@ module.exports =
             "over_differential": 1
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1.5,
             "dog": "Carolina",
             "total": 44,
@@ -1002,7 +1021,17 @@ module.exports =
             "week": 10,
             "year": 2009,
             "home": "Carolina",
-            "idj": "Carolinaanta102009"
+            "idj": "CarolinaAtlanta102009",
+            "winner": "Carolina",
+            "loser": "Atlanta",
+            "winningScore": 28,
+            "losingScore": 19,
+            "winner_ats": "Carolina",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -10.5,
+            "dog_diff_ats": 10.5,
+            "over": true,
+            "over_differential": 3
       },
       {
             "favorite": "Miami",
@@ -1564,7 +1593,17 @@ module.exports =
             "week": 10,
             "year": 2011,
             "home": "NY Jets",
-            "idj": "NY JetsNew England102011"
+            "idj": "NY JetsNew England102011",
+            "winner": "New England",
+            "loser": "NY Jets",
+            "winningScore": 37,
+            "losingScore": 16,
+            "winner_ats": "New England",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -23.5,
+            "dog_diff_ats": 23.5,
+            "over": true,
+            "over_differential": 6
       },
       {
             "favorite": "Dallas",
@@ -1721,7 +1760,7 @@ module.exports =
             "over_differential": -15
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "New Orleans",
             "total": 53,
@@ -1730,7 +1769,17 @@ module.exports =
             "week": 10,
             "year": 2012,
             "home": "New Orleans",
-            "idj": "New Orleansanta102012"
+            "idj": "New OrleansAtlanta102012",
+            "winner": "New Orleans",
+            "loser": "Atlanta",
+            "winningScore": 31,
+            "losingScore": 27,
+            "winner_ats": "New Orleans",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -6,
+            "dog_diff_ats": 6,
+            "over": true,
+            "over_differential": 5
       },
       {
             "favorite": "Detroit",
@@ -2263,14 +2312,24 @@ module.exports =
       {
             "favorite": "Dallas",
             "spread": -7.5,
-            "dog": "Jacksonville\nAt London",
+            "dog": "Jacksonville",
             "total": 45,
             "ml_fav": "-$345",
             "ml_dog": "+$280",
             "week": 10,
             "year": 2014,
-            "home": "",
-            "idj": "102014"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleDallas102014",
+            "winner": "Dallas",
+            "loser": "Jacksonville",
+            "winningScore": 31,
+            "losingScore": 17,
+            "winner_ats": "Dallas",
+            "loser_ats": "Jacksonville",
+            "favorite_diff_ats": 6.5,
+            "dog_diff_ats": -6.5,
+            "over": true,
+            "over_differential": 3
       },
       {
             "favorite": "Detroit",
@@ -2361,7 +2420,7 @@ module.exports =
             "over_differential": -16
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 47,
@@ -2370,7 +2429,17 @@ module.exports =
             "week": 10,
             "year": 2014,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta102014"
+            "idj": "Tampa BayAtlanta102014",
+            "winner": "Atlanta",
+            "loser": "Tampa Bay",
+            "winningScore": 27,
+            "losingScore": 17,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Tampa Bay",
+            "favorite_diff_ats": 7,
+            "dog_diff_ats": -7,
+            "over": false,
+            "over_differential": -3
       },
       {
             "favorite": "Arizona",
@@ -2470,7 +2539,17 @@ module.exports =
             "week": 10,
             "year": 2014,
             "home": "NY Jets",
-            "idj": "NY JetsPittsburgh102014"
+            "idj": "NY JetsPittsburgh102014",
+            "winner": "NY Jets",
+            "loser": "Pittsburgh",
+            "winningScore": 20,
+            "losingScore": 13,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Pittsburgh",
+            "favorite_diff_ats": -11.5,
+            "dog_diff_ats": 11.5,
+            "over": false,
+            "over_differential": -14
       },
       {
             "favorite": "Dallas",
@@ -2849,14 +2928,24 @@ module.exports =
       {
             "favorite": "Baltimore",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 41,
             "ml_fav": "-$190",
             "ml_dog": "+$165",
             "week": 11,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaBaltimore112006"
+            "home": "Baltimore",
+            "idj": "BaltimoreAtlanta112006",
+            "winner": "Baltimore",
+            "loser": "Atlanta",
+            "winningScore": 24,
+            "losingScore": 10,
+            "winner_ats": "Baltimore",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 10.5,
+            "dog_diff_ats": -10.5,
+            "over": false,
+            "over_differential": -7
       },
       {
             "favorite": "Philadelphia",
@@ -2978,7 +3067,17 @@ module.exports =
             "week": 11,
             "year": 2006,
             "home": "NY Jets",
-            "idj": "NY JetsChicago112006"
+            "idj": "NY JetsChicago112006",
+            "winner": "Chicago",
+            "loser": "NY Jets",
+            "winningScore": 10,
+            "losingScore": 0,
+            "winner_ats": "Chicago",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 4,
+            "dog_diff_ats": -4,
+            "over": false,
+            "over_differential": -29
       },
       {
             "favorite": "Arizona",
@@ -3298,7 +3397,17 @@ module.exports =
             "week": 11,
             "year": 2007,
             "home": "NY Jets",
-            "idj": "NY JetsPittsburgh112007"
+            "idj": "NY JetsPittsburgh112007",
+            "winner": "NY Jets",
+            "loser": "Pittsburgh",
+            "winningScore": 19,
+            "losingScore": 16,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Pittsburgh",
+            "favorite_diff_ats": -12,
+            "dog_diff_ats": 12,
+            "over": false,
+            "over_differential": -5
       },
       {
             "favorite": "Indianapolis",
@@ -3809,14 +3918,24 @@ module.exports =
       {
             "favorite": "NY Giants",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$350",
             "ml_dog": "+$290",
             "week": 11,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNY Giants112009"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta112009",
+            "winner": "NY Giants",
+            "loser": "Atlanta",
+            "winningScore": 34,
+            "losingScore": 31,
+            "winner_ats": "Atlanta",
+            "loser_ats": "NY Giants",
+            "favorite_diff_ats": -4,
+            "dog_diff_ats": 4,
+            "over": true,
+            "over_differential": 19
       },
       {
             "favorite": "Minnesota",
@@ -4105,7 +4224,7 @@ module.exports =
             "over_differential": 9
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "St. Louis",
             "total": 43,
@@ -4114,7 +4233,17 @@ module.exports =
             "week": 11,
             "year": 2010,
             "home": "St. Louis",
-            "idj": "St. Louisanta112010"
+            "idj": "St. LouisAtlanta112010",
+            "winner": "Atlanta",
+            "loser": "St. Louis",
+            "winningScore": 34,
+            "losingScore": 17,
+            "winner_ats": "Atlanta",
+            "loser_ats": "St. Louis",
+            "favorite_diff_ats": 13.5,
+            "dog_diff_ats": -13.5,
+            "over": true,
+            "over_differential": 8
       },
       {
             "favorite": "San Francisco",
@@ -4258,7 +4387,17 @@ module.exports =
             "week": 11,
             "year": 2010,
             "home": "NY Jets",
-            "idj": "NY JetsHouston112010"
+            "idj": "NY JetsHouston112010",
+            "winner": "NY Jets",
+            "loser": "Houston",
+            "winningScore": 30,
+            "losingScore": 27,
+            "winner_ats": "Houston",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -3.5,
+            "dog_diff_ats": 3.5,
+            "over": true,
+            "over_differential": 11
       },
       {
             "favorite": "Pittsburgh",
@@ -5011,14 +5150,24 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$135",
             "ml_dog": "+$115",
             "week": 11,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaTampa Bay112013"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta112013",
+            "winner": "Tampa Bay",
+            "loser": "Atlanta",
+            "winningScore": 41,
+            "losingScore": 28,
+            "winner_ats": "Tampa Bay",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 11,
+            "dog_diff_ats": -11,
+            "over": true,
+            "over_differential": 26
       },
       {
             "favorite": "Detroit",
@@ -5219,7 +5368,7 @@ module.exports =
             "over_differential": -26
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2.5,
             "dog": "Carolina",
             "total": 47,
@@ -5228,7 +5377,17 @@ module.exports =
             "week": 11,
             "year": 2014,
             "home": "Carolina",
-            "idj": "Carolinaanta112014"
+            "idj": "CarolinaAtlanta112014",
+            "winner": "Atlanta",
+            "loser": "Carolina",
+            "winningScore": 19,
+            "losingScore": 17,
+            "winner_ats": "Carolina",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -0.5,
+            "dog_diff_ats": 0.5,
+            "over": false,
+            "over_differential": -11
       },
       {
             "favorite": "Miami",
@@ -5878,7 +6037,17 @@ module.exports =
             "week": 12,
             "year": 2006,
             "home": "NY Jets",
-            "idj": "NY JetsHouston122006"
+            "idj": "NY JetsHouston122006",
+            "winner": "NY Jets",
+            "loser": "Houston",
+            "winningScore": 26,
+            "losingScore": 11,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Houston",
+            "favorite_diff_ats": 10,
+            "dog_diff_ats": -10,
+            "over": false,
+            "over_differential": -3
       },
       {
             "favorite": "Baltimore",
@@ -6694,7 +6863,17 @@ module.exports =
             "week": 12,
             "year": 2009,
             "home": "NY Jets",
-            "idj": "NY JetsCarolina122009"
+            "idj": "NY JetsCarolina122009",
+            "winner": "NY Jets",
+            "loser": "Carolina",
+            "winningScore": 17,
+            "losingScore": 6,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Carolina",
+            "favorite_diff_ats": 7.5,
+            "dog_diff_ats": -7.5,
+            "over": false,
+            "over_differential": -18
       },
       {
             "favorite": "San Diego",
@@ -6948,7 +7127,17 @@ module.exports =
             "week": 12,
             "year": 2010,
             "home": "NY Jets",
-            "idj": "NY JetsCincinnati122010"
+            "idj": "NY JetsCincinnati122010",
+            "winner": "NY Jets",
+            "loser": "Cincinnati",
+            "winningScore": 26,
+            "losingScore": 10,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Cincinnati",
+            "favorite_diff_ats": 6,
+            "dog_diff_ats": -6,
+            "over": false,
+            "over_differential": -7
       },
       {
             "favorite": "Minnesota",
@@ -7444,7 +7633,17 @@ module.exports =
             "week": 12,
             "year": 2011,
             "home": "NY Jets",
-            "idj": "NY JetsBuffalo122011"
+            "idj": "NY JetsBuffalo122011",
+            "winner": "NY Jets",
+            "loser": "Buffalo",
+            "winningScore": 28,
+            "losingScore": 24,
+            "winner_ats": "Buffalo",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -5.5,
+            "dog_diff_ats": 5.5,
+            "over": true,
+            "over_differential": 10
       },
       {
             "favorite": "Baltimore",
@@ -7588,7 +7787,17 @@ module.exports =
             "week": 12,
             "year": 2012,
             "home": "NY Jets",
-            "idj": "NY JetsNew England122012"
+            "idj": "NY JetsNew England122012",
+            "winner": "New England",
+            "loser": "NY Jets",
+            "winningScore": 49,
+            "losingScore": 19,
+            "winner_ats": "New England",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 23,
+            "dog_diff_ats": -23,
+            "over": true,
+            "over_differential": 20
       },
       {
             "favorite": "Cincinnati",
@@ -7701,7 +7910,7 @@ module.exports =
             "over_differential": -2
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Tampa Bay",
             "total": 51,
@@ -7710,7 +7919,17 @@ module.exports =
             "week": 12,
             "year": 2012,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta122012"
+            "idj": "Tampa BayAtlanta122012",
+            "winner": "Atlanta",
+            "loser": "Tampa Bay",
+            "winningScore": 24,
+            "losingScore": 23,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Tampa Bay",
+            "favorite_diff_ats": 0,
+            "dog_diff_ats": 0,
+            "over": false,
+            "over_differential": -4
       },
       {
             "favorite": "Seattle",
@@ -8547,7 +8766,17 @@ module.exports =
             "week": 12,
             "year": 2015,
             "home": "NY Jets",
-            "idj": "NY JetsMiami122015"
+            "idj": "NY JetsMiami122015",
+            "winner": "NY Jets",
+            "loser": "Miami",
+            "winningScore": 38,
+            "losingScore": 20,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Miami",
+            "favorite_diff_ats": 13.5,
+            "dog_diff_ats": -13.5,
+            "over": true,
+            "over_differential": 15
       },
       {
             "favorite": "Jacksonville",
@@ -8814,7 +9043,7 @@ module.exports =
             "over_differential": 24
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Washington",
             "total": 38,
@@ -8823,7 +9052,17 @@ module.exports =
             "week": 13,
             "year": 2006,
             "home": "Washington",
-            "idj": "Washingtonanta132006"
+            "idj": "WashingtonAtlanta132006",
+            "winner": "Atlanta",
+            "loser": "Washington",
+            "winningScore": 24,
+            "losingScore": 14,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Washington",
+            "favorite_diff_ats": 9,
+            "dog_diff_ats": -9,
+            "over": false,
+            "over_differential": 0
       },
       {
             "favorite": "New England",
@@ -8960,14 +9199,24 @@ module.exports =
       {
             "favorite": "St. Louis",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 40,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 13,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaSt. Louis132007"
+            "home": "St. Louis",
+            "idj": "St. LouisAtlanta132007",
+            "winner": "St. Louis",
+            "loser": "Atlanta",
+            "winningScore": 28,
+            "losingScore": 16,
+            "winner_ats": "St. Louis",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 9,
+            "dog_diff_ats": -9,
+            "over": true,
+            "over_differential": 4
       },
       {
             "favorite": "Dallas",
@@ -9287,7 +9536,17 @@ module.exports =
             "week": 13,
             "year": 2008,
             "home": "NY Jets",
-            "idj": "NY JetsDenver132008"
+            "idj": "NY JetsDenver132008",
+            "winner": "Denver",
+            "loser": "NY Jets",
+            "winningScore": 34,
+            "losingScore": 17,
+            "winner_ats": "Denver",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -24.5,
+            "dog_diff_ats": 24.5,
+            "over": true,
+            "over_differential": 3
       },
       {
             "favorite": "NY Giants",
@@ -9402,14 +9661,24 @@ module.exports =
       {
             "favorite": "San Diego",
             "spread": -6.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$290",
             "ml_dog": "+$240",
             "week": 13,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaSan Diego132008"
+            "home": "San Diego",
+            "idj": "San DiegoAtlanta132008",
+            "winner": "Atlanta",
+            "loser": "San Diego",
+            "winningScore": 22,
+            "losingScore": 16,
+            "winner_ats": "Atlanta",
+            "loser_ats": "San Diego",
+            "favorite_diff_ats": -12.5,
+            "dog_diff_ats": 12.5,
+            "over": false,
+            "over_differential": -10
       },
       {
             "favorite": "Oakland",
@@ -9898,14 +10167,24 @@ module.exports =
       {
             "favorite": "NY Jets",
             "spread": -3.5,
-            "dog": "Buffalo\n(At Toronto)\n",
+            "dog": "Buffalo",
             "total": 37,
             "ml_fav": "-$190",
             "ml_dog": "+$170",
             "week": 13,
             "year": 2009,
-            "home": "",
-            "idj": "132009"
+            "home": "Buffalo",
+            "idj": "BuffaloNY Jets132009",
+            "winner": "NY Jets",
+            "loser": "Buffalo",
+            "winningScore": 19,
+            "losingScore": 13,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Buffalo",
+            "favorite_diff_ats": 2.5,
+            "dog_diff_ats": -2.5,
+            "over": false,
+            "over_differential": -5
       },
       {
             "favorite": "Green Bay",
@@ -9974,7 +10253,7 @@ module.exports =
             "over_differential": 9
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 43,
@@ -9983,7 +10262,17 @@ module.exports =
             "week": 13,
             "year": 2010,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta132010"
+            "idj": "Tampa BayAtlanta132010",
+            "winner": "Atlanta",
+            "loser": "Tampa Bay",
+            "winningScore": 28,
+            "losingScore": 24,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Tampa Bay",
+            "favorite_diff_ats": 1,
+            "dog_diff_ats": -1,
+            "over": true,
+            "over_differential": 9
       },
       {
             "favorite": "San Diego",
@@ -10316,7 +10605,7 @@ module.exports =
             "over_differential": 15
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "Houston",
             "total": 38,
@@ -10325,7 +10614,17 @@ module.exports =
             "week": 13,
             "year": 2011,
             "home": "Houston",
-            "idj": "Houstonanta132011"
+            "idj": "HoustonAtlanta132011",
+            "winner": "Houston",
+            "loser": "Atlanta",
+            "winningScore": 17,
+            "losingScore": 10,
+            "winner_ats": "Houston",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -9,
+            "dog_diff_ats": 9,
+            "over": false,
+            "over_differential": -11
       },
       {
             "favorite": "New Orleans",
@@ -10711,7 +11010,17 @@ module.exports =
             "week": 13,
             "year": 2012,
             "home": "NY Jets",
-            "idj": "NY JetsArizona132012"
+            "idj": "NY JetsArizona132012",
+            "winner": "NY Jets",
+            "loser": "Arizona",
+            "winningScore": 7,
+            "losingScore": 6,
+            "winner_ats": "Arizona",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -5.5,
+            "dog_diff_ats": 5.5,
+            "over": false,
+            "over_differential": -24
       },
       {
             "favorite": "Atlanta",
@@ -11031,19 +11340,39 @@ module.exports =
             "week": 13,
             "year": 2013,
             "home": "NY Jets",
-            "idj": "NY JetsMiami132013"
+            "idj": "NY JetsMiami132013",
+            "winner": "Miami",
+            "loser": "NY Jets",
+            "winningScore": 23,
+            "losingScore": 3,
+            "winner_ats": "Miami",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -20,
+            "dog_diff_ats": 20,
+            "over": false,
+            "over_differential": -14
       },
       {
             "favorite": "Buffalo",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$210",
             "ml_dog": "+$180",
             "week": 13,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaBuffalo132013"
+            "home": "Buffalo",
+            "idj": "BuffaloAtlanta132013",
+            "winner": "Atlanta",
+            "loser": "Buffalo",
+            "winningScore": 34,
+            "losingScore": 31,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Buffalo",
+            "favorite_diff_ats": -7.5,
+            "dog_diff_ats": 7.5,
+            "over": true,
+            "over_differential": 17
       },
       {
             "favorite": "San Francisco",
@@ -11510,14 +11839,24 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": null,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$110",
             "ml_dog": " -$110",
             "week": 13,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaTampa Bay132015"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta132015",
+            "winner": "Tampa Bay",
+            "loser": "Atlanta",
+            "winningScore": 23,
+            "losingScore": 19,
+            "winner_ats": "Tampa Bay",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 4,
+            "dog_diff_ats": -4,
+            "over": false,
+            "over_differential": -4
       },
       {
             "favorite": "NY Jets",
@@ -11793,7 +12132,17 @@ module.exports =
             "week": 14,
             "year": 2006,
             "home": "NY Jets",
-            "idj": "NY JetsBuffalo142006"
+            "idj": "NY JetsBuffalo142006",
+            "winner": "Buffalo",
+            "loser": "NY Jets",
+            "winningScore": 31,
+            "losingScore": 13,
+            "winner_ats": "Buffalo",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -22.5,
+            "dog_diff_ats": 22.5,
+            "over": true,
+            "over_differential": 7
       },
       {
             "favorite": "Indianapolis",
@@ -12038,7 +12387,7 @@ module.exports =
             "over_differential": 12
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Tampa Bay",
             "total": 37,
@@ -12047,7 +12396,17 @@ module.exports =
             "week": 14,
             "year": 2006,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta142006"
+            "idj": "Tampa BayAtlanta142006",
+            "winner": "Atlanta",
+            "loser": "Tampa Bay",
+            "winningScore": 17,
+            "losingScore": 6,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Tampa Bay",
+            "favorite_diff_ats": 7.5,
+            "dog_diff_ats": -7.5,
+            "over": false,
+            "over_differential": -14
       },
       {
             "favorite": "NY Giants",
@@ -12235,7 +12594,17 @@ module.exports =
             "week": 14,
             "year": 2007,
             "home": "NY Jets",
-            "idj": "NY JetsCleveland142007"
+            "idj": "NY JetsCleveland142007",
+            "winner": "Cleveland",
+            "loser": "NY Jets",
+            "winningScore": 24,
+            "losingScore": 18,
+            "winner_ats": "Cleveland",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 2.5,
+            "dog_diff_ats": -2.5,
+            "over": false,
+            "over_differential": -5
       },
       {
             "favorite": "Denver",
@@ -12438,14 +12807,24 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 52,
             "ml_fav": "-$165",
             "ml_dog": "+$145",
             "week": 14,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaNew Orleans142008"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta142008",
+            "winner": "New Orleans",
+            "loser": "Atlanta",
+            "winningScore": 29,
+            "losingScore": 25,
+            "winner_ats": "New Orleans",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 1,
+            "dog_diff_ats": -1,
+            "over": true,
+            "over_differential": 2
       },
       {
             "favorite": "NY Jets",
@@ -12470,7 +12849,7 @@ module.exports =
             "over_differential": -7
       },
       {
-            "favorite": "Buffalo(Toronto)",
+            "favorite": "Buffalo",
             "spread": -1.5,
             "dog": "Miami",
             "total": 42,
@@ -12478,8 +12857,18 @@ module.exports =
             "ml_dog": "+$105",
             "week": 14,
             "year": 2008,
-            "home": "Buffalo(Toronto)",
-            "idj": "Buffalo(Toronto)Miami142008"
+            "home": "Buffalo",
+            "idj": "BuffaloMiami142008",
+            "winner": "Miami",
+            "loser": "Buffalo",
+            "winningScore": 16,
+            "losingScore": 3,
+            "winner_ats": "Miami",
+            "loser_ats": "Buffalo",
+            "favorite_diff_ats": -14.5,
+            "dog_diff_ats": 14.5,
+            "over": false,
+            "over_differential": -23
       },
       {
             "favorite": "Denver",
@@ -12966,7 +13355,7 @@ module.exports =
             "over_differential": -1
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -7.5,
             "dog": "Carolina",
             "total": 41,
@@ -12975,7 +13364,17 @@ module.exports =
             "week": 14,
             "year": 2010,
             "home": "Carolina",
-            "idj": "Carolinaanta142010"
+            "idj": "CarolinaAtlanta142010",
+            "winner": "Atlanta",
+            "loser": "Carolina",
+            "winningScore": 31,
+            "losingScore": 10,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Carolina",
+            "favorite_diff_ats": 13.5,
+            "dog_diff_ats": -13.5,
+            "over": false,
+            "over_differential": 0
       },
       {
             "favorite": "New England",
@@ -13053,7 +13452,17 @@ module.exports =
             "week": 14,
             "year": 2010,
             "home": "NY Jets",
-            "idj": "NY JetsMiami142010"
+            "idj": "NY JetsMiami142010",
+            "winner": "Miami",
+            "loser": "NY Jets",
+            "winningScore": 10,
+            "losingScore": 6,
+            "winner_ats": "Miami",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -9,
+            "dog_diff_ats": 9,
+            "over": false,
+            "over_differential": -21
       },
       {
             "favorite": "San Francisco",
@@ -13320,7 +13729,7 @@ module.exports =
             "over_differential": 15
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Carolina",
             "total": 47,
@@ -13329,7 +13738,17 @@ module.exports =
             "week": 14,
             "year": 2011,
             "home": "Carolina",
-            "idj": "Carolinaanta142011"
+            "idj": "CarolinaAtlanta142011",
+            "winner": "Atlanta",
+            "loser": "Carolina",
+            "winningScore": 31,
+            "losingScore": 23,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Carolina",
+            "favorite_diff_ats": 5,
+            "dog_diff_ats": -5,
+            "over": true,
+            "over_differential": 7
       },
       {
             "favorite": "Tampa Bay",
@@ -13473,7 +13892,17 @@ module.exports =
             "week": 14,
             "year": 2011,
             "home": "NY Jets",
-            "idj": "NY JetsKansas City142011"
+            "idj": "NY JetsKansas City142011",
+            "winner": "NY Jets",
+            "loser": "Kansas City",
+            "winningScore": 37,
+            "losingScore": 10,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Kansas City",
+            "favorite_diff_ats": 16,
+            "dog_diff_ats": -16,
+            "over": true,
+            "over_differential": 12
       },
       {
             "favorite": "Detroit",
@@ -13806,7 +14235,7 @@ module.exports =
             "over_differential": 3
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Carolina",
             "total": 47,
@@ -13815,7 +14244,17 @@ module.exports =
             "week": 14,
             "year": 2012,
             "home": "Carolina",
-            "idj": "Carolinaanta142012"
+            "idj": "CarolinaAtlanta142012",
+            "winner": "Carolina",
+            "loser": "Atlanta",
+            "winningScore": 30,
+            "losingScore": 20,
+            "winner_ats": "Carolina",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -13.5,
+            "dog_diff_ats": 13.5,
+            "over": true,
+            "over_differential": 3
       },
       {
             "favorite": "Chicago",
@@ -13981,7 +14420,17 @@ module.exports =
             "week": 14,
             "year": 2013,
             "home": "NY Jets",
-            "idj": "NY JetsOakland142013"
+            "idj": "NY JetsOakland142013",
+            "winner": "NY Jets",
+            "loser": "Oakland",
+            "winningScore": 37,
+            "losingScore": 27,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Oakland",
+            "favorite_diff_ats": 7,
+            "dog_diff_ats": -7,
+            "over": true,
+            "over_differential": 25
       },
       {
             "favorite": "Philadelphia",
@@ -14140,14 +14589,24 @@ module.exports =
       {
             "favorite": "Green Bay",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$185",
             "ml_dog": "+$165",
             "week": 14,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaGreen Bay142013"
+            "home": "Green Bay",
+            "idj": "Green BayAtlanta142013",
+            "winner": "Green Bay",
+            "loser": "Atlanta",
+            "winningScore": 22,
+            "losingScore": 21,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Green Bay",
+            "favorite_diff_ats": -2.5,
+            "dog_diff_ats": 2.5,
+            "over": false,
+            "over_differential": -4
       },
       {
             "favorite": "Indianapolis",
@@ -14494,14 +14953,24 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -8.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$380",
             "ml_dog": "+$320",
             "week": 14,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaCarolina142015"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta142015",
+            "winner": "Carolina",
+            "loser": "Atlanta",
+            "winningScore": 38,
+            "losingScore": 0,
+            "winner_ats": "Carolina",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 29.5,
+            "dog_diff_ats": -29.5,
+            "over": false,
+            "over_differential": -7
       },
       {
             "favorite": "Cleveland",
@@ -14667,7 +15136,17 @@ module.exports =
             "week": 14,
             "year": 2015,
             "home": "NY Jets",
-            "idj": "NY JetsTennessee142015"
+            "idj": "NY JetsTennessee142015",
+            "winner": "NY Jets",
+            "loser": "Tennessee",
+            "winningScore": 30,
+            "losingScore": 8,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Tennessee",
+            "favorite_diff_ats": 14,
+            "dog_diff_ats": -14,
+            "over": false,
+            "over_differential": -5
       },
       {
             "favorite": "New England",
@@ -15266,14 +15745,24 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": -13,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 37,
             "ml_fav": "-$750",
             "ml_dog": "+$550",
             "week": 15,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaTampa Bay152007"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta152007",
+            "winner": "Tampa Bay",
+            "loser": "Atlanta",
+            "winningScore": 37,
+            "losingScore": 3,
+            "winner_ats": "Tampa Bay",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 21,
+            "dog_diff_ats": -21,
+            "over": true,
+            "over_differential": 3
       },
       {
             "favorite": "Green Bay",
@@ -15571,7 +16060,17 @@ module.exports =
             "week": 15,
             "year": 2008,
             "home": "NY Jets",
-            "idj": "NY JetsBuffalo152008"
+            "idj": "NY JetsBuffalo152008",
+            "winner": "NY Jets",
+            "loser": "Buffalo",
+            "winningScore": 31,
+            "losingScore": 27,
+            "winner_ats": "Buffalo",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -4,
+            "dog_diff_ats": 4,
+            "over": true,
+            "over_differential": 17
       },
       {
             "favorite": "Tennessee",
@@ -15862,14 +16361,24 @@ module.exports =
       {
             "favorite": "NY Jets",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 36,
             "ml_fav": "-$250",
             "ml_dog": "+$210",
             "week": 15,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNY Jets152009"
+            "home": "NY Jets",
+            "idj": "NY JetsAtlanta152009",
+            "winner": "Atlanta",
+            "loser": "NY Jets",
+            "winningScore": 10,
+            "losingScore": 7,
+            "winner_ats": "Atlanta",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -8.5,
+            "dog_diff_ats": 8.5,
+            "over": false,
+            "over_differential": -19
       },
       {
             "favorite": "Kansas City",
@@ -16114,7 +16623,7 @@ module.exports =
             "over_differential": 9
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -5.5,
             "dog": "Seattle",
             "total": 46,
@@ -16123,7 +16632,17 @@ module.exports =
             "week": 15,
             "year": 2010,
             "home": "Seattle",
-            "idj": "Seattleanta152010"
+            "idj": "SeattleAtlanta152010",
+            "winner": "Atlanta",
+            "loser": "Seattle",
+            "winningScore": 34,
+            "losingScore": 18,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Seattle",
+            "favorite_diff_ats": 10.5,
+            "dog_diff_ats": -10.5,
+            "over": true,
+            "over_differential": 6
       },
       {
             "favorite": "Pittsburgh",
@@ -17800,14 +18319,24 @@ module.exports =
       {
             "favorite": "Jacksonville",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 15,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaJacksonville152015"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleAtlanta152015",
+            "winner": "Atlanta",
+            "loser": "Jacksonville",
+            "winningScore": 23,
+            "losingScore": 17,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Jacksonville",
+            "favorite_diff_ats": -8,
+            "dog_diff_ats": 8,
+            "over": false,
+            "over_differential": -8
       },
       {
             "favorite": "Buffalo",
@@ -18494,14 +19023,24 @@ module.exports =
       {
             "favorite": "Arizona",
             "spread": -11,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 44,
             "ml_fav": "-$600",
             "ml_dog": "+$425",
             "week": 16,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaArizona162007"
+            "home": "Arizona",
+            "idj": "ArizonaAtlanta162007",
+            "winner": "Arizona",
+            "loser": "Atlanta",
+            "winningScore": 30,
+            "losingScore": 27,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Arizona",
+            "favorite_diff_ats": -8,
+            "dog_diff_ats": 8,
+            "over": true,
+            "over_differential": 13
       },
       {
             "favorite": "Seattle",
@@ -18792,14 +19331,24 @@ module.exports =
       {
             "favorite": "Minnesota",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 16,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaMinnesota162008"
+            "home": "Minnesota",
+            "idj": "MinnesotaAtlanta162008",
+            "winner": "Atlanta",
+            "loser": "Minnesota",
+            "winningScore": 24,
+            "losingScore": 17,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Minnesota",
+            "favorite_diff_ats": -10,
+            "dog_diff_ats": 10,
+            "over": false,
+            "over_differential": -2
       },
       {
             "favorite": "NY Jets",
@@ -19836,7 +20385,7 @@ module.exports =
             "over_differential": -14
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Detroit",
             "total": 50,
@@ -19845,7 +20394,17 @@ module.exports =
             "week": 16,
             "year": 2012,
             "home": "Detroit",
-            "idj": "Detroitanta162012"
+            "idj": "DetroitAtlanta162012",
+            "winner": "Atlanta",
+            "loser": "Detroit",
+            "winningScore": 31,
+            "losingScore": 18,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Detroit",
+            "favorite_diff_ats": 9.5,
+            "dog_diff_ats": -9.5,
+            "over": false,
+            "over_differential": -1
       },
       {
             "favorite": "Green Bay",
@@ -20121,7 +20680,17 @@ module.exports =
             "week": 16,
             "year": 2012,
             "home": "NY Jets",
-            "idj": "NY JetsSan Diego162012"
+            "idj": "NY JetsSan Diego162012",
+            "winner": "San Diego",
+            "loser": "NY Jets",
+            "winningScore": 27,
+            "losingScore": 17,
+            "winner_ats": "San Diego",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -13,
+            "dog_diff_ats": 13,
+            "over": true,
+            "over_differential": 7
       },
       {
             "favorite": "Chicago",
@@ -20397,7 +20966,17 @@ module.exports =
             "week": 16,
             "year": 2013,
             "home": "NY Jets",
-            "idj": "NY JetsCleveland162013"
+            "idj": "NY JetsCleveland162013",
+            "winner": "NY Jets",
+            "loser": "Cleveland",
+            "winningScore": 24,
+            "losingScore": 13,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Cleveland",
+            "favorite_diff_ats": 9,
+            "dog_diff_ats": -9,
+            "over": false,
+            "over_differential": -4
       },
       {
             "favorite": "Philadelphia",
@@ -20688,14 +21267,24 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -6,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 56,
             "ml_fav": "-$260",
             "ml_dog": "+$220",
             "week": 16,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaNew Orleans162014"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta162014",
+            "winner": "Atlanta",
+            "loser": "New Orleans",
+            "winningScore": 30,
+            "losingScore": 14,
+            "winner_ats": "Atlanta",
+            "loser_ats": "New Orleans",
+            "favorite_diff_ats": -22,
+            "dog_diff_ats": 22,
+            "over": false,
+            "over_differential": -12
       },
       {
             "favorite": "Green Bay",
@@ -20729,7 +21318,17 @@ module.exports =
             "week": 16,
             "year": 2014,
             "home": "NY Jets",
-            "idj": "NY JetsNew England162014"
+            "idj": "NY JetsNew England162014",
+            "winner": "New England",
+            "loser": "NY Jets",
+            "winningScore": 17,
+            "losingScore": 16,
+            "winner_ats": "NY Jets",
+            "loser_ats": "New England",
+            "favorite_diff_ats": -8.5,
+            "dog_diff_ats": 8.5,
+            "over": false,
+            "over_differential": -14
       },
       {
             "favorite": "Philadelphia",
@@ -20917,7 +21516,17 @@ module.exports =
             "week": 16,
             "year": 2015,
             "home": "NY Jets",
-            "idj": "NY JetsNew England162015"
+            "idj": "NY JetsNew England162015",
+            "winner": "NY Jets",
+            "loser": "New England",
+            "winningScore": 26,
+            "losingScore": 20,
+            "winner_ats": "NY Jets",
+            "loser_ats": "New England",
+            "favorite_diff_ats": -8.5,
+            "dog_diff_ats": 8.5,
+            "over": true,
+            "over_differential": 1
       },
       {
             "favorite": "Arizona",
@@ -21318,14 +21927,24 @@ module.exports =
       {
             "favorite": "Philadelphia",
             "spread": -6.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 42,
             "ml_fav": "-$330",
             "ml_dog": "+$250",
             "week": 17,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaPhiladelphia172006"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta172006",
+            "winner": "Philadelphia",
+            "loser": "Atlanta",
+            "winningScore": 24,
+            "losingScore": 17,
+            "winner_ats": "Philadelphia",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 0.5,
+            "dog_diff_ats": -0.5,
+            "over": false,
+            "over_differential": -1
       },
       {
             "favorite": "Tennessee",
@@ -21423,19 +22042,9 @@ module.exports =
             "ml_fav": "-$140",
             "ml_dog": "+$120",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Philadelphia",
-            "idj": "PhiladelphiaDallas172008",
-            "winner": "Philadelphia",
-            "loser": "Dallas",
-            "winningScore": 44,
-            "losingScore": 6,
-            "winner_ats": "Philadelphia",
-            "loser_ats": "Dallas",
-            "favorite_diff_ats": 36,
-            "dog_diff_ats": -36,
-            "over": true,
-            "over_differential": 9
+            "idj": "PhiladelphiaDallas172007"
       },
       {
             "favorite": "Tampa Bay",
@@ -21445,19 +22054,9 @@ module.exports =
             "ml_fav": "-$600",
             "ml_dog": "+$450",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Tampa Bay",
-            "idj": "Tampa BayOakland172008",
-            "winner": "Oakland",
-            "loser": "Tampa Bay",
-            "winningScore": 31,
-            "losingScore": 24,
-            "winner_ats": "Oakland",
-            "loser_ats": "Tampa Bay",
-            "favorite_diff_ats": -18,
-            "dog_diff_ats": 18,
-            "over": true,
-            "over_differential": 16
+            "idj": "Tampa BayOakland172007"
       },
       {
             "favorite": "Green Bay",
@@ -21467,19 +22066,19 @@ module.exports =
             "ml_fav": "-$650",
             "ml_dog": "+$450",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Green Bay",
-            "idj": "Green BayDetroit172008",
+            "idj": "Green BayDetroit172007",
             "winner": "Green Bay",
             "loser": "Detroit",
-            "winningScore": 31,
-            "losingScore": 21,
-            "winner_ats": "Detroit",
-            "loser_ats": "Green Bay",
-            "favorite_diff_ats": -1,
-            "dog_diff_ats": 1,
+            "winningScore": 34,
+            "losingScore": 13,
+            "winner_ats": "Green Bay",
+            "loser_ats": "Detroit",
+            "favorite_diff_ats": 10,
+            "dog_diff_ats": -10,
             "over": true,
-            "over_differential": 11
+            "over_differential": 6
       },
       {
             "favorite": "Houston",
@@ -21489,19 +22088,9 @@ module.exports =
             "ml_fav": "-$155",
             "ml_dog": "+$135",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Houston",
-            "idj": "HoustonChicago172008",
-            "winner": "Houston",
-            "loser": "Chicago",
-            "winningScore": 31,
-            "losingScore": 24,
-            "winner_ats": "Houston",
-            "loser_ats": "Chicago",
-            "favorite_diff_ats": 4,
-            "dog_diff_ats": -4,
-            "over": true,
-            "over_differential": 9
+            "idj": "HoustonChicago172007"
       },
       {
             "favorite": "Carolina",
@@ -21511,19 +22100,9 @@ module.exports =
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "New Orleans",
-            "idj": "New OrleansCarolina172008",
-            "winner": "Carolina",
-            "loser": "New Orleans",
-            "winningScore": 33,
-            "losingScore": 31,
-            "winner_ats": "Carolina",
-            "loser_ats": "New Orleans",
-            "favorite_diff_ats": 0,
-            "dog_diff_ats": 0,
-            "over": true,
-            "over_differential": 13
+            "idj": "New OrleansCarolina172007"
       },
       {
             "favorite": "Cincinnati",
@@ -21533,19 +22112,9 @@ module.exports =
             "ml_fav": "-$125",
             "ml_dog": "+$105",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Cincinnati",
-            "idj": "CincinnatiKansas City172008",
-            "winner": "Cincinnati",
-            "loser": "Kansas City",
-            "winningScore": 16,
-            "losingScore": 6,
-            "winner_ats": "Cincinnati",
-            "loser_ats": "Kansas City",
-            "favorite_diff_ats": 8.5,
-            "dog_diff_ats": -8.5,
-            "over": false,
-            "over_differential": -18
+            "idj": "CincinnatiKansas City172007"
       },
       {
             "favorite": "Baltimore",
@@ -21555,19 +22124,9 @@ module.exports =
             "ml_fav": "-$625",
             "ml_dog": "+$450",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Baltimore",
-            "idj": "BaltimoreJacksonville172008",
-            "winner": "Baltimore",
-            "loser": "Jacksonville",
-            "winningScore": 27,
-            "losingScore": 7,
-            "winner_ats": "Baltimore",
-            "loser_ats": "Jacksonville",
-            "favorite_diff_ats": 9,
-            "dog_diff_ats": -9,
-            "over": false,
-            "over_differential": -3
+            "idj": "BaltimoreJacksonville172007"
       },
       {
             "favorite": "Atlanta",
@@ -21577,19 +22136,9 @@ module.exports =
             "ml_fav": "-$1000",
             "ml_dog": "+$700",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Atlanta",
-            "idj": "AtlantaSt. Louis172008",
-            "winner": "Atlanta",
-            "loser": "St. Louis",
-            "winningScore": 31,
-            "losingScore": 27,
-            "winner_ats": "St. Louis",
-            "loser_ats": "Atlanta",
-            "favorite_diff_ats": -10,
-            "dog_diff_ats": 10,
-            "over": true,
-            "over_differential": 14
+            "idj": "AtlantaSt. Louis172007"
       },
       {
             "favorite": "Tennessee",
@@ -21599,19 +22148,19 @@ module.exports =
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Indianapolis",
-            "idj": "IndianapolisTennessee172008",
-            "winner": "Indianapolis",
-            "loser": "Tennessee",
-            "winningScore": 23,
-            "losingScore": 0,
-            "winner_ats": "Indianapolis",
-            "loser_ats": "Tennessee",
-            "favorite_diff_ats": -26,
-            "dog_diff_ats": 26,
+            "idj": "IndianapolisTennessee172007",
+            "winner": "Tennessee",
+            "loser": "Indianapolis",
+            "winningScore": 16,
+            "losingScore": 10,
+            "winner_ats": "Tennessee",
+            "loser_ats": "Indianapolis",
+            "favorite_diff_ats": 3,
+            "dog_diff_ats": -3,
             "over": false,
-            "over_differential": -15
+            "over_differential": -12
       },
       {
             "favorite": "Minnesota",
@@ -21621,19 +22170,9 @@ module.exports =
             "ml_fav": "-$310",
             "ml_dog": "+$250",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Minnesota",
-            "idj": "MinnesotaNY Giants172008",
-            "winner": "Minnesota",
-            "loser": "NY Giants",
-            "winningScore": 20,
-            "losingScore": 19,
-            "winner_ats": "NY Giants",
-            "loser_ats": "Minnesota",
-            "favorite_diff_ats": -6,
-            "dog_diff_ats": 6,
-            "over": false,
-            "over_differential": -2
+            "idj": "MinnesotaNY Giants172007"
       },
       {
             "favorite": "Pittsburgh",
@@ -21643,19 +22182,9 @@ module.exports =
             "ml_fav": "-$650",
             "ml_dog": "+$500",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Pittsburgh",
-            "idj": "PittsburghCleveland172008",
-            "winner": "Pittsburgh",
-            "loser": "Cleveland",
-            "winningScore": 31,
-            "losingScore": 0,
-            "winner_ats": "Pittsburgh",
-            "loser_ats": "Cleveland",
-            "favorite_diff_ats": 19.5,
-            "dog_diff_ats": -19.5,
-            "over": false,
-            "over_differential": -2
+            "idj": "PittsburghCleveland172007"
       },
       {
             "favorite": "NY Jets",
@@ -21665,9 +22194,9 @@ module.exports =
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "NY Jets",
-            "idj": "NY JetsMiami172008"
+            "idj": "NY JetsMiami172007"
       },
       {
             "favorite": "San Francisco",
@@ -21677,19 +22206,9 @@ module.exports =
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "San Francisco",
-            "idj": "San FranciscoWashington172008",
-            "winner": "San Francisco",
-            "loser": "Washington",
-            "winningScore": 27,
-            "losingScore": 24,
-            "winner_ats": "San Francisco",
-            "loser_ats": "Washington",
-            "favorite_diff_ats": 0.5,
-            "dog_diff_ats": -0.5,
-            "over": true,
-            "over_differential": 14
+            "idj": "San FranciscoWashington172007"
       },
       {
             "favorite": "San Diego",
@@ -21699,19 +22218,9 @@ module.exports =
             "ml_fav": "-$330",
             "ml_dog": "+$270",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "San Diego",
-            "idj": "San DiegoDenver172008",
-            "winner": "San Diego",
-            "loser": "Denver",
-            "winningScore": 52,
-            "losingScore": 21,
-            "winner_ats": "San Diego",
-            "loser_ats": "Denver",
-            "favorite_diff_ats": 24,
-            "dog_diff_ats": -24,
-            "over": true,
-            "over_differential": 23
+            "idj": "San DiegoDenver172007"
       },
       {
             "favorite": "New England",
@@ -21721,19 +22230,9 @@ module.exports =
             "ml_fav": "-$240",
             "ml_dog": "+$200",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Buffalo",
-            "idj": "BuffaloNew England172008",
-            "winner": "New England",
-            "loser": "Buffalo",
-            "winningScore": 13,
-            "losingScore": 0,
-            "winner_ats": "New England",
-            "loser_ats": "Buffalo",
-            "favorite_diff_ats": 7.5,
-            "dog_diff_ats": -7.5,
-            "over": false,
-            "over_differential": -21
+            "idj": "BuffaloNew England172007"
       },
       {
             "favorite": "NY Jets",
@@ -21772,7 +22271,7 @@ module.exports =
             "idj": "St. LouisSan Francisco172010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 42,
@@ -21781,7 +22280,7 @@ module.exports =
             "week": 17,
             "year": 2010,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta172010"
+            "idj": "Tampa BayAtlanta172010"
       },
       {
             "favorite": "Arizona",
@@ -22778,14 +23277,24 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 38,
             "ml_fav": "-$230",
             "ml_dog": "+$190",
             "week": 1,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaCarolina12006"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta12006",
+            "winner": "Atlanta",
+            "loser": "Carolina",
+            "winningScore": 20,
+            "losingScore": 6,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Carolina",
+            "favorite_diff_ats": -18.5,
+            "dog_diff_ats": 18.5,
+            "over": false,
+            "over_differential": -12
       },
       {
             "favorite": "Philadelphia",
@@ -23252,14 +23761,24 @@ module.exports =
       {
             "favorite": "Minnesota",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 35,
             "ml_fav": "-$160",
             "ml_dog": "+$140",
             "week": 1,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaMinnesota12007"
+            "home": "Minnesota",
+            "idj": "MinnesotaAtlanta12007",
+            "winner": "Minnesota",
+            "loser": "Atlanta",
+            "winningScore": 24,
+            "losingScore": 3,
+            "winner_ats": "Minnesota",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 18,
+            "dog_diff_ats": -18,
+            "over": false,
+            "over_differential": -8
       },
       {
             "favorite": "New England",
@@ -23271,7 +23790,17 @@ module.exports =
             "week": 1,
             "year": 2007,
             "home": "NY Jets",
-            "idj": "NY JetsNew England12007"
+            "idj": "NY JetsNew England12007",
+            "winner": "New England",
+            "loser": "NY Jets",
+            "winningScore": 38,
+            "losingScore": 14,
+            "winner_ats": "New England",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 17.5,
+            "dog_diff_ats": -17.5,
+            "over": true,
+            "over_differential": 11
       },
       {
             "favorite": "St. Louis",
@@ -23413,19 +23942,9 @@ module.exports =
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 1,
-            "year": 2008,
+            "year": 2007,
             "home": "Buffalo",
-            "idj": "BuffaloSeattle12008",
-            "winner": "Buffalo",
-            "loser": "Seattle",
-            "winningScore": 34,
-            "losingScore": 10,
-            "winner_ats": "Buffalo",
-            "loser_ats": "Seattle",
-            "favorite_diff_ats": 22.5,
-            "dog_diff_ats": -22.5,
-            "over": true,
-            "over_differential": 7
+            "idj": "BuffaloSeattle12007"
       },
       {
             "favorite": "New Orleans",
@@ -24044,7 +24563,7 @@ module.exports =
             "over_differential": -14
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Pittsburgh",
             "total": 39,
@@ -24053,7 +24572,17 @@ module.exports =
             "week": 1,
             "year": 2010,
             "home": "Pittsburgh",
-            "idj": "Pittsburghanta12010"
+            "idj": "PittsburghAtlanta12010",
+            "winner": "Pittsburgh",
+            "loser": "Atlanta",
+            "winningScore": 15,
+            "losingScore": 9,
+            "winner_ats": "Pittsburgh",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -7,
+            "dog_diff_ats": 7,
+            "over": false,
+            "over_differential": -15
       },
       {
             "favorite": "Chicago",
@@ -24320,7 +24849,7 @@ module.exports =
             "over_differential": 4
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "Chicago",
             "total": 40,
@@ -24329,7 +24858,17 @@ module.exports =
             "week": 1,
             "year": 2011,
             "home": "Chicago",
-            "idj": "Chicagoanta12011"
+            "idj": "ChicagoAtlanta12011",
+            "winner": "Chicago",
+            "loser": "Atlanta",
+            "winningScore": 30,
+            "losingScore": 12,
+            "winner_ats": "Chicago",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -20,
+            "dog_diff_ats": 20,
+            "over": true,
+            "over_differential": 2
       },
       {
             "favorite": "Kansas City",
@@ -24539,7 +25078,17 @@ module.exports =
             "week": 1,
             "year": 2011,
             "home": "NY Jets",
-            "idj": "NY JetsDallas12011"
+            "idj": "NY JetsDallas12011",
+            "winner": "NY Jets",
+            "loser": "Dallas",
+            "winningScore": 27,
+            "losingScore": 24,
+            "winner_ats": "Dallas",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -3.5,
+            "dog_diff_ats": 3.5,
+            "over": true,
+            "over_differential": 10
       },
       {
             "favorite": "Detroit",
@@ -24564,7 +25113,7 @@ module.exports =
             "over_differential": 4
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2.5,
             "dog": "Kansas City",
             "total": 43,
@@ -24573,7 +25122,17 @@ module.exports =
             "week": 1,
             "year": 2012,
             "home": "Kansas City",
-            "idj": "Kansas Cityanta12012"
+            "idj": "Kansas CityAtlanta12012",
+            "winner": "Atlanta",
+            "loser": "Kansas City",
+            "winningScore": 40,
+            "losingScore": 24,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Kansas City",
+            "favorite_diff_ats": 13.5,
+            "dog_diff_ats": -13.5,
+            "over": true,
+            "over_differential": 21
       },
       {
             "favorite": "Green Bay",
@@ -24952,14 +25511,24 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 55,
             "ml_fav": "-$190",
             "ml_dog": "+$170",
             "week": 1,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaNew Orleans12013"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta12013",
+            "winner": "New Orleans",
+            "loser": "Atlanta",
+            "winningScore": 23,
+            "losingScore": 17,
+            "winner_ats": "New Orleans",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 2.5,
+            "dog_diff_ats": -2.5,
+            "over": false,
+            "over_differential": -15
       },
       {
             "favorite": "Tampa Bay",
@@ -24971,7 +25540,17 @@ module.exports =
             "week": 1,
             "year": 2013,
             "home": "NY Jets",
-            "idj": "NY JetsTampa Bay12013"
+            "idj": "NY JetsTampa Bay12013",
+            "winner": "NY Jets",
+            "loser": "Tampa Bay",
+            "winningScore": 18,
+            "losingScore": 17,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Tampa Bay",
+            "favorite_diff_ats": -5,
+            "dog_diff_ats": 5,
+            "over": false,
+            "over_differential": -4
       },
       {
             "favorite": "Pittsburgh",
@@ -25313,7 +25892,17 @@ module.exports =
             "week": 1,
             "year": 2014,
             "home": "NY Jets",
-            "idj": "NY JetsOakland12014"
+            "idj": "NY JetsOakland12014",
+            "winner": "NY Jets",
+            "loser": "Oakland",
+            "winningScore": 19,
+            "losingScore": 14,
+            "winner_ats": "Oakland",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -1.5,
+            "dog_diff_ats": 1.5,
+            "over": false,
+            "over_differential": -8
       },
       {
             "favorite": "Philadelphia",
@@ -25545,7 +26134,17 @@ module.exports =
             "week": 1,
             "year": 2015,
             "home": "NY Jets",
-            "idj": "NY JetsCleveland12015"
+            "idj": "NY JetsCleveland12015",
+            "winner": "NY Jets",
+            "loser": "Cleveland",
+            "winningScore": 31,
+            "losingScore": 10,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Cleveland",
+            "favorite_diff_ats": 17.5,
+            "dog_diff_ats": -17.5,
+            "over": true,
+            "over_differential": 3
       },
       {
             "favorite": "Kansas City",
@@ -25865,7 +26464,17 @@ module.exports =
             "week": 2,
             "year": 2006,
             "home": "NY Jets",
-            "idj": "NY JetsNew England22006"
+            "idj": "NY JetsNew England22006",
+            "winner": "New England",
+            "loser": "NY Jets",
+            "winningScore": 24,
+            "losingScore": 17,
+            "winner_ats": "New England",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 1,
+            "dog_diff_ats": -1,
+            "over": true,
+            "over_differential": 4
       },
       {
             "favorite": "San Diego",
@@ -26178,14 +26787,24 @@ module.exports =
       {
             "favorite": "Jacksonville",
             "spread": -10.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 34,
             "ml_fav": "-$625",
             "ml_dog": "+$450",
             "week": 2,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaJacksonville22007"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleAtlanta22007",
+            "winner": "Jacksonville",
+            "loser": "Atlanta",
+            "winningScore": 13,
+            "losingScore": 7,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Jacksonville",
+            "favorite_diff_ats": -4.5,
+            "dog_diff_ats": 4.5,
+            "over": false,
+            "over_differential": -14
       },
       {
             "favorite": "St. Louis",
@@ -26432,14 +27051,24 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 37,
             "ml_fav": "-$310",
             "ml_dog": "+$250",
             "week": 2,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaTampa Bay22008"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta22008",
+            "winner": "Tampa Bay",
+            "loser": "Atlanta",
+            "winningScore": 24,
+            "losingScore": 9,
+            "winner_ats": "Tampa Bay",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 8,
+            "dog_diff_ats": -8,
+            "over": false,
+            "over_differential": -4
       },
       {
             "favorite": "New England",
@@ -26451,7 +27080,17 @@ module.exports =
             "week": 2,
             "year": 2008,
             "home": "NY Jets",
-            "idj": "NY JetsNew England22008"
+            "idj": "NY JetsNew England22008",
+            "winner": "New England",
+            "loser": "NY Jets",
+            "winningScore": 19,
+            "losingScore": 10,
+            "winner_ats": "New England",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 8,
+            "dog_diff_ats": -8,
+            "over": false,
+            "over_differential": -8
       },
       {
             "favorite": "Arizona",
@@ -26639,7 +27278,17 @@ module.exports =
             "week": 2,
             "year": 2009,
             "home": "NY Jets",
-            "idj": "NY JetsNew England22009"
+            "idj": "NY JetsNew England22009",
+            "winner": "NY Jets",
+            "loser": "New England",
+            "winningScore": 16,
+            "losingScore": 9,
+            "winner_ats": "NY Jets",
+            "loser_ats": "New England",
+            "favorite_diff_ats": -10.5,
+            "dog_diff_ats": 10.5,
+            "over": false,
+            "over_differential": -20
       },
       {
             "favorite": "Denver",
@@ -27179,7 +27828,17 @@ module.exports =
             "week": 2,
             "year": 2011,
             "home": "NY Jets",
-            "idj": "NY JetsJacksonville22011"
+            "idj": "NY JetsJacksonville22011",
+            "winner": "NY Jets",
+            "loser": "Jacksonville",
+            "winningScore": 32,
+            "losingScore": 3,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Jacksonville",
+            "favorite_diff_ats": 20,
+            "dog_diff_ats": -20,
+            "over": false,
+            "over_differential": -3
       },
       {
             "favorite": "Buffalo",
@@ -28240,14 +28899,24 @@ module.exports =
       {
             "favorite": "Cincinnati",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 49,
             "ml_fav": "-$250",
             "ml_dog": "+$210",
             "week": 2,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaCincinnati22014"
+            "home": "Cincinnati",
+            "idj": "CincinnatiAtlanta22014",
+            "winner": "Cincinnati",
+            "loser": "Atlanta",
+            "winningScore": 24,
+            "losingScore": 10,
+            "winner_ats": "Cincinnati",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 8.5,
+            "dog_diff_ats": -8.5,
+            "over": false,
+            "over_differential": -15
       },
       {
             "favorite": "Green Bay",
@@ -28516,14 +29185,24 @@ module.exports =
       {
             "favorite": "NY Giants",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 50,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 2,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaNY Giants22015"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta22015",
+            "winner": "Atlanta",
+            "loser": "NY Giants",
+            "winningScore": 24,
+            "losingScore": 20,
+            "winner_ats": "Atlanta",
+            "loser_ats": "NY Giants",
+            "favorite_diff_ats": -6,
+            "dog_diff_ats": 6,
+            "over": false,
+            "over_differential": -6
       },
       {
             "favorite": "Baltimore",
@@ -29547,7 +30226,17 @@ module.exports =
             "week": 3,
             "year": 2009,
             "home": "NY Jets",
-            "idj": "NY JetsTennessee32009"
+            "idj": "NY JetsTennessee32009",
+            "winner": "NY Jets",
+            "loser": "Tennessee",
+            "winningScore": 24,
+            "losingScore": 17,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Tennessee",
+            "favorite_diff_ats": 6,
+            "dog_diff_ats": -6,
+            "over": true,
+            "over_differential": 5
       },
       {
             "favorite": "NY Giants",
@@ -29684,14 +30373,24 @@ module.exports =
       {
             "favorite": "New England",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$240",
             "ml_dog": "+$200",
             "week": 3,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNew England32009"
+            "home": "New England",
+            "idj": "New EnglandAtlanta32009",
+            "winner": "New England",
+            "loser": "Atlanta",
+            "winningScore": 26,
+            "losingScore": 10,
+            "winner_ats": "New England",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 11.5,
+            "dog_diff_ats": -11.5,
+            "over": false,
+            "over_differential": -9
       },
       {
             "favorite": "New Orleans",
@@ -30004,14 +30703,24 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 49,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 3,
             "year": 2010,
-            "home": "anta",
-            "idj": "antaNew Orleans32010"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta32010",
+            "winner": "Atlanta",
+            "loser": "New Orleans",
+            "winningScore": 27,
+            "losingScore": 24,
+            "winner_ats": "Atlanta",
+            "loser_ats": "New Orleans",
+            "favorite_diff_ats": -6,
+            "dog_diff_ats": 6,
+            "over": true,
+            "over_differential": 2
       },
       {
             "favorite": "San Francisco",
@@ -30214,14 +30923,24 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": -1,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$120",
             "ml_dog": "+$100",
             "week": 3,
             "year": 2011,
-            "home": "anta",
-            "idj": "antaTampa Bay32011"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta32011",
+            "winner": "Tampa Bay",
+            "loser": "Atlanta",
+            "winningScore": 16,
+            "losingScore": 13,
+            "winner_ats": "Tampa Bay",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 2,
+            "dog_diff_ats": -2,
+            "over": false,
+            "over_differential": -16
       },
       {
             "favorite": "Arizona",
@@ -30666,14 +31385,24 @@ module.exports =
       {
             "favorite": "San Diego",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$165",
             "ml_dog": "+$145",
             "week": 3,
             "year": 2012,
-            "home": "anta",
-            "idj": "antaSan Diego32012"
+            "home": "San Diego",
+            "idj": "San DiegoAtlanta32012",
+            "winner": "Atlanta",
+            "loser": "San Diego",
+            "winningScore": 27,
+            "losingScore": 3,
+            "winner_ats": "Atlanta",
+            "loser_ats": "San Diego",
+            "favorite_diff_ats": -27,
+            "dog_diff_ats": 27,
+            "over": false,
+            "over_differential": -17
       },
       {
             "favorite": "Houston",
@@ -30788,14 +31517,24 @@ module.exports =
       {
             "favorite": "Miami",
             "spread": -2.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 3,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaMiami32013"
+            "home": "Miami",
+            "idj": "MiamiAtlanta32013",
+            "winner": "Miami",
+            "loser": "Atlanta",
+            "winningScore": 27,
+            "losingScore": 23,
+            "winner_ats": "Miami",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 1.5,
+            "dog_diff_ats": -1.5,
+            "over": true,
+            "over_differential": 5
       },
       {
             "favorite": "San Francisco",
@@ -30873,7 +31612,17 @@ module.exports =
             "week": 3,
             "year": 2013,
             "home": "NY Jets",
-            "idj": "NY JetsBuffalo32013"
+            "idj": "NY JetsBuffalo32013",
+            "winner": "NY Jets",
+            "loser": "Buffalo",
+            "winningScore": 27,
+            "losingScore": 20,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Buffalo",
+            "favorite_diff_ats": 4.5,
+            "dog_diff_ats": -4.5,
+            "over": true,
+            "over_differential": 6
       },
       {
             "favorite": "Chicago",
@@ -31435,7 +32184,17 @@ module.exports =
             "week": 3,
             "year": 2015,
             "home": "NY Jets",
-            "idj": "NY JetsPhiladelphia32015"
+            "idj": "NY JetsPhiladelphia32015",
+            "winner": "Philadelphia",
+            "loser": "NY Jets",
+            "winningScore": 24,
+            "losingScore": 17,
+            "winner_ats": "Philadelphia",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -10,
+            "dog_diff_ats": 10,
+            "over": false,
+            "over_differential": -6
       },
       {
             "favorite": "Carolina",
@@ -31528,14 +32287,24 @@ module.exports =
       {
             "favorite": "Dallas",
             "spread": null,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$110",
             "ml_dog": " -$110",
             "week": 3,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaDallas32015"
+            "home": "Dallas",
+            "idj": "DallasAtlanta32015",
+            "winner": "Atlanta",
+            "loser": "Dallas",
+            "winningScore": 39,
+            "losingScore": 28,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Dallas",
+            "favorite_diff_ats": -11,
+            "dog_diff_ats": 11,
+            "over": true,
+            "over_differential": 24
       },
       {
             "favorite": "Cleveland",
@@ -31679,7 +32448,17 @@ module.exports =
             "week": 4,
             "year": 2006,
             "home": "NY Jets",
-            "idj": "NY JetsIndianapolis42006"
+            "idj": "NY JetsIndianapolis42006",
+            "winner": "Indianapolis",
+            "loser": "NY Jets",
+            "winningScore": 31,
+            "losingScore": 28,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Indianapolis",
+            "favorite_diff_ats": -4.5,
+            "dog_diff_ats": 4.5,
+            "over": true,
+            "over_differential": 13
       },
       {
             "favorite": "Buffalo",
@@ -32241,7 +33020,17 @@ module.exports =
             "week": 4,
             "year": 2008,
             "home": "NY Jets",
-            "idj": "NY JetsArizona42008"
+            "idj": "NY JetsArizona42008",
+            "winner": "NY Jets",
+            "loser": "Arizona",
+            "winningScore": 56,
+            "losingScore": 35,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Arizona",
+            "favorite_diff_ats": 20,
+            "dog_diff_ats": -20,
+            "over": true,
+            "over_differential": 48
       },
       {
             "favorite": "Buffalo",
@@ -32422,14 +33211,24 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 39,
             "ml_fav": "-$300",
             "ml_dog": "+$250",
             "week": 4,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaCarolina42008"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta42008",
+            "winner": "Carolina",
+            "loser": "Atlanta",
+            "winningScore": 24,
+            "losingScore": 9,
+            "winner_ats": "Carolina",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 8,
+            "dog_diff_ats": -8,
+            "over": false,
+            "over_differential": -6
       },
       {
             "favorite": "Indianapolis",
@@ -33158,7 +33957,7 @@ module.exports =
             "over_differential": 21
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Seattle",
             "total": 39,
@@ -33167,7 +33966,17 @@ module.exports =
             "week": 4,
             "year": 2011,
             "home": "Seattle",
-            "idj": "Seattleanta42011"
+            "idj": "SeattleAtlanta42011",
+            "winner": "Atlanta",
+            "loser": "Seattle",
+            "winningScore": 30,
+            "losingScore": 28,
+            "winner_ats": "Seattle",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -4,
+            "dog_diff_ats": 4,
+            "over": true,
+            "over_differential": 19
       },
       {
             "favorite": "Houston",
@@ -33553,7 +34362,17 @@ module.exports =
             "week": 4,
             "year": 2012,
             "home": "NY Jets",
-            "idj": "NY JetsSan Francisco42012"
+            "idj": "NY JetsSan Francisco42012",
+            "winner": "San Francisco",
+            "loser": "NY Jets",
+            "winningScore": 34,
+            "losingScore": 0,
+            "winner_ats": "San Francisco",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 30,
+            "dog_diff_ats": -30,
+            "over": false,
+            "over_differential": -7
       },
       {
             "favorite": "San Francisco",
@@ -33822,14 +34641,24 @@ module.exports =
       {
             "favorite": "Pittsburgh",
             "spread": -3,
-            "dog": "Minnesota(At London)",
+            "dog": "Minnesota",
             "total": 41,
             "ml_fav": "-$150",
             "ml_dog": "+$130",
             "week": 4,
             "year": 2013,
-            "home": "",
-            "idj": "42013"
+            "home": "Minnesota",
+            "idj": "MinnesotaPittsburgh42013",
+            "winner": "Minnesota",
+            "loser": "Pittsburgh",
+            "winningScore": 34,
+            "losingScore": 27,
+            "winner_ats": "Minnesota",
+            "loser_ats": "Pittsburgh",
+            "favorite_diff_ats": -10,
+            "dog_diff_ats": 10,
+            "over": true,
+            "over_differential": 20
       },
       {
             "favorite": "Pittsburgh",
@@ -33898,7 +34727,7 @@ module.exports =
             "over_differential": -2
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Minnesota",
             "total": 47,
@@ -33907,7 +34736,17 @@ module.exports =
             "week": 4,
             "year": 2014,
             "home": "Minnesota",
-            "idj": "Minnesotaanta42014"
+            "idj": "MinnesotaAtlanta42014",
+            "winner": "Minnesota",
+            "loser": "Atlanta",
+            "winningScore": 41,
+            "losingScore": 28,
+            "winner_ats": "Minnesota",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -19,
+            "dog_diff_ats": 19,
+            "over": true,
+            "over_differential": 22
       },
       {
             "favorite": "New Orleans",
@@ -33963,7 +34802,17 @@ module.exports =
             "week": 4,
             "year": 2014,
             "home": "NY Jets",
-            "idj": "NY JetsDetroit42014"
+            "idj": "NY JetsDetroit42014",
+            "winner": "Detroit",
+            "loser": "NY Jets",
+            "winningScore": 24,
+            "losingScore": 17,
+            "winner_ats": "Detroit",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -8.5,
+            "dog_diff_ats": 8.5,
+            "over": false,
+            "over_differential": -3
       },
       {
             "favorite": "Washington",
@@ -34078,14 +34927,24 @@ module.exports =
       {
             "favorite": "NY Jets",
             "spread": -2.5,
-            "dog": "Miami (At London)",
+            "dog": "Miami ",
             "total": 42,
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 4,
             "year": 2015,
-            "home": "",
-            "idj": "42015"
+            "home": "Miami",
+            "idj": "MiamiNY Jets42015",
+            "winner": "NY Jets",
+            "loser": "Miami",
+            "winningScore": 27,
+            "losingScore": 14,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Miami ",
+            "favorite_diff_ats": 10.5,
+            "dog_diff_ats": -10.5,
+            "over": false,
+            "over_differential": -1
       },
       {
             "favorite": "Indianapolis",
@@ -34640,14 +35499,24 @@ module.exports =
       {
             "favorite": "Tennessee",
             "spread": -7.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 41,
             "ml_fav": "-$380",
             "ml_dog": "+$300",
             "week": 5,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaTennessee52007"
+            "home": "Tennessee",
+            "idj": "TennesseeAtlanta52007",
+            "winner": "Tennessee",
+            "loser": "Atlanta",
+            "winningScore": 20,
+            "losingScore": 13,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Tennessee",
+            "favorite_diff_ats": -0.5,
+            "dog_diff_ats": 0.5,
+            "over": false,
+            "over_differential": -8
       },
       {
             "favorite": "Houston",
@@ -34982,14 +35851,24 @@ module.exports =
       {
             "favorite": "Green Bay",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 42,
             "ml_fav": "-$230",
             "ml_dog": "+$190",
             "week": 5,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaGreen Bay52008"
+            "home": "Green Bay",
+            "idj": "Green BayAtlanta52008",
+            "winner": "Atlanta",
+            "loser": "Green Bay",
+            "winningScore": 27,
+            "losingScore": 24,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Green Bay",
+            "favorite_diff_ats": -8.5,
+            "dog_diff_ats": 8.5,
+            "over": true,
+            "over_differential": 9
       },
       {
             "favorite": "NY Giants",
@@ -35148,14 +36027,24 @@ module.exports =
       {
             "favorite": "San Francisco",
             "spread": -1,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 39,
             "ml_fav": "-$115",
             "ml_dog": "-$105",
             "week": 5,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaSan Francisco52009"
+            "home": "San Francisco",
+            "idj": "San FranciscoAtlanta52009",
+            "winner": "Atlanta",
+            "loser": "San Francisco",
+            "winningScore": 45,
+            "losingScore": 10,
+            "winner_ats": "Atlanta",
+            "loser_ats": "San Francisco",
+            "favorite_diff_ats": -36,
+            "dog_diff_ats": 36,
+            "over": true,
+            "over_differential": 16
       },
       {
             "favorite": "New England",
@@ -35444,7 +36333,7 @@ module.exports =
             "over_differential": 7
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Cleveland",
             "total": 41,
@@ -35453,7 +36342,17 @@ module.exports =
             "week": 5,
             "year": 2010,
             "home": "Cleveland",
-            "idj": "Clevelandanta52010"
+            "idj": "ClevelandAtlanta52010",
+            "winner": "Atlanta",
+            "loser": "Cleveland",
+            "winningScore": 20,
+            "losingScore": 10,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Cleveland",
+            "favorite_diff_ats": 7,
+            "dog_diff_ats": -7,
+            "over": false,
+            "over_differential": -11
       },
       {
             "favorite": "Cincinnati",
@@ -35896,7 +36795,7 @@ module.exports =
             "over_differential": -18
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Washington",
             "total": 51,
@@ -35905,7 +36804,17 @@ module.exports =
             "week": 5,
             "year": 2012,
             "home": "Washington",
-            "idj": "Washingtonanta52012"
+            "idj": "WashingtonAtlanta52012",
+            "winner": "Atlanta",
+            "loser": "Washington",
+            "winningScore": 24,
+            "losingScore": 17,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Washington",
+            "favorite_diff_ats": 4,
+            "dog_diff_ats": -4,
+            "over": false,
+            "over_differential": -10
       },
       {
             "favorite": "Chicago",
@@ -36482,14 +37391,24 @@ module.exports =
       {
             "favorite": "NY Giants",
             "spread": -4,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 50,
             "ml_fav": "-$210",
             "ml_dog": "+$180",
             "week": 5,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaNY Giants52014"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta52014",
+            "winner": "NY Giants",
+            "loser": "Atlanta",
+            "winningScore": 30,
+            "losingScore": 20,
+            "winner_ats": "NY Giants",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 6,
+            "dog_diff_ats": -6,
+            "over": false,
+            "over_differential": 0
       },
       {
             "favorite": "New Orleans",
@@ -36985,7 +37904,17 @@ module.exports =
             "week": 6,
             "year": 2006,
             "home": "NY Jets",
-            "idj": "NY JetsMiami62006"
+            "idj": "NY JetsMiami62006",
+            "winner": "NY Jets",
+            "loser": "Miami",
+            "winningScore": 20,
+            "losingScore": 17,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Miami",
+            "favorite_diff_ats": 0.5,
+            "dog_diff_ats": -0.5,
+            "over": true,
+            "over_differential": 1
       },
       {
             "favorite": "San Diego",
@@ -37283,7 +38212,17 @@ module.exports =
             "week": 6,
             "year": 2007,
             "home": "NY Jets",
-            "idj": "NY JetsPhiladelphia62007"
+            "idj": "NY JetsPhiladelphia62007",
+            "winner": "Philadelphia",
+            "loser": "NY Jets",
+            "winningScore": 16,
+            "losingScore": 9,
+            "winner_ats": "Philadelphia",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 3,
+            "dog_diff_ats": -3,
+            "over": false,
+            "over_differential": -18
       },
       {
             "favorite": "Baltimore",
@@ -37471,7 +38410,17 @@ module.exports =
             "week": 6,
             "year": 2008,
             "home": "NY Jets",
-            "idj": "NY JetsCincinnati62008"
+            "idj": "NY JetsCincinnati62008",
+            "winner": "NY Jets",
+            "loser": "Cincinnati",
+            "winningScore": 26,
+            "losingScore": 14,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Cincinnati",
+            "favorite_diff_ats": 2.5,
+            "dog_diff_ats": -2.5,
+            "over": false,
+            "over_differential": -3
       },
       {
             "favorite": "Tampa Bay",
@@ -37747,7 +38696,17 @@ module.exports =
             "week": 6,
             "year": 2009,
             "home": "NY Jets",
-            "idj": "NY JetsBuffalo62009"
+            "idj": "NY JetsBuffalo62009",
+            "winner": "Buffalo",
+            "loser": "NY Jets",
+            "winningScore": 16,
+            "losingScore": 13,
+            "winner_ats": "Buffalo",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -12.5,
+            "dog_diff_ats": 12.5,
+            "over": false,
+            "over_differential": -6
       },
       {
             "favorite": "New England",
@@ -38104,14 +39063,24 @@ module.exports =
       {
             "favorite": "Philadelphia",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 6,
             "year": 2010,
-            "home": "anta",
-            "idj": "antaPhiladelphia62010"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta62010",
+            "winner": "Philadelphia",
+            "loser": "Atlanta",
+            "winningScore": 31,
+            "losingScore": 17,
+            "winner_ats": "Philadelphia",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 12,
+            "dog_diff_ats": -12,
+            "over": true,
+            "over_differential": 5
       },
       {
             "favorite": "Baltimore",
@@ -38607,7 +39576,17 @@ module.exports =
             "week": 6,
             "year": 2012,
             "home": "NY Jets",
-            "idj": "NY JetsIndianapolis62012"
+            "idj": "NY JetsIndianapolis62012",
+            "winner": "NY Jets",
+            "loser": "Indianapolis",
+            "winningScore": 35,
+            "losingScore": 9,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Indianapolis",
+            "favorite_diff_ats": 22.5,
+            "dog_diff_ats": -22.5,
+            "over": false,
+            "over_differential": 0
       },
       {
             "favorite": "Atlanta",
@@ -38641,7 +39620,17 @@ module.exports =
             "week": 6,
             "year": 2013,
             "home": "NY Jets",
-            "idj": "NY JetsPittsburgh62013"
+            "idj": "NY JetsPittsburgh62013",
+            "winner": "Pittsburgh",
+            "loser": "NY Jets",
+            "winningScore": 19,
+            "losingScore": 6,
+            "winner_ats": "Pittsburgh",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 11.5,
+            "dog_diff_ats": -11.5,
+            "over": false,
+            "over_differential": -16
       },
       {
             "favorite": "Cincinnati",
@@ -38917,7 +39906,17 @@ module.exports =
             "week": 6,
             "year": 2014,
             "home": "NY Jets",
-            "idj": "NY JetsDenver62014"
+            "idj": "NY JetsDenver62014",
+            "winner": "Denver",
+            "loser": "NY Jets",
+            "winningScore": 31,
+            "losingScore": 17,
+            "winner_ats": "Denver",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": 4,
+            "dog_diff_ats": -4,
+            "over": true,
+            "over_differential": 1
       },
       {
             "favorite": "Indianapolis",
@@ -39303,7 +40302,17 @@ module.exports =
             "week": 6,
             "year": 2015,
             "home": "NY Jets",
-            "idj": "NY JetsWashington62015"
+            "idj": "NY JetsWashington62015",
+            "winner": "NY Jets",
+            "loser": "Washington",
+            "winningScore": 34,
+            "losingScore": 20,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Washington",
+            "favorite_diff_ats": 6.5,
+            "dog_diff_ats": -6.5,
+            "over": true,
+            "over_differential": 14
       },
       {
             "favorite": "Jacksonville",
@@ -39579,7 +40588,17 @@ module.exports =
             "week": 7,
             "year": 2006,
             "home": "NY Jets",
-            "idj": "NY JetsDetroit72006"
+            "idj": "NY JetsDetroit72006",
+            "winner": "NY Jets",
+            "loser": "Detroit",
+            "winningScore": 31,
+            "losingScore": 24,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Detroit",
+            "favorite_diff_ats": 3,
+            "dog_diff_ats": -3,
+            "over": true,
+            "over_differential": 12
       },
       {
             "favorite": "Miami",
@@ -39694,14 +40713,24 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -7.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$370",
             "ml_dog": "+$300",
             "week": 7,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaNew Orleans72007"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta72007",
+            "winner": "New Orleans",
+            "loser": "Atlanta",
+            "winningScore": 22,
+            "losingScore": 16,
+            "winner_ats": "Atlanta",
+            "loser_ats": "New Orleans",
+            "favorite_diff_ats": -1.5,
+            "dog_diff_ats": 1.5,
+            "over": false,
+            "over_differential": -5
       },
       {
             "favorite": "Dallas",
@@ -40278,14 +41307,24 @@ module.exports =
       {
             "favorite": "Dallas",
             "spread": -5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$235",
             "ml_dog": "+$195",
             "week": 7,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaDallas72009"
+            "home": "Dallas",
+            "idj": "DallasAtlanta72009",
+            "winner": "Dallas",
+            "loser": "Atlanta",
+            "winningScore": 37,
+            "losingScore": 21,
+            "winner_ats": "Dallas",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 11,
+            "dog_diff_ats": -11,
+            "over": true,
+            "over_differential": 10
       },
       {
             "favorite": "NY Giants",
@@ -40422,14 +41461,24 @@ module.exports =
       {
             "favorite": "New England",
             "spread": -15.5,
-            "dog": "Tampa Bay(At London)",
+            "dog": "Tampa Bay",
             "total": 44,
             "ml_fav": "-$1300",
             "ml_dog": "+$900",
             "week": 7,
             "year": 2009,
-            "home": "",
-            "idj": "72009"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayNew England72009",
+            "winner": "New England",
+            "loser": "Tampa Bay",
+            "winningScore": 35,
+            "losingScore": 7,
+            "winner_ats": "New England",
+            "loser_ats": "Tampa Bay",
+            "favorite_diff_ats": 12.5,
+            "dog_diff_ats": -12.5,
+            "over": false,
+            "over_differential": -2
       },
       {
             "favorite": "Pittsburgh",
@@ -40830,26 +41879,46 @@ module.exports =
       {
             "favorite": "Detroit",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$230",
             "ml_dog": "+$195",
             "week": 7,
             "year": 2011,
-            "home": "anta",
-            "idj": "antaDetroit72011"
+            "home": "Detroit",
+            "idj": "DetroitAtlanta72011",
+            "winner": "Atlanta",
+            "loser": "Detroit",
+            "winningScore": 23,
+            "losingScore": 16,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Detroit",
+            "favorite_diff_ats": -11.5,
+            "dog_diff_ats": 11.5,
+            "over": false,
+            "over_differential": -7
       },
       {
             "favorite": "Chicago",
             "spread": -1.5,
-            "dog": "Tampa Bay\n(At London)",
+            "dog": "Tampa Bay",
             "total": 44,
             "ml_fav": "-$125",
             "ml_dog": "+$105",
             "week": 7,
             "year": 2011,
-            "home": "",
-            "idj": "72011"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayChicago72011",
+            "winner": "Chicago",
+            "loser": "Tampa Bay",
+            "winningScore": 24,
+            "losingScore": 18,
+            "winner_ats": "Chicago",
+            "loser_ats": "Tampa Bay",
+            "favorite_diff_ats": 4.5,
+            "dog_diff_ats": -4.5,
+            "over": false,
+            "over_differential": -2
       },
       {
             "favorite": "Carolina",
@@ -40883,7 +41952,17 @@ module.exports =
             "week": 7,
             "year": 2011,
             "home": "NY Jets",
-            "idj": "NY JetsSan Diego72011"
+            "idj": "NY JetsSan Diego72011",
+            "winner": "NY Jets",
+            "loser": "San Diego",
+            "winningScore": 27,
+            "losingScore": 21,
+            "winner_ats": "NY Jets",
+            "loser_ats": "San Diego",
+            "favorite_diff_ats": -7,
+            "dog_diff_ats": 7,
+            "over": true,
+            "over_differential": 5
       },
       {
             "favorite": "NY Giants",
@@ -41159,7 +42238,17 @@ module.exports =
             "week": 7,
             "year": 2013,
             "home": "NY Jets",
-            "idj": "NY JetsNew England72013"
+            "idj": "NY JetsNew England72013",
+            "winner": "NY Jets",
+            "loser": "New England",
+            "winningScore": 30,
+            "losingScore": 27,
+            "winner_ats": "NY Jets",
+            "loser_ats": "New England",
+            "favorite_diff_ats": -6.5,
+            "dog_diff_ats": 6.5,
+            "over": true,
+            "over_differential": 14
       },
       {
             "favorite": "San Diego",
@@ -41714,14 +42803,24 @@ module.exports =
       {
             "favorite": "Buffalo",
             "spread": -3.5,
-            "dog": "Jacksonville(at London)",
+            "dog": "Jacksonville",
             "total": 41,
             "ml_fav": "-$185",
             "ml_dog": "+$165",
             "week": 7,
             "year": 2015,
-            "home": "",
-            "idj": "72015"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleBuffalo72015",
+            "winner": "Jacksonville",
+            "loser": "Buffalo",
+            "winningScore": 34,
+            "losingScore": 31,
+            "winner_ats": "Jacksonville",
+            "loser_ats": "Buffalo",
+            "favorite_diff_ats": -6.5,
+            "dog_diff_ats": 6.5,
+            "over": true,
+            "over_differential": 24
       },
       {
             "favorite": "St. Louis",
@@ -41812,7 +42911,7 @@ module.exports =
             "over_differential": 2
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Tennessee",
             "total": 45,
@@ -41821,7 +42920,17 @@ module.exports =
             "week": 7,
             "year": 2015,
             "home": "Tennessee",
-            "idj": "Tennesseeanta72015"
+            "idj": "TennesseeAtlanta72015",
+            "winner": "Atlanta",
+            "loser": "Tennessee",
+            "winningScore": 10,
+            "losingScore": 7,
+            "winner_ats": "Tennessee",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -3,
+            "dog_diff_ats": 3,
+            "over": false,
+            "over_differential": -28
       },
       {
             "favorite": "Washington",
@@ -42222,14 +43331,24 @@ module.exports =
       {
             "favorite": "Cincinnati",
             "spread": -4,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$200",
             "ml_dog": "+$175",
             "week": 8,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaCincinnati82006"
+            "home": "Cincinnati",
+            "idj": "CincinnatiAtlanta82006",
+            "winner": "Atlanta",
+            "loser": "Cincinnati",
+            "winningScore": 29,
+            "losingScore": 27,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Cincinnati",
+            "favorite_diff_ats": -6,
+            "dog_diff_ats": 6,
+            "over": true,
+            "over_differential": 11
       },
       {
             "favorite": "Cleveland",
@@ -42410,14 +43529,24 @@ module.exports =
       {
             "favorite": "NY Giants",
             "spread": -10,
-            "dog": "Miami(At London)",
+            "dog": "Miami",
             "total": 47,
             "ml_fav": "-$550",
             "ml_dog": "+$400",
             "week": 8,
             "year": 2007,
-            "home": "",
-            "idj": "82007"
+            "home": "Miami",
+            "idj": "MiamiNY Giants82007",
+            "winner": "NY Giants",
+            "loser": "Miami",
+            "winningScore": 13,
+            "losingScore": 10,
+            "winner_ats": "Miami",
+            "loser_ats": "NY Giants",
+            "favorite_diff_ats": -7,
+            "dog_diff_ats": 7,
+            "over": false,
+            "over_differential": -24
       },
       {
             "favorite": "Philadelphia",
@@ -42451,7 +43580,17 @@ module.exports =
             "week": 8,
             "year": 2007,
             "home": "NY Jets",
-            "idj": "NY JetsBuffalo82007"
+            "idj": "NY JetsBuffalo82007",
+            "winner": "Buffalo",
+            "loser": "NY Jets",
+            "winningScore": 13,
+            "losingScore": 3,
+            "winner_ats": "Buffalo",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -13,
+            "dog_diff_ats": 13,
+            "over": false,
+            "over_differential": -22
       },
       {
             "favorite": "Carolina",
@@ -42588,14 +43727,24 @@ module.exports =
       {
             "favorite": "Philadelphia",
             "spread": -9,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$400",
             "ml_dog": "+$330",
             "week": 8,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaPhiladelphia82008"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta82008",
+            "winner": "Philadelphia",
+            "loser": "Atlanta",
+            "winningScore": 27,
+            "losingScore": 14,
+            "winner_ats": "Philadelphia",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 4,
+            "dog_diff_ats": -4,
+            "over": false,
+            "over_differential": -4
       },
       {
             "favorite": "Miami",
@@ -42644,14 +43793,24 @@ module.exports =
       {
             "favorite": "San Diego",
             "spread": -3,
-            "dog": "New Orleans(At London)",
+            "dog": "New Orleans",
             "total": 46,
             "ml_fav": "-$165",
             "ml_dog": "+$145",
             "week": 8,
             "year": 2008,
-            "home": "",
-            "idj": "82008"
+            "home": "New Orleans",
+            "idj": "New OrleansSan Diego82008",
+            "winner": "New Orleans",
+            "loser": "San Diego",
+            "winningScore": 37,
+            "losingScore": 32,
+            "winner_ats": "New Orleans",
+            "loser_ats": "San Diego",
+            "favorite_diff_ats": -8,
+            "dog_diff_ats": 8,
+            "over": true,
+            "over_differential": 23
       },
       {
             "favorite": "Baltimore",
@@ -42707,7 +43866,17 @@ module.exports =
             "week": 8,
             "year": 2008,
             "home": "NY Jets",
-            "idj": "NY JetsKansas City82008"
+            "idj": "NY JetsKansas City82008",
+            "winner": "NY Jets",
+            "loser": "Kansas City",
+            "winningScore": 28,
+            "losingScore": 24,
+            "winner_ats": "Kansas City",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -10,
+            "dog_diff_ats": 10,
+            "over": true,
+            "over_differential": 11
       },
       {
             "favorite": "Dallas",
@@ -42873,7 +44042,17 @@ module.exports =
             "week": 8,
             "year": 2009,
             "home": "NY Jets",
-            "idj": "NY JetsMiami82009"
+            "idj": "NY JetsMiami82009",
+            "winner": "Miami",
+            "loser": "NY Jets",
+            "winningScore": 30,
+            "losingScore": 25,
+            "winner_ats": "Miami",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -8.5,
+            "dog_diff_ats": 8.5,
+            "over": true,
+            "over_differential": 15
       },
       {
             "favorite": "Chicago",
@@ -42942,7 +44121,7 @@ module.exports =
             "over_differential": 0
       },
       {
-            "favorite": "San Francisco(At London)",
+            "favorite": "San Francisco",
             "spread": -2,
             "dog": "Denver",
             "total": 41,
@@ -42950,8 +44129,18 @@ module.exports =
             "ml_dog": "+$115",
             "week": 8,
             "year": 2010,
-            "home": "",
-            "idj": "82010"
+            "home": "San Francisco",
+            "idj": "San FranciscoDenver82010",
+            "winner": "San Francisco",
+            "loser": "Denver",
+            "winningScore": 24,
+            "losingScore": 16,
+            "winner_ats": "San Francisco",
+            "loser_ats": "Denver",
+            "favorite_diff_ats": 6,
+            "dog_diff_ats": -6,
+            "over": false,
+            "over_differential": -1
       },
       {
             "favorite": "Dallas",
@@ -43007,7 +44196,17 @@ module.exports =
             "week": 8,
             "year": 2010,
             "home": "NY Jets",
-            "idj": "NY JetsGreen Bay82010"
+            "idj": "NY JetsGreen Bay82010",
+            "winner": "Green Bay",
+            "loser": "NY Jets",
+            "winningScore": 9,
+            "losingScore": 0,
+            "winner_ats": "Green Bay",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -15.5,
+            "dog_diff_ats": 15.5,
+            "over": false,
+            "over_differential": -32
       },
       {
             "favorite": "St. Louis",
@@ -43230,7 +44429,7 @@ module.exports =
             "over_differential": 14
       },
       {
-            "favorite": "Buffalo\n(Toronto)",
+            "favorite": "Buffalo",
             "spread": -4,
             "dog": "Washington",
             "total": 46,
@@ -43238,8 +44437,18 @@ module.exports =
             "ml_dog": "+$180",
             "week": 8,
             "year": 2011,
-            "home": "Buffalo\n(Toronto)",
-            "idj": "Buffalo\n(Toronto)Washington82011"
+            "home": "Buffalo",
+            "idj": "BuffaloWashington82011",
+            "winner": "Buffalo",
+            "loser": "Washington",
+            "winningScore": 23,
+            "losingScore": 0,
+            "winner_ats": "Buffalo",
+            "loser_ats": "Washington",
+            "favorite_diff_ats": 19,
+            "dog_diff_ats": -19,
+            "over": false,
+            "over_differential": -23
       },
       {
             "favorite": "NY Giants",
@@ -43420,14 +44629,24 @@ module.exports =
       {
             "favorite": "New England",
             "spread": -7,
-            "dog": "St. Louis\n(At London)",
+            "dog": "St. Louis",
             "total": 46,
             "ml_fav": "-$330",
             "ml_dog": "+$270",
             "week": 8,
             "year": 2012,
-            "home": "",
-            "idj": "82012"
+            "home": "St. Louis",
+            "idj": "St. LouisNew England82012",
+            "winner": "New England",
+            "loser": "St. Louis",
+            "winningScore": 45,
+            "losingScore": 7,
+            "winner_ats": "New England",
+            "loser_ats": "St. Louis",
+            "favorite_diff_ats": 31,
+            "dog_diff_ats": -31,
+            "over": true,
+            "over_differential": 6
       },
       {
             "favorite": "Tennessee",
@@ -43476,14 +44695,24 @@ module.exports =
       {
             "favorite": "Philadelphia",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 8,
             "year": 2012,
-            "home": "anta",
-            "idj": "antaPhiladelphia82012"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta82012",
+            "winner": "Atlanta",
+            "loser": "Philadelphia",
+            "winningScore": 30,
+            "losingScore": 17,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Philadelphia",
+            "favorite_diff_ats": -16,
+            "dog_diff_ats": 16,
+            "over": true,
+            "over_differential": 4
       },
       {
             "favorite": "Detroit",
@@ -43517,7 +44746,17 @@ module.exports =
             "week": 8,
             "year": 2012,
             "home": "NY Jets",
-            "idj": "NY JetsMiami82012"
+            "idj": "NY JetsMiami82012",
+            "winner": "Miami",
+            "loser": "NY Jets",
+            "winningScore": 30,
+            "losingScore": 9,
+            "winner_ats": "Miami",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -22,
+            "dog_diff_ats": 22,
+            "over": true,
+            "over_differential": 1
       },
       {
             "favorite": "San Diego",
@@ -43676,14 +44915,24 @@ module.exports =
       {
             "favorite": "San Francisco",
             "spread": -16,
-            "dog": "Jacksonville\n(At London)",
+            "dog": "Jacksonville",
             "total": 40,
             "ml_fav": "-$1800",
             "ml_dog": "+$1000",
             "week": 8,
             "year": 2013,
-            "home": "",
-            "idj": "82013"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleSan Francisco82013",
+            "winner": "San Francisco",
+            "loser": "Jacksonville",
+            "winningScore": 42,
+            "losingScore": 10,
+            "winner_ats": "San Francisco",
+            "loser_ats": "Jacksonville",
+            "favorite_diff_ats": 16,
+            "dog_diff_ats": -16,
+            "over": true,
+            "over_differential": 12
       },
       {
             "favorite": "Denver",
@@ -43732,14 +44981,24 @@ module.exports =
       {
             "favorite": "Arizona",
             "spread": -2.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$140",
             "ml_dog": "+$120",
             "week": 8,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaArizona82013"
+            "home": "Arizona",
+            "idj": "ArizonaAtlanta82013",
+            "winner": "Arizona",
+            "loser": "Atlanta",
+            "winningScore": 27,
+            "losingScore": 13,
+            "winner_ats": "Arizona",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 11.5,
+            "dog_diff_ats": -11.5,
+            "over": false,
+            "over_differential": -5
       },
       {
             "favorite": "Green Bay",
@@ -44147,7 +45406,17 @@ module.exports =
             "week": 8,
             "year": 2014,
             "home": "NY Jets",
-            "idj": "NY JetsBuffalo82014"
+            "idj": "NY JetsBuffalo82014",
+            "winner": "Buffalo",
+            "loser": "NY Jets",
+            "winningScore": 43,
+            "losingScore": 23,
+            "winner_ats": "Buffalo",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -23,
+            "dog_diff_ats": 23,
+            "over": true,
+            "over_differential": 26
       },
       {
             "favorite": "New England",
@@ -44172,7 +45441,7 @@ module.exports =
             "over_differential": -8
       },
       {
-            "favorite": "Kansas City(At London)",
+            "favorite": "Kansas City",
             "spread": -3,
             "dog": "Detroit",
             "total": 45,
@@ -44180,8 +45449,18 @@ module.exports =
             "ml_dog": "+$150",
             "week": 8,
             "year": 2015,
-            "home": "",
-            "idj": "82015"
+            "home": "Kansas City",
+            "idj": "Kansas CityDetroit82015",
+            "winner": "Kansas City",
+            "loser": "Detroit",
+            "winningScore": 45,
+            "losingScore": 10,
+            "winner_ats": "Kansas City",
+            "loser_ats": "Detroit",
+            "favorite_diff_ats": 32,
+            "dog_diff_ats": -32,
+            "over": true,
+            "over_differential": 10
       },
       {
             "favorite": "Minnesota",
@@ -44558,7 +45837,7 @@ module.exports =
             "over_differential": 16
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -5.5,
             "dog": "Detroit",
             "total": 47,
@@ -44567,7 +45846,17 @@ module.exports =
             "week": 9,
             "year": 2006,
             "home": "Detroit",
-            "idj": "Detroitanta92006"
+            "idj": "DetroitAtlanta92006",
+            "winner": "Detroit",
+            "loser": "Atlanta",
+            "winningScore": 30,
+            "losingScore": 14,
+            "winner_ats": "Detroit",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -21.5,
+            "dog_diff_ats": 21.5,
+            "over": false,
+            "over_differential": -3
       },
       {
             "favorite": "Pittsburgh",
@@ -44689,7 +45978,17 @@ module.exports =
             "week": 9,
             "year": 2007,
             "home": "NY Jets",
-            "idj": "NY JetsWashington92007"
+            "idj": "NY JetsWashington92007",
+            "winner": "Washington",
+            "loser": "NY Jets",
+            "winningScore": 23,
+            "losingScore": 20,
+            "winner_ats": "NY Jets",
+            "loser_ats": "Washington",
+            "favorite_diff_ats": -0.5,
+            "dog_diff_ats": 0.5,
+            "over": true,
+            "over_differential": 8
       },
       {
             "favorite": "Tennessee",
@@ -44978,7 +46277,7 @@ module.exports =
             "over_differential": 0
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Oakland",
             "total": 41,
@@ -44987,7 +46286,17 @@ module.exports =
             "week": 9,
             "year": 2008,
             "home": "Oakland",
-            "idj": "Oaklandanta92008"
+            "idj": "OaklandAtlanta92008",
+            "winner": "Atlanta",
+            "loser": "Oakland",
+            "winningScore": 24,
+            "losingScore": 0,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Oakland",
+            "favorite_diff_ats": 21,
+            "dog_diff_ats": -21,
+            "over": false,
+            "over_differential": -17
       },
       {
             "favorite": "NY Giants",
@@ -45542,14 +46851,24 @@ module.exports =
       {
             "favorite": "Chicago",
             "spread": -3,
-            "dog": "Buffalo(Toronto)",
+            "dog": "Buffalo",
             "total": 41,
             "ml_fav": "-$150",
             "ml_dog": "+$130",
             "week": 9,
             "year": 2010,
-            "home": "Buffalo(Toronto)",
-            "idj": "Buffalo(Toronto)Chicago92010"
+            "home": "Buffalo",
+            "idj": "BuffaloChicago92010",
+            "winner": "Chicago",
+            "loser": "Buffalo",
+            "winningScore": 22,
+            "losingScore": 19,
+            "winner_ats": "Chicago",
+            "loser_ats": "Buffalo",
+            "favorite_diff_ats": 0,
+            "dog_diff_ats": 0,
+            "over": false,
+            "over_differential": 0
       },
       {
             "favorite": "New Orleans",
@@ -45640,7 +46959,7 @@ module.exports =
             "over_differential": -5
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6.5,
             "dog": "Indianapolis",
             "total": 44,
@@ -45649,7 +46968,17 @@ module.exports =
             "week": 9,
             "year": 2011,
             "home": "Indianapolis",
-            "idj": "Indianapolisanta92011"
+            "idj": "IndianapolisAtlanta92011",
+            "winner": "Atlanta",
+            "loser": "Indianapolis",
+            "winningScore": 31,
+            "losingScore": 7,
+            "winner_ats": "Atlanta",
+            "loser_ats": "Indianapolis",
+            "favorite_diff_ats": 17.5,
+            "dog_diff_ats": -17.5,
+            "over": false,
+            "over_differential": -6
       },
       {
             "favorite": "New Orleans",
@@ -46226,14 +47555,24 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -8.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$440",
             "ml_dog": "+$360",
             "week": 9,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaCarolina92013"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta92013",
+            "winner": "Carolina",
+            "loser": "Atlanta",
+            "winningScore": 34,
+            "losingScore": 10,
+            "winner_ats": "Carolina",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": 15.5,
+            "dog_diff_ats": -15.5,
+            "over": false,
+            "over_differential": -3
       },
       {
             "favorite": "Seattle",
@@ -46399,7 +47738,17 @@ module.exports =
             "week": 9,
             "year": 2013,
             "home": "NY Jets",
-            "idj": "NY JetsNew Orleans92013"
+            "idj": "NY JetsNew Orleans92013",
+            "winner": "NY Jets",
+            "loser": "New Orleans",
+            "winningScore": 26,
+            "losingScore": 20,
+            "winner_ats": "NY Jets",
+            "loser_ats": "New Orleans",
+            "favorite_diff_ats": -12,
+            "dog_diff_ats": 12,
+            "over": false,
+            "over_differential": 0
       },
       {
             "favorite": "Tennessee",
@@ -46785,7 +48134,17 @@ module.exports =
             "week": 9,
             "year": 2015,
             "home": "NY Jets",
-            "idj": "NY JetsJacksonville92015"
+            "idj": "NY JetsJacksonville92015",
+            "winner": "NY Jets",
+            "loser": "Jacksonville",
+            "winningScore": 28,
+            "losingScore": 23,
+            "winner_ats": "Jacksonville",
+            "loser_ats": "NY Jets",
+            "favorite_diff_ats": -3,
+            "dog_diff_ats": 3,
+            "over": true,
+            "over_differential": 9
       },
       {
             "favorite": "New England",
@@ -46832,7 +48191,7 @@ module.exports =
             "over_differential": 20
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -8.5,
             "dog": "San Francisco",
             "total": 43,
@@ -46841,7 +48200,17 @@ module.exports =
             "week": 9,
             "year": 2015,
             "home": "San Francisco",
-            "idj": "San Franciscoanta92015"
+            "idj": "San FranciscoAtlanta92015",
+            "winner": "San Francisco",
+            "loser": "Atlanta",
+            "winningScore": 17,
+            "losingScore": 16,
+            "winner_ats": "San Francisco",
+            "loser_ats": "Atlanta",
+            "favorite_diff_ats": -9.5,
+            "dog_diff_ats": 9.5,
+            "over": false,
+            "over_differential": -10
       },
       {
             "favorite": "NY Giants",

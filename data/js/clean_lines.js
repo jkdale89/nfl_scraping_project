@@ -1,6 +1,4 @@
-module.exports =
-
-[
+module.exports = [
       {
             "favorite": "Miami",
             "spread": -1.5,
@@ -292,14 +290,14 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 35,
             "ml_fav": "-$175",
             "ml_dog": "+$155",
             "week": 10,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaCarolina102007"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta102007"
       },
       {
             "favorite": "New Orleans",
@@ -554,7 +552,7 @@ module.exports =
             "idj": "St. LouisNew Orleans102009"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1.5,
             "dog": "Carolina",
             "total": 44,
@@ -563,7 +561,7 @@ module.exports =
             "week": 10,
             "year": 2009,
             "home": "Carolina",
-            "idj": "Carolinaanta102009"
+            "idj": "CarolinaAtlanta102009"
       },
       {
             "favorite": "Miami",
@@ -962,7 +960,7 @@ module.exports =
             "idj": "Kansas CityDenver102011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "New Orleans",
             "total": 53,
@@ -971,7 +969,7 @@ module.exports =
             "week": 10,
             "year": 2012,
             "home": "New Orleans",
-            "idj": "New Orleansanta102012"
+            "idj": "New OrleansAtlanta102012"
       },
       {
             "favorite": "Detroit",
@@ -1264,14 +1262,14 @@ module.exports =
       {
             "favorite": "Dallas",
             "spread": -7.5,
-            "dog": "Jacksonville\nAt London",
+            "dog": "Jacksonville",
             "total": 45,
             "ml_fav": "-$345",
             "ml_dog": "+$280",
             "week": 10,
             "year": 2014,
-            "home": "",
-            "idj": "102014"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleDallas102014"
       },
       {
             "favorite": "Detroit",
@@ -1322,7 +1320,7 @@ module.exports =
             "idj": "BaltimoreTennessee102014"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 47,
@@ -1331,7 +1329,7 @@ module.exports =
             "week": 10,
             "year": 2014,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta102014"
+            "idj": "Tampa BayAtlanta102014"
       },
       {
             "favorite": "Arizona",
@@ -1600,14 +1598,14 @@ module.exports =
       {
             "favorite": "Baltimore",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 41,
             "ml_fav": "-$190",
             "ml_dog": "+$165",
             "week": 11,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaBaltimore112006"
+            "home": "Baltimore",
+            "idj": "BaltimoreAtlanta112006"
       },
       {
             "favorite": "Philadelphia",
@@ -2140,14 +2138,14 @@ module.exports =
       {
             "favorite": "NY Giants",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$350",
             "ml_dog": "+$290",
             "week": 11,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNY Giants112009"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta112009"
       },
       {
             "favorite": "Minnesota",
@@ -2306,7 +2304,7 @@ module.exports =
             "idj": "New OrleansSeattle112010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "St. Louis",
             "total": 43,
@@ -2315,7 +2313,7 @@ module.exports =
             "week": 11,
             "year": 2010,
             "home": "St. Louis",
-            "idj": "St. Louisanta112010"
+            "idj": "St. LouisAtlanta112010"
       },
       {
             "favorite": "San Francisco",
@@ -2812,14 +2810,14 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$135",
             "ml_dog": "+$115",
             "week": 11,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaTampa Bay112013"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta112013"
       },
       {
             "favorite": "Detroit",
@@ -2930,7 +2928,7 @@ module.exports =
             "idj": "San DiegoOakland112014"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2.5,
             "dog": "Carolina",
             "total": 47,
@@ -2939,7 +2937,7 @@ module.exports =
             "week": 11,
             "year": 2014,
             "home": "Carolina",
-            "idj": "Carolinaanta112014"
+            "idj": "CarolinaAtlanta112014"
       },
       {
             "favorite": "Miami",
@@ -4322,7 +4320,7 @@ module.exports =
             "idj": "JacksonvilleTennessee122012"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Tampa Bay",
             "total": 51,
@@ -4331,7 +4329,7 @@ module.exports =
             "week": 12,
             "year": 2012,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta122012"
+            "idj": "Tampa BayAtlanta122012"
       },
       {
             "favorite": "Seattle",
@@ -4945,7 +4943,7 @@ module.exports =
             "idj": "ClevelandKansas City132006"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Washington",
             "total": 38,
@@ -4954,7 +4952,7 @@ module.exports =
             "week": 13,
             "year": 2006,
             "home": "Washington",
-            "idj": "Washingtonanta132006"
+            "idj": "WashingtonAtlanta132006"
       },
       {
             "favorite": "New England",
@@ -5031,14 +5029,14 @@ module.exports =
       {
             "favorite": "St. Louis",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 40,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 13,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaSt. Louis132007"
+            "home": "St. Louis",
+            "idj": "St. LouisAtlanta132007"
       },
       {
             "favorite": "Dallas",
@@ -5283,14 +5281,14 @@ module.exports =
       {
             "favorite": "San Diego",
             "spread": -6.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$290",
             "ml_dog": "+$240",
             "week": 13,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaSan Diego132008"
+            "home": "San Diego",
+            "idj": "San DiegoAtlanta132008"
       },
       {
             "favorite": "Oakland",
@@ -5559,14 +5557,14 @@ module.exports =
       {
             "favorite": "NY Jets",
             "spread": -3.5,
-            "dog": "Buffalo\n(At Toronto)\n",
+            "dog": "Buffalo",
             "total": 37,
             "ml_fav": "-$190",
             "ml_dog": "+$170",
             "week": 13,
             "year": 2009,
-            "home": "",
-            "idj": "132009"
+            "home": "Buffalo",
+            "idj": "BuffaloNY Jets132009"
       },
       {
             "favorite": "Green Bay",
@@ -5605,7 +5603,7 @@ module.exports =
             "idj": "MinnesotaBuffalo132010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 43,
@@ -5614,7 +5612,7 @@ module.exports =
             "week": 13,
             "year": 2010,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta132010"
+            "idj": "Tampa BayAtlanta132010"
       },
       {
             "favorite": "San Diego",
@@ -5797,7 +5795,7 @@ module.exports =
             "idj": "WashingtonNY Jets132011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "Houston",
             "total": 38,
@@ -5806,7 +5804,7 @@ module.exports =
             "week": 13,
             "year": 2011,
             "home": "Houston",
-            "idj": "Houstonanta132011"
+            "idj": "HoustonAtlanta132011"
       },
       {
             "favorite": "New Orleans",
@@ -6207,14 +6205,14 @@ module.exports =
       {
             "favorite": "Buffalo",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$210",
             "ml_dog": "+$180",
             "week": 13,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaBuffalo132013"
+            "home": "Buffalo",
+            "idj": "BuffaloAtlanta132013"
       },
       {
             "favorite": "San Francisco",
@@ -6471,14 +6469,14 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": null,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$110",
             "ml_dog": " -$110",
             "week": 13,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaTampa Bay132015"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta132015"
       },
       {
             "favorite": "NY Jets",
@@ -6769,7 +6767,7 @@ module.exports =
             "idj": "DallasNew Orleans142006"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Tampa Bay",
             "total": 37,
@@ -6778,7 +6776,7 @@ module.exports =
             "week": 14,
             "year": 2006,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta142006"
+            "idj": "Tampa BayAtlanta142006"
       },
       {
             "favorite": "NY Giants",
@@ -6999,14 +6997,14 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 52,
             "ml_fav": "-$165",
             "ml_dog": "+$145",
             "week": 14,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaNew Orleans142008"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta142008"
       },
       {
             "favorite": "NY Jets",
@@ -7021,7 +7019,7 @@ module.exports =
             "idj": "San FranciscoNY Jets142008"
       },
       {
-            "favorite": "Buffalo(Toronto)",
+            "favorite": "Buffalo",
             "spread": -1.5,
             "dog": "Miami",
             "total": 42,
@@ -7029,8 +7027,8 @@ module.exports =
             "ml_dog": "+$105",
             "week": 14,
             "year": 2008,
-            "home": "Buffalo(Toronto)",
-            "idj": "Buffalo(Toronto)Miami142008"
+            "home": "Buffalo",
+            "idj": "BuffaloMiami142008"
       },
       {
             "favorite": "Denver",
@@ -7297,7 +7295,7 @@ module.exports =
             "idj": "AtlantaNew Orleans142009"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -7.5,
             "dog": "Carolina",
             "total": 41,
@@ -7306,7 +7304,7 @@ module.exports =
             "week": 14,
             "year": 2010,
             "home": "Carolina",
-            "idj": "Carolinaanta142010"
+            "idj": "CarolinaAtlanta142010"
       },
       {
             "favorite": "New England",
@@ -7501,7 +7499,7 @@ module.exports =
             "idj": "WashingtonNew England142011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Carolina",
             "total": 47,
@@ -7510,7 +7508,7 @@ module.exports =
             "week": 14,
             "year": 2011,
             "home": "Carolina",
-            "idj": "Carolinaanta142011"
+            "idj": "CarolinaAtlanta142011"
       },
       {
             "favorite": "Tampa Bay",
@@ -7777,7 +7775,7 @@ module.exports =
             "idj": "IndianapolisTennessee142012"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Carolina",
             "total": 47,
@@ -7786,7 +7784,7 @@ module.exports =
             "week": 14,
             "year": 2012,
             "home": "Carolina",
-            "idj": "Carolinaanta142012"
+            "idj": "CarolinaAtlanta142012"
       },
       {
             "favorite": "Chicago",
@@ -7971,14 +7969,14 @@ module.exports =
       {
             "favorite": "Green Bay",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$185",
             "ml_dog": "+$165",
             "week": 14,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaGreen Bay142013"
+            "home": "Green Bay",
+            "idj": "Green BayAtlanta142013"
       },
       {
             "favorite": "Indianapolis",
@@ -8175,14 +8173,14 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -8.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$380",
             "ml_dog": "+$320",
             "week": 14,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaCarolina142015"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta142015"
       },
       {
             "favorite": "Cleveland",
@@ -8607,14 +8605,14 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": -13,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 37,
             "ml_fav": "-$750",
             "ml_dog": "+$550",
             "week": 15,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaTampa Bay152007"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta152007"
       },
       {
             "favorite": "Green Bay",
@@ -8943,14 +8941,14 @@ module.exports =
       {
             "favorite": "NY Jets",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 36,
             "ml_fav": "-$250",
             "ml_dog": "+$210",
             "week": 15,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNY Jets152009"
+            "home": "NY Jets",
+            "idj": "NY JetsAtlanta152009"
       },
       {
             "favorite": "Kansas City",
@@ -9085,7 +9083,7 @@ module.exports =
             "idj": "BaltimoreNew Orleans152010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -5.5,
             "dog": "Seattle",
             "total": 46,
@@ -9094,7 +9092,7 @@ module.exports =
             "week": 15,
             "year": 2010,
             "home": "Seattle",
-            "idj": "Seattleanta152010"
+            "idj": "SeattleAtlanta152010"
       },
       {
             "favorite": "Pittsburgh",
@@ -10011,14 +10009,14 @@ module.exports =
       {
             "favorite": "Jacksonville",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 15,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaJacksonville152015"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleAtlanta152015"
       },
       {
             "favorite": "Buffalo",
@@ -10395,14 +10393,14 @@ module.exports =
       {
             "favorite": "Arizona",
             "spread": -11,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 44,
             "ml_fav": "-$600",
             "ml_dog": "+$425",
             "week": 16,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaArizona162007"
+            "home": "Arizona",
+            "idj": "ArizonaAtlanta162007"
       },
       {
             "favorite": "Seattle",
@@ -10563,14 +10561,14 @@ module.exports =
       {
             "favorite": "Minnesota",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 16,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaMinnesota162008"
+            "home": "Minnesota",
+            "idj": "MinnesotaAtlanta162008"
       },
       {
             "favorite": "NY Jets",
@@ -11137,7 +11135,7 @@ module.exports =
             "idj": "Kansas CityOakland162011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3.5,
             "dog": "Detroit",
             "total": 50,
@@ -11146,7 +11144,7 @@ module.exports =
             "week": 16,
             "year": 2012,
             "home": "Detroit",
-            "idj": "Detroitanta162012"
+            "idj": "DetroitAtlanta162012"
       },
       {
             "favorite": "Green Bay",
@@ -11619,14 +11617,14 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -6,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 56,
             "ml_fav": "-$260",
             "ml_dog": "+$220",
             "week": 16,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaNew Orleans162014"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta162014"
       },
       {
             "favorite": "Green Bay",
@@ -11979,14 +11977,14 @@ module.exports =
       {
             "favorite": "Philadelphia",
             "spread": -6.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 42,
             "ml_fav": "-$330",
             "ml_dog": "+$250",
             "week": 17,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaPhiladelphia172006"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta172006"
       },
       {
             "favorite": "Tennessee",
@@ -12044,9 +12042,9 @@ module.exports =
             "ml_fav": "-$140",
             "ml_dog": "+$120",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Philadelphia",
-            "idj": "PhiladelphiaDallas172008"
+            "idj": "PhiladelphiaDallas172007"
       },
       {
             "favorite": "Tampa Bay",
@@ -12056,9 +12054,9 @@ module.exports =
             "ml_fav": "-$600",
             "ml_dog": "+$450",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Tampa Bay",
-            "idj": "Tampa BayOakland172008"
+            "idj": "Tampa BayOakland172007"
       },
       {
             "favorite": "Green Bay",
@@ -12068,9 +12066,9 @@ module.exports =
             "ml_fav": "-$650",
             "ml_dog": "+$450",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Green Bay",
-            "idj": "Green BayDetroit172008"
+            "idj": "Green BayDetroit172007"
       },
       {
             "favorite": "Houston",
@@ -12080,9 +12078,9 @@ module.exports =
             "ml_fav": "-$155",
             "ml_dog": "+$135",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Houston",
-            "idj": "HoustonChicago172008"
+            "idj": "HoustonChicago172007"
       },
       {
             "favorite": "Carolina",
@@ -12092,9 +12090,9 @@ module.exports =
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "New Orleans",
-            "idj": "New OrleansCarolina172008"
+            "idj": "New OrleansCarolina172007"
       },
       {
             "favorite": "Cincinnati",
@@ -12104,9 +12102,9 @@ module.exports =
             "ml_fav": "-$125",
             "ml_dog": "+$105",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Cincinnati",
-            "idj": "CincinnatiKansas City172008"
+            "idj": "CincinnatiKansas City172007"
       },
       {
             "favorite": "Baltimore",
@@ -12116,9 +12114,9 @@ module.exports =
             "ml_fav": "-$625",
             "ml_dog": "+$450",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Baltimore",
-            "idj": "BaltimoreJacksonville172008"
+            "idj": "BaltimoreJacksonville172007"
       },
       {
             "favorite": "Atlanta",
@@ -12128,9 +12126,9 @@ module.exports =
             "ml_fav": "-$1000",
             "ml_dog": "+$700",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Atlanta",
-            "idj": "AtlantaSt. Louis172008"
+            "idj": "AtlantaSt. Louis172007"
       },
       {
             "favorite": "Tennessee",
@@ -12140,9 +12138,9 @@ module.exports =
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Indianapolis",
-            "idj": "IndianapolisTennessee172008"
+            "idj": "IndianapolisTennessee172007"
       },
       {
             "favorite": "Minnesota",
@@ -12152,9 +12150,9 @@ module.exports =
             "ml_fav": "-$310",
             "ml_dog": "+$250",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Minnesota",
-            "idj": "MinnesotaNY Giants172008"
+            "idj": "MinnesotaNY Giants172007"
       },
       {
             "favorite": "Pittsburgh",
@@ -12164,9 +12162,9 @@ module.exports =
             "ml_fav": "-$650",
             "ml_dog": "+$500",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Pittsburgh",
-            "idj": "PittsburghCleveland172008"
+            "idj": "PittsburghCleveland172007"
       },
       {
             "favorite": "NY Jets",
@@ -12176,9 +12174,9 @@ module.exports =
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "NY Jets",
-            "idj": "NY JetsMiami172008"
+            "idj": "NY JetsMiami172007"
       },
       {
             "favorite": "San Francisco",
@@ -12188,9 +12186,9 @@ module.exports =
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "San Francisco",
-            "idj": "San FranciscoWashington172008"
+            "idj": "San FranciscoWashington172007"
       },
       {
             "favorite": "San Diego",
@@ -12200,9 +12198,9 @@ module.exports =
             "ml_fav": "-$330",
             "ml_dog": "+$270",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "San Diego",
-            "idj": "San DiegoDenver172008"
+            "idj": "San DiegoDenver172007"
       },
       {
             "favorite": "New England",
@@ -12212,9 +12210,9 @@ module.exports =
             "ml_fav": "-$240",
             "ml_dog": "+$200",
             "week": 17,
-            "year": 2008,
+            "year": 2007,
             "home": "Buffalo",
-            "idj": "BuffaloNew England172008"
+            "idj": "BuffaloNew England172007"
       },
       {
             "favorite": "NY Jets",
@@ -12253,7 +12251,7 @@ module.exports =
             "idj": "St. LouisSan Francisco172010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Tampa Bay",
             "total": 42,
@@ -12262,7 +12260,7 @@ module.exports =
             "week": 17,
             "year": 2010,
             "home": "Tampa Bay",
-            "idj": "Tampa Bayanta172010"
+            "idj": "Tampa BayAtlanta172010"
       },
       {
             "favorite": "Arizona",
@@ -12939,14 +12937,14 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 38,
             "ml_fav": "-$230",
             "ml_dog": "+$190",
             "week": 1,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaCarolina12006"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta12006"
       },
       {
             "favorite": "Philadelphia",
@@ -13203,14 +13201,14 @@ module.exports =
       {
             "favorite": "Minnesota",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 35,
             "ml_fav": "-$160",
             "ml_dog": "+$140",
             "week": 1,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaMinnesota12007"
+            "home": "Minnesota",
+            "idj": "MinnesotaAtlanta12007"
       },
       {
             "favorite": "New England",
@@ -13304,9 +13302,9 @@ module.exports =
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 1,
-            "year": 2008,
+            "year": 2007,
             "home": "Buffalo",
-            "idj": "BuffaloSeattle12008"
+            "idj": "BuffaloSeattle12007"
       },
       {
             "favorite": "New Orleans",
@@ -13645,7 +13643,7 @@ module.exports =
             "idj": "BuffaloMiami12010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -1,
             "dog": "Pittsburgh",
             "total": 39,
@@ -13654,7 +13652,7 @@ module.exports =
             "week": 1,
             "year": 2010,
             "home": "Pittsburgh",
-            "idj": "Pittsburghanta12010"
+            "idj": "PittsburghAtlanta12010"
       },
       {
             "favorite": "Chicago",
@@ -13801,7 +13799,7 @@ module.exports =
             "idj": "Tampa BayDetroit12011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2,
             "dog": "Chicago",
             "total": 40,
@@ -13810,7 +13808,7 @@ module.exports =
             "week": 1,
             "year": 2011,
             "home": "Chicago",
-            "idj": "Chicagoanta12011"
+            "idj": "ChicagoAtlanta12011"
       },
       {
             "favorite": "Kansas City",
@@ -13945,7 +13943,7 @@ module.exports =
             "idj": "DetroitSt. Louis12012"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -2.5,
             "dog": "Kansas City",
             "total": 43,
@@ -13954,7 +13952,7 @@ module.exports =
             "week": 1,
             "year": 2012,
             "home": "Kansas City",
-            "idj": "Kansas Cityanta12012"
+            "idj": "Kansas CityAtlanta12012"
       },
       {
             "favorite": "Green Bay",
@@ -14163,14 +14161,14 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -3.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 55,
             "ml_fav": "-$190",
             "ml_dog": "+$170",
             "week": 1,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaNew Orleans12013"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta12013"
       },
       {
             "favorite": "Tampa Bay",
@@ -14859,14 +14857,14 @@ module.exports =
       {
             "favorite": "Jacksonville",
             "spread": -10.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 34,
             "ml_fav": "-$625",
             "ml_dog": "+$450",
             "week": 2,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaJacksonville22007"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleAtlanta22007"
       },
       {
             "favorite": "St. Louis",
@@ -15003,14 +15001,14 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 37,
             "ml_fav": "-$310",
             "ml_dog": "+$250",
             "week": 2,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaTampa Bay22008"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta22008"
       },
       {
             "favorite": "New England",
@@ -16011,14 +16009,14 @@ module.exports =
       {
             "favorite": "Cincinnati",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 49,
             "ml_fav": "-$250",
             "ml_dog": "+$210",
             "week": 2,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaCincinnati22014"
+            "home": "Cincinnati",
+            "idj": "CincinnatiAtlanta22014"
       },
       {
             "favorite": "Green Bay",
@@ -16167,14 +16165,14 @@ module.exports =
       {
             "favorite": "NY Giants",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 50,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 2,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaNY Giants22015"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta22015"
       },
       {
             "favorite": "Baltimore",
@@ -16815,14 +16813,14 @@ module.exports =
       {
             "favorite": "New England",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$240",
             "ml_dog": "+$200",
             "week": 3,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaNew England32009"
+            "home": "New England",
+            "idj": "New EnglandAtlanta32009"
       },
       {
             "favorite": "New Orleans",
@@ -16995,14 +16993,14 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 49,
             "ml_fav": "-$170",
             "ml_dog": "+$150",
             "week": 3,
             "year": 2010,
-            "home": "anta",
-            "idj": "antaNew Orleans32010"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta32010"
       },
       {
             "favorite": "San Francisco",
@@ -17115,14 +17113,14 @@ module.exports =
       {
             "favorite": "Tampa Bay",
             "spread": -1,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$120",
             "ml_dog": "+$100",
             "week": 3,
             "year": 2011,
-            "home": "anta",
-            "idj": "antaTampa Bay32011"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayAtlanta32011"
       },
       {
             "favorite": "Arizona",
@@ -17367,14 +17365,14 @@ module.exports =
       {
             "favorite": "San Diego",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$165",
             "ml_dog": "+$145",
             "week": 3,
             "year": 2012,
-            "home": "anta",
-            "idj": "antaSan Diego32012"
+            "home": "San Diego",
+            "idj": "San DiegoAtlanta32012"
       },
       {
             "favorite": "Houston",
@@ -17439,14 +17437,14 @@ module.exports =
       {
             "favorite": "Miami",
             "spread": -2.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 3,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaMiami32013"
+            "home": "Miami",
+            "idj": "MiamiAtlanta32013"
       },
       {
             "favorite": "San Francisco",
@@ -17859,14 +17857,14 @@ module.exports =
       {
             "favorite": "Dallas",
             "spread": null,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$110",
             "ml_dog": " -$110",
             "week": 3,
             "year": 2015,
-            "home": "anta",
-            "idj": "antaDallas32015"
+            "home": "Dallas",
+            "idj": "DallasAtlanta32015"
       },
       {
             "favorite": "Cleveland",
@@ -18363,14 +18361,14 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -7,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 39,
             "ml_fav": "-$300",
             "ml_dog": "+$250",
             "week": 4,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaCarolina42008"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta42008"
       },
       {
             "favorite": "Indianapolis",
@@ -18769,7 +18767,7 @@ module.exports =
             "idj": "ChicagoCarolina42011"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Seattle",
             "total": 39,
@@ -18778,7 +18776,7 @@ module.exports =
             "week": 4,
             "year": 2011,
             "home": "Seattle",
-            "idj": "Seattleanta42011"
+            "idj": "SeattleAtlanta42011"
       },
       {
             "favorite": "Houston",
@@ -19143,14 +19141,14 @@ module.exports =
       {
             "favorite": "Pittsburgh",
             "spread": -3,
-            "dog": "Minnesota(At London)",
+            "dog": "Minnesota",
             "total": 41,
             "ml_fav": "-$150",
             "ml_dog": "+$130",
             "week": 4,
             "year": 2013,
-            "home": "",
-            "idj": "42013"
+            "home": "Minnesota",
+            "idj": "MinnesotaPittsburgh42013"
       },
       {
             "favorite": "Pittsburgh",
@@ -19189,7 +19187,7 @@ module.exports =
             "idj": "San FranciscoPhiladelphia42014"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Minnesota",
             "total": 47,
@@ -19198,7 +19196,7 @@ module.exports =
             "week": 4,
             "year": 2014,
             "home": "Minnesota",
-            "idj": "Minnesotaanta42014"
+            "idj": "MinnesotaAtlanta42014"
       },
       {
             "favorite": "New Orleans",
@@ -19299,14 +19297,14 @@ module.exports =
       {
             "favorite": "NY Jets",
             "spread": -2.5,
-            "dog": "Miami (At London)",
+            "dog": "Miami ",
             "total": 42,
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 4,
             "year": 2015,
-            "home": "",
-            "idj": "42015"
+            "home": "Miami",
+            "idj": "MiamiNY Jets42015"
       },
       {
             "favorite": "Indianapolis",
@@ -19611,14 +19609,14 @@ module.exports =
       {
             "favorite": "Tennessee",
             "spread": -7.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 41,
             "ml_fav": "-$380",
             "ml_dog": "+$300",
             "week": 5,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaTennessee52007"
+            "home": "Tennessee",
+            "idj": "TennesseeAtlanta52007"
       },
       {
             "favorite": "Houston",
@@ -19803,14 +19801,14 @@ module.exports =
       {
             "favorite": "Green Bay",
             "spread": -5.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 42,
             "ml_fav": "-$230",
             "ml_dog": "+$190",
             "week": 5,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaGreen Bay52008"
+            "home": "Green Bay",
+            "idj": "Green BayAtlanta52008"
       },
       {
             "favorite": "NY Giants",
@@ -19899,14 +19897,14 @@ module.exports =
       {
             "favorite": "San Francisco",
             "spread": -1,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 39,
             "ml_fav": "-$115",
             "ml_dog": "-$105",
             "week": 5,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaSan Francisco52009"
+            "home": "San Francisco",
+            "idj": "San FranciscoAtlanta52009"
       },
       {
             "favorite": "New England",
@@ -20065,7 +20063,7 @@ module.exports =
             "idj": "DetroitSt. Louis52010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Cleveland",
             "total": 41,
@@ -20074,7 +20072,7 @@ module.exports =
             "week": 5,
             "year": 2010,
             "home": "Cleveland",
-            "idj": "Clevelandanta52010"
+            "idj": "ClevelandAtlanta52010"
       },
       {
             "favorite": "Cincinnati",
@@ -20317,7 +20315,7 @@ module.exports =
             "idj": "St. LouisArizona52012"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Washington",
             "total": 51,
@@ -20326,7 +20324,7 @@ module.exports =
             "week": 5,
             "year": 2012,
             "home": "Washington",
-            "idj": "Washingtonanta52012"
+            "idj": "WashingtonAtlanta52012"
       },
       {
             "favorite": "Chicago",
@@ -20643,14 +20641,14 @@ module.exports =
       {
             "favorite": "NY Giants",
             "spread": -4,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 50,
             "ml_fav": "-$210",
             "ml_dog": "+$180",
             "week": 5,
             "year": 2014,
-            "home": "anta",
-            "idj": "antaNY Giants52014"
+            "home": "NY Giants",
+            "idj": "NY GiantsAtlanta52014"
       },
       {
             "favorite": "New Orleans",
@@ -21555,14 +21553,14 @@ module.exports =
       {
             "favorite": "Philadelphia",
             "spread": -2,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$130",
             "ml_dog": "+$110",
             "week": 6,
             "year": 2010,
-            "home": "anta",
-            "idj": "antaPhiladelphia62010"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta62010"
       },
       {
             "favorite": "Baltimore",
@@ -22455,14 +22453,14 @@ module.exports =
       {
             "favorite": "New Orleans",
             "spread": -7.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$370",
             "ml_dog": "+$300",
             "week": 7,
             "year": 2007,
-            "home": "anta",
-            "idj": "antaNew Orleans72007"
+            "home": "New Orleans",
+            "idj": "New OrleansAtlanta72007"
       },
       {
             "favorite": "Dallas",
@@ -22779,14 +22777,14 @@ module.exports =
       {
             "favorite": "Dallas",
             "spread": -5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 48,
             "ml_fav": "-$235",
             "ml_dog": "+$195",
             "week": 7,
             "year": 2009,
-            "home": "anta",
-            "idj": "antaDallas72009"
+            "home": "Dallas",
+            "idj": "DallasAtlanta72009"
       },
       {
             "favorite": "NY Giants",
@@ -22863,14 +22861,14 @@ module.exports =
       {
             "favorite": "New England",
             "spread": -15.5,
-            "dog": "Tampa Bay(At London)",
+            "dog": "Tampa Bay",
             "total": 44,
             "ml_fav": "-$1300",
             "ml_dog": "+$900",
             "week": 7,
             "year": 2009,
-            "home": "",
-            "idj": "72009"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayNew England72009"
       },
       {
             "favorite": "Pittsburgh",
@@ -23091,26 +23089,26 @@ module.exports =
       {
             "favorite": "Detroit",
             "spread": -4.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 46,
             "ml_fav": "-$230",
             "ml_dog": "+$195",
             "week": 7,
             "year": 2011,
-            "home": "anta",
-            "idj": "antaDetroit72011"
+            "home": "Detroit",
+            "idj": "DetroitAtlanta72011"
       },
       {
             "favorite": "Chicago",
             "spread": -1.5,
-            "dog": "Tampa Bay\n(At London)",
+            "dog": "Tampa Bay",
             "total": 44,
             "ml_fav": "-$125",
             "ml_dog": "+$105",
             "week": 7,
             "year": 2011,
-            "home": "",
-            "idj": "72011"
+            "home": "Tampa Bay",
+            "idj": "Tampa BayChicago72011"
       },
       {
             "favorite": "Carolina",
@@ -23595,14 +23593,14 @@ module.exports =
       {
             "favorite": "Buffalo",
             "spread": -3.5,
-            "dog": "Jacksonville(at London)",
+            "dog": "Jacksonville",
             "total": 41,
             "ml_fav": "-$185",
             "ml_dog": "+$165",
             "week": 7,
             "year": 2015,
-            "home": "",
-            "idj": "72015"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleBuffalo72015"
       },
       {
             "favorite": "St. Louis",
@@ -23653,7 +23651,7 @@ module.exports =
             "idj": "DetroitMinnesota72015"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6,
             "dog": "Tennessee",
             "total": 45,
@@ -23662,7 +23660,7 @@ module.exports =
             "week": 7,
             "year": 2015,
             "home": "Tennessee",
-            "idj": "Tennesseeanta72015"
+            "idj": "TennesseeAtlanta72015"
       },
       {
             "favorite": "Washington",
@@ -23883,14 +23881,14 @@ module.exports =
       {
             "favorite": "Cincinnati",
             "spread": -4,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$200",
             "ml_dog": "+$175",
             "week": 8,
             "year": 2006,
-            "home": "anta",
-            "idj": "antaCincinnati82006"
+            "home": "Cincinnati",
+            "idj": "CincinnatiAtlanta82006"
       },
       {
             "favorite": "Cleveland",
@@ -23991,14 +23989,14 @@ module.exports =
       {
             "favorite": "NY Giants",
             "spread": -10,
-            "dog": "Miami(At London)",
+            "dog": "Miami",
             "total": 47,
             "ml_fav": "-$550",
             "ml_dog": "+$400",
             "week": 8,
             "year": 2007,
-            "home": "",
-            "idj": "82007"
+            "home": "Miami",
+            "idj": "MiamiNY Giants82007"
       },
       {
             "favorite": "Philadelphia",
@@ -24099,14 +24097,14 @@ module.exports =
       {
             "favorite": "Philadelphia",
             "spread": -9,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$400",
             "ml_dog": "+$330",
             "week": 8,
             "year": 2008,
-            "home": "anta",
-            "idj": "antaPhiladelphia82008"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta82008"
       },
       {
             "favorite": "Miami",
@@ -24135,14 +24133,14 @@ module.exports =
       {
             "favorite": "San Diego",
             "spread": -3,
-            "dog": "New Orleans(At London)",
+            "dog": "New Orleans",
             "total": 46,
             "ml_fav": "-$165",
             "ml_dog": "+$145",
             "week": 8,
             "year": 2008,
-            "home": "",
-            "idj": "82008"
+            "home": "New Orleans",
+            "idj": "New OrleansSan Diego82008"
       },
       {
             "favorite": "Baltimore",
@@ -24313,7 +24311,7 @@ module.exports =
             "idj": "BuffaloHouston82009"
       },
       {
-            "favorite": "San Francisco(At London)",
+            "favorite": "San Francisco",
             "spread": -2,
             "dog": "Denver",
             "total": 41,
@@ -24321,8 +24319,8 @@ module.exports =
             "ml_dog": "+$115",
             "week": 8,
             "year": 2010,
-            "home": "",
-            "idj": "82010"
+            "home": "San Francisco",
+            "idj": "San FranciscoDenver82010"
       },
       {
             "favorite": "Dallas",
@@ -24481,7 +24479,7 @@ module.exports =
             "idj": "BaltimoreArizona82011"
       },
       {
-            "favorite": "Buffalo\n(Toronto)",
+            "favorite": "Buffalo",
             "spread": -4,
             "dog": "Washington",
             "total": 46,
@@ -24489,8 +24487,8 @@ module.exports =
             "ml_dog": "+$180",
             "week": 8,
             "year": 2011,
-            "home": "Buffalo\n(Toronto)",
-            "idj": "Buffalo\n(Toronto)Washington82011"
+            "home": "Buffalo",
+            "idj": "BuffaloWashington82011"
       },
       {
             "favorite": "NY Giants",
@@ -24591,14 +24589,14 @@ module.exports =
       {
             "favorite": "New England",
             "spread": -7,
-            "dog": "St. Louis\n(At London)",
+            "dog": "St. Louis",
             "total": 46,
             "ml_fav": "-$330",
             "ml_dog": "+$270",
             "week": 8,
             "year": 2012,
-            "home": "",
-            "idj": "82012"
+            "home": "St. Louis",
+            "idj": "St. LouisNew England82012"
       },
       {
             "favorite": "Tennessee",
@@ -24627,14 +24625,14 @@ module.exports =
       {
             "favorite": "Philadelphia",
             "spread": -3,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 43,
             "ml_fav": "-$145",
             "ml_dog": "+$125",
             "week": 8,
             "year": 2012,
-            "home": "anta",
-            "idj": "antaPhiladelphia82012"
+            "home": "Philadelphia",
+            "idj": "PhiladelphiaAtlanta82012"
       },
       {
             "favorite": "Detroit",
@@ -24747,14 +24745,14 @@ module.exports =
       {
             "favorite": "San Francisco",
             "spread": -16,
-            "dog": "Jacksonville\n(At London)",
+            "dog": "Jacksonville",
             "total": 40,
             "ml_fav": "-$1800",
             "ml_dog": "+$1000",
             "week": 8,
             "year": 2013,
-            "home": "",
-            "idj": "82013"
+            "home": "Jacksonville",
+            "idj": "JacksonvilleSan Francisco82013"
       },
       {
             "favorite": "Denver",
@@ -24783,14 +24781,14 @@ module.exports =
       {
             "favorite": "Arizona",
             "spread": -2.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 45,
             "ml_fav": "-$140",
             "ml_dog": "+$120",
             "week": 8,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaArizona82013"
+            "home": "Arizona",
+            "idj": "ArizonaAtlanta82013"
       },
       {
             "favorite": "Green Bay",
@@ -25033,7 +25031,7 @@ module.exports =
             "idj": "New EnglandMiami82015"
       },
       {
-            "favorite": "Kansas City(At London)",
+            "favorite": "Kansas City",
             "spread": -3,
             "dog": "Detroit",
             "total": 45,
@@ -25041,8 +25039,8 @@ module.exports =
             "ml_dog": "+$150",
             "week": 8,
             "year": 2015,
-            "home": "",
-            "idj": "82015"
+            "home": "Kansas City",
+            "idj": "Kansas CityDetroit82015"
       },
       {
             "favorite": "Minnesota",
@@ -25249,7 +25247,7 @@ module.exports =
             "idj": "San DiegoCleveland92006"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -5.5,
             "dog": "Detroit",
             "total": 47,
@@ -25258,7 +25256,7 @@ module.exports =
             "week": 9,
             "year": 2006,
             "home": "Detroit",
-            "idj": "Detroitanta92006"
+            "idj": "DetroitAtlanta92006"
       },
       {
             "favorite": "Pittsburgh",
@@ -25489,7 +25487,7 @@ module.exports =
             "idj": "CincinnatiJacksonville92008"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -3,
             "dog": "Oakland",
             "total": 41,
@@ -25498,7 +25496,7 @@ module.exports =
             "week": 9,
             "year": 2008,
             "home": "Oakland",
-            "idj": "Oaklandanta92008"
+            "idj": "OaklandAtlanta92008"
       },
       {
             "favorite": "NY Giants",
@@ -25803,14 +25801,14 @@ module.exports =
       {
             "favorite": "Chicago",
             "spread": -3,
-            "dog": "Buffalo(Toronto)",
+            "dog": "Buffalo",
             "total": 41,
             "ml_fav": "-$150",
             "ml_dog": "+$130",
             "week": 9,
             "year": 2010,
-            "home": "Buffalo(Toronto)",
-            "idj": "Buffalo(Toronto)Chicago92010"
+            "home": "Buffalo",
+            "idj": "BuffaloChicago92010"
       },
       {
             "favorite": "New Orleans",
@@ -25861,7 +25859,7 @@ module.exports =
             "idj": "BaltimoreMiami92010"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -6.5,
             "dog": "Indianapolis",
             "total": 44,
@@ -25870,7 +25868,7 @@ module.exports =
             "week": 9,
             "year": 2011,
             "home": "Indianapolis",
-            "idj": "Indianapolisanta92011"
+            "idj": "IndianapolisAtlanta92011"
       },
       {
             "favorite": "New Orleans",
@@ -26187,14 +26185,14 @@ module.exports =
       {
             "favorite": "Carolina",
             "spread": -8.5,
-            "dog": "anta",
+            "dog": "Atlanta",
             "total": 47,
             "ml_fav": "-$440",
             "ml_dog": "+$360",
             "week": 9,
             "year": 2013,
-            "home": "anta",
-            "idj": "antaCarolina92013"
+            "home": "Carolina",
+            "idj": "CarolinaAtlanta92013"
       },
       {
             "favorite": "Seattle",
@@ -26533,7 +26531,7 @@ module.exports =
             "idj": "CarolinaGreen Bay92015"
       },
       {
-            "favorite": "anta",
+            "favorite": "Atlanta",
             "spread": -8.5,
             "dog": "San Francisco",
             "total": 43,
@@ -26542,7 +26540,7 @@ module.exports =
             "week": 9,
             "year": 2015,
             "home": "San Francisco",
-            "idj": "San Franciscoanta92015"
+            "idj": "San FranciscoAtlanta92015"
       },
       {
             "favorite": "NY Giants",

@@ -561,7 +561,7 @@ module.exports =
       },
       {
             "awayTeam": "St. Louis",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "STL",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -570,7 +570,7 @@ module.exports =
             "losingScore": 3,
             "week": 10,
             "year": 2008,
-            "idj": "New YorkSt. Louis102008"
+            "idj": "NY JetsSt. Louis102008"
       },
       {
             "awayTeam": "Chicago",
@@ -756,7 +756,7 @@ module.exports =
       },
       {
             "awayTeam": "Jacksonville",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "JAX",
             "homeNickname": "NYJ",
             "winner": "JAX",
@@ -765,7 +765,7 @@ module.exports =
             "losingScore": 22,
             "week": 10,
             "year": 2009,
-            "idj": "New YorkJacksonville102009"
+            "idj": "NY JetsJacksonville102009"
       },
       {
             "awayTeam": "Detroit",
@@ -1055,7 +1055,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NE",
@@ -1064,7 +1064,7 @@ module.exports =
             "losingScore": 16,
             "week": 10,
             "year": 2011,
-            "idj": "New YorkNew England102011"
+            "idj": "NY JetsNew England102011"
       },
       {
             "awayTeam": "Minnesota",
@@ -1666,7 +1666,7 @@ module.exports =
       },
       {
             "awayTeam": "Pittsburgh",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "PIT",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -1675,7 +1675,7 @@ module.exports =
             "losingScore": 13,
             "week": 10,
             "year": 2014,
-            "idj": "New YorkPittsburgh102014"
+            "idj": "NY JetsPittsburgh102014"
       },
       {
             "awayTeam": "Atlanta",
@@ -1692,7 +1692,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "BUF",
@@ -1701,7 +1701,7 @@ module.exports =
             "losingScore": 17,
             "week": 10,
             "year": 2015,
-            "idj": "New YorkBuffalo102015"
+            "idj": "NY JetsBuffalo102015"
       },
       {
             "awayTeam": "Detroit",
@@ -2043,7 +2043,7 @@ module.exports =
       },
       {
             "awayTeam": "Chicago",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CHI",
             "homeNickname": "NYJ",
             "winner": "CHI",
@@ -2052,7 +2052,7 @@ module.exports =
             "losingScore": 0,
             "week": 11,
             "year": 2006,
-            "idj": "New YorkChicago112006"
+            "idj": "NY JetsChicago112006"
       },
       {
             "awayTeam": "Washington",
@@ -2134,7 +2134,7 @@ module.exports =
       },
       {
             "awayTeam": "Pittsburgh",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "PIT",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -2143,7 +2143,7 @@ module.exports =
             "losingScore": 16,
             "week": 11,
             "year": 2007,
-            "idj": "New YorkPittsburgh112007"
+            "idj": "NY JetsPittsburgh112007"
       },
       {
             "awayTeam": "Washington",
@@ -2836,7 +2836,7 @@ module.exports =
       },
       {
             "awayTeam": "Houston",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "HOU",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -2845,7 +2845,7 @@ module.exports =
             "losingScore": 27,
             "week": 11,
             "year": 2010,
-            "idj": "New YorkHouston112010"
+            "idj": "NY JetsHouston112010"
       },
       {
             "awayTeam": "Oakland",
@@ -3941,7 +3941,7 @@ module.exports =
       },
       {
             "awayTeam": "Houston",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "HOU",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -3950,7 +3950,7 @@ module.exports =
             "losingScore": 11,
             "week": 12,
             "year": 2006,
-            "idj": "New YorkHouston122006"
+            "idj": "NY JetsHouston122006"
       },
       {
             "awayTeam": "Carolina",
@@ -4552,7 +4552,7 @@ module.exports =
       },
       {
             "awayTeam": "Carolina",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CAR",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -4561,7 +4561,7 @@ module.exports =
             "losingScore": 6,
             "week": 12,
             "year": 2009,
-            "idj": "New YorkCarolina122009"
+            "idj": "NY JetsCarolina122009"
       },
       {
             "awayTeam": "Washington",
@@ -4851,7 +4851,7 @@ module.exports =
       },
       {
             "awayTeam": "Cincinnati",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CIN",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -4860,7 +4860,7 @@ module.exports =
             "losingScore": 10,
             "week": 12,
             "year": 2010,
-            "idj": "New YorkCincinnati122010"
+            "idj": "NY JetsCincinnati122010"
       },
       {
             "awayTeam": "Minnesota",
@@ -4890,7 +4890,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -4899,7 +4899,7 @@ module.exports =
             "losingScore": 24,
             "week": 12,
             "year": 2011,
-            "idj": "New YorkBuffalo122011"
+            "idj": "NY JetsBuffalo122011"
       },
       {
             "awayTeam": "Houston",
@@ -5111,7 +5111,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NE",
@@ -5120,7 +5120,7 @@ module.exports =
             "losingScore": 19,
             "week": 12,
             "year": 2012,
-            "idj": "New YorkNew England122012"
+            "idj": "NY JetsNew England122012"
       },
       {
             "awayTeam": "Minnesota",
@@ -5813,7 +5813,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -5822,7 +5822,7 @@ module.exports =
             "losingScore": 20,
             "week": 12,
             "year": 2015,
-            "idj": "New YorkMiami122015"
+            "idj": "NY JetsMiami122015"
       },
       {
             "awayTeam": "San Diego",
@@ -6359,7 +6359,7 @@ module.exports =
       },
       {
             "awayTeam": "Denver",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "DEN",
             "homeNickname": "NYJ",
             "winner": "DEN",
@@ -6368,7 +6368,7 @@ module.exports =
             "losingScore": 17,
             "week": 13,
             "year": 2008,
-            "idj": "New YorkDenver132008"
+            "idj": "NY JetsDenver132008"
       },
       {
             "awayTeam": "Chicago",
@@ -7217,7 +7217,7 @@ module.exports =
       },
       {
             "awayTeam": "Arizona",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "ARI",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -7226,7 +7226,7 @@ module.exports =
             "losingScore": 6,
             "week": 13,
             "year": 2012,
-            "idj": "New YorkArizona132012"
+            "idj": "NY JetsArizona132012"
       },
       {
             "awayTeam": "New England",
@@ -7477,7 +7477,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "MIA",
@@ -7486,7 +7486,7 @@ module.exports =
             "losingScore": 3,
             "week": 13,
             "year": 2013,
-            "idj": "New YorkMiami132013"
+            "idj": "NY JetsMiami132013"
       },
       {
             "awayTeam": "Arizona",
@@ -7724,7 +7724,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "MIA",
@@ -7733,7 +7733,7 @@ module.exports =
             "losingScore": 13,
             "week": 13,
             "year": 2014,
-            "idj": "New YorkMiami132014"
+            "idj": "NY JetsMiami132014"
       },
       {
             "awayTeam": "Green Bay",
@@ -8140,7 +8140,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "BUF",
@@ -8149,7 +8149,7 @@ module.exports =
             "losingScore": 13,
             "week": 14,
             "year": 2006,
-            "idj": "New YorkBuffalo142006"
+            "idj": "NY JetsBuffalo142006"
       },
       {
             "awayTeam": "Chicago",
@@ -8348,7 +8348,7 @@ module.exports =
       },
       {
             "awayTeam": "Cleveland",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CLE",
             "homeNickname": "NYJ",
             "winner": "CLE",
@@ -8357,7 +8357,7 @@ module.exports =
             "losingScore": 18,
             "week": 14,
             "year": 2007,
-            "idj": "New YorkCleveland142007"
+            "idj": "NY JetsCleveland142007"
       },
       {
             "awayTeam": "Oakland",
@@ -8816,7 +8816,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "MIA",
@@ -8825,7 +8825,7 @@ module.exports =
             "losingScore": 6,
             "week": 14,
             "year": 2010,
-            "idj": "New YorkMiami142010"
+            "idj": "NY JetsMiami142010"
       },
       {
             "awayTeam": "Denver",
@@ -9050,7 +9050,7 @@ module.exports =
       },
       {
             "awayTeam": "Kansas City",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "KC",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -9059,7 +9059,7 @@ module.exports =
             "losingScore": 10,
             "week": 14,
             "year": 2011,
-            "idj": "New YorkKansas City142011"
+            "idj": "NY JetsKansas City142011"
       },
       {
             "awayTeam": "New England",
@@ -9453,7 +9453,7 @@ module.exports =
       },
       {
             "awayTeam": "Oakland",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "OAK",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -9462,7 +9462,7 @@ module.exports =
             "losingScore": 27,
             "week": 14,
             "year": 2013,
-            "idj": "New YorkOakland142013"
+            "idj": "NY JetsOakland142013"
       },
       {
             "awayTeam": "Detroit",
@@ -9986,7 +9986,7 @@ module.exports =
       },
       {
             "awayTeam": "Tennessee",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "TEN",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -9995,7 +9995,7 @@ module.exports =
             "losingScore": 8,
             "week": 14,
             "year": 2015,
-            "idj": "New YorkTennessee142015"
+            "idj": "NY JetsTennessee142015"
       },
       {
             "awayTeam": "Indianapolis",
@@ -10493,7 +10493,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -10502,7 +10502,7 @@ module.exports =
             "losingScore": 27,
             "week": 15,
             "year": 2008,
-            "idj": "New YorkBuffalo152008"
+            "idj": "NY JetsBuffalo152008"
       },
       {
             "awayTeam": "New England",
@@ -10805,7 +10805,7 @@ module.exports =
       },
       {
             "awayTeam": "Atlanta",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "ATL",
             "homeNickname": "NYJ",
             "winner": "ATL",
@@ -10814,7 +10814,7 @@ module.exports =
             "losingScore": 7,
             "week": 15,
             "year": 2009,
-            "idj": "New YorkAtlanta152009"
+            "idj": "NY JetsAtlanta152009"
       },
       {
             "awayTeam": "Houston",
@@ -13223,7 +13223,7 @@ module.exports =
       },
       {
             "awayTeam": "NY Giants",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NYG",
             "homeNickname": "NYJ",
             "winner": "NYG",
@@ -13232,7 +13232,7 @@ module.exports =
             "losingScore": 14,
             "week": 16,
             "year": 2011,
-            "idj": "New YorkNY Giants162011"
+            "idj": "NY JetsNY Giants162011"
       },
       {
             "awayTeam": "St. Louis",
@@ -13418,7 +13418,7 @@ module.exports =
       },
       {
             "awayTeam": "San Diego",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "SD",
             "homeNickname": "NYJ",
             "winner": "SD",
@@ -13427,7 +13427,7 @@ module.exports =
             "losingScore": 17,
             "week": 16,
             "year": 2012,
-            "idj": "New YorkSan Diego162012"
+            "idj": "NY JetsSan Diego162012"
       },
       {
             "awayTeam": "Cincinnati",
@@ -13678,7 +13678,7 @@ module.exports =
       },
       {
             "awayTeam": "Cleveland",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CLE",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -13687,7 +13687,7 @@ module.exports =
             "losingScore": 13,
             "week": 16,
             "year": 2013,
-            "idj": "New YorkCleveland162013"
+            "idj": "NY JetsCleveland162013"
       },
       {
             "awayTeam": "Minnesota",
@@ -13964,7 +13964,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NE",
@@ -13973,11 +13973,11 @@ module.exports =
             "losingScore": 16,
             "week": 16,
             "year": 2014,
-            "idj": "New YorkNew England162014"
+            "idj": "NY JetsNew England162014"
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -13986,7 +13986,7 @@ module.exports =
             "losingScore": 20,
             "week": 16,
             "year": 2015,
-            "idj": "New YorkNew England162015"
+            "idj": "NY JetsNew England162015"
       },
       {
             "awayTeam": "San Diego",
@@ -14380,7 +14380,7 @@ module.exports =
       },
       {
             "awayTeam": "Oakland",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "OAK",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -14389,7 +14389,7 @@ module.exports =
             "losingScore": 3,
             "week": 17,
             "year": 2006,
-            "idj": "New YorkOakland172006"
+            "idj": "NY JetsOakland172006"
       },
       {
             "awayTeam": "New England",
@@ -14445,7 +14445,7 @@ module.exports =
       },
       {
             "awayTeam": "Kansas City",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "KC",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -14454,7 +14454,7 @@ module.exports =
             "losingScore": 10,
             "week": 17,
             "year": 2007,
-            "idj": "New YorkKansas City172007"
+            "idj": "NY JetsKansas City172007"
       },
       {
             "awayTeam": "Cincinnati",
@@ -14731,7 +14731,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "MIA",
@@ -14740,7 +14740,7 @@ module.exports =
             "losingScore": 17,
             "week": 17,
             "year": 2008,
-            "idj": "New YorkMiami172008"
+            "idj": "NY JetsMiami172008"
       },
       {
             "awayTeam": "Dallas",
@@ -14926,7 +14926,7 @@ module.exports =
       },
       {
             "awayTeam": "Cincinnati",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CIN",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -14935,7 +14935,7 @@ module.exports =
             "losingScore": 0,
             "week": 17,
             "year": 2009,
-            "idj": "New YorkCincinnati172009"
+            "idj": "NY JetsCincinnati172009"
       },
       {
             "awayTeam": "San Francisco",
@@ -15160,7 +15160,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -15169,7 +15169,7 @@ module.exports =
             "losingScore": 7,
             "week": 17,
             "year": 2010,
-            "idj": "New YorkBuffalo172010"
+            "idj": "NY JetsBuffalo172010"
       },
       {
             "awayTeam": "Tampa Bay",
@@ -16551,7 +16551,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NE",
@@ -16560,7 +16560,7 @@ module.exports =
             "losingScore": 14,
             "week": 1,
             "year": 2007,
-            "idj": "New YorkNew England12007"
+            "idj": "NY JetsNew England12007"
       },
       {
             "awayTeam": "Miami",
@@ -17188,7 +17188,7 @@ module.exports =
       },
       {
             "awayTeam": "Baltimore",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BAL",
             "homeNickname": "NYJ",
             "winner": "BAL",
@@ -17197,7 +17197,7 @@ module.exports =
             "losingScore": 9,
             "week": 1,
             "year": 2010,
-            "idj": "New YorkBaltimore12010"
+            "idj": "NY JetsBaltimore12010"
       },
       {
             "awayTeam": "San Diego",
@@ -17422,7 +17422,7 @@ module.exports =
       },
       {
             "awayTeam": "Dallas",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "DAL",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -17431,7 +17431,7 @@ module.exports =
             "losingScore": 24,
             "week": 1,
             "year": 2011,
-            "idj": "New YorkDallas12011"
+            "idj": "NY JetsDallas12011"
       },
       {
             "awayTeam": "Oakland",
@@ -17617,7 +17617,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -17626,7 +17626,7 @@ module.exports =
             "losingScore": 28,
             "week": 1,
             "year": 2012,
-            "idj": "New YorkBuffalo12012"
+            "idj": "NY JetsBuffalo12012"
       },
       {
             "awayTeam": "Miami",
@@ -17903,7 +17903,7 @@ module.exports =
       },
       {
             "awayTeam": "Tampa Bay",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "TB",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -17912,7 +17912,7 @@ module.exports =
             "losingScore": 17,
             "week": 1,
             "year": 2013,
-            "idj": "New YorkTampa Bay12013"
+            "idj": "NY JetsTampa Bay12013"
       },
       {
             "awayTeam": "Atlanta",
@@ -18098,7 +18098,7 @@ module.exports =
       },
       {
             "awayTeam": "Oakland",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "OAK",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -18107,7 +18107,7 @@ module.exports =
             "losingScore": 14,
             "week": 1,
             "year": 2014,
-            "idj": "New YorkOakland12014"
+            "idj": "NY JetsOakland12014"
       },
       {
             "awayTeam": "Cincinnati",
@@ -18163,7 +18163,7 @@ module.exports =
       },
       {
             "awayTeam": "Cleveland",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CLE",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -18172,7 +18172,7 @@ module.exports =
             "losingScore": 10,
             "week": 1,
             "year": 2015,
-            "idj": "New YorkCleveland12015"
+            "idj": "NY JetsCleveland12015"
       },
       {
             "awayTeam": "Detroit",
@@ -18410,7 +18410,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NE",
@@ -18419,7 +18419,7 @@ module.exports =
             "losingScore": 17,
             "week": 2,
             "year": 2006,
-            "idj": "New YorkNew England22006"
+            "idj": "NY JetsNew England22006"
       },
       {
             "awayTeam": "Tennessee",
@@ -18904,7 +18904,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NE",
@@ -18913,7 +18913,7 @@ module.exports =
             "losingScore": 10,
             "week": 2,
             "year": 2008,
-            "idj": "New YorkNew England22008"
+            "idj": "NY JetsNew England22008"
       },
       {
             "awayTeam": "Miami",
@@ -19021,7 +19021,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -19030,7 +19030,7 @@ module.exports =
             "losingScore": 9,
             "week": 2,
             "year": 2009,
-            "idj": "New YorkNew England22009"
+            "idj": "NY JetsNew England22009"
       },
       {
             "awayTeam": "New Orleans",
@@ -19216,7 +19216,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -19225,7 +19225,7 @@ module.exports =
             "losingScore": 14,
             "week": 2,
             "year": 2010,
-            "idj": "New YorkNew England22010"
+            "idj": "NY JetsNew England22010"
       },
       {
             "awayTeam": "Jacksonville",
@@ -19541,7 +19541,7 @@ module.exports =
       },
       {
             "awayTeam": "Jacksonville",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "JAX",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -19550,7 +19550,7 @@ module.exports =
             "losingScore": 3,
             "week": 2,
             "year": 2011,
-            "idj": "New YorkJacksonville22011"
+            "idj": "NY JetsJacksonville22011"
       },
       {
             "awayTeam": "Cleveland",
@@ -20633,7 +20633,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -20642,7 +20642,7 @@ module.exports =
             "losingScore": 28,
             "week": 3,
             "year": 2007,
-            "idj": "New YorkMiami32007"
+            "idj": "NY JetsMiami32007"
       },
       {
             "awayTeam": "Detroit",
@@ -21062,7 +21062,7 @@ module.exports =
       },
       {
             "awayTeam": "Tennessee",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "TEN",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -21071,7 +21071,7 @@ module.exports =
             "losingScore": 17,
             "week": 3,
             "year": 2009,
-            "idj": "New YorkTennessee32009"
+            "idj": "NY JetsTennessee32009"
       },
       {
             "awayTeam": "Kansas City",
@@ -21907,7 +21907,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -21916,7 +21916,7 @@ module.exports =
             "losingScore": 20,
             "week": 3,
             "year": 2013,
-            "idj": "New YorkBuffalo32013"
+            "idj": "NY JetsBuffalo32013"
       },
       {
             "awayTeam": "Indianapolis",
@@ -22180,7 +22180,7 @@ module.exports =
       },
       {
             "awayTeam": "Chicago",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CHI",
             "homeNickname": "NYJ",
             "winner": "CHI",
@@ -22189,7 +22189,7 @@ module.exports =
             "losingScore": 19,
             "week": 3,
             "year": 2014,
-            "idj": "New YorkChicago32014"
+            "idj": "NY JetsChicago32014"
       },
       {
             "awayTeam": "Dallas",
@@ -22453,7 +22453,7 @@ module.exports =
       },
       {
             "awayTeam": "Philadelphia",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "PHI",
             "homeNickname": "NYJ",
             "winner": "PHI",
@@ -22462,7 +22462,7 @@ module.exports =
             "losingScore": 17,
             "week": 3,
             "year": 2015,
-            "idj": "New YorkPhiladelphia32015"
+            "idj": "NY JetsPhiladelphia32015"
       },
       {
             "awayTeam": "Arizona",
@@ -22518,7 +22518,7 @@ module.exports =
       },
       {
             "awayTeam": "Indianapolis",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "IND",
             "homeNickname": "NYJ",
             "winner": "IND",
@@ -22527,7 +22527,7 @@ module.exports =
             "losingScore": 28,
             "week": 4,
             "year": 2006,
-            "idj": "New YorkIndianapolis42006"
+            "idj": "NY JetsIndianapolis42006"
       },
       {
             "awayTeam": "New Orleans",
@@ -22882,7 +22882,7 @@ module.exports =
       },
       {
             "awayTeam": "Arizona",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "ARI",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -22891,7 +22891,7 @@ module.exports =
             "losingScore": 35,
             "week": 4,
             "year": 2008,
-            "idj": "New YorkArizona42008"
+            "idj": "NY JetsArizona42008"
       },
       {
             "awayTeam": "Philadelphia",
@@ -23649,7 +23649,7 @@ module.exports =
       },
       {
             "awayTeam": "San Francisco",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "SF",
             "homeNickname": "NYJ",
             "winner": "SF",
@@ -23658,7 +23658,7 @@ module.exports =
             "losingScore": 0,
             "week": 4,
             "year": 2012,
-            "idj": "New YorkSan Francisco42012"
+            "idj": "NY JetsSan Francisco42012"
       },
       {
             "awayTeam": "Tennessee",
@@ -24065,7 +24065,7 @@ module.exports =
       },
       {
             "awayTeam": "Detroit",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "DET",
             "homeNickname": "NYJ",
             "winner": "DET",
@@ -24074,7 +24074,7 @@ module.exports =
             "losingScore": 17,
             "week": 4,
             "year": 2014,
-            "idj": "New YorkDetroit42014"
+            "idj": "NY JetsDetroit42014"
       },
       {
             "awayTeam": "Carolina",
@@ -25170,7 +25170,7 @@ module.exports =
       },
       {
             "awayTeam": "Minnesota",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIN",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -25179,7 +25179,7 @@ module.exports =
             "losingScore": 20,
             "week": 5,
             "year": 2010,
-            "idj": "New YorkMinnesota52010"
+            "idj": "NY JetsMinnesota52010"
       },
       {
             "awayTeam": "Kansas City",
@@ -25495,7 +25495,7 @@ module.exports =
       },
       {
             "awayTeam": "Houston",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "HOU",
             "homeNickname": "NYJ",
             "winner": "HOU",
@@ -25504,7 +25504,7 @@ module.exports =
             "losingScore": 17,
             "week": 5,
             "year": 2012,
-            "idj": "New YorkHouston52012"
+            "idj": "NY JetsHouston52012"
       },
       {
             "awayTeam": "Green Bay",
@@ -26249,7 +26249,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -26258,7 +26258,7 @@ module.exports =
             "losingScore": 17,
             "week": 6,
             "year": 2006,
-            "idj": "New YorkMiami62006"
+            "idj": "NY JetsMiami62006"
       },
       {
             "awayTeam": "Kansas City",
@@ -26431,7 +26431,7 @@ module.exports =
       },
       {
             "awayTeam": "Philadelphia",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "PHI",
             "homeNickname": "NYJ",
             "winner": "PHI",
@@ -26440,7 +26440,7 @@ module.exports =
             "losingScore": 9,
             "week": 6,
             "year": 2007,
-            "idj": "New YorkPhiladelphia62007"
+            "idj": "NY JetsPhiladelphia62007"
       },
       {
             "awayTeam": "St. Louis",
@@ -26652,7 +26652,7 @@ module.exports =
       },
       {
             "awayTeam": "Cincinnati",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "CIN",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -26661,7 +26661,7 @@ module.exports =
             "losingScore": 14,
             "week": 6,
             "year": 2008,
-            "idj": "New YorkCincinnati62008"
+            "idj": "NY JetsCincinnati62008"
       },
       {
             "awayTeam": "Houston",
@@ -26717,7 +26717,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "BUF",
@@ -26726,7 +26726,7 @@ module.exports =
             "losingScore": 13,
             "week": 6,
             "year": 2009,
-            "idj": "New YorkBuffalo62009"
+            "idj": "NY JetsBuffalo62009"
       },
       {
             "awayTeam": "Chicago",
@@ -27094,7 +27094,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -27103,7 +27103,7 @@ module.exports =
             "losingScore": 6,
             "week": 6,
             "year": 2011,
-            "idj": "New YorkMiami62011"
+            "idj": "NY JetsMiami62011"
       },
       {
             "awayTeam": "Houston",
@@ -27250,7 +27250,7 @@ module.exports =
       },
       {
             "awayTeam": "Indianapolis",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "IND",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -27259,7 +27259,7 @@ module.exports =
             "losingScore": 9,
             "week": 6,
             "year": 2012,
-            "idj": "New YorkIndianapolis62012"
+            "idj": "NY JetsIndianapolis62012"
       },
       {
             "awayTeam": "Detroit",
@@ -27432,7 +27432,7 @@ module.exports =
       },
       {
             "awayTeam": "Pittsburgh",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "PIT",
             "homeNickname": "NYJ",
             "winner": "PIT",
@@ -27441,7 +27441,7 @@ module.exports =
             "losingScore": 6,
             "week": 6,
             "year": 2013,
-            "idj": "New YorkPittsburgh62013"
+            "idj": "NY JetsPittsburgh62013"
       },
       {
             "awayTeam": "Carolina",
@@ -27744,7 +27744,7 @@ module.exports =
       },
       {
             "awayTeam": "Denver",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "DEN",
             "homeNickname": "NYJ",
             "winner": "DEN",
@@ -27753,7 +27753,7 @@ module.exports =
             "losingScore": 17,
             "week": 6,
             "year": 2014,
-            "idj": "New YorkDenver62014"
+            "idj": "NY JetsDenver62014"
       },
       {
             "awayTeam": "Pittsburgh",
@@ -27783,7 +27783,7 @@ module.exports =
       },
       {
             "awayTeam": "Washington",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "WSH",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -27792,7 +27792,7 @@ module.exports =
             "losingScore": 20,
             "week": 6,
             "year": 2015,
-            "idj": "New YorkWashington62015"
+            "idj": "NY JetsWashington62015"
       },
       {
             "awayTeam": "Arizona",
@@ -28017,7 +28017,7 @@ module.exports =
       },
       {
             "awayTeam": "Detroit",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "DET",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -28026,7 +28026,7 @@ module.exports =
             "losingScore": 24,
             "week": 7,
             "year": 2006,
-            "idj": "New YorkDetroit72006"
+            "idj": "NY JetsDetroit72006"
       },
       {
             "awayTeam": "Philadelphia",
@@ -28862,7 +28862,7 @@ module.exports =
       },
       {
             "awayTeam": "San Diego",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "SD",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -28871,7 +28871,7 @@ module.exports =
             "losingScore": 21,
             "week": 7,
             "year": 2011,
-            "idj": "New YorkSan Diego72011"
+            "idj": "NY JetsSan Diego72011"
       },
       {
             "awayTeam": "Chicago",
@@ -29226,7 +29226,7 @@ module.exports =
       },
       {
             "awayTeam": "New England",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NE",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -29235,7 +29235,7 @@ module.exports =
             "losingScore": 27,
             "week": 7,
             "year": 2013,
-            "idj": "New YorkNew England72013"
+            "idj": "NY JetsNew England72013"
       },
       {
             "awayTeam": "Dallas",
@@ -30019,7 +30019,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "BUF",
@@ -30028,7 +30028,7 @@ module.exports =
             "losingScore": 3,
             "week": 8,
             "year": 2007,
-            "idj": "New YorkBuffalo82007"
+            "idj": "NY JetsBuffalo82007"
       },
       {
             "awayTeam": "Houston",
@@ -30240,7 +30240,7 @@ module.exports =
       },
       {
             "awayTeam": "Kansas City",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "KC",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -30249,7 +30249,7 @@ module.exports =
             "losingScore": 24,
             "week": 8,
             "year": 2008,
-            "idj": "New YorkKansas City82008"
+            "idj": "NY JetsKansas City82008"
       },
       {
             "awayTeam": "St. Louis",
@@ -30396,7 +30396,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "MIA",
@@ -30405,7 +30405,7 @@ module.exports =
             "losingScore": 25,
             "week": 8,
             "year": 2009,
-            "idj": "New YorkMiami82009"
+            "idj": "NY JetsMiami82009"
       },
       {
             "awayTeam": "St. Louis",
@@ -30604,7 +30604,7 @@ module.exports =
       },
       {
             "awayTeam": "Green Bay",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "GB",
             "homeNickname": "NYJ",
             "winner": "GB",
@@ -30613,7 +30613,7 @@ module.exports =
             "losingScore": 0,
             "week": 8,
             "year": 2010,
-            "idj": "New YorkGreen Bay82010"
+            "idj": "NY JetsGreen Bay82010"
       },
       {
             "awayTeam": "Indianapolis",
@@ -30955,7 +30955,7 @@ module.exports =
       },
       {
             "awayTeam": "Miami",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "MIA",
             "homeNickname": "NYJ",
             "winner": "MIA",
@@ -30964,7 +30964,7 @@ module.exports =
             "losingScore": 9,
             "week": 8,
             "year": 2012,
-            "idj": "New YorkMiami82012"
+            "idj": "NY JetsMiami82012"
       },
       {
             "awayTeam": "Dallas",
@@ -31163,7 +31163,7 @@ module.exports =
       },
       {
             "awayTeam": "Buffalo",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "BUF",
             "homeNickname": "NYJ",
             "winner": "BUF",
@@ -31172,7 +31172,7 @@ module.exports =
             "losingScore": 23,
             "week": 8,
             "year": 2014,
-            "idj": "New YorkBuffalo82014"
+            "idj": "NY JetsBuffalo82014"
       },
       {
             "awayTeam": "Philadelphia",
@@ -31852,7 +31852,7 @@ module.exports =
       },
       {
             "awayTeam": "Washington",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "WSH",
             "homeNickname": "NYJ",
             "winner": "WSH",
@@ -31861,7 +31861,7 @@ module.exports =
             "losingScore": 20,
             "week": 9,
             "year": 2007,
-            "idj": "New YorkWashington92007"
+            "idj": "NY JetsWashington92007"
       },
       {
             "awayTeam": "Denver",
@@ -32814,7 +32814,7 @@ module.exports =
       },
       {
             "awayTeam": "New Orleans",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "NO",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -32823,7 +32823,7 @@ module.exports =
             "losingScore": 20,
             "week": 9,
             "year": 2013,
-            "idj": "New YorkNew Orleans92013"
+            "idj": "NY JetsNew Orleans92013"
       },
       {
             "awayTeam": "San Diego",
@@ -33178,7 +33178,7 @@ module.exports =
       },
       {
             "awayTeam": "Jacksonville",
-            "homeTeam": "New York",
+            "homeTeam": "NY Jets",
             "awayNickname": "JAX",
             "homeNickname": "NYJ",
             "winner": "NYJ",
@@ -33187,7 +33187,7 @@ module.exports =
             "losingScore": 23,
             "week": 9,
             "year": 2015,
-            "idj": "New YorkJacksonville92015"
+            "idj": "NY JetsJacksonville92015"
       },
       {
             "awayTeam": "Oakland",
