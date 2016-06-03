@@ -1,9 +1,5 @@
-var fs = require('fs'),
-    results = require("./js/clean_results.js"),
-    lines = require("./js/clean_lines.js"),
-    teams_key = require("./js/teams_key.js"),
-    aggregate = [];
-
+module.exports = {
+  merge: function(){
     for(var i = 0; i < lines.length; i ++) {
       // set a variable that can serve as unique ID for games
       var id = lines[i].idj;
@@ -22,25 +18,21 @@ var fs = require('fs'),
           // the loser ATS is the team that didn't cover...
           lines[i].loser_ats =
             lines[i].winner_ats === lines[i].favorite ? lines[i].dog : lines[i].favorite,
-
-          lines[i].favorite_diff_ats =
-            (lines[i].favorite === lines[i].winner) ?
-              lines[i].winningScore - lines[i].losingScore + lines[i].spread
+            lines[i].favorite_diff_ats =
+              (lines[i].favorite === lines[i].winner) ?
+                lines[i].winningScore - lines[i].losingScore + lines[i].spread
+                :
+                lines[i].losingScore - lines[i].winningScore + lines[i].spread,
+            lines[i].dog_diff_ats = (-1 * lines[i].favorite_diff_ats),
+            lines[i].over = ((lines[i].winningScore + lines[i].losingScore) > lines[i].total) ?
+              true
               :
-              lines[i].losingScore - lines[i].winningScore + lines[i].spread,
-          lines[i].dog_diff_ats = (-1 * lines[i].favorite_diff_ats),
+              false,
+            lines[i].over_differential = (lines[i].winningScore + lines[i].losingScore - lines[i].total)
 
-          lines[i].over = ((lines[i].winningScore + lines[i].losingScore) > lines[i].total) ?
-            true
-            :
-            false,
-          lines[i].over_differential = (lines[i].winningScore + lines[i].losingScore - lines[i].total)
-
+          }
         }
+        aggregate.push(lines[i]);
       }
-      aggregate.push(lines[i]);
     }
-
-  fs.writeFile("aggregate.json", JSON.stringify(aggregate, null, 6), function(err) {
-      console.log("check aggreagate.json for the output.")
-  });
+  }

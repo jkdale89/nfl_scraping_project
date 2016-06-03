@@ -1,386 +1,101 @@
 {
       "Miami": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Kansas City": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "San Diego": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Cincinnati": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Chicago": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "NY Giants": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Green Bay": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Minnesota": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "NY Jets": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "New England": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Cleveland": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Atlanta": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Indianapolis": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Buffalo": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Houston": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Jacksonville": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Baltimore": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Tennessee": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Pittsburgh": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "New Orleans": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Philadelphia": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Washington": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Dallas": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Arizona": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Carolina": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Tampa Bay": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "San Francisco": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Detroit": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Seattle": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "St. Louis": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2006": []
       },
       "Denver": {
-            "wins": 1,
-            "losses": 0,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2007": []
       },
       "Oakland": {
-            "wins": 0,
-            "losses": 1,
-            "over": 0,
-            "under": 0,
-            "wins_ats": 0,
-            "losses_ats": 0,
-            "point_diff": 0,
-            "point_diff_ats": 0,
-            "record": 0,
-            "record_ats": 0
+            "2007": []
+      },
+      "undefined": {
+            "2007": []
       }
 }

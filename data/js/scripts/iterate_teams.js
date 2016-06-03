@@ -1,12 +1,6 @@
-var fs = require('fs')
-    , games = require("./js/games.js")
-    , no_games = games.length
-    , arr = []
-    , master = {};
-
-
-    //let's test populating one season, for one team
-var sort_games = function(year){
+module.exports = {
+  //let's test populating one season, for one team
+  sort_games: function(year){
     //first, we're iterating through the entire game file
     for(var i = 0; i < no_games; i++){
         //since our games file isn't correctly sorted, we'll pull
@@ -65,9 +59,9 @@ var sort_games = function(year){
     arr.shift();
     console.log(arr);
     return arr;
-  }
+  },
 
-  var pop_cumulatives = function(array){
+  pop_cumulatives: function(array){
     for(var i = 1; i < array.length; i++){
       // find the bye week, and don't iterate it
       if(array[i-1] && (array[i] ? array[i].week === array[i-1].week : false)){
@@ -92,15 +86,4 @@ var sort_games = function(year){
     arr = array;
     return arr;
   }
-
-  sort_games(2008);
-  // pop_cumulatives(arr);
-  // master["Cleveland"] = {};
-  // master["Cleveland"][2008] = arr;
-
-// console.log(master);
-
-
-fs.writeFile("test.json", JSON.stringify(master, null, 6), function(err){
-  console.log("check test.json i guess?")
-});
+}
