@@ -1,7 +1,6 @@
 module.exports = {
-  lines: function(){
+  cleanup_lines: function(lines){
     for(var i = 0; i < lines.length; i++){
-
       var cur = lines[i]
       if(cur["Favorite"] === "") {
         i ++
