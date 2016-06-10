@@ -1,5 +1,5 @@
 var fs = require("fs");
-var lines = require("../exports/clean_lines.js");
+var lines = require("../exports/clean_lines_edited.js");
 var results = require("../exports/clean_results.js");
 var teams_key = require("../exports/teams_key.js");
 var aggregate = [];
@@ -23,16 +23,16 @@ var test =
               lines[i][k][l].winner_ats =
                 lines[i][k][l].dog === lines[i][k][l].winner ?  lines[i][k][l].dog :
                   ((lines[i][k][l].losingScore - lines[i][k][l].spread) > lines[i][k][l].winningScore)
-                  ? lines[i][k][l].dog : lines[i][k][l].favorite,
+                  ? lines[i][k][l].dog : lines[i][k][l].fav,
               // the loser ATS is the team that didn't cover...
               lines[i][k][l].loser_ats =
-                lines[i][k][l].winner_ats === lines[i][k][l].favorite ? lines[i][k][l].dog : lines[i][k][l].favorite,
-                lines[i][k][l].favorite_diff_ats =
-                  (lines[i][k][l].favorite === lines[i][k][l].winner) ?
+                lines[i][k][l].winner_ats === lines[i][k][l].fav ? lines[i][k][l].dog : lines[i][k][l].fav,
+                lines[i][k][l].fav_diff_ats =
+                  (lines[i][k][l].fav === lines[i][k][l].winner) ?
                     lines[i][k][l].winningScore - lines[i][k][l].losingScore + lines[i][k][l].spread
                     :
                     lines[i][k][l].losingScore - lines[i][k][l].winningScore + lines[i][k][l].spread,
-                lines[i][k][l].dog_diff_ats = (-1 * lines[i][k][l].favorite_diff_ats),
+                lines[i][k][l].dog_diff_ats = (-1 * lines[i][k][l].fav_diff_ats),
                 lines[i][k][l].over = ((lines[i][k][l].winningScore + lines[i][k][l].losingScore) > lines[i][k][l].total) ?
                   true
                   :
@@ -45,7 +45,7 @@ var test =
             }
         }
       }
-      fs.writeFile("aggregate.js", JSON.stringify(aggregate, 6, "\t"), function(){
+      fs.writeFile("aggregate.js", "module.exports = " + JSON.stringify(aggregate, 6, "\t"), function(){
         console.log("check aggregate.js for output");
       })
     }

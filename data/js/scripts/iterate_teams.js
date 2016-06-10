@@ -1,6 +1,8 @@
-module.exports = {
+var arr = []
+  , games = require("./aggregate.js")
+  , no_games = games.length;
   //let's test populating one season, for one team
-  sort_games: function(year){
+  var sort_games = function(year, team){
     //first, we're iterating through the entire game file
     for(var i = 0; i < no_games; i++){
         //since our games file isn't correctly sorted, we'll pull
@@ -18,33 +20,33 @@ module.exports = {
             var spread = games[i].spread;
             //we'll persist the data differently, depending on
             //whether our team is a favorite or underdog
-            if(games[i].favorite === "Cleveland"){
+            if(games[i].fav === team){
               arr[k] = {
                 favorite : true,
-                team : "Cleveland",
+                team : team,
                 week : k,
                 year : year,
                 spread: spread,
                 ml: games[i].ml_fav,
-                home: games[i].home === "Cleveland",
-                winner: games[i].winner === "Cleveland",
+                home: games[i].home === team,
+                winner: games[i].winner === team,
                 winningScore: games[i].winningScore,
                 losingScore: games[i].losingScore,
-                ats: games[i].favorite_diff_ats,
+                ats: games[i].fav_diff_ats,
                 total: games[i].total,
                 over: games[i].over
               };
             }
-            if(games[i].dog === "Cleveland"){
+            if(games[i].dog === team){
               arr[k] = {
                 favorite : false,
-                team : "Cleveland",
+                team : team,
                 week : k,
                 year : year,
                 spread: spread * -1,
                 ml: games[i].ml_dog,
-                home: games[i].home === "Cleveland",
-                winner: games[i].winner === "Cleveland",
+                home: games[i].home === team,
+                winner: games[i].winner === team,
                 winningScore: games[i].winningScore,
                 losingScore: games[i].losingScore,
                 ats: games[i].dog_diff_ats,
@@ -56,12 +58,12 @@ module.exports = {
         }
     }
     console.log(arr);
-    arr.shift();
+    // arr.shift();
     console.log(arr);
     return arr;
-  },
+  };
 
-  pop_cumulatives: function(array){
+  var pop_cumulatives = function(array){
     for(var i = 1; i < array.length; i++){
       // find the bye week, and don't iterate it
       if(array[i-1] && (array[i] ? array[i].week === array[i-1].week : false)){
@@ -84,6 +86,7 @@ module.exports = {
       }
     }
     arr = array;
-    return arr;
-  }
-}
+    console.log(arr);
+  };
+
+pop_cumulatives(sort_games(2006, "Chicago"));
