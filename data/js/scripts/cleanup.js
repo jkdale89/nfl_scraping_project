@@ -1,5 +1,9 @@
-module.exports = {
-  cleanup_lines: function(lines){
+var lines = require("../exports/clean_lines.js");
+
+console.log(lines);
+
+
+  var clean_lines = function(lines){
     for(var i = 0; i < lines.length; i++){
       var cur = lines[i]
       if(cur["Favorite"] === "") {
@@ -45,13 +49,13 @@ module.exports = {
         newLines.push(newObjL);
       }
     }
-  },
+  };
 
 // fs.writeFile("./json/clean_lines.json", JSON.stringify(newLines, null, 6), function(err){
 //   console.log("check clean_lines.json for output");
 // })
 
-  results: function(){
+  var clean_results = function(results){
     for(var i = 0; i < results.length; i++){
       if(results[i]["Result"] === "Postponed"){
         i ++
@@ -109,9 +113,4 @@ module.exports = {
           newResults.push(newObj);
         }
       }
-    }
-
-  // fs.writeFile("./json/clean_results.json", JSON.stringify(newResults, null, 6), function(err) {
-  //   console.log("check clean_results.json for the output.")
-  // });
-}
+    };

@@ -14,33 +14,83 @@ module.exports = {
             var result = [];
             for(var j = 1; j <= 17; j ++){
               var temp = {
-                "Time" : data.eq(j).children().eq(0).text(),
-                "Favorite" : data.eq(j).children().eq(1).text(),
-                "Spread" : data.eq(j).children().eq(2).text(),
-                "Dawg" : data.eq(j).children().eq(3).text(),
-                "Total" : data.eq(j).children().eq(4).text(),
-                "Odds" : data.eq(j).children().eq(5).text(),
-                "Week" : week,
-                "Year" : i
+                "time" : data.eq(j).children().eq(0).text(),
+                "spread" : parseFloat(data.eq(j).children().eq(2).text()),
+                "fav" : data.eq(j).children().eq(1).text(),
+                "dog" : data.eq(j).children().eq(3).text(),
+                "week" : week,
+                "year" : i
               }
 
-              //sometimes the lines will have '(At London)' or '(Toronto)' - let's correct this
-              if(temp.Favorite.indexOf('(') > 0){
-                temp.Favorite = temp.Favorite.substring(0, temp.Favorite.indexOf('('));
-              }
+              var fav = data.eq(j).children().eq(1).text()
+                , dog = data.eq(j).children().eq(3).text()
+                , odds = data.eq(j).children().eq(5).text()
+                , total = data.eq(j).children().eq(4).text()
+                , home = ""
+                , away = ""
+                ;
 
-              //same thing, for underdog
-              if(temp.Dawg.indexOf('(') > 0){
-                temp.Dawg = temp.Dawg.substring(0, temp.Dawg.indexOf('('));
-              }
+                //sometimes the lines will have '(At London)' or '(Toronto)' - let's correct this
+                if(fav.indexOf('(') > 0){
+                  temp.fav = fav.substring(0, fav.indexOf('('));
+                }
+
+                //same thing, for underdog
+                if(dog.indexOf('(') > 0){
+                  temp.dog = dog.substring(0, dog.indexOf('('));
+                }
+
+                if(fav.indexOf('\n') > 0){
+                  temp.fav = fav.substring(0, fav.indexOf('\n'));
+                }
+
+                if(dog.indexOf('\n') > 0){
+                  temp.dog = dog.substring(0, dog.indexOf('\n'));
+                }
+
+                if((fav.indexOf("At ") + 1) === 1){
+                  temp.fav = fav.slice(3, fav.length);
+                  home = temp.fav;
+                  away = temp.dog;
+                }
+
+                else if((dog.indexOf("At ") + 1) === 1) {
+                  temp.dog = dog.slice(3, dog.length);
+                  home = temp.dog;
+                  away = temp.fav;
+                }
+
+                else {
+                  home = temp.dog;
+                  away = temp.fav;
+                }
+
+                temp.home = home
+                , temp.away = away;
+
+                // create a unique id for removing duplicates, in a sec;
+                temp.id = temp.time + temp.fav + temp.spread;
+                // create a unique id for matching with results file
+                temp.id_match = home + away + temp.week.toString() + temp.year.toString();
+                // create an alternate id for matching with results files
+                // this is for when the home and away teams get switched up
+                temp.id_match_alt = away + home + temp.week.toString() + temp.year.toString();
+                temp.total = parseInt(total);
+                temp.ml_fav = odds.substring(0, odds.indexOf(" "));
+                temp.ml_dog = odds.substring(odds.indexOf(" ") + 1, odds.length);
 
 
 
-              //identify a unique id for removing duplicates, in a sec;
-              temp.id = temp.Time + temp.Favorite + temp.Spread;
+
+
+
+
+
+
+
 
               //make sure empty objects don't get pushed
-              if(temp.Time){
+              if(temp.time){
                 result.push(temp);
               }
             }

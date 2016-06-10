@@ -1,38 +1,55 @@
-module.exports = {
-  merge: function(){
-    for(var i = 0; i < lines.length; i ++) {
-      // set a variable that can serve as unique ID for games
-      var id = lines[i].idj;
-      for(var j = 0; j < results.length; j ++){
-        // if the id of the lines === id of results, merge data
-        if (id === results[j].idj) {
-          lines[i].winner = teams_key[results[j].winner];
-          lines[i].loser = teams_key[results[j].loser];
-          lines[i].winningScore = results[j].winningScore;
-          lines[i].losingScore = results[j].losingScore;
-          // if the underdog won, or if the underdog lost by less than the spread, the underdog covered.
-          lines[i].winner_ats =
-            lines[i].dog === lines[i].winner ?  lines[i].dog :
-              ((lines[i].losingScore - lines[i].spread) > lines[i].winningScore)
-              ? lines[i].dog : lines[i].favorite,
-          // the loser ATS is the team that didn't cover...
-          lines[i].loser_ats =
-            lines[i].winner_ats === lines[i].favorite ? lines[i].dog : lines[i].favorite,
-            lines[i].favorite_diff_ats =
-              (lines[i].favorite === lines[i].winner) ?
-                lines[i].winningScore - lines[i].losingScore + lines[i].spread
-                :
-                lines[i].losingScore - lines[i].winningScore + lines[i].spread,
-            lines[i].dog_diff_ats = (-1 * lines[i].favorite_diff_ats),
-            lines[i].over = ((lines[i].winningScore + lines[i].losingScore) > lines[i].total) ?
-              true
-              :
-              false,
-            lines[i].over_differential = (lines[i].winningScore + lines[i].losingScore - lines[i].total)
+var fs = require("fs");
+var lines = require("../exports/clean_lines.js");
+var results = require("../exports/clean_results.js");
+var teams_key = require("../exports/teams_key.js");
+var aggregate = [];
 
-          }
+var test =
+  function(){
+    for(var i = 0; i < lines.length; i ++) {
+      for(var k = 0; k < lines[i].length; k++){
+        for(var l = 0; l < lines[i][k].length; l++){
+          // set a variable that can serve as unique ID for games
+          var id = lines[i][k][l].id_match;
+          var id_alt = lines[i][k][l].id_match_alt;
+          for(var j = 0; j < results.length; j ++){
+            // if the id of the lines === id of results, merge data
+            if (id === results[j].idj || id_alt == results[j].idj) {
+              lines[i][k][l].winner = teams_key[results[j].winner];
+              lines[i][k][l].loser = teams_key[results[j].loser];
+              lines[i][k][l].winningScore = results[j].winningScore;
+              lines[i][k][l].losingScore = results[j].losingScore;
+              // if the underdog won, or if the underdog lost by less than the spread, the underdog covered.
+              lines[i][k][l].winner_ats =
+                lines[i][k][l].dog === lines[i][k][l].winner ?  lines[i][k][l].dog :
+                  ((lines[i][k][l].losingScore - lines[i][k][l].spread) > lines[i][k][l].winningScore)
+                  ? lines[i][k][l].dog : lines[i][k][l].favorite,
+              // the loser ATS is the team that didn't cover...
+              lines[i][k][l].loser_ats =
+                lines[i][k][l].winner_ats === lines[i][k][l].favorite ? lines[i][k][l].dog : lines[i][k][l].favorite,
+                lines[i][k][l].favorite_diff_ats =
+                  (lines[i][k][l].favorite === lines[i][k][l].winner) ?
+                    lines[i][k][l].winningScore - lines[i][k][l].losingScore + lines[i][k][l].spread
+                    :
+                    lines[i][k][l].losingScore - lines[i][k][l].winningScore + lines[i][k][l].spread,
+                lines[i][k][l].dog_diff_ats = (-1 * lines[i][k][l].favorite_diff_ats),
+                lines[i][k][l].over = ((lines[i][k][l].winningScore + lines[i][k][l].losingScore) > lines[i][k][l].total) ?
+                  true
+                  :
+                  false,
+                lines[i][k][l].over_differential = (lines[i][k][l].winningScore + lines[i][k][l].losingScore - lines[i][k][l].total)
+
+              }
+            }
+            aggregate.push(lines[i][k][l]);
+            }
         }
-        aggregate.push(lines[i]);
       }
+      fs.writeFile("aggregate.js", JSON.stringify(aggregate, 6, "\t"), function(){
+        console.log("check aggregate.js for output");
+      })
     }
-  }
+
+
+
+test();
