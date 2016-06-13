@@ -1,5 +1,5 @@
-var arr = []
-  , games = require("./aggregate.js")
+
+  var games = require("./aggregate.js")
   , no_games = games.length
   , fs = require("fs")
   , teamsObj = require("../exports/teams_key.js");
@@ -13,6 +13,7 @@ var arr = []
 
   // let's test populating one season, for one team
   var sort_games = function(year, team){
+    var arr = [];
     //first, we're iterating through the entire game file
     for(var i = 0; i < no_games; i++){
         //since our games file isn't correctly sorted, we'll pull
@@ -73,8 +74,6 @@ var arr = []
 
   var pop_cumulatives = function(array){
     for(var i = 1; i < array.length; i++){
-
-
       if(i === 1){
         array[i].wins_ats = (1 * (array[i].ats > 0)),
         array[i].losses_ats = (1 * (array[i].ats < 0)),
@@ -89,6 +88,7 @@ var arr = []
         array[i] = {
           BYE: true
         }
+        ind = i;
       }
       else {
         if(array[i-1].BYE){
@@ -110,30 +110,26 @@ var arr = []
           array[i].record = array[i].wins + "-" + array[i].losses;
         }
       }
-      // console.log(array[i-1])
     }
+    array.shift();
     return array;
-
   };
 
-// var test = [];
-//
-// for(var year = 2006; year <= 2015; year++){
-//   test[2006 - year] = pop_cumulatives(sort_games(year, "New Orleans"));
-// }
-//
-// console.log(test);
-//
-//
+  var test = [];
 
-console.log(pop_cumulatives(sort_games(2015, "New Orleans")));
+  for(var t = 0; t < teams.length; t++){
+    var temp_team = {
+      [teams[t]] : {}
+    };
+    for(var i = 2006; i < 2016; i++){
+      temp_team[teams[t]][i] = {}
+      temp_team[teams[t]][i] = pop_cumulatives(sort_games(i, teams[t]));
+    }
+    test.push(temp_team);
+  }
 
 
 
-// fs.writeFile("teams.js", JSON.stringify(teams_arr, 6, "\t"), function(){
-//   console.log("check teams.js for the shit");
-// })
-
-// fs.writeFile("teams.js", JSON.stringify(teams, 6, "\t"), function(){
-//   console.log("check teams.js for output")
-// })
+fs.writeFile("test.js", JSON.stringify(test, 6, "\t"), function(){
+  console.log("check test.js for the shit");
+})
