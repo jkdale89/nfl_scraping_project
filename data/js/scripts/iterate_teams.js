@@ -1,7 +1,17 @@
 var arr = []
   , games = require("./aggregate.js")
-  , no_games = games.length;
-  //let's test populating one season, for one team
+  , no_games = games.length
+  , fs = require("fs")
+  , teamsObj = require("../exports/teams_key.js");
+
+  var teams_keys = Object.keys(teamsObj);
+  teams = [];
+
+  for(var i = 0; i < teams_keys.length; i ++){
+    teams.push(teamsObj[teams_keys[i]])
+  }
+
+  // let's test populating one season, for one team
   var sort_games = function(year, team){
     //first, we're iterating through the entire game file
     for(var i = 0; i < no_games; i++){
@@ -13,10 +23,11 @@ var arr = []
             (games[i].year === year)
             &&
             (games[i].week === k)
-          ){
-            if(arr[k-1] === undefined){
-              arr[k-1] = arr[k-2];
-            }
+          )
+            {
+            //   if(arr[k-1] === undefined){
+            //     arr[k-1] = arr[k-2];
+            // }
             var spread = games[i].spread;
             //we'll persist the data differently, depending on
             //whether our team is a favorite or underdog
@@ -57,36 +68,72 @@ var arr = []
           }
         }
     }
-    console.log(arr);
-    // arr.shift();
-    console.log(arr);
     return arr;
   };
 
   var pop_cumulatives = function(array){
     for(var i = 1; i < array.length; i++){
-      // find the bye week, and don't iterate it
-      if(array[i-1] && (array[i] ? array[i].week === array[i-1].week : false)){
-        array[i].wins_ats = array[i-2] ? array[i-2].wins_ats + (1 * (array[i].ats > 0)) : (1 * (array[i].ats > 0)),
-        array[i].losses_ats = array[i-2] ? array[i-2].losses_ats + (1 * (array[i].ats < 0)) : (1 * (array[i].ats < 0)),
-        array[i].ties_ats = array[i-2] ? array[i-2].ties_ats + (1 * (array[i].ats === 0)) : (1 * (array[i].ats === 0)),
+
+
+      if(i === 1){
+        array[i].wins_ats = (1 * (array[i].ats > 0)),
+        array[i].losses_ats = (1 * (array[i].ats < 0)),
+        array[i].ties_ats = (1 * (array[i].ats === 0)),
         array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
-        array[i].wins = array[i-2] ? array[i-2].wins + (1 * (array[i].winner)) : (1 * (array[i].winner)),
-        array[i].losses = array[i-2] ? array[i-2].losses + (1 * !(array[i].winner)) : (1 * !(array[i].winner)),
+        array[i].wins = (1 * (array[i].winner)),
+        array[i].losses = (1 * !(array[i].winner)),
         array[i].record = array[i].wins + "-" + array[i].losses;
+      }
+      // find the bye week, and don't iterate it
+      else if((array[i] == undefined) && (i > 1)){
+        array[i] = {
+          BYE: true
+        }
       }
       else {
-        array[i].wins_ats = array[i-1] ? array[i-1].wins_ats + (1 * (array[i].ats > 0)) : (1 * (array[i].ats > 0)),
-        array[i].losses_ats = array[i-1] ? array[i-1].losses_ats + (1 * (array[i].ats < 0)) : (1 * (array[i].ats < 0)),
-        array[i].ties_ats = array[i-1] ? array[i-1].ties_ats + (1 * (array[i].ats === 0)) : (1 * (array[i].ats === 0)),
-        array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
-        array[i].wins = array[i-1] ? array[i-1].wins + (1 * (array[i].winner)) : (1 * (array[i].winner)),
-        array[i].losses = array[i-1] ? array[i-1].losses + (1 * !(array[i].winner)) : (1 * !(array[i].winner)),
-        array[i].record = array[i].wins + "-" + array[i].losses;
+        if(array[i-1].BYE){
+          array[i].wins_ats = array[i-2].wins_ats + (1 * (array[i].ats > 0)),
+          array[i].losses_ats = array[i-2].losses_ats + (1 * (array[i].ats < 0)),
+          array[i].ties_ats = array[i-2].ties_ats + (1 * (array[i].ats === 0)),
+          array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
+          array[i].wins = array[i-2].wins + (1 * (array[i].winner)),
+          array[i].losses = array[i-2].losses + (1 * !(array[i].winner)),
+          array[i].record = array[i].wins + "-" + array[i].losses;
+        }
+        else {
+          array[i].wins_ats = array[i-1].wins_ats + (1 * (array[i].ats > 0)),
+          array[i].losses_ats = array[i-1].losses_ats + (1 * (array[i].ats < 0)),
+          array[i].ties_ats = array[i-1].ties_ats + (1 * (array[i].ats === 0)),
+          array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
+          array[i].wins = array[i-1].wins + (1 * (array[i].winner)),
+          array[i].losses = array[i-1].losses + (1 * !(array[i].winner)),
+          array[i].record = array[i].wins + "-" + array[i].losses;
+        }
       }
+      // console.log(array[i-1])
     }
-    arr = array;
-    console.log(arr);
+    return array;
+
   };
 
-pop_cumulatives(sort_games(2006, "Chicago"));
+// var test = [];
+//
+// for(var year = 2006; year <= 2015; year++){
+//   test[2006 - year] = pop_cumulatives(sort_games(year, "New Orleans"));
+// }
+//
+// console.log(test);
+//
+//
+
+console.log(pop_cumulatives(sort_games(2015, "New Orleans")));
+
+
+
+// fs.writeFile("teams.js", JSON.stringify(teams_arr, 6, "\t"), function(){
+//   console.log("check teams.js for the shit");
+// })
+
+// fs.writeFile("teams.js", JSON.stringify(teams, 6, "\t"), function(){
+//   console.log("check teams.js for output")
+// })

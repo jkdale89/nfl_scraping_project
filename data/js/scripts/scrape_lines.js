@@ -1,5 +1,5 @@
-module.exports = {
-  lines: function(week, write){
+
+var lines = function(week, write){
     var request = require('request'), cheerio = require('cheerio'), fs = require('fs'), results = [];
     url = "http://www.footballlocks.com/nfl_odds_week_" + week.toString() + ".shtml";
     request(url, function(error, response, html){
@@ -11,6 +11,7 @@ module.exports = {
             var data = $("b:contains('Closing Las Vegas NFL Odds From Week " + week.toString() + ", " + year_str + "')").parent().parent().parent().parent().find("tr:has(td)");
             //lets grab the monday night football games
             var mnf_data = $("b:contains('Monday Night Football Odds'):contains('" + year_str + "')").parent().parent().parent().next().eq(0).find("tr:has(td)");
+            console.log(data);
             var result = [];
             for(var j = 1; j <= 17; j ++){
               var temp = {
@@ -21,7 +22,6 @@ module.exports = {
                 "week" : week,
                 "year" : i
               }
-
               var fav = data.eq(j).children().eq(1).text()
                 , dog = data.eq(j).children().eq(3).text()
                 , odds = data.eq(j).children().eq(5).text()
@@ -79,16 +79,6 @@ module.exports = {
                 temp.ml_fav = odds.substring(0, odds.indexOf(" "));
                 temp.ml_dog = odds.substring(odds.indexOf(" ") + 1, odds.length);
 
-
-
-
-
-
-
-
-
-
-
               //make sure empty objects don't get pushed
               if(temp.time){
                 result.push(temp);
@@ -106,10 +96,10 @@ module.exports = {
             }
           }
           removeDups(result);
-          console.log(result);
+          // console.log(result);
           results.push(result);
         }
-        console.log(results)
+        // console.log(results)
       }
       var week_display = (week / 10) < 1 ? "0" : "";
       fs.writeFile("./exports/lines/lines_week_" + week_display + week + ".js", JSON.stringify(results, 6, "\t") + (week === 16 ? "" : ","), function(){
@@ -117,43 +107,11 @@ module.exports = {
       })
     })
   }
-  // DEPRECATED
-  // results: function(week, year){
-  //   var request = require('request'), cheerio = require('cheerio');
-  //   var weekTest = function(input){
-  //     if(input === 1){
-  //       return '';
-  //     }
-  //     else {
-  //       var res = "/" + input.toString();
-  //       return res;
-  //     }
-  //   };
-  //     var results = [];
-  //     url = "http://espn.go.com/nfl/schedule/_/year/" + year.toString() + weekTest(week);
-  //     console.log(url);
-  //     request(url, function(error, response, html){
-  //       if(!error){
-  //
-  //         var $ = cheerio.load(html);
-  //         var data = $("tbody").children();
-  //         for(var i = 0; i <= data.length; i ++){
-  //           result = {
-  //               "Away Team": data.eq(i).children().eq(0).text(),
-  //               "Home Team": data.eq(i).children().eq(1).text(),
-  //               "Result": data.eq(i).children().eq(2).text(),
-  //               "Week": week,
-  //               "Year": year
-  //           }
-  //           if(result["Away Team"] === ""){
-  //             i ++;
-  //           }
-  //           else {
-  //             results.push(result)
-  //           }
-  //         }
-  //         console.log(results);
-  //       }
-  //     })
-  // }
-}
+
+  var pop_lines = function(){
+    for(var i = 1; i <= 16; i++){
+      lines(i);
+    }
+  }
+
+  pop_lines();

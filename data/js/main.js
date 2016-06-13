@@ -17,13 +17,7 @@ var fs = require('fs'),
     master = {},
     total = [];
 
-var pop_lines = function(){
-  for(var i = 1; i <= 16; i++){
-    scrape.lines(i);
-  }
-}
 
-pop_lines();
 
 
 
