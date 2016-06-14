@@ -1,4 +1,4 @@
-
+// This file will iterate weekly performance for teams against the spread for each season from 2006...
   var games = require("./aggregate.js")
   , no_games = games.length
   , fs = require("fs")
@@ -46,7 +46,9 @@
                 losingScore: games[i].losingScore,
                 ats: games[i].fav_diff_ats,
                 total: games[i].total,
-                over: games[i].over
+                over: games[i].over,
+                o_u_expected_score: (games[i].total/2) - (games[i].spread/2),
+                over_expected_diff: ((games[i].winner === team) * games[i.winningScore]) + ((games[i].loser === team) * games[i].losingScore) - ((games[i].total/2) + (games[i].spread/2))
               };
             }
             if(games[i].dog === team){
@@ -63,7 +65,10 @@
                 losingScore: games[i].losingScore,
                 ats: games[i].dog_diff_ats,
                 total: games[i].total,
-                over: games[i].over
+                over: games[i].over,
+                o_u_expected_score: (games[i].total/2) + (games[i].spread/2),
+                over_expected_diff: ((games[i].winner === team) * games[i.winningScore]) + ((games[i].loser === team) * games[i].losingScore) - ((games[i].total/2) + (games[i].spread/2)),
+                over_expected_record: (((games[i].winner === team) * games[i.winningScore]) + ((games[i].loser === team) * games[i].losingScore) - ((games[i].total/2) + (games[i].spread/2)) > 0)
               };
             }
           }
@@ -81,7 +86,13 @@
         array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
         array[i].wins = (1 * (array[i].winner)),
         array[i].losses = (1 * !(array[i].winner)),
-        array[i].record = array[i].wins + "-" + array[i].losses;
+        array[i].record = array[i].wins + "-" + array[i].losses,
+        array[i].o_u_wins = array[i].over * 1,
+        array[i].o_u_losses = !(array[i].over) * 1,
+        array[i].o_u_diff = array[i].over_differential;
+        // array[i].over_expected_diff = array[i].over_expected_diff,
+        // array[i].over_expected_record = array[i].over_expected_diff > 0;
+
       }
       // find the bye week, and don't iterate it
       else if((array[i] == undefined) && (i > 1)){
@@ -98,7 +109,12 @@
           array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
           array[i].wins = array[i-2].wins + (1 * (array[i].winner)),
           array[i].losses = array[i-2].losses + (1 * !(array[i].winner)),
-          array[i].record = array[i].wins + "-" + array[i].losses;
+          array[i].record = array[i].wins + "-" + array[i].losses,
+          array[i].o_u_wins = array[i-2].o_u_wins + (array[i].over * 1),
+          array[i].o_u_losses = array[i-2].o_u_losses + (!(array[i].over) * 1),
+          array[i].o_u_diff = array[i-2].o_u_diff + (array[i].over_differential)
+          // array[i].over_expected_diff = array[i-2].over_expected_diff + array[i].over_expected_diff,
+          // array[i].over_expected_record = array[i-2].over_expected_record + (array[i].over_expected_record * 1);
         }
         else {
           array[i].wins_ats = array[i-1].wins_ats + (1 * (array[i].ats > 0)),
@@ -107,7 +123,12 @@
           array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
           array[i].wins = array[i-1].wins + (1 * (array[i].winner)),
           array[i].losses = array[i-1].losses + (1 * !(array[i].winner)),
-          array[i].record = array[i].wins + "-" + array[i].losses;
+          array[i].record = array[i].wins + "-" + array[i].losses,
+          array[i].o_u_wins = array[i-1].o_u_wins + (array[i].over_differential * 1),
+          array[i].o_u_losses = array[i-1].o_u_losses + (!(array[i].over) * 1),
+          array[i].o_u_diff = array[i-1].o_u_diff + (array[i].over_differential)
+        //   array[i].over_expected_diff = array[i-1].over_expected_diff + array[i].over_expected_diff,
+        //   array[i].over_expected_record = array[i-1].over_expected_record + (array[i].over_expected_record * 1);
         }
       }
     }
