@@ -1,38 +1,155 @@
-.game-even {
-  width: 100%;
-  padding: 0% 20% 0% 20%;
-  height: 20px;
-  background: #e6e6e6;
-}
-
-.game-even div {
-  text-align: center;
-}
-
-.game-odd {
-  width: 100%;
-  padding: 0% 20% 0% 20%;
-  height: 20px;
-  background: #f2f2f2;
-}
-
-.game-odd div {
-  text-align: center;
-}
-
 ._nav {
-  background: linear-gradient(to bottom,#fff 0,rgba(255,255,255,.9) 100%);
-  padding-left: 20%;
-  padding-right: 20%;
+  background-color: #f2f2f2;
+  opacity: .90;
+  position: fixed;
   height: 50px;
   width: 100%;
+  display: inline-block;
 }
 
-._nav div {
-  color: #000066;
+._nav ul {
+  background: #009999;
+  /*border-top: 2px solid #f2f2f2;
+  border-bottom: 2px solid #f2f2f2;*/
+  width: 75%;
+  height: 50px;
+  float: left;
+}
+
+._nav ul li {
+  color: #f2f2f2;
+  font-family: sans-serif;
   font-size: 16px;
+  text-align: center;
   cursor: pointer;
-  line-height: 4;
+  line-height: 3;
+  display: inline;
+  margin-right: 20px;
+  transition: .2s all ease;
+}
+
+._nav ul li:hover {
+  color: white;
+  transition: .2s all ease;
+}
+
+._nav:after {
+  margin-bottom: 50px;
+}
+
+div.logo {
+  width: 25%;
+  float: left;
+  height: 50px;
+  color: #009999;
+  background: #f2f2f2;
+  cursor: pointer;
+  transition: .2s all ease;
+}
+
+div.logo:hover {
+  color: #f2f2f2;
+  background: #009999;
+  transition: .2s all ease;
+}
+
+div.logo p {
+  border-top: 2px solid #009999;
+  border-bottom: 3px solid #009999;
+  line-height: 1.5;
+  font-size: 30px;
+  padding-left: 10%;
+  transition: .2s all ease;
+}
+
+div.logo p: hover {
+  font-size: 36px;
+  transition: .2s all ease;
+}
+
+
+
+div.carousel {
+  padding-top: 50px;
+}
+
+div.home_chart {
+  padding-top: 100px;
+  height: 800px;
+  background: #white;
+}
+
+div.home_chart div {
+  width: 45%;
+  margin: 0% 2.5% 0% 2.5%;
+  height: 100%;
+  float: left;
+  background: white;
+  border: 1px solid black;
+}
+
+div.home_chart table tr td {
+  white-space: nowrap;
+  display: inline-block;
+  float: left;
+  list-style: none;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+div.home_chart table tr:first-child{
+  font-weight: bolder;
+}
+
+.week {width: 8%}
+.oppo {width: 15%}
+.spread{width: 8%}
+.o_u{width: 8%}
+.ml{width: 8%; margin-left: -20px}
+.score{width: 10%}
+.w_l{width: 8%}
+.ats{width: 7%}
+.ats_ytd{width: 10%}
+.o_u_result{width: 8%}
+.o_u_ytd{width: 10%}
+
+
+p.matchups {
   width: 33%;
   display: inline-block;
+  float: left;
+  color: #0a0a0a;
+  text-align: center;
+  padding-left: 50px;
+}
+
+p.results {
+  width: 66%;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  color: #0a0a0a;
+  padding-left: 30px;
+}
+
+.bye {
+  width: 100%;
+  text-align: center;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.favorite {
+  color: blue;
+}
+
+.dog {
+  color: pink;
 }

@@ -130,7 +130,42 @@
     return array;
   };
 
-console.log(pop_cumulatives(sort_games(2006, "away")));
+var arr_home = [];
+for(var i = 2006; i <= 2015; i++){
+  arr_home.push(pop_cumulatives(sort_games(2006, "home")));
+}
+
+var arr_away = [];
+for(var i = 2006; i <= 2015; i++){
+  arr_away.push(pop_cumulatives(sort_games(2006, "away")));
+}
+
+var arr_fav = [];
+for(var i = 2006; i <= 2015; i++){
+  arr_fav.push(pop_cumulatives(sort_games(2006, "fav")));
+}
+
+var arr_dog = [];
+for(var i = 2006; i <= 2015; i++){
+  arr_dog.push(pop_cumulatives(sort_games(2006, "dog")));
+}
+
+fs.writeFile("./working_front_end/home.js", JSON.stringify(arr_home, 6, "\t"), function(){
+  console.log("check working_front_end/away.js for results");
+})
+
+fs.writeFile("./working_front_end/away.js", JSON.stringify(arr_away, 6, "\t"), function(){
+  console.log("check working_front_end/away.js for results");
+})
+
+fs.writeFile("./working_front_end/fav.js", JSON.stringify(arr_fav, 6, "\t"), function(){
+  console.log("check working_front_end/away.js for results");
+})
+
+fs.writeFile("./working_front_end/dog.js", JSON.stringify(arr_dog, 6, "\t"), function(){
+  console.log("check working_front_end/away.js for results");
+})
+
 
 
 

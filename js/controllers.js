@@ -4,10 +4,16 @@ angular.module('Controllers', [])
 
   .controller('MainCtrl', ['$scope', '$routeParams', '$http', 'Data',
     function($scope, $routeParams, $http, data) {
-      data.gamesPromise.then(function(data){
-        $scope.games = data;
-        return $scope.games;
+      data.teamsPromise.then(function(data){
+        $scope.teams = data;
+        return $scope.teams;
       })
+      data.teamsMetaPromise.then(function(data){
+        $scope.teamsMeta = data;
+        return $scope.teamsMeta;
+      })
+    $scope.cur_year = 2015;
+    $scope.year_options = [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015];
   }])
 
   .controller('CarouselDemoCtrl', function ($scope) {

@@ -1,4 +1,43 @@
-<div ng-controller="CarouselDemoCtrl">
+<div class = "home_chart">
+  <div>
+    <p style="font-size: 24px; text-align: center">{{teamsMeta.Cleveland.city}} {{teamsMeta.Cleveland.nick}} {{cur_year}}</p>
+    <p class="matchups">matchup</p>
+    <p class ="results">results</p>
+    <table class = "matchups">
+      <tr>
+        <td class="week">week</td>
+        <td class="oppo">opponent</td>
+        <td class="spread">spread</td>
+        <td class="o_u">o/u</td>
+        <td class="ml" style="padding-left: 30px">ML</td>
+        <td class="score">score</td>
+        <td class="w_l">W-L</td>
+        <td class="ats">ats</td>
+        <td class="ats_ytd">ytd</td>
+        <td class="o_u_result">o-u</td>
+        <td class="o_u_ytd">ytd</td>
+      </tr>
+      <tr ng-repeat="week in teams[0]['Cleveland']['2015']" ng-if="week.week">
+        <td class="week">{{week.week}}</td>
+        <td class="oppo">opponent</td>
+        <td ng-class="week.spread > 0 ? 'dog' : 'favorite'" class="spread">{{week.spread > 0 ? "+" + week.spread : week.spread}}</td>
+        <td class="o_u">{{week.total}}</td>
+        <td ng-class="week.winner ? 'positive' : 'negative'" class="ml">{{week.ml}}</td>
+        <td ng-class="week.winner ? 'positive' : 'negative'" class="score">{{week.winningScore}}-{{week.losingScore}}</td>
+        <td class="w_l">{{week.record}}</td>
+        <td ng-class="week.ats > 0 ? 'positive' : 'negative'" class="ats">{{week.ats}}</td>
+        <td class="ats_ytd">{{week.record_ats}}</td>
+        <td ng-class="week.over ? 'favorite' : 'dog'" class="o_u_result">{{week.over? "Over" : "Under"}}</td>
+        <td class="o_u_ytd">{{week.over? "Over" : "Under"}}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    the graphic goes here
+  </div>
+</div>
+
+<div class = "carousel" ng-controller="CarouselDemoCtrl">
   <div style="height: 550px">
     <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
       <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
@@ -11,3 +50,8 @@
     </uib-carousel>
   </div>
 </div>
+
+
+<!-- <div class="test" ng-controller="MainCtrl" ng-repeat="team in teams[0]">
+  {{team}}
+</div> -->
