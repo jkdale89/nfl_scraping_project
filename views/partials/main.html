@@ -1,5 +1,5 @@
-<div class = "home_chart">
-  <div>
+<div class = "home">
+  <div class = "data">
     <p style="font-size: 24px; text-align: center">{{teamsMeta.Cleveland.city}} {{teamsMeta.Cleveland.nick}} {{cur_year}}</p>
     <p class="matchups">matchup</p>
     <p class ="results">results</p>
@@ -9,7 +9,7 @@
         <td class="oppo">opponent</td>
         <td class="spread">spread</td>
         <td class="o_u">o/u</td>
-        <td class="ml" style="padding-left: 30px">ML</td>
+        <td class="ml">ML</td>
         <td class="score">score</td>
         <td class="w_l">W-L</td>
         <td class="ats">ats</td>
@@ -19,7 +19,7 @@
       </tr>
       <tr ng-repeat="week in teams[0]['Cleveland']['2015']" ng-if="week.week">
         <td class="week">{{week.week}}</td>
-        <td class="oppo">opponent</td>
+        <td class="oppo">{{week.home ? '@ ' + week.opponent : week.opponent}}</td>
         <td ng-class="week.spread > 0 ? 'dog' : 'favorite'" class="spread">{{week.spread > 0 ? "+" + week.spread : week.spread}}</td>
         <td class="o_u">{{week.total}}</td>
         <td ng-class="week.winner ? 'positive' : 'negative'" class="ml">{{week.ml}}</td>
@@ -28,11 +28,11 @@
         <td ng-class="week.ats > 0 ? 'positive' : 'negative'" class="ats">{{week.ats}}</td>
         <td class="ats_ytd">{{week.record_ats}}</td>
         <td ng-class="week.over ? 'favorite' : 'dog'" class="o_u_result">{{week.over? "Over" : "Under"}}</td>
-        <td class="o_u_ytd">{{week.over? "Over" : "Under"}}</td>
+        <td class="o_u_ytd">{{week.o_u_wins + "-" + week.o_u_losses}}</td>
       </tr>
     </table>
   </div>
-  <div>
+  <div class = "chart">
     the graphic goes here
   </div>
 </div>

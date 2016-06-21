@@ -73,14 +73,23 @@ div.carousel {
   padding-top: 50px;
 }
 
-div.home_chart {
+div.home {
   padding-top: 100px;
   height: 800px;
   background: #white;
 }
 
-div.home_chart div {
-  width: 45%;
+div.home div.data {
+  width: 55%;
+  margin: 0% 2.5% 0% 2.5%;
+  height: 100%;
+  float: left;
+  background: white;
+  /*border: 1px solid black;*/
+}
+
+div.home div.chart {
+  width: 35%;
   margin: 0% 2.5% 0% 2.5%;
   height: 100%;
   float: left;
@@ -98,39 +107,52 @@ div.home_chart table tr td {
   padding-right: 15px;
 }
 
-div.home_chart table tr:first-child{
-  font-weight: bolder;
+tr td:first-child {
+  padding-left: 30px;
 }
 
-.week {width: 8%}
-.oppo {width: 15%}
-.spread{width: 8%}
-.o_u{width: 8%}
-.ml{width: 8%; margin-left: -20px}
-.score{width: 10%}
-.w_l{width: 8%}
-.ats{width: 7%}
-.ats_ytd{width: 10%}
-.o_u_result{width: 8%}
-.o_u_ytd{width: 10%}
+div.home table tr:first-child{
+  font-weight: bolder;
+  color: #555555;
+}
+
+.week {width: 8%; text-align: center;}
+.oppo {width: 15%; text-align: center;}
+.spread{width: 8%; text-align: center}
+.o_u{width: 8%; text-align: center;}
+.ml{width: 9%; text-align: center;}
+.score{width: 10%; text-align: center; border-left: 1px solid #009999}
+.w_l{width: 8%; text-align: center;}
+.ats{width: 7%; text-align: center;}
+.ats_ytd{width: 10%; text-align: center;}
+.o_u_result{width: 8%; text-align: center;}
+.o_u_ytd{width: 10%; text-align: center;}
 
 
 p.matchups {
-  width: 33%;
+  border-bottom: 1px solid #009999;
+  width: 45%;
+  font-size: 16px;
+  color: #009999;
+  padding-bottom: 5px;
   display: inline-block;
   float: left;
-  color: #0a0a0a;
+  /*color: #0a0a0a;*/
   text-align: center;
-  padding-left: 50px;
+  margin-right: 3%;
 }
 
 p.results {
-  width: 66%;
+  border-bottom: 1px solid #009999;
+  width: 45%;
+  font-size: 16px;
+  color: #009999;
+  padding-bottom: 5px;
   display: inline-block;
   float: left;
   text-align: center;
-  color: #0a0a0a;
-  padding-left: 30px;
+  /*color: #0a0a0a;*/
+  margin-left: 3%;
 }
 
 .bye {
