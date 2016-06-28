@@ -48,6 +48,7 @@
                 ats: games[i].fav_diff_ats,
                 total: games[i].total,
                 over: games[i].over,
+                over_differential: (games[i].winningScore + games[i].losingScore) - games[i].total,
                 o_u_expected_score: (games[i].total/2) - (games[i].spread/2),
                 over_expected_diff: ((games[i].winner === team) * games[i.winningScore]) + ((games[i].loser === team) * games[i].losingScore) - ((games[i].total/2) + (games[i].spread/2))
               };
@@ -67,10 +68,10 @@
                 losingScore: games[i].losingScore,
                 ats: games[i].dog_diff_ats,
                 total: games[i].total,
-                over: games[i].over
-                // o_u_expected_score: (games[i].total/2) + (games[i].spread/2),
-                // over_expected_diff: ((games[i].winner === team) * games[i.winningScore]) + ((games[i].loser === team) * games[i].losingScore) - ((games[i].total/2) + (games[i].spread/2)),
-                // over_expected_record: (((games[i].winner === team) * games[i.winningScore]) + ((games[i].loser === team) * games[i].losingScore) - ((games[i].total/2) + (games[i].spread/2)) > 0)
+                over: games[i].over,
+                over_differential: (games[i].winningScore + games[i].losingScore) - games[i].total,
+                o_u_expected_score: (games[i].total/2) - (games[i].spread/2),
+                over_expected_diff: ((games[i].winner !== team) * games[i.winningScore]) + ((games[i].loser === team) * games[i].losingScore) - ((games[i].total/2) + (games[i].spread/2))
               };
             }
           }
@@ -91,9 +92,10 @@
         array[i].record = array[i].wins + "-" + array[i].losses,
         array[i].o_u_wins = (array[i].over * 1) || 0,
         array[i].o_u_losses = (!(array[i].over) * 1) || 0,
-        array[i].o_u_diff = array[i].over_differential;
-        // array[i].over_expected_diff = array[i].over_expected_diff,
-        // array[i].over_expected_record = array[i].over_expected_diff > 0;
+        array[i].o_u_diff = array[i].over_differential,
+        array[i].over_expected_diff = array[i].over_expected_diff,
+        array[i].over_expected_record = array[i].over_expected_diff > 0,
+        array[i].spread_differential = array[i].ats
 
       }
       // find the bye week, and don't iterate it
@@ -113,10 +115,11 @@
           array[i].losses = array[i-2].losses + (1 * !(array[i].winner)),
           array[i].record = array[i].wins + "-" + array[i].losses,
           array[i].o_u_wins = array[i-2].o_u_wins + (array[i].over * 1),
-          array[i].o_u_losses = array[i-2].o_u_losses + (!(array[i].over) * 1)
-          // array[i].o_u_diff = array[i-2].o_u_diff + (array[i].over_differential)
-          // array[i].over_expected_diff = array[i-2].over_expected_diff + array[i].over_expected_diff,
-          // array[i].over_expected_record = array[i-2].over_expected_record + (array[i].over_expected_record * 1);
+          array[i].o_u_losses = array[i-2].o_u_losses + (!(array[i].over) * 1),
+          array[i].o_u_diff = array[i-2].o_u_diff + (array[i].over_differential),
+          array[i].over_expected_diff = array[i-2].over_expected_diff + array[i].over_expected_diff,
+          array[i].over_expected_record = array[i-2].over_expected_record + (array[i].over_expected_record * 1),
+          array[i].spread_differential = array[i-2].spread_differential + array[i].ats
         }
         else {
           array[i].wins_ats = array[i-1].wins_ats + (1 * (array[i].ats > 0)),
@@ -127,10 +130,11 @@
           array[i].losses = array[i-1].losses + (1 * !(array[i].winner)),
           array[i].record = array[i].wins + "-" + array[i].losses,
           array[i].o_u_wins = array[i-1].o_u_wins + (array[i].over * 1),
-          array[i].o_u_losses = array[i-1].o_u_losses + (!(array[i].over) * 1)
-          // array[i].o_u_diff = array[i-1].o_u_diff + (array[i].over_)
-        //   array[i].over_expected_diff = array[i-1].over_expected_diff + array[i].over_expected_diff,
-        //   array[i].over_expected_record = array[i-1].over_expected_record + (array[i].over_expected_record * 1);
+          array[i].o_u_losses = array[i-1].o_u_losses + (!(array[i].over) * 1),
+          array[i].o_u_diff = array[i-1].o_u_diff + (array[i].over_differential),
+          array[i].over_expected_diff = array[i-1].over_expected_diff + array[i].over_expected_diff,
+          array[i].over_expected_record = array[i-1].over_expected_record + (array[i].over_expected_record * 1),
+          array[i].spread_differential = array[i-1].spread_differential + array[i].ats
         }
       }
     }
@@ -152,7 +156,6 @@
   }
 
 
-
-fs.writeFile("test.js", JSON.stringify(test, 6, "\t"), function(){
+fs.writeFile("teams.json", JSON.stringify(test, 6, "\t"), function(){
   console.log("check test.js for the shit");
 })

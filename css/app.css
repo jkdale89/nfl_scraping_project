@@ -1,3 +1,11 @@
+p {
+    display: block;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
 ._nav {
   background-color: #f2f2f2;
   opacity: .90;
@@ -37,12 +45,23 @@
   margin-bottom: 50px;
 }
 
+.toggle {
+  height: 100%;
+  display: inline;
+  float: left;
+  background: #f2f2f2;
+  line-height: 2.5;
+  border-left: 2px solid #009999;
+  border-right: 2px solid #009999;
+  border-bottom: 2px solid #009999;
+}
+
 div.logo {
   width: 25%;
   float: left;
   height: 50px;
-  color: #009999;
-  background: #f2f2f2;
+  color: #f2f2f2;
+  background: #009999;
   cursor: pointer;
   transition: .2s all ease;
 }
@@ -74,17 +93,21 @@ div.carousel {
 }
 
 div.home {
-  padding-top: 100px;
+  padding-top: 50px;
   height: 800px;
   background: #white;
 }
 
+table.matchups {
+  width: 75%;
+  float: left;
+  display: inline;
+}
 div.home div.data {
-  width: 55%;
-  margin: 0% 2.5% 0% 2.5%;
+  width: 100%;
   height: 100%;
   float: left;
-  background: white;
+  /*background: white;*/
   /*border: 1px solid black;*/
 }
 
@@ -97,14 +120,10 @@ div.home div.chart {
   border: 1px solid black;
 }
 
-div.home_chart table tr td {
-  white-space: nowrap;
-  display: inline-block;
-  float: left;
-  list-style: none;
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
+tr td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid #aaaaaa;
 }
 
 tr td:first-child {
@@ -113,51 +132,55 @@ tr td:first-child {
 
 div.home table tr:first-child{
   font-weight: bolder;
+  text-decoration: underline;
+  margin-bottom: 30px;
   color: #555555;
+  border-top: none;
 }
 
-.week {width: 8%; text-align: center;}
-.oppo {width: 15%; text-align: center;}
-.spread{width: 8%; text-align: center}
+table {
+  border-top: none;
+}
+
+.week {width: 6%; text-align: center;}
+.oppo {width: 12%; text-align: center;}
+.spread{width: 7%; text-align: center}
 .o_u{width: 8%; text-align: center;}
-.ml{width: 9%; text-align: center;}
-.score{width: 10%; text-align: center; border-left: 1px solid #009999}
-.w_l{width: 8%; text-align: center;}
-.ats{width: 7%; text-align: center;}
-.ats_ytd{width: 10%; text-align: center;}
-.o_u_result{width: 8%; text-align: center;}
-.o_u_ytd{width: 10%; text-align: center;}
+.ml{width: 6%; text-align: center;}
+.score{width: 9%; text-align: center; }
+.w_l{width: 7%; text-align: center;}
+.ats{width: 6%; text-align: center;}
+.ats_cum{width: 9%; text-align: center;}
+.ats_ytd{width: 8%; text-align: center;}
+.o_u_result{width: 7%; text-align: center;}
+.o_u_ytd{width: 6%; text-align: center;}
+.o_u_ytd_diff{width: 10%; text-align: center}
 
 
 p.matchups {
-  border-bottom: 1px solid #009999;
   width: 45%;
   font-size: 16px;
-  color: #009999;
-  padding-bottom: 5px;
   display: inline-block;
   float: left;
-  /*color: #0a0a0a;*/
   text-align: center;
   margin-right: 3%;
 }
 
+.bye {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    background: white;
+    padding-right: 60px;
+}
+
 p.results {
-  border-bottom: 1px solid #009999;
   width: 45%;
   font-size: 16px;
-  color: #009999;
-  padding-bottom: 5px;
   display: inline-block;
   float: left;
   text-align: center;
-  /*color: #0a0a0a;*/
   margin-left: 3%;
-}
-
-.bye {
-  width: 100%;
-  text-align: center;
 }
 
 .positive {
@@ -173,5 +196,138 @@ p.results {
 }
 
 .dog {
-  color: pink;
+  color: magenta;
+}
+
+.odd {
+  background: rgba(0,0,0,.05)
+}
+
+
+.cur_year {
+  display: inline-block;
+  float: top;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.cur_year p:hover {
+  color: #009999;
+  cursor: pointer;
+}
+
+.cur_team {
+  display: inline-block;
+  width: 100%;
+  float: top;
+  line-height: 2;
+}
+
+.cur_team p:hover {
+  color: #009999;
+  cursor: pointer;
+}
+
+.teams_drop {
+  cursor: pointer;
+  float: top;
+  text-align: center;
+  overflow-y: scroll;
+  height: 200px;
+  position: absolute;
+  width: 300px;
+  margin-top: 40px;
+  border: 1px solid gray;
+  background: white;
+  z-index: 10;
+}
+
+.teams_drop p {
+  color: black;
+  font-weight: bold;
+  padding: 0px;
+  text-align: center;
+  height: 40px;
+  margin: 0px;
+  line-height: 3;
+  border-bottom: 1px solid white;
+}
+
+.teams_drop p:hover {
+  background: #009999;
+  color: white;
+  cursor: pointer;
+}
+
+.years_drop {
+  cursor: pointer;
+  top: 0px;
+  right: 0px;
+  margin-top: 40px;
+  margin-left: 40px;
+  text-align: center;
+  overflow-y: scroll;
+  height: 200px;
+  position: absolute;
+  width: 200px;
+  border: 1px solid gray;
+  background: white;
+  z-index: 10;
+}
+
+.years_drop p {
+  color: black;
+  font-weight: bold;
+  padding: 0px;
+  text-align: center;
+  height: 40px;
+  margin: 0px;
+  line-height: 3;
+  border-bottom: 1px solid white;
+}
+
+.years_drop p:hover {
+  background: #009999;
+  color: white;
+  cursor: pointer;
+}
+
+._hidden {
+  display: none;
+}
+
+._visible {
+  display: inline;
+}
+
+._minimized {
+  height: 0px;
+  overflow-y: hidden;
+}
+
+._expanded {
+  height: auto;
+  overflow-y: hidden;
+}
+
+.bar--positive {
+  fill: #80bfff;
+  text-align: right;
+  color: white;
+}
+.bar--negative {
+  fill: #ffb3ff;
+  text-align: left;
+  color: white;
+}
+.axis text {
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }

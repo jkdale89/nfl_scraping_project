@@ -1,40 +1,73 @@
+<!-- 1 - repopulate the teams with proper iterations
+2 - add new columns, adjust the %'s for teams
+3 - move teams, home away, and fav dog to their own partials
+4 - develop new categories for annual stats -->
+
+
+
 <div class = "home">
-  <div class = "data">
-    <p style="font-size: 24px; text-align: center">{{teamsMeta.Cleveland.city}} {{teamsMeta.Cleveland.nick}} {{cur_year}}</p>
-    <p class="matchups">matchup</p>
-    <p class ="results">results</p>
-    <table class = "matchups">
-      <tr>
-        <td class="week">week</td>
-        <td class="oppo">opponent</td>
-        <td class="spread">spread</td>
-        <td class="o_u">o/u</td>
-        <td class="ml">ML</td>
-        <td class="score">score</td>
-        <td class="w_l">W-L</td>
-        <td class="ats">ats</td>
-        <td class="ats_ytd">ytd</td>
-        <td class="o_u_result">o-u</td>
-        <td class="o_u_ytd">ytd</td>
-      </tr>
-      <tr ng-repeat="week in teams[0]['Cleveland']['2015']" ng-if="week.week">
-        <td class="week">{{week.week}}</td>
-        <td class="oppo">{{week.home ? '@ ' + week.opponent : week.opponent}}</td>
-        <td ng-class="week.spread > 0 ? 'dog' : 'favorite'" class="spread">{{week.spread > 0 ? "+" + week.spread : week.spread}}</td>
-        <td class="o_u">{{week.total}}</td>
-        <td ng-class="week.winner ? 'positive' : 'negative'" class="ml">{{week.ml}}</td>
-        <td ng-class="week.winner ? 'positive' : 'negative'" class="score">{{week.winningScore}}-{{week.losingScore}}</td>
-        <td class="w_l">{{week.record}}</td>
-        <td ng-class="week.ats > 0 ? 'positive' : 'negative'" class="ats">{{week.ats}}</td>
-        <td class="ats_ytd">{{week.record_ats}}</td>
-        <td ng-class="week.over ? 'favorite' : 'dog'" class="o_u_result">{{week.over? "Over" : "Under"}}</td>
-        <td class="o_u_ytd">{{week.o_u_wins + "-" + week.o_u_losses}}</td>
-      </tr>
-    </table>
+  <div class = "row">
+    <div class = "col-md-3 toggle" style="padding-left:20px; padding-right: 20px">
+      <div ng-click="teams_dropdown = !teams_dropdown" class="cur_team">
+        <p style="width: 10%; display; inline; float: left; padding-top: 3px">
+          <img src="{{teamsMeta[cur_team].url}}">
+        </p>
+        <p style="font-size: 24px; display: inline; margin-left: 5px; float: left; text-align: center; white-space: nowrap;">
+          {{teamsMeta[cur_team].city}} {{teamsMeta[cur_team].nick}}
+          <i class="fa fa-angle-down" style="text-align: right" aria-hidden="true"></i>
+        </p>
+
+        <div ng-show="teams_dropdown" class="teams_drop">
+          <p ng-click = "changeTeam(team)" ng-repeat="team in team_options" ng-class-odd="'odd'">
+            <img src="{{teamsMeta[team].url}}">
+            {{team}}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" style="text-align: center">
+          filter by ...
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+          <button ng-click="activeTable = 'teams'">teams</button>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+          <button ng-click="activeTable = 'favsDogs'">faves / dogs</button>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+          <button ng-click="activeTable = 'homeAway'">home / away</button>
+        </div>
+      </div>
+
+      <div ng-click="year_dropdown = !year_dropdown" class="cur_year row">
+          <p style="text-align: center; font-size: 24px;"> {{cur_year}} <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+          <div ng-show="year_dropdown" class="years_drop">
+            <p ng-click="changeYear(year)" ng-repeat="year in year_options" ng-class-odd="'odd'">
+              {{year}}
+            </p>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" style="text-align: center">
+          show
+        </div>
+        <div class="col-md-6" style="text-align: center">
+          <button>weekly</button>
+        </div>
+        <div class="col-md-6" style="text-align: center">
+          <button>annually</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <table-teams ng-show = "activeTable == 'teams'"></table-teams>
+      <table-favs-dogs ng-show = "activeTable == 'favsDogs'"></table-favs-dogs>
+      <table-home-away ng-show = "activeTable == 'homeAway'"></table-home-away>
+    </div>
   </div>
-  <div class = "chart">
-    the graphic goes here
-  </div>
+
+
 </div>
 
 <div class = "carousel" ng-controller="CarouselDemoCtrl">

@@ -14,6 +14,10 @@ angular.module('betweenTheLines', [
         .when('/home', {
           templateUrl: 'views/home.html',
           controller: 'MainCtrl'
-        });
+        })
+        .when('/graph1', {
+          templateUrl: 'views/graphs/graph1.html',
+          controller: 'GraphControl'
+        })
     }
 ])

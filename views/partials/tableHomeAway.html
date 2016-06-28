@@ -1,0 +1,22 @@
+<table class = "matchups">
+  <tr>
+    <td class="week">Week</td>
+    <td class="oppo">Opponent</td>
+    <td class="spread">Spread</td>
+    <td class="o_u">Total</td>
+    <td class="ml">ML</td>
+    <td class="score">Score</td>
+    <td class="w_l">W-L</td>
+  </tr>
+  <tr ng-repeat="week in teams[ind][cur_team][cur_year]" ng-class-odd="'odd'">
+    <div ng-if="week.week">
+      <td ng-if="week.week" class="week">{{week.week}}</td>
+      <td ng-if="!week.week" class="bye">BYE</td>
+      <td class="oppo">{{week.home ? '@ ' + week.opponent : week.opponent}}</td>
+      <td ng-class="week.spread > 0 ? 'dog' : 'favorite'" class="spread">{{week.spread > 0 ? "+" + week.spread : week.spread < 0 ? week.spread : 0}}</td>
+      <td class="o_u">{{week.total}}</td>
+      <td ng-class="week.winner ? 'positive' : 'negative'" class="ml">{{week.ml}}</td>
+      <td ng-class="week.winner ? 'positive' : 'negative'" class="score">{{week.winningScore}}-{{week.losingScore}}</td>
+    </div>
+  </tr>
+</table>
