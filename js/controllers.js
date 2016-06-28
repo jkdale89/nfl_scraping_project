@@ -75,16 +75,15 @@ angular.module('Controllers', [])
 
     $scope.$watch('cur_season', function(){
 
-      var margin = {top: 20, right: 30, bottom: 40, left: 30},
-          width = 960 - margin.left - margin.right,
+      var margin = {top: 20, right: 30, bottom: 40, left: 20},
+          width = 1000 - margin.left - margin.right,
           height = 500 - margin.top - margin.bottom;
       var x = d3.scale.linear()
-          .range([0, width]);
+          .range([0, width - margin.right * 2]);
       var y = d3.scale.ordinal()
           .rangeRoundBands([0, height], 0.1);
       var xAxis = d3.svg.axis()
           .scale(x)
-          .tickValues([-17,-14, -10, -7, -3, 0, 3, 7, 10, 14, 17])
           .orient("bottom");
       var yAxis = d3.svg.axis()
           .scale(y)
@@ -98,6 +97,13 @@ angular.module('Controllers', [])
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
       var data = $scope.cur_season;
+      // it looks like our spread is doing some weird things - let's make sure it's + or - depending on
+      // whether the .favorite property is true
+      for(var i = 0; i < data.length; i ++){
+        data[i].spread = Math.abs(data[i].spread);
+        var joe = data[i].favorite ? 1 : -1;
+        data[i].spread = data[i].spread * joe;
+      }
 
         x.domain(d3.extent(data, function(d) { return d.spread; })).nice();
         y.domain(data.map(function(d) { return d.week; }));
@@ -113,10 +119,18 @@ angular.module('Controllers', [])
             .attr("text", "hey");
         svg.selectAll("g").append("text")
           .text(function(d){return d.spread})
-          .attr("text-align", "right")
-          .attr("alignment-baseline", "middle")
           .attr("x", function(d){ return x(Math.min(0), d.spread); })
-          .attr("y", function(d){ return y(d.week); });
+          .attr("y", function(d){ return y(d.week); })
+          .attr("dy", "1.15em")
+          .attr("dx", function(d){ return d.spread < 0 ? (x(d.spread) - x(0) + 5) : (x(d.spread) - x(0) - this.clientWidth - 10)})
+          .attr("fill", "white");
+        svg.selectAll("g").append("text")
+          .text(function(d){return (d.home ? "" : "@ ") + d.opponent})
+          .attr("x", function(d){ return x(Math.min(0), d.spread); })
+          .attr("y", function(d){ return y(d.week); })
+          .attr("dy", "1.15em")
+          .attr("dx", function(d){ return d.spread < 0 ? (x(d.spread) - x(0) - this.clientWidth - 10) : (x(d.spread) - x(0) + 5)})
+          .attr("fill", "black");
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
@@ -124,6 +138,7 @@ angular.module('Controllers', [])
         svg.append("g")
             .attr("class", "y axis")
             .attr("transform", "translate(" + x(0) + ",0)")
+            .attr("x", 0)
             .call(yAxis);
 
 

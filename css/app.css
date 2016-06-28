@@ -331,3 +331,20 @@ p.results {
   stroke: #000;
   shape-rendering: crispEdges;
 }
+
+.text-negative {
+  color: white;
+  margin-left: -20px;
+}
+
+.text-positive {
+  color: white;
+  margin-left: 5px;
+}
+
+svg {
+  display: block;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
