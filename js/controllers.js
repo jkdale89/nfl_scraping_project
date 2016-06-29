@@ -60,7 +60,7 @@ angular.module('Controllers', [])
 
   }])
 
-  .controller('GraphControl', ['$scope', '$routeParams', '$http', 'Data', function($scope, $routeParams, $http, db){
+  .controller('GraphControl', ['$scope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $routeParams, $timeout, $http, db){
 
     $scope.teams_dropdown = false;
     $scope.year_dropdown = false;
@@ -82,12 +82,26 @@ angular.module('Controllers', [])
     })
 
     $scope.newChart = function(team){
-      $scope.cur_team = team;
-      $scope.ind = $scope.team_options.indexOf($scope.cur_team);
-      db.teamsPromise.then(function(data){
+      //first, let's fade out the old graph
+      d3.selectAll("svg")
+      .style("opacity", 0);
+
+      //after the fade, we'll remove the element
+      $timeout(function(){
+        d3.selectAll("svg")
+        .remove()
+      }, 1000)
+      //then we'll repopulate with a new graph
+      .then(function(){
+        //don't run until we get our key variables
+        $scope.cur_team = team;
+        $scope.ind = $scope.team_options.indexOf($scope.cur_team);
+        db.teamsPromise.then(function(data){
         $scope.teams = data;
         $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$scope.cur_year];
-      }).then(function(){
+      })
+
+      .then(function(){
 
         var margin = {top: 20, right: 30, bottom: 40, left: 50},
             width = 1000 - margin.left - margin.right,
@@ -106,6 +120,7 @@ angular.module('Controllers', [])
             .tickPadding(6);
         var svg = d3.select(".test")
             .append("svg")
+            .style("opacity", 0)
             .attr("class", "chart")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom + 50)
@@ -179,7 +194,13 @@ angular.module('Controllers', [])
           return d;
         }
 
+      }).then(function(){
+        d3.selectAll("svg")
+          .style("opacity", 1)
       })
+
+    })
+
 
 
     }

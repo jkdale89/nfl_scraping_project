@@ -350,5 +350,9 @@ svg {
 
 svg {
   transition: 1s ease all;
-  visibility: visible;
+}
+
+._hide {
+  opacity: 0;
+  transition: 1s ease all;
 }
