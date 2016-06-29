@@ -1,6 +1,20 @@
-<svg class = "chart">
-</svg>
+<div>
 
-<div ng-repeat = "week in cur_season">
-  <p>{{week.spread}}</p>
+  <div class="test">
+
+  </div>
+
+
+  <div ng-click="teams_dropdown = !teams_dropdown" class = "cur_team" style="color: {{teamsMeta[cur_team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[cur_team].sec_hex}}">
+    {{cur_team}} {{teamsMeta[cur_team].nick}}
+    <i class="fa fa-angle-down" ng-mouseover="" style="color: {{teamsMeta[cur_team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[cur_team].sec_hex}}" aria-hidden="true"></i>
+    <div ng-show="teams_dropdown" class="teams_drop">
+      <p ng-click = "newChart(team)" ng-repeat="team in team_options" ng-class-odd="'odd'">
+        <img src="{{teamsMeta[team].url}}">
+        {{team}}
+      </p>
+    </div>
+  </div>
+
+
 </div>
