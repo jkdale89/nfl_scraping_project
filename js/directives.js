@@ -70,7 +70,7 @@
     teamsOu = function(){
       return {
         restrict: 'E',
-        template: "<div class='teams_ou_graph'>the over under graph will go here</div>",
+        template: "<div ng-init=\"newOuChart('Denver')\" class='teams_ou_graph'></div>",
         controller: 'teamsOuGraphCtrl',
         replace: false
       }
