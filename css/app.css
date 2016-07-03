@@ -1,3 +1,12 @@
+
+body {
+  background-color: #f1f1f1;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
 p {
     display: block;
     -webkit-margin-before: 0em;
@@ -7,8 +16,7 @@ p {
 }
 
 ._nav {
-  background-color: #f2f2f2;
-  opacity: .90;
+  background-color: rgba(99,99,99,1);
   position: fixed;
   height: 50px;
   width: 100%;
@@ -16,7 +24,7 @@ p {
 }
 
 ._nav ul {
-  background: #009999;
+  background: rgba(00,99,99,.8);
   /*border-top: 2px solid #f2f2f2;
   border-bottom: 2px solid #f2f2f2;*/
   width: 75%;
@@ -24,20 +32,27 @@ p {
   float: left;
 }
 
+
+
+
 ._nav ul li {
   color: #f2f2f2;
+  background: rgba(00,99,99,1);
   font-family: sans-serif;
   font-size: 16px;
   text-align: center;
   cursor: pointer;
   line-height: 3;
-  display: inline;
-  margin-right: 20px;
+  display: inline-block;
+  height:100%;
+  width: 100px;
+  margin-right: 0px;
   transition: .2s all ease;
 }
 
 ._nav ul li:hover {
   color: white;
+  background: #009999;
   transition: .2s all ease;
 }
 
@@ -61,7 +76,7 @@ div.logo {
   float: left;
   height: 50px;
   color: #f2f2f2;
-  background: #009999;
+  background: rgba(00,99,99, .8);
   cursor: pointer;
   transition: .2s all ease;
 }
@@ -73,8 +88,6 @@ div.logo:hover {
 }
 
 div.logo p {
-  border-top: 2px solid #009999;
-  border-bottom: 3px solid #009999;
   line-height: 1.5;
   font-size: 30px;
   padding-left: 10%;
@@ -218,13 +231,6 @@ p.results {
   cursor: pointer;
 }
 
-.cur_team {
-  display: inline-block;
-  width: 100%;
-  float: top;
-  line-height: 2;
-}
-
 .cur_team p:hover {
   color: #009999;
   cursor: pointer;
@@ -244,6 +250,20 @@ p.results {
   z-index: 10;
 }
 
+.teams_drop_graph {
+  cursor: pointer;
+  float: top;
+  text-align: center;
+  overflow-y: scroll;
+  height: 200px;
+  position: absolute;
+  width: 350px;
+  margin-top: 0px;
+  border: 1px solid gray;
+  background: white;
+  z-index: 10;
+}
+
 .teams_drop p {
   color: black;
   font-weight: bold;
@@ -257,6 +277,23 @@ p.results {
 
 .teams_drop p:hover {
   background: #009999;
+  color: white;
+  cursor: pointer;
+}
+
+.teams_drop_graph p {
+  color: black;
+  font-weight: bold;
+  padding: 0px;
+  text-align: center;
+  height: 40px;
+  margin: 0px;
+  line-height: 3;
+  border-bottom: 1px solid white;
+}
+
+.teams_drop_graph p:hover {
+  background: rgba(00,99,99, .3);
   color: white;
   cursor: pointer;
 }
@@ -341,10 +378,10 @@ svg {
 }
 
 .cur_team {
-  font-size: 40px;
+  font-size: 2em;
   position: absolute;
   top: 0px;
-  left: 21%;
+  left: 2.5%;
   display: inline;
 }
 
@@ -355,4 +392,54 @@ svg {
 ._hide {
   opacity: 0;
   transition: 1s ease all;
+}
+
+.options {
+  list-style: none;
+  position: absolute;
+  top: 75px;
+}
+
+.options ul {
+  list-style: none;
+  margin-bottom: 35px;
+}
+
+
+p.category{
+  margin-top: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+p.category:hover {
+  font-size: 18px;
+  transition: .3s ease all;
+}
+
+.options ul li {
+  margin-left: 12px;
+  font-size: 12px;
+  transition: .3s ease all;
+  cursor: pointer;
+}
+
+.options ul li:hover {
+  font-size: 14px;
+  transition: .3s ease all;
+  cursor: pointer;
+}
+
+div.graph {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+div .test {
+  background-color: #f1f1f1;
+}
+
+.active {
+  font-weight: bolder;
 }
