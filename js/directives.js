@@ -79,7 +79,9 @@
     teamsMl = function(){
       return {
         restrict: 'E',
-        template: "<div class = 'teams_ml_graph'>the moneyline graph will go here</div>",
+        template: "<div ng-init=\"newMlChart('Denver')\" class = 'teams_ml_graph_favs'></div>" +
+                  "<div class = 'teams_ml_graph_dogs'></div>" +
+                  "<div class = 'teams_ml_graph_cum'></div>",
         controller: 'teamsMlGraphCtrl',
         replace: false
       }

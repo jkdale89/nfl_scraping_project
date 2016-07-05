@@ -40,7 +40,7 @@
                 week : k,
                 year : year,
                 spread: spread,
-                ml: games[i].ml_fav,
+                ml: parseInt(games[i].ml_fav.replace("$","")),
                 home: games[i].home === team,
                 winner: games[i].winner === team,
                 winningScore: games[i].winningScore,
@@ -61,7 +61,7 @@
                 opponent: games[i].fav,
                 year : year,
                 spread: spread * -1,
-                ml: games[i].ml_dog,
+                ml: parseInt(games[i].ml_dog.replace("$","")),
                 home: games[i].home === team,
                 winner: games[i].winner === team,
                 winningScore: games[i].winningScore,
@@ -156,6 +156,6 @@
   }
 
 
-fs.writeFile("teams.json", JSON.stringify(test, 6, "\t"), function(){
+fs.writeFile("teamsX.json", JSON.stringify(test, 6, "\t"), function(){
   console.log("check test.js for the shit");
 })

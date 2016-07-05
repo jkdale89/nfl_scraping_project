@@ -31,7 +31,7 @@ angular.module('Controllers', [])
 
       $rootScope.category_options = ["Teams", "Entire NFL", "Aggregates"];
       $rootScope.active_category = "Teams";
-      $rootScope.active_type = "Against the Spread";
+      $rootScope.active_type = "Moneyline";
 
       $rootScope.changeActiveCategory = function(str){
         $rootScope.active_category = str;
@@ -171,121 +171,420 @@ angular.module('Controllers', [])
 
     .then(function(){
 
-      var margin = {top: 60, right: 30, bottom: 40, left: 250},
-          width = 1200 - margin.left - margin.right,
-          height = 500 - margin.top - margin.bottom;
-      var x = d3.scale.linear()
-          .range([0, width * .8]);
-      var y = d3.scale.ordinal()
-          .rangeRoundBands([0, height], 0.1);
-      var xAxis = d3.svg.axis()
-          .scale(x)
-          .orient("bottom");
-      var yAxis = d3.svg.axis()
-          .scale(y)
-          .orient("left")
-          .tickSize(0)
-          .tickPadding(6);
+      var margin = {top: 20, right: 20, bottom: 30, left: 50},
+      width = 960 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
 
-          //what we are trying to add here...
-          // turn old box green or red
-          // show result against the spread in the box
-          // outside box, in correct color, say if they covered or not
+      /*
+   * value accessor - returns the value to encode for a given data object.
+   * scale - maps value to a visual display encoding, such as a pixel position.
+   * map function - maps from data value to display value
+   * axis - sets up axis
+   */
 
-          //on hover, show green if covered
-          // show red if no cover
-          // text says
+  // setup x
+  var xValue = function(d) { return d.week;}, // data -> value
+      xScale = d3.scale.linear().range([0, width]), // value -> display
+      xMap = function(d) { return xScale(xValue(d));}, // data -> display
+      xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
-      var svg = d3.select(".teams_ou_graph")
-          .append("svg")
-          .style("opacity", 0)
-          .attr("class", "chart")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom + 50)
-        .append("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-          d3.select('.chart')
-            .append('text')
-            .attr('transform', 'translate(120, 220)rotate(-90)')
-            .attr({'id': 'yLabel', 'text-anchor': 'middle', "stroke": "#888", "font-size": '18', "stroke-width": '.5'})
-            .text('Week');
-          d3.select('.chart')
-            .append('text')
-            .attr('transform', 'translate(' + ((width) / 2) + ',' + (height + 100) + ')')
-            .attr({'id': 'xLabel', 'text-anchor': 'middle', "stroke": "#eee", "font-size": '18', "stroke-width": '.5'})
-            .text('Spread');
-          // d3.select('.chart')
-          //   .append('text')
-          //   .attr('transform', 'translate(40, 60)')
-          //   .attr({'font-size': '40', "fill": $scope.teamsMeta[$scope.cur_team].hex, "stroke": $scope.teamsMeta[$scope.cur_team].sec_hex})
-          //   .text($scope.cur_team + " " + $scope.teamsMeta[$scope.cur_team].nick);
+  // setup y 1 - for over / unders
+  var yValue = function(d) { return d.total;}, // data -> value
+      yScale = d3.scale.linear().range([height, 0]), // value -> display
+      yMap = function(d) { return yScale(yValue(d));}, // data -> display
+      yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+  // setup y 2 - for actuals
+
+  // setup y 1 - for over / unders
+  var yyValue = function(d) { return (d.total + d.over_differential)}, // data -> value
+      yyMap = function(d) { return yScale(yyValue(d));}; // data -> display
 
 
-      // var data = $scope.cur_season;
+  // setup fill color
+  // var cValue = function(d) { return d.Manufacturer;},
+  //     color = d3.scale.category10();
 
-      // it looks like our spread is doing some weird things - let's make sure it's + or - depending on
-      // whether the .favorite property is true
-      for(var i = 0; i < $scope.cur_season.length; i ++){
-        $scope.cur_season[i].spread = Math.abs($scope.cur_season[i].spread);
-        var joe = $scope.cur_season[i].favorite ? 1 : -1;
-        $scope.cur_season[i].spread = $scope.cur_season[i].spread * joe;
-      }
+  // add the graph canvas to the body of the webpage
+  var svg = d3.select(".teams_ou_graph").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        x.domain([d3.min($scope.cur_season, function(d) { return d.spread - 3; }), d3.max($scope.cur_season, function(d) {return d.spread + 3})]);
-        y.domain($scope.cur_season.map(function(d) { return d.week ? d.week : "BYE"; }));
-        svg.selectAll(".bar")
-            .data($scope.cur_season)
-          .enter().append("g").append("rect")
-            .attr("x", function(d) { return x(Math.min(0, d.spread)); })
-            .attr("y", function(d) { return y(d.week); })
-            .attr("width", function(d) { return Math.abs(x(d.spread) - x(0)); })
-            .attr("height", y.rangeBand())
-            .attr("stroke", function(d) { return d.spread < 0 ? $scope.teamsMeta[d.opponent].sec_hex : $scope.teamsMeta[$scope.cur_team].sec_hex})
-            .attr("fill", function(d) { return d.spread < 0 ? $scope.teamsMeta[d.opponent].rgba : $scope.teamsMeta[$scope.cur_team].rgba})
-            .on("mouseover", function(d){ console.log(d)});
-        svg.selectAll("g").append("text")
-          .text(function(d){return d.spread ? d.spread : ''})
-          .attr("x", function(d){ return x(Math.min(0), d.spread); })
-          .attr("y", function(d){ return y(d.week); })
-          .attr("dy", "1.15em")
-          .attr("dx", function(d){ return d.spread < 0 ? (x(d.spread) - x(0) + 5) : (x(d.spread) - x(0) - this.clientWidth - 10)})
-          .attr("fill", "white");
-        svg.selectAll("g").append("text")
-          .text(function(d){return d.home ? "" + d.opponent : (d.home == false) ? "@ " + d.opponent : ""})
-          .attr("x", function(d){ return x(Math.min(0), d.spread); })
-          .attr("y", function(d){ return y(d.week); })
-          .attr("dy", "1.15em")
-          .attr("dx", function(d){ return d.spread < 0 ? (x(d.spread) - x(0) - this.clientWidth - 10) : (x(d.spread) - x(0) + 5)})
-          .attr("fill", "black");
-        svg.append("g")
-            .attr("class", "x axis")
-            .attr("stroke", "#aaa")
-            .attr("stroke-width", ".5")
-            .attr("transform", "translate(0," + height + ")")
-            .call(xAxis);
-        svg.append("g")
-            .attr("class", "y axis")
-            .attr("transform", "translate(-20,0)")
-            .attr("stroke", "#aaa")
-            .attr("stroke-width", ".5")
-            .attr("x", 0)
-            .call(yAxis);
+  // add the tooltip area to the webpage
+  var tooltip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
 
-      function type(d) {
-        d.spread = +d.spread;
-        return d;
-      }
+    // don't want dots overlapping axis, so add in buffer to data domain
+    xScale.domain([d3.min($scope.cur_season, xValue)- 1, d3.max($scope.cur_season, xValue)+1]);
+    // set the domain to the range of ACTUALS
+    yScale.domain([d3.min($scope.cur_season, yyValue) + 3, d3.max($scope.cur_season, yyValue) - 3]);
 
-    }).then(function(){
-      d3.selectAll("svg")
-        .style("opacity", 1)
-      })
-    })
-  }
+    // x-axis
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+      .append("text")
+        .attr("class", "label")
+        .attr("x", width)
+        .attr("y", -6)
+        .style("text-anchor", "end")
+        .text("Week");
+
+    // y-axis
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+      .append("text")
+        .attr("class", "label")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Over / Under");
+
+    // draw dots
+    svg.selectAll(".dot")
+        .data($scope.cur_season)
+      .enter().append("circle")
+        .attr("class", "dot")
+        .attr("r", function(d){ return d.total ? 9.5 : 0})
+        .attr("cx", xMap)
+        .attr("cy", yMap)
+        .style("fill", function(d) { return d.team ? $scope.teamsMeta[d.team].rgba : "" })
+        // .style("fill", "rgba(00,00,00,.5)")
+        .attr("cursor", "pointer");
+        // function(d) { return color(cValue(d));})
+        // .on("mouseover", function(d) {
+        //     tooltip.transition()
+        //          .duration(200)
+        //          .style("opacity", .9);
+        //     tooltip.html(d.opponent + "<br/> " + d.team)
+        //          .style("left", (d3.event.pageX + 5) + "px")
+        //          .style("top", (d3.event.pageY - 28) + "px");
+        // })
+        // .on("mouseout", function(d) {
+        //     tooltip.transition()
+        //          .duration(500)
+        //          .style("opacity", 0)
+        //        })
+
+    svg.selectAll(".dot2")
+        .data($scope.cur_season)
+      .enter().append("circle")
+        .attr("class", "dot2")
+        .attr("r", function(d){ return d.total ? 6.5 : 0})
+        .attr("cx", xMap)
+        .attr("cy", yyMap)
+        .style("fill", function(d){ return d.over_differential > 0 ? 'rgba(00,150,00,.85)' : d.over_differential == 0? 'rgba(255,255,255,1)' : 'rgba(255,00,00,.6)'});
+        // function(d) { return color(cValue(d));})
+        // .on("mouseover", function(d) {
+        //     tooltip.transition()
+        //          .duration(200)
+        //          .style("opacity", .9);
+        //     tooltip.html(d["Cereal Name"] + "<br/> (" + xValue(d)
+  	    //     + ", " + yValue(d) + ")")
+        //          .style("left", (d3.event.pageX + 5) + "px")
+        //          .style("top", (d3.event.pageY - 28) + "px");
+        // })
+        // .on("mouseout", function(d) {
+        //     tooltip.transition()
+        //          .duration(500)
+        //          .style("opacity", 0);
+  })
+
+  // function type(d) {
+  //   d.date = formatDate.parse(d.date);
+  //   d.close = +d.close;
+  //   return d;
+  // }
+
+
+          .then(function(){
+            d3.selectAll("svg")
+              .style("opacity", 1)
+            })
+          })
+        }
 
 }])
 
 .controller('teamsMlGraphCtrl', ['$scope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $routeParams, $timeout, $http, db){
+
+  $scope.changeActiveCategory = function(str){
+    $scope.active_category = str;
+    return $scope.active_category
+  };
+
+  $scope.changeActiveType = function(str){
+    $scope.active_type = str;
+    return $scope.active_type;
+  }
+
+  $scope.teams_dropdown = false;
+  $scope.year_dropdown = false;
+  $scope.cur_team = "Denver";
+  $scope.cur_year = 2015;
+
+  $scope.$watch("cur_season", function(){
+    return $scope.cur_season;
+  })
+
+  db.teamsMetaPromise.then(function(data){
+    $scope.teamsMeta = data;
+    return $scope.teamsMeta;
+  })
+
+  $http.get("../working_data/teams_meta.json").then(function(data){
+    $scope.team_options = Object.keys(data.data);
+    $scope.ind = $scope.team_options.indexOf($scope.cur_team);
+  })
+
+  $scope.newMlChart = function(team){
+    //first, let's fade out the old graph
+    d3.selectAll("svg")
+    .style("opacity", 0);
+
+    //after the fade, we'll remove the element
+    $timeout(function(){
+      d3.selectAll("svg")
+      .remove()
+    }, 1)
+    //then we'll repopulate with a new graph
+    .then(function(){
+      //don't run until we get our key variables
+      $scope.cur_team = team;
+      $scope.ind = $scope.team_options.indexOf($scope.cur_team);
+      db.teamsPromise.then(function(data){
+      $scope.teams = data;
+      $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$scope.cur_year];
+
+    })
+
+
+
+
+    .then(function(){
+
+      var margin = {top: 20, right: 20, bottom: 30, left: 50},
+      width = 960 - margin.left - margin.right,
+      height = 200 - margin.top - margin.bottom;
+
+      /*
+   * value accessor - returns the value to encode for a given data object.
+   * scale - maps value to a visual display encoding, such as a pixel position.
+   * map function - maps from data value to display value
+   * axis - sets up axis
+   */
+
+
+   for(var i = 0; i < $scope.cur_season.length; i++){
+     $scope.cur_season[i].cum_earned = 0
+
+     if( i == 0 ){
+       if($scope.cur_season[i].ml < 0 && $scope.cur_season[i].winner == true){
+         $scope.cur_season[i].cum_earned = 100;
+       }
+       else if($scope.cur_season[i].ml < 0 && $scope.cur_season[i].winner == false){
+         $scope.cur_season[i].cum_earned = $scope.cur_season[i].ml;
+       }
+       else if($scope.cur_season[i].ml > 0 && $scope.cur_season[i].winner == true){
+         $scope.cur_season[i].cum_earned = $scope.cur_season[i].ml;
+       }
+       else {
+         $scope.cur_season[i].cum_earned = -100;
+       }
+       i++
+     }
+        // if we were favorites, and we won the game, add 100
+        if($scope.cur_season[i].ml < 0 && $scope.cur_season[i].winner == true){
+          $scope.cur_season[i].cum_earned = ($scope.cur_season[i-1].cum_earned || $scope.cur_season[i-2].cum_earned || 0) + 100;
+        }
+        else if($scope.cur_season[i].ml < 0 && $scope.cur_season[i].winner == false){
+          $scope.cur_season[i].cum_earned = ($scope.cur_season[i-1].cum_earned || $scope.cur_season[i-2].cum_earned || 0) + $scope.cur_season[i].ml;
+        }
+        else if($scope.cur_season[i].ml > 0 && $scope.cur_season[i].winner == true){
+          $scope.cur_season[i].cum_earned = ($scope.cur_season[i-1].cum_earned || $scope.cur_season[i-2].cum_earned || 0) + $scope.cur_season[i].ml;
+        }
+        else {
+          $scope.cur_season[i].cum_earned = ($scope.cur_season[i-1].cum_earned || $scope.cur_season[i-2].cum_earned || 0) - 100;
+        }
+    }
+
+    console.log($scope.cur_season);
+
+  // setup x
+  var xValue = function(d) { return d.week;}, // data -> value
+      xScale = d3.scale.linear().range([0, width]), // value -> display
+      xMap = function(d) { return xScale(xValue(d));}, // data -> display
+      xAxis = d3.svg.axis().scale(xScale).orient("bottom")
+        .tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
+
+  var xCumValue = function(d) { return d},
+      xCumMap = function(d) { return xScale(xCumValue(d));},
+      xCumAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+  // setup y 1 - for over / unders
+  var yFavsValue = function(d) { return d.ml < 0 ? d.ml * -1 : "";}, // data -> value
+      yFavsScale = d3.scale.linear().range([height, 0]), // value -> display
+      yFavsMap = function(d) { return yFavsScale(yFavsValue(d));}, // data -> display
+      yFavsAxis = d3.svg.axis().scale(yFavsScale).orient("left");
+
+  // setup y 1 - for favorites
+  var yDogsValue = function(d) { return d.ml > 0 ? (100 / (d.ml * 1)) * 100 : "";}, // data -> value
+      yDogsScale = d3.scale.linear().range([height, 0]), // value -> display
+      yDogsMap = function(d) { return yDogsScale(yDogsValue(d));}, // data -> display
+      yDogsAxis = d3.svg.axis().scale(yDogsScale).orient("left");
+
+      // setup y 2 - for favorites
+  var yCumValue = function(d) { return d.cum_earned;}, // data -> value
+      yCumScale = d3.scale.linear().range([height, 0]), // value -> display
+      yCumMap = function(d) { return yCumScale(yCumValue(d));}, // data -> display
+      yCumAxis = d3.svg.axis().scale(yCumScale).orient("left");
+
+  var svg = d3.select(".teams_ml_graph_favs").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var svg2 = d3.select(".teams_ml_graph_dogs").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var svg3 = d3.select(".teams_ml_graph_cum").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+    // don't want dots overlapping axis, so add in buffer to data domain
+    xScale.domain([0, 16]);
+    // set the domain to the range of ACTUALS
+    yFavsScale.domain([100, d3.max($scope.cur_season, yFavsValue)]);
+    yDogsScale.domain([0, 100]);
+    yCumScale.domain([d3.min($scope.cur_season, yCumValue), d3.max($scope.cur_season, yCumValue)]);
+    console.log($scope.cur_season);
+
+    // x-axis
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+      .append("text")
+        .attr("class", "label")
+        .attr("x", width)
+        .attr("y", -6)
+        .style("text-anchor", "end")
+        .text("Week");
+
+    // y-axis
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yFavsAxis)
+      .append("text")
+        .attr("class", "label")
+        .attr("transform", "translate(0, 0)rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("$ risked to win 100");
+
+    // draw dots
+    svg.selectAll(".dot")
+        .data($scope.cur_season)
+        .enter().append("circle")
+          .attr("class", "dot2")
+          .attr("r", function(d){ return d.ml < 0 ? 6.5 : 0})
+        .attr("cx", xMap)
+        .attr("cy", yFavsMap)
+        .style("fill", function(d) { return d.team ? $scope.teamsMeta[d.team].rgba : "" })
+        // .style("fill", "rgba(00,00,00,.5)")
+        .attr("cursor", "pointer")
+
+        svg2.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis)
+          .append("text")
+            .attr("class", "label")
+            .attr("x", width)
+            .attr("y", -6)
+            .style("text-anchor", "end")
+            .text("Week");
+
+        svg2.append("g")
+            .attr("class", "y axis")
+            .call(yDogsAxis)
+          .append("text")
+            .attr("class", "label")
+            .attr("transform", "translate(0, 0)rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("$ risked to win 100");
+
+            svg2.selectAll(".dot")
+                .data($scope.cur_season)
+                .enter().append("circle")
+                  .attr("class", "dot2")
+                  .attr("r", function(d){ return d.ml > 0 ? 6.5 : 0})
+                .attr("cx", xMap)
+                .attr("cy", yDogsMap)
+                .style("fill", function(d) { return d.team ? $scope.teamsMeta[d.team].rgba : "" })
+                // .style("fill", "rgba(00,00,00,.5)")
+                .attr("cursor", "pointer")
+
+                svg3.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(xAxis)
+                  .append("text")
+                    .attr("class", "label")
+                    .attr("x", width)
+                    .attr("y", -6)
+                    .style("text-anchor", "end")
+                    .text("Week");
+
+                svg3.append("g")
+                    .attr("class", "y axis")
+                    .call(yCumAxis)
+                  .append("text")
+                    .attr("class", "label")
+                    .attr("transform", "translate(0, 0)rotate(-90)")
+                    .attr("y", 6)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .text("$ risked to win 100");
+
+                    svg3.selectAll(".dot")
+                        .data($scope.cur_season)
+                        .enter().append("circle")
+                          .attr("class", "dot2")
+                          .attr("r", "6.5")
+                          .attr("cx", xMap)
+                        .attr("cy", yCumMap)
+
+                        .style("fill", "green")
+                        // .style("fill", "rgba(00,00,00,.5)")
+                        .attr("cursor", "pointer");
+
+
+      })
+
+          .then(function(){
+            d3.selectAll("svg")
+              .style("opacity", 1)
+            })
+          })
+        }
+
 
 }])
 
