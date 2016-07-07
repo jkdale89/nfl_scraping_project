@@ -125,6 +125,7 @@
         array[i].wins = (1 * (array[i].winner)),
         array[i].losses = (1 * !(array[i].winner)),
         array[i].record = array[i].wins + "-" + array[i].losses;
+        array[i].multiplier = 1;
       }
       // find the bye week, and don't iterate it
       else if((array[i] == undefined) && (i > 1)){
@@ -141,7 +142,8 @@
           array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
           array[i].wins = array[i-2].wins + (1 * (array[i].winner)),
           array[i].losses = array[i-2].losses + (1 * !(array[i].winner)),
-          array[i].record = array[i].wins + "-" + array[i].losses;
+          array[i].record = array[i].wins + "-" + array[i].losses,
+          array[i].multiplier = i % 16;
         }
         else {
           array[i].wins_ats = array[i-1].wins_ats + (1 * (array[i].ats > 0)),
@@ -150,7 +152,8 @@
           array[i].record_ats = array[i].wins_ats + "-" + array[i].losses_ats + "-" + array[i].ties_ats,
           array[i].wins = array[i-1].wins + (1 * (array[i].winner)),
           array[i].losses = array[i-1].losses + (1 * !(array[i].winner)),
-          array[i].record = array[i].wins + "-" + array[i].losses;
+          array[i].record = array[i].wins + "-" + array[i].losses,
+          array[i].multiplier = i % 16;
         }
       }
     }

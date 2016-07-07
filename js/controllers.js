@@ -620,7 +620,7 @@ angular.module('Controllers', [])
     $scope.newNflChart(2015);
   });
 
-  $scope.newNflChart = function(startYear, endYear, type){
+  $scope.newNflChart = function(startYear, endYear, type, team){
     d3.selectAll("svg")
       .style("opacity", 0);
 
@@ -629,9 +629,10 @@ angular.module('Controllers', [])
         .remove()
       }, 1)
 
+
       .then(function(){
 
-        console.log($scope.favorites.length + "is the length of favorites");
+
 
         $rootScope.cur_year = startYear;
         if(endYear){
@@ -648,14 +649,16 @@ angular.module('Controllers', [])
         }
       })
 
+
+
       .then(function(){
-        var margin = {top: 100, right: 20, bottom: 30, left: 50},
-        width = 960 - margin.left - margin.right,
+        var margin = {top: 100, right: 20, bottom: 30, left: 120},
+        width = 1060 - margin.left - margin.right,
         height = 580 - margin.top - margin.bottom;
 
         var xValue = function(d){ return d.week},
             xScale = d3.scale.linear().range([0, width]),
-            xMap = function(d) { return xScale(xValue(d));},
+            xMap = function(d) { return xScale(xValue(d) - 1 + ((1 - d.spread) * .125));},
             xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
         var yValueF = function(d) { return d.spread * -1},
@@ -666,11 +669,57 @@ angular.module('Controllers', [])
             var yValueD = function(d) {return d.spread},
             yMapD = function(d) { return yScale(yValueD(d));}
 
+            var yValueAts = function(d){return d.ats > 21? 21 : d.ats < -21 ? -21 :
+              d.ats > 0 ? (d.spread * -1 + d.ats) > 21 ? 21 : (d.spread * -1 + d.ats) : (d.spread * -1) + d.ats},
+                yValueAtsD = function(d){ return (d.spread) + d.ats},
+                yMapAts = function(d){ return yScale(yValueAts(d))},
+                yMapAtsD = function(d){ return yScale(yValueAtsD(d))};
+
         var svg = d3.select(".nfl_scatter").append("svg")
-          .attr("width", width + margin.left + margin.right + 50)
+          .attr("width", width + margin.left + margin.right + 200)
           .attr("height", height + margin.top + margin.bottom + 50)
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+          d3.select("svg").append("text")
+            .text($rootScope.active_category + ": " + $rootScope.cur_team)
+            .attr("font-size", "80px")
+            .attr("stroke", "rgb(221,221,221)")
+            .attr("opacity", ".3")
+            .attr("y", margin.top - 20)
+            .attr("x", margin.left);
+
+          d3.select("svg").append("text")
+            .text($scope.cur_year)
+            .attr("font-size", "80px")
+            .attr("stroke", "rgb(221,221,221)")
+            .attr("opacity", ".3")
+            .attr("y", margin.top -20)
+            .attr("x", width - 50);
+
+            var play_button = d3.select("body").append("div")
+              .html(
+                "<div class='play_button'>" +
+                "<i class = 'fa fa-play-circle-o'></i>" +
+                "</div>"
+              )
+
+              .attr("y", height + 50)
+              .attr("x", width / 2);
+
+
+            // tooltip.html(
+            //   "<p style='text-align:center'>" + d.fav +  "</p><p style='text-align:center'>" + d.spread + "<p style='text-align:center'>" + d.dog
+            //     + "</p><p>" + d.winningTeam + ": " + d.winningScore +"</p><p>" +
+            //   "<p ng-style='d.ats > 0? 'green' : 'red'>" + d.ats + "</p>" +
+            //   "<p>" + d.losingTeam + ": " + d.losingScore + "</p>")
+            //   .style("left", (d3.event.pageX + 25) + "px")
+            //   .style("top", (d3.event.pageY - 8) + "px");
+            //   tooltip.transition()
+            //     .ease("elastic")
+            //     .duration("1000")
+            //     .style("opacity", "1");
+
 
           xScale.domain([0, 16]);
           yScale.domain([-21, 21]);
@@ -681,20 +730,6 @@ angular.module('Controllers', [])
           var tooltip = d3.select("body").append("div")
               .attr("class", "tooltip")
               .style("opacity", 1);
-
-          // .on("mouseover", function(d) {
-          //     tooltip.transition()
-          //          .duration(200)
-          //          .style("opacity", .9);
-          //     tooltip.html(d.opponent + "<br/> " + d.team)
-          //          .style("left", (d3.event.pageX + 5) + "px")
-          //          .style("top", (d3.event.pageY - 28) + "px");
-          // })
-          // .on("mouseout", function(d) {
-          //     tooltip.transition()
-          //          .duration(500)
-          //          .style("opacity", 0)
-          //        })
 
           svg.append("g")
             .attr("class", "x axis")
@@ -721,16 +756,18 @@ angular.module('Controllers', [])
 
             svg.selectAll(".dotFavorite")
               .data($scope.favorites[$rootScope.cur_year - 2006][$rootScope.cur_year])
+
                   .enter().append("circle")
+
                     .attr("class", function(d)
-                      {return d.dog.replace(" ","").replace(".","") + d.week
-                      + " " + "week_" + d.week
+
+                      {return d.dog.replace(" ","").replace(".","") + d.week + " " + "week_" + d.week
                       })
                     .attr("r", function(d){ return d.spread ? 5.5 : 0})
                     .attr("stroke-width", "3")
                     .attr("cx", xMap)
                     .attr("cy", yMapF)
-                    .attr("fill", "rgba(0,200,50,1)")
+                    .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150,1)" : "rgba(0,50,100,.8)"})
                     // .style("fill", function(d){ return $scope.teamsMeta[d.fav].hex})
                     // .style("fill", "rgba(00,00,00,.5)")
                     .attr("cursor", "pointer")
@@ -743,8 +780,8 @@ angular.module('Controllers', [])
                           .duration("500")
                           .attr("r", "5.5")
                           .attr("z-index", "0")
-                          .attr("fill", "rgba(0,200,50,1)")
-                          .attr("stroke", "rgba(0,200,50,1)")
+                          .attr("fill", "rgba(0,50,150,1)")
+                          .attr("stroke", "rgba(0,50,150,1)")
 
                         d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
                           .transition()
@@ -764,22 +801,32 @@ angular.module('Controllers', [])
                           .attr("fill", function(d){return $scope.teamsMeta[d.fav].hex})
                           .attr("stroke", function(d){return $scope.teamsMeta[d.fav].sec_hex});
 
-                        tooltip.transition()
-                          .duration(200)
-                          .ease("elastic")
-                        tooltip.html(d.fav + "<br/> " + d.ats + "<br/>" + d.dog)
+                        tooltip.html(
+                          "<p style='text-align:center'>" + d.fav +  "</p><p style='text-align:center'>" + d.spread + "<p style='text-align:center'>" + d.dog
+                            + "</p><p>" + d.winningTeam + ": " + d.winningScore +"</p><p>" +
+                          "<p ng-style='d.ats > 0? 'green' : 'red'>" + d.ats + "</p>" +
+                          "<p>" + d.losingTeam + ": " + d.losingScore + "</p>")
                           .style("left", (d3.event.pageX + 25) + "px")
                           .style("top", (d3.event.pageY - 8) + "px");
+                          tooltip.transition()
+                            .ease("elastic")
+                            .duration("1000")
+                            .style("opacity", "1");
+                    })
+                    .on("click", function(d){
+                      d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
+                      .transition()
+                      .ease("elastic")
+                      .duration("1000")
+                      .style("fill", function(d){ return d.ats > 0 ? "rgba(00,200,100,1)" : "rgba(150,0,0,1)"})
+                      .style("stroke", function(d){ return d.ats > 0 ? "rgba(00,200,100,1)" : "rgba(150,0,0,1)"})
+                      .attr("cy", yMapAts);
                     })
                     .on("mouseout", function(d){
-                        d3.selectAll(".week_" + d.week)
-                        .transition()
-                        .ease("elastic")
-                        .attr("stroke-width", "3")
-                        .duration("100")
-                        .attr("r", 5.5)
-                        .attr("opacity", "1")
-                        .attr("fill", "rgba(0,200,50,1)");
+                        tooltip.transition()
+                        .ease("linear")
+                        .style("opacity", "0")
+                        .duration("1000");
 
                         d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
                         .transition()
@@ -787,15 +834,17 @@ angular.module('Controllers', [])
                         .attr("stroke-width", "3")
                         .duration("100")
                         .attr("r", 5.5)
-                        .attr("opacity", "1");
+                        .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150,1)" : "rgba(0,50,100,.8)"})
+                        .attr("stroke", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150,1)" : "rgba(0,50,100,.8)"})
+                        .attr("opacity", ".1");
 
                         d3.select(this)
                           .transition()
                           .ease("elastic")
                           .duration("100")
                           .attr("r", "5.5")
-                          .attr("fill", "rgba(0,200,50,1)")
-                          .attr("stroke", "rgba(0,200,50,1)")
+                          .attr("fill", function(d){ return d.ats > 0 ? "rgba(00,200,100,1)" : "rgba(150,0,0,1)"})
+                          .attr("stroke", function(d){ return d.ats > 0 ? "rgba(00,200,100,1)" : "rgba(150,0,0,1)"})
                           .attr("opacity", "1");
 
 
@@ -810,7 +859,8 @@ angular.module('Controllers', [])
                           .attr("stroke-width", "3")
                           .attr("cx", xMap)
                           .attr("cy", yMapD)
-                          .attr("fill", "rgba(150,0,150,1)")
+                          .attr("opacity", ".1")
+                          .attr("fill", function(d){return d.week % 2 == 0 ? "rgba(150,0,150,1)" : "rgba(150,0,50,1)"})
                           // .style("fill", "rgba(00,00,00,.5)")
                           .attr("cursor", "pointer");
       })
