@@ -652,6 +652,23 @@ angular.module('Controllers', [])
 
 
       .then(function(){
+
+        var animate_games = function(speed){
+            d3.selectAll("circle")
+            .transition()
+            .duration(500)
+            .ease("linear")
+              .attr("opacity", 0)
+
+        svg.selectAll("circle")
+          .transition()
+            .duration(500)
+            .ease("linear")
+            .delay(function(d,i){
+              return 500 + 100 * d.week + i * 5})
+              .attr("opacity", 1)
+
+      }
         var margin = {top: 100, right: 20, bottom: 30, left: 120},
         width = 1060 - margin.left - margin.right,
         height = 580 - margin.top - margin.bottom;
@@ -682,16 +699,16 @@ angular.module('Controllers', [])
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
           d3.select("svg").append("text")
-            .text($rootScope.active_category + ": " + $rootScope.cur_team)
-            .attr("font-size", "80px")
+            .text($rootScope.active_category + ": " + $rootScope.active_type)
+            .attr("font-size", "60px")
             .attr("stroke", "rgb(221,221,221)")
             .attr("opacity", ".3")
             .attr("y", margin.top - 20)
-            .attr("x", margin.left);
+            .attr("x", margin.left + 20);
 
           d3.select("svg").append("text")
             .text($scope.cur_year)
-            .attr("font-size", "80px")
+            .attr("font-size", "60px")
             .attr("stroke", "rgb(221,221,221)")
             .attr("opacity", ".3")
             .attr("y", margin.top -20)
@@ -703,22 +720,8 @@ angular.module('Controllers', [])
                 "<i class = 'fa fa-play-circle-o'></i>" +
                 "</div>"
               )
+              .on("click", animate_games);
 
-              .attr("y", height + 50)
-              .attr("x", width / 2);
-
-
-            // tooltip.html(
-            //   "<p style='text-align:center'>" + d.fav +  "</p><p style='text-align:center'>" + d.spread + "<p style='text-align:center'>" + d.dog
-            //     + "</p><p>" + d.winningTeam + ": " + d.winningScore +"</p><p>" +
-            //   "<p ng-style='d.ats > 0? 'green' : 'red'>" + d.ats + "</p>" +
-            //   "<p>" + d.losingTeam + ": " + d.losingScore + "</p>")
-            //   .style("left", (d3.event.pageX + 25) + "px")
-            //   .style("top", (d3.event.pageY - 8) + "px");
-            //   tooltip.transition()
-            //     .ease("elastic")
-            //     .duration("1000")
-            //     .style("opacity", "1");
 
 
           xScale.domain([0, 16]);
