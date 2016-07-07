@@ -44,7 +44,7 @@ body {
 }
 
 .x.axis path {
-  
+
 }
 
 .line {
@@ -237,22 +237,35 @@ p.results {
 
 
 .cur_year {
-  display: inline-block;
-  float: top;
-  width: 100%;
+  display: block;
+  color: rgba(0,99,99,.8);
+  top: 20px;
+  position: absolute;
+  left: 25%;
   text-align: center;
-  position: relative;
   cursor: pointer;
+}
+
+.cur_year p {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: inherit;
+  transition: .3s ease all;
 }
 
 .cur_year p:hover {
-  color: #009999;
-  cursor: pointer;
+  background-color: rgba(0,99,99,.5);
+  color: white;
+  transition: .3s ease all;
 }
 
-.cur_team p:hover {
-  color: #009999;
-  cursor: pointer;
+.cur_year p.active {
+  background-color: rgba(0,99,99,.8);
+  color: white;
+  transition: .3s ease all;
 }
 
 .teams_drop {
@@ -400,7 +413,7 @@ svg {
   font-size: 2em;
   position: absolute;
   top: 0px;
-  left: 2.5%;
+  left: 20%;
   display: inline;
 }
 
@@ -461,4 +474,13 @@ div .test {
 
 .active {
   font-weight: bolder;
+}
+
+.tooltip {
+  background: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
 }

@@ -87,11 +87,11 @@
       }
     },
 
-    nflFavs = function(){
+    nflScatter = function(){
       return {
         restrict: 'E',
-        template: "<div class = 'nfl_favs_graph'>the nfl favs vs dawg graph will go here</div>",
-        controller: 'nflFavsGraphCtrl',
+        template: "<div ng-init=\"newNflChart(2015)\" class = 'nfl_scatter'></div>",
+        controller: 'nflScatterCtrl',
         replace: false
       }
     },
@@ -237,7 +237,7 @@
       .directive('teamsOu', teamsOu)
       .directive('teamsMl', teamsMl)
     // graphs for entire nfl
-      .directive('nflFavs', nflFavs)
+      .directive('nflScatter', nflScatter)
       .directive('nflHome', nflHome)
       .directive('nflOu', nflOu)
       .directive('nflMl', nflMl)

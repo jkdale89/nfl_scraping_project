@@ -14,13 +14,13 @@
         <teams-ml
           ng-show="active_type == 'Moneyline' &&
           active_category == 'Teams'">
-          
+
         </teams-ml>
 
-        <nfl-favs
-          ng-show="active_type == 'Favorites vs Underdogs' &&
+        <nfl-scatter
+          ng-show="active_type == 'Scatter' &&
           active_category == 'Entire NFL'">
-        </nfl-favs>
+        </nfl-scatter>
         <nfl-home
           ng-show="active_type == 'Home vs Away' &&
           active_category == 'Entire NFL'">
@@ -60,16 +60,20 @@
           active_category == 'Aggregates'">
         </agg-ml>
 
-  </div>
+      </div>
+    </div>
 
+<div>
 
-
-
-  <div ng-mouseenter="teams_dropdown = true" ng-mouseleave="teams_dropdown = false" class = "cur_team">
+  <div
+  ng-mouseenter="teams_dropdown = true"
+  ng-mouseleave="teams_dropdown = false"
+  ng-show="active_category == 'Teams'" class = "cur_team">
     {{cur_team}} {{teamsMeta[cur_team].nick}}
     <i class="fa fa-angle-down" aria-hidden="true"></i>
     <div ng-show="teams_dropdown" class="teams_drop_graph">
-      <p style="font-size: 20px; line-height: 2; color: {{teamsMeta[team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[team].hex}}; background-color {{teamsMeta[team].rgba}}" ng-click = "newChart(team)" ng-repeat="team in team_options" ng-class-odd="'odd'">
+      <p style="font-size: 20px; line-height: 2; color: {{teamsMeta[team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[team].hex}}; background-color {{teamsMeta[team].rgba}}"
+      ng-click = "newChart(team)" ng-repeat="team in team_options" ng-class-odd="'odd'">
         <img src="{{teamsMeta[team].url}}">
         {{team}}
       </p>
@@ -85,7 +89,16 @@
     </ul>
   </div>
 
-  </div>
+  <!-- <div class="cur_year">
+    <p ng-class="{active: year == cur_year}"
+       ng-repeat="year in year_options"
+       ng-click="changeYear(year)">
+      {{year}}
+    </p>
+  </div> -->
+
+</div>
+
 
 
 </div>

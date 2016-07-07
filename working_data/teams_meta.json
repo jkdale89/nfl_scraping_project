@@ -75,7 +75,7 @@
 		"city": "Chicago",
 		"url": "http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/chi.png&h=25&w=25",
 		"hex": "#0B162A",
-		"sec_hex": "C83803",
+		"sec_hex": "#C83803",
 		"rgba": "rgba(11,22,42,.8)",
 		"sec_rgba": "rgba(200,56,3,.8)"
 	},
@@ -114,8 +114,8 @@
 		"nick": "49ers",
 		"city": "San Francisco",
 		"url": "http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sf.png&h=25&w=25",
-		"hex": "#b3995d",
-		"sec_hex": "#aa0000",
+		"hex": "#aa0000",
+		"sec_hex": "#b3995d",
 		"rgba": "rgba(170,0,0,.8)",
 		"sec_rgba": "rgba(179,153,93,.8)"
 	},

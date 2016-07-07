@@ -30,8 +30,8 @@ angular.module('Controllers', [])
       })
 
       $rootScope.category_options = ["Teams", "Entire NFL", "Aggregates"];
-      $rootScope.active_category = "Teams";
-      $rootScope.active_type = "Moneyline";
+      $rootScope.active_category = "Entire NFL";
+      $rootScope.active_type = "Scatter";
 
       $rootScope.changeActiveCategory = function(str){
         $rootScope.active_category = str;
@@ -57,7 +57,7 @@ angular.module('Controllers', [])
           category: "Entire NFL",
           //no space after
           cat_types: [
-            "Favorites vs Underdogs",
+            "Scatter",
             "Home vs Away",
             "Over / Under",
             "Moneyline"
@@ -101,6 +101,7 @@ angular.module('Controllers', [])
 
     $rootScope.changeYear = function(year){
       $rootScope.cur_year = year;
+      return $rootScope;
     }
 
     $rootScope.teams_dropdown = false;
@@ -132,8 +133,7 @@ angular.module('Controllers', [])
 
   $scope.teams_dropdown = false;
   $scope.year_dropdown = false;
-  $scope.cur_team = "Denver";
-  $scope.cur_year = 2015;
+
 
   $scope.$watch("cur_season", function(){
     return $scope.cur_season;
@@ -166,7 +166,7 @@ angular.module('Controllers', [])
       $scope.ind = $scope.team_options.indexOf($scope.cur_team);
       db.teamsPromise.then(function(data){
       $scope.teams = data;
-      $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$scope.cur_year];
+      $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$rootScope.cur_year];
     })
 
     .then(function(){
@@ -257,6 +257,9 @@ angular.module('Controllers', [])
         .style("fill", function(d) { return d.team ? $scope.teamsMeta[d.team].rgba : "" })
         // .style("fill", "rgba(00,00,00,.5)")
         .attr("cursor", "pointer");
+        // var tooltip = d3.select("body").append("div")
+        //     .attr("class", "tooltip")
+        //     .style("opacity", 0);
         // function(d) { return color(cValue(d));})
         // .on("mouseover", function(d) {
         //     tooltip.transition()
@@ -369,7 +372,7 @@ angular.module('Controllers', [])
 
     .then(function(){
 
-      var margin = {top: 20, right: 20, bottom: 30, left: 50},
+      var margin = {top: 20, right: 20, bottom: 30, left: 20},
       width = 960 - margin.left - margin.right,
       height = 200 - margin.top - margin.bottom;
 
@@ -414,7 +417,7 @@ angular.module('Controllers', [])
         }
     }
 
-    console.log($scope.cur_season);
+
 
   // setup x
   var xValue = function(d) { return d.week;}, // data -> value
@@ -470,7 +473,7 @@ angular.module('Controllers', [])
     yFavsScale.domain([100, d3.max($scope.cur_season, yFavsValue)]);
     yDogsScale.domain([0, 100]);
     yCumScale.domain([d3.min($scope.cur_season, yCumValue), d3.max($scope.cur_season, yCumValue)]);
-    console.log($scope.cur_season);
+
 
     // x-axis
     svg.append("g")
@@ -588,7 +591,233 @@ angular.module('Controllers', [])
 
 }])
 
-.controller('nflFavsGraphCtrl', ['$scope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $routeParams, $timeout, $http, db){
+.controller('nflScatterCtrl', ['$scope', '$routeParams', '$rootScope', '$timeout', '$http', 'Data', function($scope, $routeParams, $rootScope, $timeout, $http, db){
+
+  db.underdogsPromise.then(function(data){
+    $scope.underdogs = data;
+  });
+
+  db.homeTeamsPromise.then(function(data){
+    $scope.home = data;
+  });
+
+  db.awayTeamsPromise.then(function(data){
+    $scope.away = data;
+  });
+
+  db.teamsMetaPromise.then(function(data){
+    $scope.teamsMeta = data;
+  });
+
+  $scope.favorites = [];
+
+  db.favoritesPromise.then(function(data){
+    $scope.favorites = data;
+    return $scope.favorites;
+  });
+
+  $scope.$watch("favorites", function(){
+    $scope.newNflChart(2015);
+  });
+
+  $scope.newNflChart = function(startYear, endYear, type){
+    d3.selectAll("svg")
+      .style("opacity", 0);
+
+      $timeout(function(){
+        d3.selectAll("svg")
+        .remove()
+      }, 1)
+
+      .then(function(){
+
+        console.log($scope.favorites.length + "is the length of favorites");
+
+        $rootScope.cur_year = startYear;
+        if(endYear){
+          $scope.duration = endYear - startYear + 1;
+        }
+        else{
+          $scope.duration = 1;
+        }
+        if(type){
+          $scope.filter = type;
+        }
+        else{
+          $scope.filter = null;
+        }
+      })
+
+      .then(function(){
+        var margin = {top: 100, right: 20, bottom: 30, left: 50},
+        width = 960 - margin.left - margin.right,
+        height = 580 - margin.top - margin.bottom;
+
+        var xValue = function(d){ return d.week},
+            xScale = d3.scale.linear().range([0, width]),
+            xMap = function(d) { return xScale(xValue(d));},
+            xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+        var yValueF = function(d) { return d.spread * -1},
+            yScale = d3.scale.linear().range([height, 0]),
+            yMapF = function(d) { return yScale(yValueF(d));},
+            yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+            var yValueD = function(d) {return d.spread},
+            yMapD = function(d) { return yScale(yValueD(d));}
+
+        var svg = d3.select(".nfl_scatter").append("svg")
+          .attr("width", width + margin.left + margin.right + 50)
+          .attr("height", height + margin.top + margin.bottom + 50)
+        .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+          xScale.domain([0, 16]);
+          yScale.domain([-21, 21]);
+
+          xAxis.tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
+          yAxis.tickValues([-21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21]);
+
+          var tooltip = d3.select("body").append("div")
+              .attr("class", "tooltip")
+              .style("opacity", 1);
+
+          // .on("mouseover", function(d) {
+          //     tooltip.transition()
+          //          .duration(200)
+          //          .style("opacity", .9);
+          //     tooltip.html(d.opponent + "<br/> " + d.team)
+          //          .style("left", (d3.event.pageX + 5) + "px")
+          //          .style("top", (d3.event.pageY - 28) + "px");
+          // })
+          // .on("mouseout", function(d) {
+          //     tooltip.transition()
+          //          .duration(500)
+          //          .style("opacity", 0)
+          //        })
+
+          svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height / 2 + ")")
+            .call(xAxis)
+          .append("text")
+            .attr("class", "label")
+            .attr("x", width)
+            .attr("y", -6)
+            .style("text-anchor", "end")
+            .text("Week");
+
+            // y-axis
+            svg.append("g")
+                .attr("class", "y axis")
+                .call(yAxis)
+              .append("text")
+                .attr("class", "label")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 6)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("Over / Under");
+
+            svg.selectAll(".dotFavorite")
+              .data($scope.favorites[$rootScope.cur_year - 2006][$rootScope.cur_year])
+                  .enter().append("circle")
+                    .attr("class", function(d)
+                      {return d.dog.replace(" ","").replace(".","") + d.week
+                      + " " + "week_" + d.week
+                      })
+                    .attr("r", function(d){ return d.spread ? 5.5 : 0})
+                    .attr("stroke-width", "3")
+                    .attr("cx", xMap)
+                    .attr("cy", yMapF)
+                    .attr("fill", "rgba(0,200,50,1)")
+                    // .style("fill", function(d){ return $scope.teamsMeta[d.fav].hex})
+                    // .style("fill", "rgba(00,00,00,.5)")
+                    .attr("cursor", "pointer")
+                    .on("mouseover", function(d){
+                        // select data from this week
+                        d3.selectAll(".week_" + d.week)
+                        //on hover, fade out the data, make it small and green
+                          .transition()
+                          .ease("elastic")
+                          .duration("500")
+                          .attr("r", "5.5")
+                          .attr("z-index", "0")
+                          .attr("fill", "rgba(0,200,50,1)")
+                          .attr("stroke", "rgba(0,200,50,1)")
+
+                        d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
+                          .transition()
+                          .ease("elastic")
+                          .duration("500")
+                          .attr("z-index", "1")
+                          .attr("r", "12.5")
+                          .attr("fill", function(d){ return $scope.teamsMeta[d.dog].hex})
+                          .attr("stroke", function(d){return $scope.teamsMeta[d.dog].sec_hex})
+                          .attr("opacity", "1");
+                        d3.select(this)
+                          .transition()
+                          .ease("elastic")
+                          .duration("500")
+                          .attr("r", "12.5")
+                          .attr("z-index", "1")
+                          .attr("fill", function(d){return $scope.teamsMeta[d.fav].hex})
+                          .attr("stroke", function(d){return $scope.teamsMeta[d.fav].sec_hex});
+
+                        tooltip.transition()
+                          .duration(200)
+                          .ease("elastic")
+                        tooltip.html(d.fav + "<br/> " + d.ats + "<br/>" + d.dog)
+                          .style("left", (d3.event.pageX + 25) + "px")
+                          .style("top", (d3.event.pageY - 8) + "px");
+                    })
+                    .on("mouseout", function(d){
+                        d3.selectAll(".week_" + d.week)
+                        .transition()
+                        .ease("elastic")
+                        .attr("stroke-width", "3")
+                        .duration("100")
+                        .attr("r", 5.5)
+                        .attr("opacity", "1")
+                        .attr("fill", "rgba(0,200,50,1)");
+
+                        d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
+                        .transition()
+                        .ease("elastic")
+                        .attr("stroke-width", "3")
+                        .duration("100")
+                        .attr("r", 5.5)
+                        .attr("opacity", "1");
+
+                        d3.select(this)
+                          .transition()
+                          .ease("elastic")
+                          .duration("100")
+                          .attr("r", "5.5")
+                          .attr("fill", "rgba(0,200,50,1)")
+                          .attr("stroke", "rgba(0,200,50,1)")
+                          .attr("opacity", "1");
+
+
+                    });
+
+                    svg.selectAll(".dotUnderdog")
+                    .data($scope.favorites[$rootScope.cur_year - 2006][$rootScope.cur_year])
+                        .enter().append("circle")
+                          .attr("class", function(d){
+                            return d.dog.replace(" ","").replace(".","") + d.week})
+                          .attr("r", function(d){ return d.spread ? 5.5 : 0})
+                          .attr("stroke-width", "3")
+                          .attr("cx", xMap)
+                          .attr("cy", yMapD)
+                          .attr("fill", "rgba(150,0,150,1)")
+                          // .style("fill", "rgba(00,00,00,.5)")
+                          .attr("cursor", "pointer");
+      })
+
+
+  }
+
 
 }])
 
