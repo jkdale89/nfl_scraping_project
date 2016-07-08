@@ -338,8 +338,9 @@ p.results {
   text-align: center;
   height: 40px;
   margin: 0px;
-  line-height: 3;
   border-bottom: 1px solid white;
+  font-size: 20px;
+  line-height: 2;
 }
 
 .teams_drop_graph p:hover {
@@ -509,18 +510,37 @@ div .test {
   margin-top: 0px;
 }
 
-div .play_button {
+div .area_chart {
   padding: 5px 10px 5px 10px;
   position: absolute;
   font-size: 24px;
   top: 550px;
-  right: 50%;
+  right: 55%;
   border-radius: 5px;
   background-color: rgba(00,99,99,.2);
   color: black;
 }
 
-.play_button:hover {
+.area_chart:hover {
+  color: "rgba(00,99,99,.7)";
+  background: white;
+  transition: .3s ease all;
+  cursor: pointer;
+  color: green;
+}
+
+div .line_chart {
+  padding: 5px 10px 5px 10px;
+  position: absolute;
+  font-size: 24px;
+  top: 550px;
+  right: 45%;
+  border-radius: 5px;
+  background-color: rgba(00,99,99,.2);
+  color: black;
+}
+
+.line_chart:hover {
   color: "rgba(00,99,99,.7)";
   background: white;
   transition: .3s ease all;

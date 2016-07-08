@@ -107,6 +107,7 @@ angular.module('Controllers', [])
       return $rootScope;
     }
 
+
     $rootScope.teams_dropdown = false;
     $rootScope.year_dropdown = false;
 
@@ -123,20 +124,6 @@ angular.module('Controllers', [])
   }])
 
 .controller('teamsOuGraphCtrl', ['$scope', '$rootScope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $rootScope, $routeParams, $timeout, $http, db){
-
-  $scope.changeActiveCategory = function(str){
-    $scope.active_category = str;
-    return $scope.active_category
-  };
-
-  $scope.changeActiveType = function(str){
-    $scope.active_type = str;
-    return $scope.active_type;
-  }
-
-  $scope.teams_dropdown = false;
-  $scope.year_dropdown = false;
-
 
   $scope.$watch("cur_season", function(){
     return $scope.cur_season;
@@ -318,20 +305,10 @@ angular.module('Controllers', [])
 
 }])
 
-.controller('teamsMlGraphCtrl', ['$scope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $routeParams, $timeout, $http, db){
-
-  $scope.changeActiveCategory = function(str){
-    $scope.active_category = str;
-    return $scope.active_category
-  };
-
-  $scope.changeActiveType = function(str){
-    $scope.active_type = str;
-    return $scope.active_type;
-  }
+.controller('teamsMlGraphCtrl', ['$scope', '$rootScope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $rootScope, $routeParams, $timeout, $http, db){
 
   $scope.$watch("cur_season", function(){
-    return $scope.cur_season;
+    return $rootScope.cur_season;
   })
 
   db.teamsMetaPromise.then(function(data){
@@ -628,6 +605,47 @@ angular.module('Controllers', [])
 
   })
 
+  $rootScope.switchFade = function(type){
+    // OBVIOUSLY REFACTOR THIS. am shitty code writing
+    if(type == 'Underdogs'){
+      d3.selectAll(".Favorite")
+        .transition()
+        .ease("linear")
+        .duration(300)
+        .attr("opacity", .1);
+
+      d3.selectAll(".Underdog")
+        .transition()
+        .ease("linear")
+        .duration(300)
+        .attr("opacity", 1);
+      }
+
+      if(type == 'Favorites'){
+        d3.selectAll(".Favorite")
+          .transition()
+          .ease("linear")
+          .duration(300)
+          .attr("opacity", 1);
+
+        d3.selectAll(".Underdog")
+          .transition()
+          .ease("linear")
+          .duration(300)
+          .attr("opacity", .1);
+        }
+
+
+
+  }
+
+  $scope.transition_results = function(){
+    d3.selectAll("circle")
+      .transition()
+      .duration(500)
+      .ease("linear")
+  }
+
   $scope.newNflChart = function(startYear, endYear, type, team){
     d3.selectAll("svg")
       .transition()
@@ -664,7 +682,7 @@ angular.module('Controllers', [])
 
       .then(function(){
 
-        var animate_games = function(speed){
+        var populate_games = function(speed){
             d3.selectAll("circle")
             .transition()
             .duration(500)
@@ -680,6 +698,27 @@ angular.module('Controllers', [])
               .attr("opacity", 1)
 
       }
+
+      var results = function(){
+
+        d3.selectAll("circle")
+          .transition()
+          .duration(1000)
+          .ease("linear")
+          .delay(function(d,i){return 500 + 100 * d.week + i * 5})
+          .attr("cy", yMapAts)
+          .attr("fill", function(d){ return d.ats > 0 ? "green" : "red"});
+
+          d3.selectAll("circle")
+            .transition()
+            .duration(1000)
+            .ease("linear")
+            .delay(function(d,i){return 500 + 100 * d.week + i * 5})
+            .attr("cy", yMapAts)
+            .attr("fill", function(d){ return d.ats > 0 ? "green" : "red"});
+      };
+
+
         var margin = {top: 100, right: 20, bottom: 30, left: 120},
         width = 1060 - margin.left - margin.right,
         height = 580 - margin.top - margin.bottom;
@@ -722,16 +761,24 @@ angular.module('Controllers', [])
             .attr("font-size", "60px")
             .attr("stroke", "rgb(221,221,221)")
             .attr("opacity", ".3")
-            .attr("y", margin.top -40)
+            .attr("y", margin.top - 40)
             .attr("x", width + 20);
 
             var play_button = d3.select("body").append("div")
               .html(
-                "<div class='play_button'>" +
-                "<i class = 'fa fa-play-circle-o'></i>" +
+                "<div class='area_chart'>" +
+                "<i class = 'fa fa-area-chart'></i>" +
                 "</div>"
               )
-              .on("click", animate_games);
+              .on("click", populate_games);
+
+              var joe_button = d3.select("body").append("div")
+                .html(
+                  "<div class='line_chart'>" +
+                  "<i class = 'fa fa-line-chart'></i>" +
+                  "</div>"
+                )
+                .on("click", results);
 
 
 
@@ -775,13 +822,13 @@ angular.module('Controllers', [])
 
                     .attr("class", function(d)
 
-                      {return d.dog.replace(" ","").replace(".","") + d.week + " " + "week_" + d.week
+                      {return d.dog.replace(" ","").replace(".","") + d.week + " " + "week_" + d.week + " Favorite"
                       })
                     .attr("r", function(d){ return d.spread ? 5.5 : 0})
                     .attr("stroke-width", "3")
                     .attr("cx", xMap)
                     .attr("cy", yMapF)
-                    .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150,1)" : "rgba(0,50,100,.8)"})
+                    .attr("fill", function(d){ return d.week % 2 == 0 ? "rgb(0,50,150)" : "rgb(0,50,70)"})
                     // .style("fill", function(d){ return $scope.teamsMeta[d.fav].hex})
                     // .style("fill", "rgba(00,00,00,.5)")
                     .attr("cursor", "pointer")
@@ -794,8 +841,8 @@ angular.module('Controllers', [])
                           .duration("500")
                           .attr("r", "5.5")
                           .attr("z-index", "0")
-                          .attr("fill", "rgba(0,50,150,1)")
-                          .attr("stroke", "rgba(0,50,150,1)")
+                          .attr("fill", "rgb(0,50,150)")
+                          .attr("stroke", "rgb(0,50,150)")
 
                         d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
                           .transition()
@@ -832,14 +879,14 @@ angular.module('Controllers', [])
                       .transition()
                       .ease("elastic")
                       .duration("1000")
-                      .style("fill", function(d){ return d.ats > 0 ? "rgba(00,200,100,1)" : "rgba(150,0,0,1)"})
-                      .style("stroke", function(d){ return d.ats > 0 ? "rgba(00,200,100,1)" : "rgba(150,0,0,1)"})
+                      .attr("fill", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
+                      .attr("stroke", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
                       .attr("cy", yMapAts);
                     })
                     .on("mouseout", function(d){
                         tooltip.transition()
                         .ease("linear")
-                        .style("opacity", "0")
+                        .attr("opacity", "0")
                         .duration("1000");
 
                         d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
@@ -848,8 +895,8 @@ angular.module('Controllers', [])
                         .attr("stroke-width", "3")
                         .duration("100")
                         .attr("r", 5.5)
-                        .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150,1)" : "rgba(0,50,100,.8)"})
-                        .attr("stroke", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150,1)" : "rgba(0,50,100,.8)"})
+                        .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
+                        .attr("stroke", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
                         .attr("opacity", ".1");
 
                         d3.select(this)
@@ -857,8 +904,8 @@ angular.module('Controllers', [])
                           .ease("elastic")
                           .duration("100")
                           .attr("r", "5.5")
-                          .attr("fill", function(d){ return d.ats > 0 ? "rgba(00,200,100,1)" : "rgba(150,0,0,1)"})
-                          .attr("stroke", function(d){ return d.ats > 0 ? "rgba(00,200,100,1)" : "rgba(150,0,0,1)"})
+                          .attr("fill", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
+                          .attr("stroke", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
                           .attr("opacity", "1");
 
 
@@ -868,7 +915,7 @@ angular.module('Controllers', [])
                     .data($scope.favorites[$rootScope.cur_year - 2006][$rootScope.cur_year])
                         .enter().append("circle")
                           .attr("class", function(d){
-                            return d.dog.replace(" ","").replace(".","") + d.week})
+                            return d.dog.replace(" ","").replace(".","") + d.week + " Underdog"})
                           .attr("r", function(d){ return d.spread ? 5.5 : 0})
                           .attr("stroke-width", "3")
                           .attr("cx", xMap)
