@@ -1,0 +1,52 @@
+// this function highlights the point that is hovered
+// and fades out the other points from that week
+// var fadeAll = function(obj){
+//   // select data from this week
+//   d3.selectAll(".week_" + obj.week)
+//   //on hover, fade out the data, make it small and green
+//     .transition()
+//     .ease("elastic")
+//     .duration("500")
+//     .attr("r", "5.5")
+//     .attr("z-index", "0")
+//     .attr("fill", "rgb(0,50,150)")
+//     .attr("stroke", "rgb(0,50,150)")
+//     .attr("opacity", ".1")
+// };
+//
+// var highlightPartner = function(obj){
+//   d3.select("." + obj.dog.replace(" ","").replace(".","") + obj.week)
+//     .transition()
+//     .ease("elastic")
+//     .duration("500")
+//     .attr("z-index", "1")
+//     .attr("r", "12.5")
+//     .attr("fill", function(d){ return $scope.teamsMeta[obj.dog].hex})
+//     .attr("stroke", function(d){return $scope.teamsMeta[obj.dog].sec_hex})
+//     .attr("opacity", "1");
+//   }
+// var highlightMe = function(obj){
+//   console.log(obj);
+//   d3.select("circle" + "." + obj.dog.replace(" ","").replace(".","") + obj.week + " .Favorite")
+//     .transition()
+//     .ease("elastic")
+//     .duration("500")
+//     .attr("r", "5.5")
+//     .attr("z-index", "1")
+//     .attr("fill", function(d){return $scope.teamsMeta[obj.fav].hex})
+//     .attr("stroke", function(d){return $scope.teamsMeta[obj.fav].sec_hex});
+// }
+
+// var showTooltip = function(obj){
+//   tooltip.html(
+//     "<p style='text-align:center'>" + obj.fav +  "</p><p style='text-align:center'>" + obj.spread + "<p style='text-align:center'>" + obj.dog
+//     + "</p><p>" + obj.winningTeam + ": " + obj.winningScore +"</p><p>" +
+//     "<p ng-style='obj.ats > 0? 'green' : 'red'>" + obj.ats + "</p>" +
+//     "<p>" + obj.losingTeam + ": " + obj.losingScore + "</p>")
+//     .style("left", (d3.event.pageX + 25) + "px")
+//     .style("top", (d3.event.pageY - 8) + "px");
+//   tooltip.transition()
+//       .ease("elastic")
+//       .duration("1000")
+//       .attr("opacity", "1")
+// };

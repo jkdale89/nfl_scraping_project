@@ -176,18 +176,14 @@ angular.module('Controllers', [])
   var xValue = function(d) { return d.week;}, // data -> value
       xScale = d3.scale.linear().range([0, width]), // value -> display
       xMap = function(d) { return xScale(xValue(d));}, // data -> display
-      xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
+      xAxis = d3.svg.axis().scale(xScale).orient("bottom"),
   // setup y 1 - for over / unders
-  var yValue = function(d) { return d.total;}, // data -> value
+      yValue = function(d) { return d.total;}, // data -> value
       yScale = d3.scale.linear().range([height, 0]), // value -> display
       yMap = function(d) { return yScale(yValue(d));}, // data -> display
-      yAxis = d3.svg.axis().scale(yScale).orient("left");
-
-  // setup y 2 - for actuals
-
+      yAxis = d3.svg.axis().scale(yScale).orient("left"),
   // setup y 1 - for over / unders
-  var yyValue = function(d) { return (d.total + d.over_differential)}, // data -> value
+      yyValue = function(d) { return (d.total + d.over_differential)}, // data -> value
       yyMap = function(d) { return yScale(yyValue(d));}; // data -> display
 
 
@@ -681,8 +677,9 @@ angular.module('Controllers', [])
 
 
       .then(function(){
-
+      // populates the lines
         var populate_games = function(speed){
+          //TODO ADD SPEED FUNCTIONALITY
             d3.selectAll("circle")
             .transition()
             .duration(500)
@@ -699,16 +696,30 @@ angular.module('Controllers', [])
 
       }
 
+      var editHeaderDesc = function(category, subCategory) {
+        d3.select("svg").append("text")
+          .text(category + ": " + subCategory)
+          .attr("font-size", "60px")
+          .attr("stroke", "rgb(221,221,221)")
+          .attr("opacity", ".3")
+          .attr("y", margin.top - 40)
+          .attr("x", margin.left -20);
+      };
+
+      var editYearDesc = function(year){
+        d3.select("svg").append("text")
+        .text(year)
+        .attr("font-size", "60px")
+        .attr("stroke", "rgb(221,221,221)")
+        .attr("opacity", ".3")
+        .attr("y", margin.top - 40)
+        .attr("x", width + 20);
+      };
+
+      //this function will animate the RESULTS against the spread
       var results = function(){
-
-        d3.selectAll("circle")
-          .transition()
-          .duration(1000)
-          .ease("linear")
-          .delay(function(d,i){return 500 + 100 * d.week + i * 5})
-          .attr("cy", yMapAts)
-          .attr("fill", function(d){ return d.ats > 0 ? "green" : "red"});
-
+        // if you covered, you move up, and you're green
+        // if not, you move down, and you're red!
           d3.selectAll("circle")
             .transition()
             .duration(1000)
@@ -718,29 +729,46 @@ angular.module('Controllers', [])
             .attr("fill", function(d){ return d.ats > 0 ? "green" : "red"});
       };
 
+      var play_button = d3.select("body").append("div")
+        .html(
+          "<div class='area_chart'>" +
+          "<i class = 'fa fa-area-chart'></i>" +
+          "</div>"
+        )
+        .on("click", populate_games);
+
+
+        var results_button = d3.select("body").append("div")
+          .html(
+            "<div class='line_chart'>" +
+            "<i class = 'fa fa-line-chart'></i>" +
+            "</div>"
+          )
+          .on("click", results);
+
 
         var margin = {top: 100, right: 20, bottom: 30, left: 120},
-        width = 1060 - margin.left - margin.right,
-        height = 580 - margin.top - margin.bottom;
-
-        var xValue = function(d){ return d.week},
+            width = 1060 - margin.left - margin.right,
+            height = 580 - margin.top - margin.bottom,
+            // x axis stuff
+            xValue = function(d){ return d.week},
             xScale = d3.scale.linear().range([0, width]),
             xMap = function(d) { return xScale(xValue(d) - 1 + ((1 - d.spread) * .125));},
-            xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
-        var yValueF = function(d) { return d.spread * -1},
+            xAxis = d3.svg.axis().scale(xScale).orient("bottom"),
+            // y axis stuff
+            yValueF = function(d) { return d.spread * -1},
             yScale = d3.scale.linear().range([height, 0]),
             yMapF = function(d) { return yScale(yValueF(d));},
-            yAxis = d3.svg.axis().scale(yScale).orient("left");
-
-            var yValueD = function(d) {return d.spread},
-            yMapD = function(d) { return yScale(yValueD(d));}
-
-            var yValueAts = function(d){return d.ats > 21? 21 : d.ats < -21 ? -21 :
+            yAxis = d3.svg.axis().scale(yScale).orient("left"),
+            yValueD = function(d) {return d.spread},
+            yMapD = function(d) { return yScale(yValueD(d));},
+            yValueAts = function(d){
+              return d.ats > 21? 21 : d.ats < -21 ? -21
+              :
               d.ats > 0 ? (d.spread * -1 + d.ats) > 21 ? 21 : (d.spread * -1 + d.ats) : (d.spread * -1) + d.ats},
-                yValueAtsD = function(d){ return (d.spread) + d.ats},
-                yMapAts = function(d){ return yScale(yValueAts(d))},
-                yMapAtsD = function(d){ return yScale(yValueAtsD(d))};
+            yValueAtsD = function(d){ return (d.spread) + d.ats},
+            yMapAts = function(d){ return yScale(yValueAts(d))},
+            yMapAtsD = function(d){ return yScale(yValueAtsD(d))};
 
         var svg = d3.select(".nfl_scatter").append("svg")
           .attr("width", width + margin.left + margin.right + 200)
@@ -748,39 +776,8 @@ angular.module('Controllers', [])
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-          d3.select("svg").append("text")
-            .text($rootScope.active_category + ": " + $rootScope.active_type)
-            .attr("font-size", "60px")
-            .attr("stroke", "rgb(221,221,221)")
-            .attr("opacity", ".3")
-            .attr("y", margin.top - 40)
-            .attr("x", margin.left -20);
-
-          d3.select("svg").append("text")
-            .text($rootScope.cur_year)
-            .attr("font-size", "60px")
-            .attr("stroke", "rgb(221,221,221)")
-            .attr("opacity", ".3")
-            .attr("y", margin.top - 40)
-            .attr("x", width + 20);
-
-            var play_button = d3.select("body").append("div")
-              .html(
-                "<div class='area_chart'>" +
-                "<i class = 'fa fa-area-chart'></i>" +
-                "</div>"
-              )
-              .on("click", populate_games);
-
-              var joe_button = d3.select("body").append("div")
-                .html(
-                  "<div class='line_chart'>" +
-                  "<i class = 'fa fa-line-chart'></i>" +
-                  "</div>"
-                )
-                .on("click", results);
-
-
+      editHeaderDesc($rootScope.active_category, $rootScope.active_type);
+      editYearDesc($rootScope.cur_year);
 
           xScale.domain([0, 16]);
           yScale.domain([-21, 21]);
@@ -816,21 +813,21 @@ angular.module('Controllers', [])
                 .text("Over / Under");
 
             svg.selectAll(".dotFavorite")
-              .data($scope.favorites[$rootScope.cur_year - 2006][$rootScope.cur_year])
-
+              .data($scope.favorites[$rootScope.cur_year - $rootScope.year_options[0]][$rootScope.cur_year])
                   .enter().append("circle")
-
-                    .attr("class", function(d)
-
-                      {return d.dog.replace(" ","").replace(".","") + d.week + " " + "week_" + d.week + " Favorite"
+                    .attr("class", function(d){return
+                      //add a class that will pair the favorites and underdogs
+                      d.dog.replace(" ","").replace(".","") +
+                      // add a class for the week - we we can color code for clarity, other reasons
+                      d.week + " " + "week_" + d.week +
+                      // add a class that says if this is a favorite or underdog
+                       " Favorite"
                       })
                     .attr("r", function(d){ return d.spread ? 5.5 : 0})
                     .attr("stroke-width", "3")
                     .attr("cx", xMap)
                     .attr("cy", yMapF)
                     .attr("fill", function(d){ return d.week % 2 == 0 ? "rgb(0,50,150)" : "rgb(0,50,70)"})
-                    // .style("fill", function(d){ return $scope.teamsMeta[d.fav].hex})
-                    // .style("fill", "rgba(00,00,00,.5)")
                     .attr("cursor", "pointer")
                     .on("mouseover", function(d){
                         // select data from this week
