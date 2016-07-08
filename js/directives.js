@@ -90,7 +90,7 @@
     nflScatter = function(){
       return {
         restrict: 'E',
-        template: "<div ng-init=\"newNflChart(2015)\" class = 'nfl_scatter'></div>",
+        template: "<div ng-init=\"newNflChart(cur_year)\" class = 'nfl_scatter'></div>",
         controller: 'nflScatterCtrl',
         replace: false
       }

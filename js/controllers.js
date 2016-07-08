@@ -29,9 +29,10 @@ angular.module('Controllers', [])
         return $rootScope.favorites;
       })
 
+      $rootScope.cur_year = 2015;
       $rootScope.category_options = ["Teams", "Entire NFL", "Aggregates"];
       $rootScope.active_category = "Entire NFL";
-      $rootScope.active_type = "Scatter";
+      $rootScope.active_type = "Favorites";
 
       $rootScope.changeActiveCategory = function(str){
         $rootScope.active_category = str;
@@ -57,8 +58,10 @@ angular.module('Controllers', [])
           category: "Entire NFL",
           //no space after
           cat_types: [
-            "Scatter",
-            "Home vs Away",
+            "Favorites",
+            "Underdogs",
+            "Home",
+            "Away",
             "Over / Under",
             "Moneyline"
           ]
@@ -85,7 +88,7 @@ angular.module('Controllers', [])
         return $rootScope.active_type;
       }
 
-    $rootScope.cur_year = 2015;
+
     $rootScope.year_options = [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015];
     $rootScope.cur_team = "Denver";
     $rootScope.activeTable = 'teams';
@@ -327,11 +330,6 @@ angular.module('Controllers', [])
     return $scope.active_type;
   }
 
-  $scope.teams_dropdown = false;
-  $scope.year_dropdown = false;
-  $scope.cur_team = "Denver";
-  $scope.cur_year = 2015;
-
   $scope.$watch("cur_season", function(){
     return $scope.cur_season;
   })
@@ -363,7 +361,7 @@ angular.module('Controllers', [])
       $scope.ind = $scope.team_options.indexOf($scope.cur_team);
       db.teamsPromise.then(function(data){
       $scope.teams = data;
-      $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$scope.cur_year];
+      $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$rootScope.cur_year];
 
     })
 
@@ -616,18 +614,31 @@ angular.module('Controllers', [])
     return $scope.favorites;
   });
 
-  $scope.$watch("favorites", function(){
-    $scope.newNflChart(2015);
-  });
+  // $scope.$watch("favorites", function(){
+  //   $scope.newNflChart(2015);
+  // });
+
+  $rootScope.$watch("cur_year", function(){
+    d3.selectAll("svg")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .attr("opacity", 0);
+    $scope.newNflChart($rootScope.cur_year);
+
+  })
 
   $scope.newNflChart = function(startYear, endYear, type, team){
     d3.selectAll("svg")
-      .style("opacity", 0);
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .attr("opacity", 0);
 
       $timeout(function(){
         d3.selectAll("svg")
         .remove()
-      }, 1)
+      }, 501)
 
 
       .then(function(){
@@ -703,16 +714,16 @@ angular.module('Controllers', [])
             .attr("font-size", "60px")
             .attr("stroke", "rgb(221,221,221)")
             .attr("opacity", ".3")
-            .attr("y", margin.top - 20)
-            .attr("x", margin.left + 20);
+            .attr("y", margin.top - 40)
+            .attr("x", margin.left -20);
 
           d3.select("svg").append("text")
-            .text($scope.cur_year)
+            .text($rootScope.cur_year)
             .attr("font-size", "60px")
             .attr("stroke", "rgb(221,221,221)")
             .attr("opacity", ".3")
-            .attr("y", margin.top -20)
-            .attr("x", width - 50);
+            .attr("y", margin.top -40)
+            .attr("x", width + 20);
 
             var play_button = d3.select("body").append("div")
               .html(
@@ -922,8 +933,6 @@ angular.module('Controllers', [])
 
   $scope.teams_dropdown = false;
   $scope.year_dropdown = false;
-  $scope.cur_team = "Denver";
-  $scope.cur_year = 2015;
 
   $scope.$watch("cur_season", function(){
     return $scope.cur_season;
@@ -956,7 +965,7 @@ angular.module('Controllers', [])
       $scope.ind = $scope.team_options.indexOf($scope.cur_team);
       db.teamsPromise.then(function(data){
       $scope.teams = data;
-      $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$scope.cur_year];
+      $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$rootScope.cur_year];
     })
 
     .then(function(){

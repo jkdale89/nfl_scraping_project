@@ -296,6 +296,24 @@ p.results {
   z-index: 10;
 }
 
+.year_drop {
+  cursor: pointer;
+  float: top;
+  text-align: center;
+  overflow-y: scroll;
+  height: 200px;
+  position: absolute;
+  width: 350px;
+  margin-top: 0px;
+  border: 1px solid gray;
+  background: white;
+  z-index: 10;
+}
+
+.year_drop p {
+  color: black;
+}
+
 .teams_drop p {
   color: black;
   font-weight: bold;
@@ -410,10 +428,10 @@ svg {
 }
 
 .cur_team {
-  font-size: 2em;
+  font-size: 1em;
   position: absolute;
   top: 0px;
-  left: 20%;
+  left: 0%;
   display: inline;
 }
 
@@ -429,7 +447,7 @@ svg {
 .options {
   list-style: none;
   position: absolute;
-  top: 125px;
+  top: 90px;
 }
 
 .options ul {
@@ -508,4 +526,61 @@ div .play_button {
   transition: .3s ease all;
   cursor: pointer;
   color: green;
+}
+
+/*.leftDash {
+  display: block;
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  width: 400px;
+}*/
+
+.circle {
+	width: 100px;
+	height: 100px;
+	background: rgba(00,150,150,1);
+	border-radius: 50%;
+  position: absolute;
+  right: -50px;
+  top: 43%;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+.circle:hover {
+  width: 150px;
+  height: 150px;
+  right: -75px;
+  background: white;
+  transition: .3s ease all;
+}
+
+
+ul .filter {
+  display: inline;
+}
+
+ul .filterx p {
+  font-size: 240px;
+}
+
+i.fa-arrow-left {
+  font-size: 36px;
+  top: 32%;
+  color:white;
+  position: relative;
+  margin-left: 10%;
+  opacity: 1;
+  display: inherit;
+}
+
+.legend {
+  font-size: 18px;
+  top: 36%;
+  color: rgba(00,150,150,1);
+  position: relative;
+  margin-left: 5%;
+  transition: .3s ease all;
 }

@@ -18,7 +18,7 @@
         </teams-ml>
 
         <nfl-scatter
-          ng-show="active_type == 'Scatter' &&
+          ng-show="active_type == 'Favorites' &&
           active_category == 'Entire NFL'">
         </nfl-scatter>
         <nfl-home
@@ -36,7 +36,7 @@
         </nfl-ml>
 
         <agg-favs
-          ng-show = "active_type == 'Favorites vs Underdogs' &&
+          ng-show = "active_type == 'Favorites' &&
           active_category == 'Aggregates'">
         </agg-favs>
 
@@ -63,45 +63,58 @@
       </div>
     </div>
 
-<div>
+<div class="leftDash">
 
-  <div
-  ng-mouseenter="teams_dropdown = true"
-  ng-mouseleave="teams_dropdown = false"
-  ng-show="active_category == 'Teams'" class = "cur_team">
-    {{cur_team}} {{teamsMeta[cur_team].nick}}
-    <i class="fa fa-angle-down" aria-hidden="true"></i>
-    <div ng-show="teams_dropdown" class="teams_drop_graph">
-      <p style="font-size: 20px; line-height: 2; color: {{teamsMeta[team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[team].hex}}; background-color {{teamsMeta[team].rgba}}"
-      ng-click = "newChart(team)" ng-repeat="team in team_options" ng-class-odd="'odd'">
-        <img src="{{teamsMeta[team].url}}">
-        {{team}}
-      </p>
-    </div>
-  </div>
+    <div class="options">
 
-  <div class="options">
-    <ul ng-repeat = "cat in graph_options">
-      <p ng-click = "changeActiveCategory(cat.category)" ng-class="{active: active_category == cat.category}" class = "category">{{cat.category}}</p>
-      <li ng-click="changeActiveType(type, cat.category)" ng-repeat="type in cat.cat_types" ng-class="{active: (active_type == type && active_category == cat.category)}">
-        {{type}}
-      </li>
+      <ul>
+        <p style="font-size: 18px; color: rgba(00,150,150,1); font-weight: bold">Filter</p>
+        <li class="col-md-12">
+          <div ng-mouseenter="year_dropdown = true"
+               ng-mouseleave="year_dropdown = false">
+            {{cur_year}}
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+            <div ng-show="year_dropdown" class="year_drop">
+              <p ng-click = "changeYear(year)" ng-repeat="year in year_options">
+                {{year}}
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div ng-mouseenter="teams_dropdown = true"
+          ng-mouseleave="teams_dropdown = false"
+          ng-show="active_category !== 'Teams'">
+            {{cur_team}} {{teamsMeta[cur_team].nick}}
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+            <div ng-disabled="active_category !== 'Teams'" ng-show="teams_dropdown" class="teams_drop_graph">
+              <p style="font-size: 20px; line-height: 2; color: {{teamsMeta[team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[team].hex}}; background-color {{teamsMeta[team].rgba}}"
+              ng-click = "newChart(team)" ng-repeat="team in team_options" ng-class-odd="'odd'">
+                <img src="{{teamsMeta[team].url}}">
+                {{team}}
+              </p>
+            </div>
+          </div>
+        </li>
     </ul>
+
+      <ul ng-repeat = "cat in graph_options">
+        <p ng-click = "changeActiveCategory(cat.category)" ng-class="{active: active_category == cat.category}" class = "category">{{cat.category}}</p>
+        <li ng-click="changeActiveType(type, cat.category)" ng-repeat="type in cat.cat_types" ng-class="{active: (active_type == type && active_category == cat.category)}">
+          {{type}}
+        </li>
+      </ul>
+
+    </div>
+
+    <div ng-mouseover="joe = true" ng-mouseleave="joe = false" class="circle">
+      <i ng-show = "!joe" class = "fa fa-arrow-left"></i>
+      <p ng-show="joe" class="legend">Legend</p>
+    </div>
+
+
   </div>
-
-  <!-- <div class="cur_year">
-    <p ng-class="{active: year == cur_year}"
-       ng-repeat="year in year_options"
-       ng-click="changeYear(year)">
-      {{year}}
-    </p>
-  </div> -->
-
-  <!-- <div class="play_button">
-    <i class = "fa fa-play-circle-o"></i>
-  </div> -->
-
-
 </div>
 
 
