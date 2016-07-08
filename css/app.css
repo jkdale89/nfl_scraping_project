@@ -268,70 +268,74 @@ p.results {
   transition: .3s ease all;
 }
 
-.teams_drop {
-  cursor: pointer;
-  float: top;
-  text-align: center;
-  overflow-y: scroll;
-  height: 200px;
+.year_dropdown {
   position: absolute;
-  width: 300px;
-  margin-top: 40px;
-  border: 1px solid gray;
-  background: white;
-  z-index: 10;
-}
-
-.teams_drop_graph {
   cursor: pointer;
-  float: top;
-  text-align: center;
-  overflow-y: scroll;
-  height: 200px;
-  position: absolute;
-  width: 350px;
-  margin-top: 0px;
-  border: 1px solid gray;
-  background: white;
-  z-index: 10;
+  bottom: 15%;
+  right: 15%;
+  color: rgba(0,99,99,.8);
+  font-size: 24px;
+  font-weight: normal;
+  transition: .3s ease all;
 }
 
-.year_drop {
-  cursor: pointer;
-  float: top;
-  text-align: center;
-  overflow-y: scroll;
-  height: 200px;
-  position: absolute;
-  width: 350px;
-  margin-top: 0px;
-  border: 1px solid gray;
-  background: white;
-  z-index: 10;
-}
-
-.year_drop p {
-  color: black;
-}
-
-.teams_drop p {
-  color: black;
+.year_dropdown:hover {
+  color: rgba(0,99,99,1);
   font-weight: bold;
+  transition: .3s ease all;
+}
+
+.year_dropdown div {
+  cursor: pointer;
+  text-align: center;
+  overflow-y: scroll;
+  height: 100px;
+  font-weight: normal;
+  position: absolute;
+  width: 150px;
+  margin-top: 0px;
+  margin-left: -25px;
+  border: 1px solid gray;
+  background: white;
+  z-index: 10;
+}
+
+.year_dropdown div p {
+  color: rgba(00,99,99,.4);
+  font-weight: normal;
+  background: white;
+  transition: .3s ease all;
+}
+
+.year_dropdown div p:hover {
+  background: rgba(00,99,99,.4);
+  color: white;
+  transition: .3s ease all;
+}
+
+.teams_dropdown {
+  position: absolute;
+  bottom: 15%;
+  left: 17%;
+  width: 300px;
+  color: rgba(00,99,99,.8);
+  font-weight: normal;
   padding: 0px;
+  font-size: 24px;
   text-align: center;
   height: 40px;
   margin: 0px;
-  line-height: 3;
-  border-bottom: 1px solid white;
-}
-
-.teams_drop p:hover {
-  background: #009999;
-  color: white;
+  transition: .3s ease all;
   cursor: pointer;
 }
 
-.teams_drop_graph p {
+.teams_dropdown:hover {
+    color: rgba(00,99,99,1);
+    transition: .3s ease all;
+
+}
+
+.teams_dropdown div p {
   color: black;
   font-weight: bold;
   padding: 0px;
@@ -341,44 +345,13 @@ p.results {
   border-bottom: 1px solid white;
   font-size: 20px;
   line-height: 2;
+  background: none;
 }
 
-.teams_drop_graph p:hover {
+.teams_dropdown div p:hover {
   background: rgba(00,99,99, .3);
   color: white;
-  cursor: pointer;
-}
-
-.years_drop {
-  cursor: pointer;
-  top: 0px;
-  right: 0px;
-  margin-top: 40px;
-  margin-left: 40px;
-  text-align: center;
   overflow-y: scroll;
-  height: 200px;
-  position: absolute;
-  width: 200px;
-  border: 1px solid gray;
-  background: white;
-  z-index: 10;
-}
-
-.years_drop p {
-  color: black;
-  font-weight: bold;
-  padding: 0px;
-  text-align: center;
-  height: 40px;
-  margin: 0px;
-  line-height: 3;
-  border-bottom: 1px solid white;
-}
-
-.years_drop p:hover {
-  background: #009999;
-  color: white;
   cursor: pointer;
 }
 
@@ -496,25 +469,20 @@ div .test {
 }
 
 .tooltip {
-  background: white;
-  color: black;
-  border: 1px solid black;
-  text-align: center;
-  border-radius: 5px;
+  background-color: #f1f1f1;
+  color: rgba(00,99,99,1);
+  transition: .2s ease all;
 }
 
-.tooltip p {
-  text-align: center;
-  padding: 2px;
-  margin-bottom: 0px;
-  margin-top: 0px;
+.tooltip span {
+  font-size: 16px;
 }
 
 div .area_chart {
   padding: 5px 10px 5px 10px;
   position: absolute;
   font-size: 24px;
-  top: 550px;
+  bottom: 15%;
   right: 55%;
   border-radius: 5px;
   background-color: rgba(00,99,99,.2);
@@ -533,8 +501,8 @@ div .line_chart {
   padding: 5px 10px 5px 10px;
   position: absolute;
   font-size: 24px;
-  top: 550px;
-  right: 45%;
+  bottom: 15%;
+  right: 40%;
   border-radius: 5px;
   background-color: rgba(00,99,99,.2);
   color: black;
@@ -570,12 +538,17 @@ div .line_chart {
 }
 
 .circle:hover {
-  width: 150px;
-  height: 150px;
-  right: -75px;
+  width: 200px;
+  height: 400px;
+  right: 30px;
+  top: 20%;
+  border-radius: 5px;
   background: white;
-  transition: .3s ease all;
+  border: 1px solid black;
+  transition: 1s ease all;
 }
+
+
 
 
 ul .filter {
@@ -598,9 +571,9 @@ i.fa-arrow-left {
 
 .legend {
   font-size: 18px;
-  top: 36%;
-  color: rgba(00,150,150,1);
+  float: top;
+  color: black;
   position: relative;
-  margin-left: 5%;
-  transition: .3s ease all;
+  margin-left: 15%;
+  transition: 1s ease all;
 }

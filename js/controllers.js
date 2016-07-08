@@ -199,9 +199,7 @@ angular.module('Controllers', [])
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   // add the tooltip area to the webpage
-  var tooltip = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0);
+
 
     // don't want dots overlapping axis, so add in buffer to data domain
     xScale.domain([d3.min($scope.cur_season, xValue)- 1, d3.max($scope.cur_season, xValue)+1]);
@@ -696,6 +694,7 @@ angular.module('Controllers', [])
 
       }
 
+
       var editHeaderDesc = function(category, subCategory) {
         d3.select("svg").append("text")
           .text(category + ": " + subCategory)
@@ -715,6 +714,10 @@ angular.module('Controllers', [])
         .attr("y", margin.top - 40)
         .attr("x", width + 20);
       };
+
+      var tooltip = d3.select("svg").append("text")
+          .attr("class", "tooltip")
+          .attr("opacity", "0")
 
       //this function will animate the RESULTS against the spread
       var results = function(){
@@ -749,11 +752,11 @@ angular.module('Controllers', [])
 
         var margin = {top: 100, right: 20, bottom: 30, left: 120},
             width = 1060 - margin.left - margin.right,
-            height = 580 - margin.top - margin.bottom,
+            height = 680 - margin.top - margin.bottom,
             // x axis stuff
             xValue = function(d){ return d.week},
             xScale = d3.scale.linear().range([0, width]),
-            xMap = function(d) { return xScale(xValue(d) - 1 + ((1 - d.spread) * .125));},
+            xMap = function(d) { return xScale(xValue(d) - 1 + ((1 - d.spread) * .15));},
             xAxis = d3.svg.axis().scale(xScale).orient("bottom"),
             // y axis stuff
             yValueF = function(d) { return d.spread * -1},
@@ -762,10 +765,8 @@ angular.module('Controllers', [])
             yAxis = d3.svg.axis().scale(yScale).orient("left"),
             yValueD = function(d) {return d.spread},
             yMapD = function(d) { return yScale(yValueD(d));},
-            yValueAts = function(d){
-              return d.ats > 21? 21 : d.ats < -21 ? -21
-              :
-              d.ats > 0 ? (d.spread * -1 + d.ats) > 21 ? 21 : (d.spread * -1 + d.ats) : (d.spread * -1) + d.ats},
+            yValueAts = function(d){return d.ats},
+
             yValueAtsD = function(d){ return (d.spread) + d.ats},
             yMapAts = function(d){ return yScale(yValueAts(d))},
             yMapAtsD = function(d){ return yScale(yValueAtsD(d))};
@@ -780,14 +781,19 @@ angular.module('Controllers', [])
       editYearDesc($rootScope.cur_year);
 
           xScale.domain([0, 16]);
-          yScale.domain([-21, 21]);
+          yScale.domain([-35, 35]);
 
           xAxis.tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
-          yAxis.tickValues([-21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21]);
+          yAxis.tickValues([-35, -28, -21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21, 28, 35]);
 
-          var tooltip = d3.select("body").append("div")
+          var spread_tooltip = d3.select("body").append("div")
               .attr("class", "tooltip")
-              .style("opacity", 1);
+              .style("opacity", "0"),
+
+              result_tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", "0");
+
 
           svg.append("g")
             .attr("class", "x axis")
@@ -859,17 +865,17 @@ angular.module('Controllers', [])
                           .attr("fill", function(d){return $scope.teamsMeta[d.fav].hex})
                           .attr("stroke", function(d){return $scope.teamsMeta[d.fav].sec_hex});
 
-                        tooltip.html(
-                          "<p style='text-align:center'>" + d.fav +  "</p><p style='text-align:center'>" + d.spread + "<p style='text-align:center'>" + d.dog
-                            + "</p><p>" + d.winningTeam + ": " + d.winningScore +"</p><p>" +
-                          "<p ng-style='d.ats > 0? 'green' : 'red'>" + d.ats + "</p>" +
-                          "<p>" + d.losingTeam + ": " + d.losingScore + "</p>")
-                          .style("left", (d3.event.pageX + 25) + "px")
-                          .style("top", (d3.event.pageY - 8) + "px");
-                          tooltip.transition()
-                            .ease("elastic")
-                            .duration("1000")
-                            .style("opacity", "1");
+                        spread_tooltip.html(
+                          "<span>" + (d.home ? '@ ' : '') + d.fav + " VS </span><span>" +
+                           (!d.home ? '@ ' : '') + d.dog + "</span><span>, " + d.spread + "</span> ")
+                          .style("left", "220px")
+                          .style("top", "75px");
+
+                        spread_tooltip.transition()
+                          .ease("elastic")
+                          .duration("1000")
+                          .style("opacity", "1");
+
                     })
                     .on("click", function(d){
                       d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
@@ -879,12 +885,39 @@ angular.module('Controllers', [])
                       .attr("fill", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
                       .attr("stroke", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
                       .attr("cy", yMapAts);
+                      d3.select(this)
+                        .transition()
+                        .ease("elastic")
+                        .duration("1000")
+                        .attr("cy", yMapAts);
+
+                      spread_tooltip.transition()
+                        .ease("elastic")
+                        .duration(300)
+                        .style("opacity", ".3");
+
+                        result_tooltip.html(
+                              "<span> " + (d.home ? '@ ' : '') + d.winningTeam + ": </span><span> " + d.winningScore +",</span><span> " +
+                              "<span>" + (!d.home ? '@ ' : '') + d.losingTeam + ": " + d.losingScore + "</span>" +
+                              "<span> (" + d.ats + ")</span>")
+                              .style("right", "220px")
+                              .style("top", "75px");
+                        result_tooltip.transition()
+                                .ease("elastic")
+                                .duration("300")
+                                .style("opacity", "1")
                     })
                     .on("mouseout", function(d){
-                        tooltip.transition()
-                        .ease("linear")
-                        .attr("opacity", "0")
-                        .duration("1000");
+
+                      spread_tooltip.transition()
+                        .ease("elastic")
+                        .duration(300)
+                        .style("opacity", "0");
+
+                        result_tooltip.transition()
+                          .ease("elastic")
+                          .duration(300)
+                          .style("opacity", "0");
 
                         d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
                         .transition()
@@ -901,15 +934,13 @@ angular.module('Controllers', [])
                           .ease("elastic")
                           .duration("100")
                           .attr("r", "5.5")
-                          .attr("fill", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
-                          .attr("stroke", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
+                          .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
+                          .attr("stroke", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
                           .attr("opacity", "1");
-
-
                     });
 
                     svg.selectAll(".dotUnderdog")
-                    .data($scope.favorites[$rootScope.cur_year - 2006][$rootScope.cur_year])
+                    .data($scope.favorites[$rootScope.cur_year - $rootScope.year_options[0]][$rootScope.cur_year])
                         .enter().append("circle")
                           .attr("class", function(d){
                             return d.dog.replace(" ","").replace(".","") + d.week + " Underdog"})
@@ -919,7 +950,6 @@ angular.module('Controllers', [])
                           .attr("cy", yMapD)
                           .attr("opacity", ".1")
                           .attr("fill", function(d){return d.week % 2 == 0 ? "rgba(150,0,150,1)" : "rgba(150,0,50,1)"})
-                          // .style("fill", "rgba(00,00,00,.5)")
                           .attr("cursor", "pointer");
       })
 
