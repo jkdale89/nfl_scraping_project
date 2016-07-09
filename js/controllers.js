@@ -30,7 +30,7 @@ angular.module('Controllers', [])
       })
 
       $rootScope.cur_year = 2015;
-      $rootScope.category_options = ["Teams", "Entire NFL", "Aggregates"];
+      $rootScope.category_options = ["Entire NFL", "Aggregates"];
       $rootScope.active_category = "Entire NFL";
       $rootScope.active_type = "Favorites";
 
@@ -46,14 +46,6 @@ angular.module('Controllers', [])
       }
 
       $rootScope.graph_options = [
-        {
-          category: "Teams",
-          cat_types: [
-            "Against the Spread",
-            "Over / Under",
-            "Moneyline"
-          ]
-        },
         {
           category: "Entire NFL",
           //no space after
@@ -123,181 +115,181 @@ angular.module('Controllers', [])
 
   }])
 
-.controller('teamsOuGraphCtrl', ['$scope', '$rootScope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $rootScope, $routeParams, $timeout, $http, db){
-
-  $scope.$watch("cur_season", function(){
-    return $scope.cur_season;
-  })
-
-  db.teamsMetaPromise.then(function(data){
-    $scope.teamsMeta = data;
-    return $scope.teamsMeta;
-  })
-
-  $http.get("../working_data/teams_meta.json").then(function(data){
-    $scope.team_options = Object.keys(data.data);
-    $scope.ind = $scope.team_options.indexOf($scope.cur_team);
-  })
-
-  $scope.newOuChart = function(team){
-    //first, let's fade out the old graph
-    d3.selectAll("svg")
-    .style("opacity", 0);
-
-    //after the fade, we'll remove the element
-    $timeout(function(){
-      d3.selectAll("svg")
-      .remove()
-    }, 1)
-    //then we'll repopulate with a new graph
-    .then(function(){
-      //don't run until we get our key variables
-      $scope.cur_team = team;
-      $scope.ind = $scope.team_options.indexOf($scope.cur_team);
-      db.teamsPromise.then(function(data){
-      $scope.teams = data;
-      $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$rootScope.cur_year];
-    })
-
-    .then(function(){
-
-      var margin = {top: 20, right: 20, bottom: 30, left: 50},
-      width = 960 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
-
-      /*
-   * value accessor - returns the value to encode for a given data object.
-   * scale - maps value to a visual display encoding, such as a pixel position.
-   * map function - maps from data value to display value
-   * axis - sets up axis
-   */
-
-  // setup x
-  var xValue = function(d) { return d.week;}, // data -> value
-      xScale = d3.scale.linear().range([0, width]), // value -> display
-      xMap = function(d) { return xScale(xValue(d));}, // data -> display
-      xAxis = d3.svg.axis().scale(xScale).orient("bottom"),
-  // setup y 1 - for over / unders
-      yValue = function(d) { return d.total;}, // data -> value
-      yScale = d3.scale.linear().range([height, 0]), // value -> display
-      yMap = function(d) { return yScale(yValue(d));}, // data -> display
-      yAxis = d3.svg.axis().scale(yScale).orient("left"),
-  // setup y 1 - for over / unders
-      yyValue = function(d) { return (d.total + d.over_differential)}, // data -> value
-      yyMap = function(d) { return yScale(yyValue(d));}; // data -> display
-
-
-  // setup fill color
-  // var cValue = function(d) { return d.Manufacturer;},
-  //     color = d3.scale.category10();
-
-  // add the graph canvas to the body of the webpage
-  var svg = d3.select(".teams_ou_graph").append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-  // add the tooltip area to the webpage
-
-
-    // don't want dots overlapping axis, so add in buffer to data domain
-    xScale.domain([d3.min($scope.cur_season, xValue)- 1, d3.max($scope.cur_season, xValue)+1]);
-    // set the domain to the range of ACTUALS
-    yScale.domain([d3.min($scope.cur_season, yyValue) + 3, d3.max($scope.cur_season, yyValue) - 3]);
-
-    // x-axis
-    svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
-      .append("text")
-        .attr("class", "label")
-        .attr("x", width)
-        .attr("y", -6)
-        .style("text-anchor", "end")
-        .text("Week");
-
-    // y-axis
-    svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis)
-      .append("text")
-        .attr("class", "label")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Over / Under");
-
-    // draw dots
-    svg.selectAll(".dot")
-        .data($scope.cur_season)
-      .enter().append("circle")
-        .attr("class", "dot")
-        .attr("r", function(d){ return d.total ? 9.5 : 0})
-        .attr("cx", xMap)
-        .attr("cy", yMap)
-        .style("fill", function(d) { return d.team ? $scope.teamsMeta[d.team].rgba : "" })
-        // .style("fill", "rgba(00,00,00,.5)")
-        .attr("cursor", "pointer");
-        // var tooltip = d3.select("body").append("div")
-        //     .attr("class", "tooltip")
-        //     .style("opacity", 0);
-        // function(d) { return color(cValue(d));})
-        // .on("mouseover", function(d) {
-        //     tooltip.transition()
-        //          .duration(200)
-        //          .style("opacity", .9);
-        //     tooltip.html(d.opponent + "<br/> " + d.team)
-        //          .style("left", (d3.event.pageX + 5) + "px")
-        //          .style("top", (d3.event.pageY - 28) + "px");
-        // })
-        // .on("mouseout", function(d) {
-        //     tooltip.transition()
-        //          .duration(500)
-        //          .style("opacity", 0)
-        //        })
-
-    svg.selectAll(".dot2")
-        .data($scope.cur_season)
-      .enter().append("circle")
-        .attr("class", "dot2")
-        .attr("r", function(d){ return d.total ? 6.5 : 0})
-        .attr("cx", xMap)
-        .attr("cy", yyMap)
-        .style("fill", function(d){ return d.over_differential > 0 ? 'rgba(00,150,00,.85)' : d.over_differential == 0? 'rgba(255,255,255,1)' : 'rgba(255,00,00,.6)'});
-        // function(d) { return color(cValue(d));})
-        // .on("mouseover", function(d) {
-        //     tooltip.transition()
-        //          .duration(200)
-        //          .style("opacity", .9);
-        //     tooltip.html(d["Cereal Name"] + "<br/> (" + xValue(d)
-  	    //     + ", " + yValue(d) + ")")
-        //          .style("left", (d3.event.pageX + 5) + "px")
-        //          .style("top", (d3.event.pageY - 28) + "px");
-        // })
-        // .on("mouseout", function(d) {
-        //     tooltip.transition()
-        //          .duration(500)
-        //          .style("opacity", 0);
-  })
-
-  // function type(d) {
-  //   d.date = formatDate.parse(d.date);
-  //   d.close = +d.close;
-  //   return d;
-  // }
-
-
-          .then(function(){
-            d3.selectAll("svg")
-              .style("opacity", 1)
-            })
-          })
-        }
-
-}])
+// .controller('teamsOuGraphCtrl', ['$scope', '$rootScope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $rootScope, $routeParams, $timeout, $http, db){
+//
+//   $scope.$watch("cur_season", function(){
+//     return $scope.cur_season;
+//   })
+//
+//   db.teamsMetaPromise.then(function(data){
+//     $scope.teamsMeta = data;
+//     return $scope.teamsMeta;
+//   })
+//
+//   $http.get("../working_data/teams_meta.json").then(function(data){
+//     $scope.team_options = Object.keys(data.data);
+//     $scope.ind = $scope.team_options.indexOf($scope.cur_team);
+//   })
+//
+//   $scope.newOuChart = function(team){
+//     //first, let's fade out the old graph
+//     d3.selectAll("svg")
+//     .style("opacity", 0);
+//
+//     //after the fade, we'll remove the element
+//     $timeout(function(){
+//       d3.selectAll("svg")
+//       .remove()
+//     }, 1)
+//     //then we'll repopulate with a new graph
+//     .then(function(){
+//       //don't run until we get our key variables
+//       $scope.cur_team = team;
+//       $scope.ind = $scope.team_options.indexOf($scope.cur_team);
+//       db.teamsPromise.then(function(data){
+//       $scope.teams = data;
+//       $scope.cur_season = $scope.teams[$scope.ind][$scope.cur_team][$rootScope.cur_year];
+//     })
+//
+//     .then(function(){
+//
+//       var margin = {top: 20, right: 20, bottom: 30, left: 50},
+//       width = 960 - margin.left - margin.right,
+//       height = 500 - margin.top - margin.bottom;
+//
+//       /*
+//    * value accessor - returns the value to encode for a given data object.
+//    * scale - maps value to a visual display encoding, such as a pixel position.
+//    * map function - maps from data value to display value
+//    * axis - sets up axis
+//    */
+//
+//   // setup x
+//   var xValue = function(d) { return d.week;}, // data -> value
+//       xScale = d3.scale.linear().range([0, width]), // value -> display
+//       xMap = function(d) { return xScale(xValue(d));}, // data -> display
+//       xAxis = d3.svg.axis().scale(xScale).orient("bottom"),
+//   // setup y 1 - for over / unders
+//       yValue = function(d) { return d.total;}, // data -> value
+//       yScale = d3.scale.linear().range([height, 0]), // value -> display
+//       yMap = function(d) { return yScale(yValue(d));}, // data -> display
+//       yAxis = d3.svg.axis().scale(yScale).orient("left"),
+//   // setup y 1 - for over / unders
+//       yyValue = function(d) { return (d.total + d.over_differential)}, // data -> value
+//       yyMap = function(d) { return yScale(yyValue(d));}; // data -> display
+//
+//
+//   // setup fill color
+//   // var cValue = function(d) { return d.Manufacturer;},
+//   //     color = d3.scale.category10();
+//
+//   // add the graph canvas to the body of the webpage
+//   var svg = d3.select(".teams_ou_graph").append("svg")
+//       .attr("width", width + margin.left + margin.right)
+//       .attr("height", height + margin.top + margin.bottom)
+//     .append("g")
+//       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+//
+//   // add the tooltip area to the webpage
+//
+//
+//     // don't want dots overlapping axis, so add in buffer to data domain
+//     xScale.domain([d3.min($scope.cur_season, xValue)- 1, d3.max($scope.cur_season, xValue)+1]);
+//     // set the domain to the range of ACTUALS
+//     yScale.domain([d3.min($scope.cur_season, yyValue) + 3, d3.max($scope.cur_season, yyValue) - 3]);
+//
+//     // x-axis
+//     svg.append("g")
+//         .attr("class", "x axis")
+//         .attr("transform", "translate(0," + height + ")")
+//         .call(xAxis)
+//       .append("text")
+//         .attr("class", "label")
+//         .attr("x", width)
+//         .attr("y", -6)
+//         .style("text-anchor", "end")
+//         .text("Week");
+//
+//     // y-axis
+//     svg.append("g")
+//         .attr("class", "y axis")
+//         .call(yAxis)
+//       .append("text")
+//         .attr("class", "label")
+//         .attr("transform", "rotate(-90)")
+//         .attr("y", 6)
+//         .attr("dy", ".71em")
+//         .style("text-anchor", "end")
+//         .text("Over / Under");
+//
+//     // draw dots
+//     svg.selectAll(".dot")
+//         .data($scope.cur_season)
+//       .enter().append("circle")
+//         .attr("class", "dot")
+//         .attr("r", function(d){ return d.total ? 9.5 : 0})
+//         .attr("cx", xMap)
+//         .attr("cy", yMap)
+//         .style("fill", function(d) { return d.team ? $scope.teamsMeta[d.team].rgba : "" })
+//         // .style("fill", "rgba(00,00,00,.5)")
+//         .attr("cursor", "pointer");
+//         // var tooltip = d3.select("body").append("div")
+//         //     .attr("class", "tooltip")
+//         //     .style("opacity", 0);
+//         // function(d) { return color(cValue(d));})
+//         // .on("mouseover", function(d) {
+//         //     tooltip.transition()
+//         //          .duration(200)
+//         //          .style("opacity", .9);
+//         //     tooltip.html(d.opponent + "<br/> " + d.team)
+//         //          .style("left", (d3.event.pageX + 5) + "px")
+//         //          .style("top", (d3.event.pageY - 28) + "px");
+//         // })
+//         // .on("mouseout", function(d) {
+//         //     tooltip.transition()
+//         //          .duration(500)
+//         //          .style("opacity", 0)
+//         //        })
+//
+//     svg.selectAll(".dot2")
+//         .data($scope.cur_season)
+//       .enter().append("circle")
+//         .attr("class", "dot2")
+//         .attr("r", function(d){ return d.total ? 6.5 : 0})
+//         .attr("cx", xMap)
+//         .attr("cy", yyMap)
+//         .style("fill", function(d){ return d.over_differential > 0 ? 'rgba(00,150,00,.85)' : d.over_differential == 0? 'rgba(255,255,255,1)' : 'rgba(255,00,00,.6)'});
+//         // function(d) { return color(cValue(d));})
+//         // .on("mouseover", function(d) {
+//         //     tooltip.transition()
+//         //          .duration(200)
+//         //          .style("opacity", .9);
+//         //     tooltip.html(d["Cereal Name"] + "<br/> (" + xValue(d)
+//   	    //     + ", " + yValue(d) + ")")
+//         //          .style("left", (d3.event.pageX + 5) + "px")
+//         //          .style("top", (d3.event.pageY - 28) + "px");
+//         // })
+//         // .on("mouseout", function(d) {
+//         //     tooltip.transition()
+//         //          .duration(500)
+//         //          .style("opacity", 0);
+//   })
+//
+//   // function type(d) {
+//   //   d.date = formatDate.parse(d.date);
+//   //   d.close = +d.close;
+//   //   return d;
+//   // }
+//
+//
+//           .then(function(){
+//             d3.selectAll("svg")
+//               .style("opacity", 1)
+//             })
+//           })
+//         }
+//
+// }])
 
 .controller('teamsMlGraphCtrl', ['$scope', '$rootScope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $rootScope, $routeParams, $timeout, $http, db){
 
@@ -560,7 +552,8 @@ angular.module('Controllers', [])
 
 }])
 
-.controller('nflScatterCtrl', ['$scope', '$routeParams', '$rootScope', '$timeout', '$http', 'Data', function($scope, $routeParams, $rootScope, $timeout, $http, db){
+.controller('nflScatterCtrl', ['$scope', '$routeParams', '$rootScope', '$timeout', '$http', 'Data', 'util', 'Axes',
+  function($scope, $routeParams, $rootScope, $timeout, $http, db, util, Axes){
 
   db.underdogsPromise.then(function(data){
     $scope.underdogs = data;
@@ -585,10 +578,6 @@ angular.module('Controllers', [])
     return $scope.favorites;
   });
 
-  // $scope.$watch("favorites", function(){
-  //   $scope.newNflChart(2015);
-  // });
-
   $rootScope.$watch("cur_year", function(){
     d3.selectAll("svg")
       .transition()
@@ -597,48 +586,9 @@ angular.module('Controllers', [])
       .attr("opacity", 0);
     $scope.newNflChart($rootScope.cur_year);
 
-  })
+  });
 
-  $rootScope.switchFade = function(type){
-    // OBVIOUSLY REFACTOR THIS. am shitty code writing
-    if(type == 'Underdogs'){
-      d3.selectAll(".Favorite")
-        .transition()
-        .ease("linear")
-        .duration(300)
-        .attr("opacity", .1);
-
-      d3.selectAll(".Underdog")
-        .transition()
-        .ease("linear")
-        .duration(300)
-        .attr("opacity", 1);
-      }
-
-      if(type == 'Favorites'){
-        d3.selectAll(".Favorite")
-          .transition()
-          .ease("linear")
-          .duration(300)
-          .attr("opacity", 1);
-
-        d3.selectAll(".Underdog")
-          .transition()
-          .ease("linear")
-          .duration(300)
-          .attr("opacity", .1);
-        }
-
-
-
-  }
-
-  $scope.transition_results = function(){
-    d3.selectAll("circle")
-      .transition()
-      .duration(500)
-      .ease("linear")
-  }
+  $rootScope.$watch("active_type", util.switchFade);
 
   $scope.newNflChart = function(startYear, endYear, type, team){
     d3.selectAll("svg")
@@ -656,7 +606,6 @@ angular.module('Controllers', [])
       .then(function(){
 
 
-
         $rootScope.cur_year = startYear;
         if(endYear){
           $scope.duration = endYear - startYear + 1;
@@ -671,286 +620,159 @@ angular.module('Controllers', [])
           $scope.filter = null;
         }
       })
+    .then(function(){
+      var margin = {top: 100, right: 20, bottom: 30, left: 120},
+        width = 1060 - margin.left - margin.right,
+        height = 680 - margin.top - margin.bottom,
+        // x axis stuff
+        xValue = function(d){ return d.week},
+        xScale = d3.scale.linear().range([0, width]),
+        xMap = function(d) { return xScale(xValue(d) - 1 + ((1 - d.spread) * .15));},
+        xAxis = d3.svg.axis().scale(xScale).orient("bottom"),
+        // y axis stuff
+        yValueF = function(d) { return d.spread * -1},
+        yScale = d3.scale.linear().range([height, 0]),
+        yMapF = function(d) { return yScale(yValueF(d));},
+        yAxis = d3.svg.axis().scale(yScale).orient("left"),
+        yValueD = function(d) {return d.spread},
+        yMapD = function(d) { return yScale(yValueD(d));},
+        yValueAts = function(d){return d.ats},
 
-
-
-      .then(function(){
-      // populates the lines
-        var populate_games = function(speed){
-          //TODO ADD SPEED FUNCTIONALITY
+        yValueAtsD = function(d){ return (d.spread) + d.ats},
+        yMapAts = function(d){ return yScale(yValueAts(d))},
+        yMapAtsD = function(d){ return yScale(yValueAtsD(d))},
+        results = function(){
+          // if you covered, you move up, and you're green
+          // if not, you move down, and you're red!
             d3.selectAll("circle")
-            .transition()
-            .duration(500)
-            .ease("linear")
-              .attr("opacity", 0)
+              .transition()
+              .duration(1000)
+              .ease("linear")
+              .delay(function(d,i){return 500 + 100 * d.week + i * 5})
+              .attr("cy", yMapAts)
+              .attr("fill", function(d){ return d.ats > 0 ? "green" : "red"});
+        };
 
-        svg.selectAll("circle")
-          .transition()
-            .duration(500)
-            .ease("linear")
-            .delay(function(d,i){
-              return 500 + 100 * d.week + i * 5})
-              .attr("opacity", 1)
+      var svg = d3.select(".nfl_scatter").append("svg")
+        .attr("width", width + margin.left + margin.right + 200)
+        .attr("height", height + margin.top + margin.bottom + 50)
+      .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-      }
+      util.editHeaderDesc($rootScope.active_category, $rootScope.active_type)
+      util.editYearDesc($rootScope.cur_year);
+      util.play_button.on("click", util.populate_games);
+      util.results_button.on("click", results);
+      xScale.domain([0, 16]);
+      yScale.domain([-35, 35]);
 
+      xAxis.tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
+      yAxis.tickValues([-35, -28, -21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21, 28, 35]);
 
-      var editHeaderDesc = function(category, subCategory) {
-        d3.select("svg").append("text")
-          .text(category + ": " + subCategory)
-          .attr("font-size", "60px")
-          .attr("stroke", "rgb(221,221,221)")
-          .attr("opacity", ".3")
-          .attr("y", margin.top - 40)
-          .attr("x", margin.left -20);
-      };
+      Axes.init_x_axis("week", svg);
+      Axes.init_y_axis("Spread", svg);
 
-      var editYearDesc = function(year){
-        d3.select("svg").append("text")
-        .text(year)
-        .attr("font-size", "60px")
-        .attr("stroke", "rgb(221,221,221)")
-        .attr("opacity", ".3")
-        .attr("y", margin.top - 40)
-        .attr("x", width + 20);
-      };
-
-      var tooltip = d3.select("svg").append("text")
-          .attr("class", "tooltip")
-          .attr("opacity", "0")
-
-      //this function will animate the RESULTS against the spread
-      var results = function(){
-        // if you covered, you move up, and you're green
-        // if not, you move down, and you're red!
-          d3.selectAll("circle")
-            .transition()
-            .duration(1000)
-            .ease("linear")
-            .delay(function(d,i){return 500 + 100 * d.week + i * 5})
-            .attr("cy", yMapAts)
-            .attr("fill", function(d){ return d.ats > 0 ? "green" : "red"});
-      };
-
-      var play_button = d3.select("body").append("div")
-        .html(
-          "<div class='area_chart'>" +
-          "<i class = 'fa fa-area-chart'></i>" +
-          "</div>"
-        )
-        .on("click", populate_games);
-
-
-        var results_button = d3.select("body").append("div")
-          .html(
-            "<div class='line_chart'>" +
-            "<i class = 'fa fa-line-chart'></i>" +
-            "</div>"
-          )
-          .on("click", results);
-
-
-        var margin = {top: 100, right: 20, bottom: 30, left: 120},
-            width = 1060 - margin.left - margin.right,
-            height = 680 - margin.top - margin.bottom,
-            // x axis stuff
-            xValue = function(d){ return d.week},
-            xScale = d3.scale.linear().range([0, width]),
-            xMap = function(d) { return xScale(xValue(d) - 1 + ((1 - d.spread) * .15));},
-            xAxis = d3.svg.axis().scale(xScale).orient("bottom"),
-            // y axis stuff
-            yValueF = function(d) { return d.spread * -1},
-            yScale = d3.scale.linear().range([height, 0]),
-            yMapF = function(d) { return yScale(yValueF(d));},
-            yAxis = d3.svg.axis().scale(yScale).orient("left"),
-            yValueD = function(d) {return d.spread},
-            yMapD = function(d) { return yScale(yValueD(d));},
-            yValueAts = function(d){return d.ats},
-
-            yValueAtsD = function(d){ return (d.spread) + d.ats},
-            yMapAts = function(d){ return yScale(yValueAts(d))},
-            yMapAtsD = function(d){ return yScale(yValueAtsD(d))};
-
-        var svg = d3.select(".nfl_scatter").append("svg")
-          .attr("width", width + margin.left + margin.right + 200)
-          .attr("height", height + margin.top + margin.bottom + 50)
-        .append("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-      editHeaderDesc($rootScope.active_category, $rootScope.active_type);
-      editYearDesc($rootScope.cur_year);
-
-          xScale.domain([0, 16]);
-          yScale.domain([-35, 35]);
-
-          xAxis.tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
-          yAxis.tickValues([-35, -28, -21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21, 28, 35]);
-
-          var spread_tooltip = d3.select("body").append("div")
-              .attr("class", "tooltip")
-              .style("opacity", "0"),
-
-              result_tooltip = d3.select("body").append("div")
-                .attr("class", "tooltip")
-                .style("opacity", "0");
+      svg.selectAll(".dotFavorite")
+        .data($scope.favorites[$rootScope.cur_year - $rootScope.year_options[0]][$rootScope.cur_year])
+            .enter().append("circle")
+              .attr("class", function(d){return d.dog.replace(" ","").replace(".","") + d.week + " Favorites"})
+              .attr("r", function(d){ return d.spread ? 5.5 : 0})
+              .attr("stroke-width", "3")
+              .attr("cx", xMap)
+              .attr("cy", yMapF)
+              .attr("opacity", "1")
+              .attr("fill", function(d){ return d.week % 2 == 0 ? "rgb(0,50,150)" : "rgb(0,50,70)"})
+              .attr("cursor", "pointer")
+            .on("mouseover", function(d){
+                // select data from this week
+              util.highlightPartner(d);
+              d3.select(this)
+                .transition()
+                .ease("elastic")
+                .duration("500")
+                .attr("r", "12.5")
+                .attr("z-index", "1")
+                .attr("fill", function(d){return $rootScope.teamsMeta[d.fav].hex})
+                .attr("stroke", function(d){return $rootScope.teamsMeta[d.fav].sec_hex});
+              util.spread_label.html(
+                "<span>" + (d.home ? '@ ' : '') + d.fav + " VS </span><span>" +
+                (!d.home ? '@ ' : '') + d.dog + "</span><span>, " + d.spread + "</span> ")
+              .style("left", "220px")
+              .style("top", "75px")
+              .transition()
+              .ease("elastic")
+              .duration("500")
+              .style("opacity", "1");
+            })
+            .on("click", function(d){
+              d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
+              .transition()
+              .ease("elastic")
+              .duration("1000")
+              .attr("fill", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
+              .attr("stroke", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
+              .attr("cy", yMapAts);
+            d3.select(this)
+              .transition()
+              .ease("elastic")
+              .duration("1000")
+              .attr("cy", yMapAts);
+            util.spread_label.transition()
+              .ease("elastic")
+              .duration(300)
+              .style("opacity", ".3");
+              util.result_label.html(
+                "<span> " + (d.home ? '@ ' : '') + d.winningTeam + ": </span><span> " + d.winningScore +",</span><span> " +
+                "<span>" + (!d.home ? '@ ' : '') + d.losingTeam + ": " + d.losingScore + "</span>" +
+                "<span> (" + d.ats + ")</span>")
+                .style("right", "220px")
+                .style("top", "75px")
+                .transition()
+                .ease("elastic")
+                .duration("300")
+                .style("opacity", "1")
+            })
+            .on("mouseout", function(d){
+            
+              util.fadeIn(util.spread_label, "elastic", "500", 0);
+              // transition()
+              //   .ease("elastic")
+              //   .duration(300)
+              //   .style("opacity", "0");
 
 
-          svg.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + height / 2 + ")")
-            .call(xAxis)
-          .append("text")
-            .attr("class", "label")
-            .attr("x", width)
-            .attr("y", -6)
-            .style("text-anchor", "end")
-            .text("Week");
 
-            // y-axis
-            svg.append("g")
-                .attr("class", "y axis")
-                .call(yAxis)
-              .append("text")
-                .attr("class", "label")
-                .attr("transform", "rotate(-90)")
-                .attr("y", 6)
-                .attr("dy", ".71em")
-                .style("text-anchor", "end")
-                .text("Over / Under");
+              util.result_label.hey
 
-            svg.selectAll(".dotFavorite")
-              .data($scope.favorites[$rootScope.cur_year - $rootScope.year_options[0]][$rootScope.cur_year])
-                  .enter().append("circle")
-                    .attr("class", function(d){return
-                      //add a class that will pair the favorites and underdogs
-                      d.dog.replace(" ","").replace(".","") +
-                      // add a class for the week - we we can color code for clarity, other reasons
-                      d.week + " " + "week_" + d.week +
-                      // add a class that says if this is a favorite or underdog
-                       " Favorite"
-                      })
-                    .attr("r", function(d){ return d.spread ? 5.5 : 0})
-                    .attr("stroke-width", "3")
-                    .attr("cx", xMap)
-                    .attr("cy", yMapF)
-                    .attr("fill", function(d){ return d.week % 2 == 0 ? "rgb(0,50,150)" : "rgb(0,50,70)"})
-                    .attr("cursor", "pointer")
-                    .on("mouseover", function(d){
-                        // select data from this week
-                        d3.selectAll(".week_" + d.week)
-                        //on hover, fade out the data, make it small and green
-                          .transition()
-                          .ease("elastic")
-                          .duration("500")
-                          .attr("r", "5.5")
-                          .attr("z-index", "0")
-                          .attr("fill", "rgb(0,50,150)")
-                          .attr("stroke", "rgb(0,50,150)")
-
-                        d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
-                          .transition()
-                          .ease("elastic")
-                          .duration("500")
-                          .attr("z-index", "1")
-                          .attr("r", "12.5")
-                          .attr("fill", function(d){ return $scope.teamsMeta[d.dog].hex})
-                          .attr("stroke", function(d){return $scope.teamsMeta[d.dog].sec_hex})
-                          .attr("opacity", "1");
-                        d3.select(this)
-                          .transition()
-                          .ease("elastic")
-                          .duration("500")
-                          .attr("r", "12.5")
-                          .attr("z-index", "1")
-                          .attr("fill", function(d){return $scope.teamsMeta[d.fav].hex})
-                          .attr("stroke", function(d){return $scope.teamsMeta[d.fav].sec_hex});
-
-                        spread_tooltip.html(
-                          "<span>" + (d.home ? '@ ' : '') + d.fav + " VS </span><span>" +
-                           (!d.home ? '@ ' : '') + d.dog + "</span><span>, " + d.spread + "</span> ")
-                          .style("left", "220px")
-                          .style("top", "75px");
-
-                        spread_tooltip.transition()
-                          .ease("elastic")
-                          .duration("1000")
-                          .style("opacity", "1");
-
-                    })
-                    .on("click", function(d){
-                      d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
-                      .transition()
-                      .ease("elastic")
-                      .duration("1000")
-                      .attr("fill", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
-                      .attr("stroke", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
-                      .attr("cy", yMapAts);
-                      d3.select(this)
-                        .transition()
-                        .ease("elastic")
-                        .duration("1000")
-                        .attr("cy", yMapAts);
-
-                      spread_tooltip.transition()
-                        .ease("elastic")
-                        .duration(300)
-                        .style("opacity", ".3");
-
-                        result_tooltip.html(
-                              "<span> " + (d.home ? '@ ' : '') + d.winningTeam + ": </span><span> " + d.winningScore +",</span><span> " +
-                              "<span>" + (!d.home ? '@ ' : '') + d.losingTeam + ": " + d.losingScore + "</span>" +
-                              "<span> (" + d.ats + ")</span>")
-                              .style("right", "220px")
-                              .style("top", "75px");
-                        result_tooltip.transition()
-                                .ease("elastic")
-                                .duration("300")
-                                .style("opacity", "1")
-                    })
-                    .on("mouseout", function(d){
-
-                      spread_tooltip.transition()
-                        .ease("elastic")
-                        .duration(300)
-                        .style("opacity", "0");
-
-                        result_tooltip.transition()
-                          .ease("elastic")
-                          .duration(300)
-                          .style("opacity", "0");
-
-                        d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
-                        .transition()
-                        .ease("elastic")
-                        .attr("stroke-width", "3")
-                        .duration("100")
-                        .attr("r", 5.5)
-                        .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
-                        .attr("stroke", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
-                        .attr("opacity", ".1");
-
-                        d3.select(this)
-                          .transition()
-                          .ease("elastic")
-                          .duration("100")
-                          .attr("r", "5.5")
-                          .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
-                          .attr("stroke", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
-                          .attr("opacity", "1");
-                    });
-
-                    svg.selectAll(".dotUnderdog")
-                    .data($scope.favorites[$rootScope.cur_year - $rootScope.year_options[0]][$rootScope.cur_year])
-                        .enter().append("circle")
-                          .attr("class", function(d){
-                            return d.dog.replace(" ","").replace(".","") + d.week + " Underdog"})
-                          .attr("r", function(d){ return d.spread ? 5.5 : 0})
-                          .attr("stroke-width", "3")
-                          .attr("cx", xMap)
-                          .attr("cy", yMapD)
-                          .attr("opacity", ".1")
-                          .attr("fill", function(d){return d.week % 2 == 0 ? "rgba(150,0,150,1)" : "rgba(150,0,50,1)"})
-                          .attr("cursor", "pointer");
+              d3.selectAll("." + d.dog.replace(" ","").replace(".","") + d.week)
+                .transition()
+                .ease("elastic")
+                .attr("stroke-width", "3")
+                .duration("300")
+                .attr("r", 5.5)
+                .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
+                .attr("stroke", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
+                .attr("opacity", ".1");
+              d3.select(this)
+                .transition()
+                .ease("elastic")
+                .duration("300")
+                .attr("r", "5.5")
+                .attr("fill", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
+                .attr("stroke", function(d){ return d.week % 2 == 0 ? "rgba(0,50,150)" : "rgba(0,50,100)"})
+                .attr("opacity", "1");
+            });
+            svg.selectAll(".dotUnderdog")
+            .data($scope.favorites[$rootScope.cur_year - $rootScope.year_options[0]][$rootScope.cur_year])
+              .enter().append("circle")
+              .attr("class", function(d){return d.dog.replace(" ","").replace(".","") + d.week + " Underdogs"})
+              .attr("r", function(d){ return d.spread ? 5.5 : 0})
+              .attr("stroke-width", "3")
+              .attr("cx", xMap)
+              .attr("cy", yMapD)
+              .attr("opacity", ".1")
+              .attr("fill", function(d){return d.week % 2 == 0 ? "rgba(150,0,150,1)" : "rgba(150,0,50,1)"})
+              .attr("cursor", "pointer");
       })
 
 
@@ -1059,6 +881,8 @@ angular.module('Controllers', [])
           .orient("left")
           .tickSize(0)
           .tickPadding(6);
+
+
 
           //what we are trying to add here...
           // turn old box green or red

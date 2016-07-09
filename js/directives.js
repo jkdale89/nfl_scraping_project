@@ -169,65 +169,6 @@
     }
 
 
-    // team_graphs = function(){
-    //   return {
-    //     restrict: 'E',
-    //     template: "<div class='team_graph'></div>",
-    //     controller: 'team_graph_ctrl',
-    //     replace: false
-    //   }
-    // },
-    //
-    // team_graphs = function(){
-    //   return {
-    //     restrict: 'E',
-    //     template: "<div class='team_graph'></div>",
-    //     controller: 'team_graph_ctrl',
-    //     replace: false
-    //   }
-    // },
-    //
-    // team_graphs = function(){
-    //   return {
-    //     restrict: 'E',
-    //     template: "<div class='team_graph'></div>",
-    //     controller: 'team_graph_ctrl',
-    //     replace: false
-    //   }
-    // },
-    //
-    // team_graphs = function(){
-    //   return {
-    //     restrict: 'E',
-    //     template: "<div class='team_graph'></div>",
-    //     controller: 'team_graph_ctrl',
-    //     replace: false
-    //   }
-    // },
-    //
-    // team_graphs = function(){
-    //   return {
-    //     restrict: 'E',
-    //     template: "<div class='team_graph'></div>",
-    //     controller: 'team_graph_ctrl',
-    //     replace: false
-    //   }
-    // },
-    //
-    // team_graphs = function(){
-    //   return {
-    //     restrict: 'E',
-    //     template: "<div class='team_graph'></div>",
-    //     controller: 'team_graph_ctrl',
-    //     replace: false
-    //   }
-    // },
-
-
-
-
-
-
   // This maps the above variables to their own elements, so we can use "<chart></chart>"
   // to insert the pie.html into the element. This gives direction to our html and separates our concerns
   angular.module('Directives', [])
