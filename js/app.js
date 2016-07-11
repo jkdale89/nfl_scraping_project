@@ -11,8 +11,8 @@ angular.module('betweenTheLines', [
   .config(['$routeProvider',
     function($routeProvider) {
       $routeProvider
-        .when('/graphs', {
-          templateUrl: 'views/graphs/graph1.html',
+        .when('/main', {
+          templateUrl: 'views/graphs/scatter.html',
           controller: 'MainCtrl'
         })
     }
