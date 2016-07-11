@@ -2,20 +2,6 @@
 
     <!-- the graphs for teams -->
     <div class = "graph-container">
-        <!-- <teams-ats
-          ng-show="active_type == 'Against the Spread' &&
-          active_category == 'Teams'">
-        </teams-ats>
-        <teams-ou
-          ng-show="active_type == 'Over / Under' &&
-          active_category == 'Teams'">
-        </teams-ou>
-
-        <teams-ml
-          ng-show="active_type == 'Moneyline' &&
-          active_category == 'Teams'">
-
-        </teams-ml> -->
 
         <nfl-scatter
           ng-show="(active_type == 'Favorites' || 'Underdogs') &&
@@ -71,44 +57,51 @@
         </li>
       </ul>
 
+        <div class = "year_dropdown"
+          ng-click="year_dropdown = !year_dropdown">
+          <p style="color: {{teamsMeta[cur_team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[cur_team].hex}};}}">
+            {{cur_year}}
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </p>
+          <div ng-show="year_dropdown">
+            <p ng-click = "changeYear(year)" ng-repeat="year in year_options">
+              {{year}}
+            </p>
+          </div>
+        </div>
+
+
+      <div class = "teams_dropdown"
+        ng-click="teams_dropdown = !teams_dropdown"
+        ng-show="active_category !== 'Teams'">
+          <p style="color: {{teamsMeta[cur_team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[cur_team].hex}};}}">
+          <img src="{{teamsMeta[cur_team].url}}">
+            {{cur_team}} {{teamsMeta[cur_team].nick}}
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </p>
+        <div ng-show="teams_dropdown">
+          <p style="color: {{teamsMeta[team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[team].hex}}; background-color {{teamsMeta[team].rgba}}"
+          ng-show="teams_dropdown" ng-repeat="team in team_options">
+          <img src="{{teamsMeta[team].url}}">
+          {{team}}
+          </p>
+        </div>
+      </div>
+
+      <div ng-click="toggleSecondary()" class="toggleSecondary">
+        <p ng-class="'active_joe': {{showSecondary}}"> {{showSecondary? 'hide' : 'show'}} {{secondary}} </p>
+      </div>
+
     </div>
-</div>
 
     <div ng-mouseover="legend = true" ng-mouseleave="legend = false" class="circle">
       <i ng-show = "!legend" class = "fa fa-arrow-left"></i>
       <p ng-show="legend" class="legend">Legend</p>
     </div>
 
-      <div class = "year_dropdown"
-        ng-click="year_dropdown = !year_dropdown">
-        <p style="color: {{teamsMeta[cur_team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[cur_team].hex}};}}">
-          {{cur_year}}
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
-      </p>
-        <div ng-show="year_dropdown">
-          <p ng-click = "changeYear(year)" ng-refpeat="year in year_options">
-            {{year}}
-          </p>
-        </div>
-      </div>
+</div>
 
 
-    <div class = "teams_dropdown"
-      ng-click="teams_dropdown = !teams_dropdown"
-      ng-show="active_category !== 'Teams'">
-        <p style="color: {{teamsMeta[cur_team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[cur_team].hex}};}}">
-        <img src="{{teamsMeta[cur_team].url}}">
-          {{cur_team}} {{teamsMeta[cur_team].nick}}
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
-        </p>
-      <div ng-disabled="active_category !== 'Teams'" ng-show="teams_dropdown">
-        <p style="color: {{teamsMeta[team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[team].hex}}; background-color {{teamsMeta[team].rgba}}"
-        ng-click = "newChart(team)" ng-repeat="team in team_options">
-        <img src="{{teamsMeta[team].url}}">
-        {{team}}
-        </p>
-      </div>
-    </div>
 
 
 

@@ -269,32 +269,29 @@ p.results {
 }
 
 .year_dropdown {
-  position: absolute;
+  width: 100%;
+  position: relative;
+  text-align: center;
   cursor: pointer;
-  bottom: 15%;
-  right: 15%;
   color: rgba(0,99,99,.8);
-  font-size: 24px;
+  font-size: 18px;
   font-weight: normal;
   transition: .3s ease all;
 }
 
 .year_dropdown:hover {
   color: rgba(0,99,99,1);
-  font-weight: bold;
   transition: .3s ease all;
 }
 
 .year_dropdown div {
+  position: absolute;
   cursor: pointer;
   text-align: center;
   overflow-y: scroll;
-  height: 100px;
-  font-weight: normal;
-  position: absolute;
-  width: 150px;
+  width: 100px;
   margin-top: 0px;
-  margin-left: -25px;
+  margin-left: 50px;
   border: 1px solid gray;
   background: white;
   z-index: 10;
@@ -314,16 +311,15 @@ p.results {
 }
 
 .teams_dropdown {
-  position: absolute;
-  bottom: 15%;
-  left: 17%;
-  width: 300px;
+  width: 100%;
+  position: relative;
+  width: auto;
   color: rgba(00,99,99,.8);
   font-weight: normal;
   padding: 0px;
-  font-size: 24px;
+  font-size: 18px;
   text-align: center;
-  height: 40px;
+  height: auto;
   margin: 0px;
   transition: .3s ease all;
   cursor: pointer;
@@ -332,10 +328,10 @@ p.results {
 .teams_dropdown:hover {
     color: rgba(00,99,99,1);
     transition: .3s ease all;
-
 }
 
 .teams_dropdown div p {
+  padding-left: 20%;
   color: black;
   font-weight: bold;
   padding: 0px;
@@ -421,7 +417,7 @@ svg {
 .options {
   list-style: none;
   position: absolute;
-  top: 90px;
+  top: 25%;
 }
 
 .options ul {
@@ -470,7 +466,7 @@ div .test {
 
 .tooltip {
   background-color: #f1f1f1;
-  color: rgba(00,99,99,1);
+  color: rgba(0,0,0,1);
   transition: .2s ease all;
 }
 
@@ -482,8 +478,8 @@ div .area_chart {
   padding: 5px 10px 5px 10px;
   position: absolute;
   font-size: 24px;
-  bottom: 15%;
-  right: 55%;
+  top: 3.5%;
+  right: 27%;
   border-radius: 5px;
   background-color: rgba(00,99,99,.2);
   color: black;
@@ -501,8 +497,8 @@ div .line_chart {
   padding: 5px 10px 5px 10px;
   position: absolute;
   font-size: 24px;
-  bottom: 15%;
-  right: 40%;
+  bottom: 5%;
+  right: 35%;
   border-radius: 5px;
   background-color: rgba(00,99,99,.2);
   color: black;
@@ -576,4 +572,29 @@ i.fa-arrow-left {
   position: relative;
   margin-left: 15%;
   transition: 1s ease all;
+}
+
+
+.toggleSecondary {
+  cursor: pointer;
+  transition: .3s ease all;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 4px;
+  line-height: 3;
+  margin-left: 10px;
+  color: rgba(00,99,99,.6)
+}
+
+.toggleSecondary:hover {
+  color: rgba(00,99,99, 1);
+}
+
+.toggleSecondary p {
+  text-align: center;
+}
+
+.active_joe {
+  background: #f1f1f1;
+  color: black;
 }

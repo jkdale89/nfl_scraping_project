@@ -32,8 +32,8 @@
             var spread = games[i].spread;
               temp = {
                 fav_bin : true,
-                fav: games[i].fav,
-                dog: games[i].dog,
+                primaryTeam: games[i].fav,
+                secondaryTeam: games[i].dog,
                 home: games[i].home === games[i].fav,
                 week : k,
                 year : games[i].year,
@@ -53,8 +53,8 @@
             var spread = -1 * games[i].spread;
               temp = {
                 fav_bin : false,
-                fav: games[i].fav,
-                dog: games[i].dog,
+                primaryTeam: games[i].dog,
+                secondaryTeam: games[i].fav,
                 home: games[i].home === games[i].dog,
                 week : k,
                 year : games[i].year,
@@ -74,11 +74,11 @@
               temp = {
                 favorite : games[i].home === games[i].fav,
                 home: true,
-                homeTeam: games[i].home,
-                awayTeam: games[i].away,
+                primaryTeam: games[i].home,
+                secondaryTeam: games[i].away,
                 week: k,
                 year : games[i].year,
-                spread: ((games[i].fav !== games[i].home) * -1) * games[i].spread,
+                spread: ((games[i].fav !== games[i].home) ? -1 : 1) * games[i].spread,
                 winner: games[i].winner === games[i].home,
                 winner_ats: games[i].winner_ats === games[i].home,
                 ats: ((games[i].fav === games[i].home) * 1) * games[i].fav_diff_ats + ((games[i].fav !== games[i].home) * -1) * games[i].fav_diff_ats,
@@ -93,11 +93,11 @@
             temp = {
               favorite: games[i].away === games[i].fav,
               home: false,
-              homeTeam: games[i].home,
-              awayTeam: games[i].away,
+              primaryTeam: games[i].away,
+              secondaryTeam: games[i].home,
               week: k,
               year : games[i].year,
-              spread: ((games[i].fav !== games[i].away) * -1) * games[i].spread,
+              spread: ((games[i].fav !== games[i].away) ? -1 : 1) * games[i].spread,
               winner: games[i].winner === games[i].away,
               winner_ats: games[i].winner_ats === games[i].away,
               ats: ((games[i].fav === games[i].away) * 1) * games[i].fav_diff_ats + ((games[i].fav !== games[i].away) * -1) * games[i].fav_diff_ats,

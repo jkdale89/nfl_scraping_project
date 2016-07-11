@@ -2,10 +2,10 @@
 
 angular.module('Services', ['ngResource'])
 
-.service('util', ['$exceptionHandler', '$rootScope', function($exceptionHandler, $rootScope){
+.service('util', ['$exceptionHandler', 'Axes', '$rootScope', function($exceptionHandler, Axes, $rootScope){
   var self = this,
   //margin for the top header
-    m_top = 50,
+    m_top = 70,
     //margin for the left
     m_title = 100,
     m_year = 950;
@@ -21,11 +21,54 @@ angular.module('Services', ['ngResource'])
       .attr("x", m_title);
   };
 
-  self.fadeIn = function(obj, animation, speed, opa){
+  self.fade = function(obj, animation, speed, opa, yCoord){
     obj.transition()
     .ease(animation)
     .duration(speed)
     .style("opacity", opa)
+    .attr("cy", yCoord)
+  }
+
+  self.initPrimary = function(obj, type, size, team){
+
+    obj
+      .attr("class", function(d){self.stringify(d) + " " + type})
+      .attr("r", function(d){ return d.spread && ($rootScope.team_filter? d.primaryTeam == team : true) ? size : 0})
+      .attr("stroke-width", "1.5")
+      .attr("cx", Axes.xMap)
+    //Init at the y axis, in order to animate up
+      .attr("cy", Axes.yScale(0))
+      .attr("opacity", "1")
+      .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
+      .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex})
+      .attr("cursor", "pointer");
+  }
+
+  //transition this to the result
+  self.trans_result = function(data){
+    var sel = d3.selectAll("." + data.secondaryTeam.replace(" ","").replace(".","") + data.week);
+    sel.transition()
+    .ease("elastic")
+    .duration("1000")
+    .attr("fill", function(data){ return data.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
+    .attr("stroke", function(data){ return data.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
+  }
+
+
+  self.fill_spread = function(obj, data){
+    obj.html(
+      "<span> Spread: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.primaryTeam].url + ">" + "<span> " + data.spread + " vs </span><span>" +
+      (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.secondaryTeam].url + ">" + " " + "</span><span>")
+    .style("right", "16%")
+    .style("top", "13.5%")
+  }
+
+  self.fill_result = function(obj, data){
+    obj.html("<span> Result: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.winningTeam].url + " alt=" + data.winingTeam + ">" + ": </span><span> " + data.winningScore +",</span><span> " +
+    "<span>" + (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.losingTeam].url + ">" + " alt=" + data.losingTeam +  ": " + data.losingScore + "</span>" +
+    "<span> (" + data.ats + ")</span>")
+    .style("right", "16%")
+    .style("top", "17.5%")
   }
 
   self.editYearDesc = function(year){
@@ -38,50 +81,54 @@ angular.module('Services', ['ngResource'])
     .attr("x", m_year);
   };
 
+  self.stringify = function(obj){
+      var n_str = obj.secondaryTeam.replace(" ","").replace(".","") + obj.week;
+      return n_str;
+    };
+
   // populates the lines
   self.populate_games = function(graph){
-    d3.selectAll("circle")
-    .transition()
-    .duration(500)
-    .ease("linear")
-      .attr("opacity", 0);
-
-    d3.selectAll("circle")
+    if($rootScope.before == true){
+      d3.selectAll("circle")
       .transition()
-        .duration(500)
-        .ease("linear")
-        .delay(function(d,i){
-          return 500 + 100 * d.week + i * 5})
-          .attr("opacity", 1)
-  };
-
-
+      .duration(500)
+      .ease("linear")
+      .attr("fill", function(d){return d.ats > 0 ? "green" : "red"})
+      .attr("stroke", function(d){return d.ats > 0 ? "green" : "red"})
+      .attr("cy", Axes.yMapAts)
+      .delay(function(d,i){return 100 + 25 * d.week + i * 5});
+      $rootScope.before = false;
+    }
+    else if($rootScope.before == false){
+      d3.selectAll("circle")
+      .transition()
+      .duration(500)
+      .ease("linear")
+      .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
+      .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex})
+      .attr("cy", Axes.yMapPrimary)
+      .delay(function(d,i){return 100 + 25 * d.week + i * 5});
+      $rootScope.before = true;
+    }
+  }
   // self.populate_primary = function(type //fav, dog, home, away)
 
   self.highlightPartner = function(obj){
-    d3.selectAll("." + obj.dog.replace(" ","").replace(".","") + obj.week)
+    d3.selectAll("." + obj.secondaryTeam.replace(" ","").replace(".","") + obj.week)
     .transition()
     .ease("elastic")
     .duration("500")
     .attr("z-index", "1")
     .attr("r", "12.5")
-    .attr("fill", function(d){ return $rootScope.teamsMeta[obj.dog].hex})
-    .attr("stroke", function(d){return $rootScope.teamsMeta[obj.dog].sec_hex})
+    .attr("fill", function(d){ return $rootScope.teamsMeta[obj.secondaryTeam].hex})
+    .attr("stroke", function(d){return $rootScope.teamsMeta[obj.secondaryTeam].sec_hex})
     .attr("opacity", "1")
   };
 
-
-  self.play_button = d3.select("body").append("div")
+  self.action_button = d3.select("body").append("div")
     .html(
       "<div class='area_chart'>" +
       "<i class = 'fa fa-area-chart'></i>" +
-      "</div>"
-    );
-
-  self.results_button = d3.select("body").append("div")
-    .html(
-      "<div class='line_chart'>" +
-      "<i class = 'fa fa-line-chart'></i>" +
       "</div>"
     );
 
@@ -129,48 +176,81 @@ angular.module('Services', ['ngResource'])
 
 }])
 
-.service("Axes", ['$http', function($http){
+.service("Axes", ['$http', '$rootScope', function($http, $rootScope){
   var self = this,
-  margin = {top: 100, right: 20, bottom: 30, left: 120},
-  width = 1060 - margin.left - margin.right,
-  height = 680 - margin.top - margin.bottom,
+      shift_left = .45,
+      slope_multiplier = .05;
 
-  xScale = d3.scale.linear().range([0, width]),
-  xAxis = d3.svg.axis().scale(xScale).orient("bottom"),
+  self.xScale = d3.scale.linear().range([0, $rootScope.width]);
+  self.xAxis = d3.svg.axis().scale(self.xScale).orient("bottom");
+  self.xValue = function(d){ return d.week};
+  self.xMap = function(d) { return self.xScale(self.xValue(d) - shift_left + ((1 - d.spread) * slope_multiplier));};
 
-  yScale = d3.scale.linear().range([height, 0]),
-  yAxis = d3.svg.axis().scale(yScale).orient("left");
 
-  xScale.domain([0, 16]);
-  yScale.domain([-35, 35]);
+  self.yScale = d3.scale.linear().range([$rootScope.height, 0]);
+  self.yAxis = d3.svg.axis().scale(self.yScale).orient("left");
 
-  xAxis.tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
-  yAxis.tickValues([-35, -28, -21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21, 28, 35]);
+  // y favorites utilities
+  self.yValueFav = function(d) { return d.spread * -1};
+  self.yMapFav = function(d) {return self.yScale(self.yValueFav(d));};
 
+  self.yMapPrimary = function(d){
+    if($rootScope.active_type == 'Favorites'){
+      return self.yMapFav(d)
+    }
+    else if($rootScope.active_type == 'Home'){
+      return self.yMapHome(d);
+    }
+  };
+
+  self.yMapSecondary = function(){
+    if($rootScope.active_type == 'Favorites'){
+      return self.yMapDog;
+    }
+    else if($rootScope.active_type == 'Underdogs'){
+      return self.yMapFav
+    }
+    else if($rootScope.active_type == 'Home'){
+      return self.yMapAway
+    }
+    else if($rootScope.active_type == 'Away'){
+      return self.yMapHome
+    };
+  };
+
+  self.yValueDog = function(d) {return d.spread};
+  self.yMapDog = function(d) {return self.yScale(self.yValueDog(d));};
+
+  // y home teams utilities
+  self.yValueHome = function(d){return d.spread * -1};
+  self.yMapHome = function(d){return self.yScale(self.yValueHome(d))};
+
+  self.yValueAway = function(d){return d.spread};
+  self.yMapAway = function(d){return self.yScale(self.yValueAway(d))};
+
+  self.yValueAts = function(d){return (d.spread * -1) + d.ats};
+  self.yMapAts = function(d){ return self.yScale(self.yValueAts(d))};
+
+
+  // x-axis
   self.init_x_axis = function(name, graph){
     graph.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate(0," + height / 2 + ")")
-      .call(xAxis)
+      .attr("transform", "translate(0," + $rootScope.height / 2 + ")")
+      .call(self.xAxis)
     .append("text")
       .attr("class", "label")
-      .attr("x", width / 2)
+      .attr("x", $rootScope.width / 2)
       .attr("y", -6)
       .style("text-anchor", "end")
       .text(name);
   };
 
-  xScale.domain([0, 16]);
-  yScale.domain([-35, 35]);
-
-  xAxis.tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
-  yAxis.tickValues([-35, -28, -21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21, 28, 35]);
-
   // y-axis
   self.init_y_axis = function(name, graph){
     graph.append("g")
         .attr("class", "y axis")
-        .call(yAxis)
+        .call(self.yAxis)
       .append("text")
         .attr("class", "label")
         .attr("transform", "rotate(-90)")
