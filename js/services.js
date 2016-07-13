@@ -56,16 +56,16 @@ angular.module('Services', ['ngResource'])
     obj.html(
       "<span> Spread: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.primaryTeam].url + ">" + "<span> " + data.spread + " vs </span><span>" +
       (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.secondaryTeam].url + ">" + " " + "</span><span>")
-    .style("right", "16%")
-    .style("top", "13.5%")
+    .style("right", "13%")
+    .style("top", "3.5%")
   }
 
   self.fill_result = function(obj, data){
     obj.html("<span> Result: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.winningTeam].url + " alt=" + data.winingTeam + ">" + ": </span><span> " + data.winningScore +",</span><span> " +
     "<span>" + (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.losingTeam].url +  " alt=" + data.losingTeam + ">" +  ": " + data.losingScore + "</span>" +
     "<span> (" + data.ats + ")</span>")
-    .style("right", "16%")
-    .style("top", "17.5%")
+    .style("right", "13%")
+    .style("top", "7.5%")
   }
 
   // self.editYearDesc = function(year){
@@ -85,29 +85,37 @@ angular.module('Services', ['ngResource'])
 
   // populates the lines
   self.populate_games = function(graph){
-    if($rootScope.before == true){
+    if($rootScope.graphStatus == "lines"){
       d3.selectAll("circle")
       .transition()
-      .duration(1000)
-      .ease("linear")
+      .duration(2000)
+      .ease("elastic")
       .attr("fill", function(d){return d.ats > 0 ? "green" : "red"})
       .attr("stroke", function(d){return d.ats > 0 ? "green" : "red"})
       .attr("cy", Axes.yMapAts)
       .attr("opacity", 1)
       .delay(function(d,i){return 100 + 25 * d.week + i * 5});
-      $rootScope.before = false;
+      $rootScope.graphStatus = "results";
     }
-    else if($rootScope.before == false){
+    else if($rootScope.graphStatus == 'results'){
       d3.selectAll("circle")
       .transition()
       .duration(1000)
       .ease("linear")
+      .attr("opacity", .15);
+      $rootScope.graphStatus = "trend";
+    }
+    else if($rootScope.graphStatus == 'trend'){
+      d3.selectAll("circle")
+      .transition()
+      .duration(2000)
+      .ease("elastic")
       .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
       .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex})
       .attr("cy", Axes.yMapPrimary)
       .attr("opacity", 1)
       .delay(function(d,i){return 100 + 25 * d.week + i * 5});
-      $rootScope.before = true;
+      $rootScope.graphStatus = "lines";
     }
   }
   // self.populate_primary = function(type //fav, dog, home, away)
@@ -184,8 +192,8 @@ angular.module('Services', ['ngResource'])
 
 .service("Axes", ['$http', '$rootScope', function($http, $rootScope){
   var self = this,
-      shift_left = .45,
-      slope_multiplier = .05;
+      shift_left = 1,
+      slope_multiplier = .10;
 
   self.xScale = d3.scale.linear().range([0, $rootScope.width]);
   self.xAxis = d3.svg.axis().scale(self.xScale).orient("bottom");
@@ -196,8 +204,11 @@ angular.module('Services', ['ngResource'])
   self.yScale = d3.scale.linear().range([$rootScope.height, 0]);
   self.yAxis = d3.svg.axis().scale(self.yScale).orient("left");
 
-  self.yScaleResults = d3.scale.linear().range([$rootScope.height, 0]);
-  self.yAxisResults = d3.svg.axis().scale(self.yScale).orient("left");
+  self.yScaleRight = d3.scale.linear().range([$rootScope.height, 0]);
+  self.yAxisSec = d3.svg.axis().scale(self.yScaleRight).orient("right");
+
+
+
 
 
 
@@ -284,6 +295,21 @@ angular.module('Services', ['ngResource'])
       .append("text")
         .attr("class", "label")
         .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text(name);
+  }
+
+  self.init_sec_y_axis = function(name, graph){
+    graph.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(950)")
+        .attr("fill", "rgba(00,00,00,.3)")
+        .call(self.yAxisSec)
+      .append("text")
+        .attr("class", "label")
+        .attr("transform", "translate(-20)rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")

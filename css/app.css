@@ -443,8 +443,8 @@ div .area_chart {
   padding: 5px 10px 5px 10px;
   position: absolute;
   font-size: 24px;
-  top: 3.5%;
-  right: 15%;
+  top: 70%;
+  left: 1.5%;
   border-radius: 5px;
   background-color: rgba(00,99,99,.2);
   color: black;
@@ -454,8 +454,8 @@ div .play_button {
   padding: 5px 15px 5px 15px;
   position: absolute;
   font-size: 24px;
-  top: 3.5%;
-  right: 20%;
+  top: 70%;
+  left: 5.5%;
   border-radius: 5px;
   background-color: rgba(00,99,99,.2);
   color: black;

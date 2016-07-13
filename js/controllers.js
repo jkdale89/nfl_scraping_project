@@ -29,6 +29,8 @@ angular.module('Controllers', [])
         return $rootScope.favorites;
       })
 
+
+
       $http.get("../working_data/teams_meta.json").then(function(data){
         $rootScope.team_options = Object.keys(data.data);
         $rootScope.ind = $rootScope.team_options.indexOf($rootScope.cur_team);
@@ -44,7 +46,7 @@ angular.module('Controllers', [])
       $rootScope.teams_dropdown = false;
       $rootScope.year_dropdown = false;
       $rootScope.showSecondary = false;
-      $rootScope.before = true;
+      $rootScope.graphStatus = "lines";
       $rootScope.team_filter = false;
       $rootScope.graph_options = [
         {
@@ -482,12 +484,15 @@ angular.module('Controllers', [])
 
       Axes.xScale.domain([0, 16]);
       Axes.yScale.domain([-35, 35]);
+      Axes.yScaleRight.domain([-10, 10])
 
       Axes.xAxis.tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
       Axes.yAxis.tickValues([-35, -28, -21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21, 28, 35]);
+      Axes.yAxisSec.tickValues([-10, -5, 0, 5, 10]);
 
       Axes.init_x_axis("week", svg);
       Axes.init_y_axis("Spread", svg);
+      Axes.init_sec_y_axis("Net Weekly Aggregates", svg);
 
       var graph = svg.selectAll(".primary").data(change_data).enter().append("circle");
 
@@ -498,6 +503,27 @@ angular.module('Controllers', [])
       util.initPrimary(graph, $rootScope.active_type, 8.5);
       // transition to spread coordinates
       util.fade(d3.selectAll("circle"), "elastic", 1800, 1, Axes.yMapPrimary);
+
+      var netWinsAts = [0,0,0,0,
+                        0,0,0,0,
+                        0,0,0,0,
+                        0,0,0,0];
+
+
+      d3.selectAll("circle").filter(function(d){
+        if(d.ats > 0){
+          netWinsAts[d.week - 1] ++;
+        }
+        else if(d.ats < 0){
+          netWinsAts[d.week - 1] --;
+        }
+      })
+
+
+
+      $timeout(function(){
+        console.log(netWinsAts + "is the array for all the net wins");
+      },500);
 
       d3.selectAll("circle")
         .on("mouseover", function(d){
@@ -562,7 +588,7 @@ angular.module('Controllers', [])
               .enter().append("circle")
               .attr("class", $rootScope.secondary)
               .attr("r", function(d){ return d.spread ? 5.5 : 0})
-              .attr("stroke-width", "3")
+              .attr("stroke-width", "1.5")
               .attr("cx", Axes.xMap)
               .attr("cy", Axes.yMapSecondary())
               .attr("opacity", "0")
