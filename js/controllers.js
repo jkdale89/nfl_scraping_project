@@ -17,7 +17,7 @@ angular.module('Controllers', [])
         return $rootScope.home
       })
       data.awayTeamsPromise.then(function(data){
-        $rootScope.away_teams = data;
+        $rootScope.away = data;
         return $rootScope.away;
       })
       data.underdogsPromise.then(function(data){
@@ -39,12 +39,13 @@ angular.module('Controllers', [])
       $rootScope.active_category = "Entire NFL";
       $rootScope.active_type = "Favorites";
       $rootScope.year_options = [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015];
-      $rootScope.cur_team = "Denver";
+      $rootScope.cur_team = "";
       $rootScope.activeTable = 'teams';
       $rootScope.teams_dropdown = false;
       $rootScope.year_dropdown = false;
       $rootScope.showSecondary = false;
       $rootScope.before = true;
+      $rootScope.team_filter = false;
       $rootScope.graph_options = [
         {
           category: "Entire NFL",
@@ -69,14 +70,24 @@ angular.module('Controllers', [])
           ]
         }
       ],
-      $rootScope.margin = {top: 150, right: 20, bottom: 30, left: 120};
+      $rootScope.margin = {top: 100, right: 20, bottom: 50, left: 120};
       $rootScope.width = 1060 - $rootScope.margin.left - $rootScope.margin.right;
-      $rootScope.height = 750 - $rootScope.margin.top - $rootScope.margin.bottom;
+      $rootScope.height = 675 - $rootScope.margin.top - $rootScope.margin.bottom;
 
     $rootScope.changeActiveCategory = function(str){
       $rootScope.active_category = str;
       $rootScope.active_type = $rootScope.graph_options[$rootScope.category_options.indexOf($rootScope.active_category)].cat_types[0];
       return $rootScope.active_category
+    };
+
+    $rootScope.toggleTeamFilter = function(){
+      if($rootScope.team_filter == false){
+        $rootScope.team_filter = true;
+      }
+      else{
+        $rootScope.team_filter = false;
+        $rootScope.cur_team = "";
+      }
     };
 
     $rootScope.changeActiveType = function(str){
@@ -381,42 +392,44 @@ angular.module('Controllers', [])
 .controller('nflScatterCtrl', ['$scope', '$routeParams', '$rootScope', '$timeout', '$http', 'Data', 'util', 'Axes',
   function($scope, $routeParams, $rootScope, $timeout, $http, db, util, Axes){
 
-  db.underdogsPromise.then(function(data){
-    $scope.underdogs = data;
-  });
-
-  db.homeTeamsPromise.then(function(data){
-    $scope.home = data;
-    console.log($scope.home[0]["2015"] + "is the home data");
-  });
-
-  db.awayTeamsPromise.then(function(data){
-    $scope.away = data;
-  });
-
-  db.teamsMetaPromise.then(function(data){
-    $scope.teamsMeta = data;
-  });
-
-  $scope.favorites = [];
-
-  db.favoritesPromise.then(function(data){
-    $scope.favorites = data;
-    return $scope.favorites;
-  });
-
   $rootScope.$watch("cur_year", function(){
-    d3.selectAll("svg")
-      .transition()
-      .duration(500)
-      .ease("linear")
-      .attr("opacity", 0);
-    $scope.newNflChart($rootScope.cur_year);
+    var data = d3.selectAll("circle");
+      if(data[0].length > 0){
+        console.log(data[0]);
+        data
+        .transition()
+        .duration(250)
+        .ease("linear")
+        .attr("opacity", 0);
+        $timeout(function(){
+          data.remove();
+          $scope.newNflChart($rootScope.cur_year);
+        },250)
 
+      };
   });
 
+  $rootScope.$watch("team_filter", function(){
+    if($rootScope.team_filter == true)
+    util.initPrimary(d3.selectAll("svg"), $rootScope.active_type, 8.5, $rootScope.cur_team);
+  })
 
-  $rootScope.$watch("active_type", util.switchFade);
+
+  $rootScope.$watch("active_type", function(){
+    var data = d3.selectAll("circle");
+      if(data[0].length > 0){
+        console.log(data[0]);
+        data
+        .transition()
+        .duration(250)
+        .ease("linear")
+        .attr("opacity", 0);
+        $timeout(function(){
+          data.remove();
+          $scope.newNflChart($rootScope.cur_year);
+        },250)
+      }
+  });
 
   $scope.newNflChart = function(startYear, type, team){
 
@@ -424,16 +437,16 @@ angular.module('Controllers', [])
     //grab the current graph
     var graph = d3.selectAll("svg");
     //fade out the old graph
-    util.fade(graph, "linear", 500, 0);
+    util.fade(graph, "linear", 250, 0);
     // remove the old graph after fade ends
       $timeout(function(){
         d3.selectAll("svg").remove()
-      }, 501)
+      }, 251)
 
     .then(function(){
       var
       // establish the data we are using
-      joe_data = $scope.favorites[$rootScope.cur_year - $rootScope.year_options[0]][$rootScope.cur_year],
+      joe_data = $rootScope.favorites[$rootScope.cur_year - $rootScope.year_options[0]][$rootScope.cur_year],
 
       change_data = function(){
 
@@ -452,6 +465,11 @@ angular.module('Controllers', [])
         return joe_data;
       };
 
+      // for(var i = 0; i < 10; i++){
+      //   $timeout(function(){
+      //     $rootScope.cur_year = $rootScope - 1;
+      //   }, 1000)
+      // };
 
       var svg = d3.select(".nfl_scatter").append("svg")
         .attr("width", $rootScope.width + $rootScope.margin.left + $rootScope.margin.right + 200)
@@ -459,8 +477,7 @@ angular.module('Controllers', [])
       .append("g")
         .attr("transform", "translate(" + $rootScope.margin.left + "," + $rootScope.margin.top + ")");
 
-      util.editHeaderDesc($rootScope.active_category, $rootScope.active_type)
-      util.editYearDesc($rootScope.cur_year);
+      // util.editYearDesc($rootScope.cur_year);
       util.action_button.on("click", util.populate_games);
 
       Axes.xScale.domain([0, 16]);
@@ -474,10 +491,13 @@ angular.module('Controllers', [])
 
       var graph = svg.selectAll(".primary").data(change_data).enter().append("circle");
 
+      $rootScope.$watch("cur_team", function(){
+        util.filterTeam($rootScope.cur_team);
+      })
       // Initialize the graph
       util.initPrimary(graph, $rootScope.active_type, 8.5);
       // transition to spread coordinates
-      util.fade(d3.selectAll("circle"), "elastic", 500, 1, Axes.yMapPrimary);
+      util.fade(d3.selectAll("circle"), "elastic", 1800, 1, Axes.yMapPrimary);
 
       d3.selectAll("circle")
         .on("mouseover", function(d){
@@ -528,7 +548,14 @@ angular.module('Controllers', [])
             .ease("elastic")
             .duration("300")
             .attr("r", "8.5");
-        
+          if($rootScope.showSecondary){
+            d3.selectAll("." + util.stringify(d))
+            .transition()
+            .ease("elastic")
+            .duration("300")
+            .attr("r", 5.5)
+            .attr("opacity", ".1");
+            }
           });
           svg.selectAll(".secondary")
             .data(change_data)
@@ -552,6 +579,9 @@ angular.module('Controllers', [])
         })
     })
   }
+
+  $scope.newNflChart($rootScope.cur_year);
+
 }])
 
 .controller('nflOuGraphCtrl', ['$scope', '$routeParams', '$timeout', '$http', 'Data', function($scope, $routeParams, $timeout, $http, db){

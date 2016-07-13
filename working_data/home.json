@@ -30741,7 +30741,7 @@
 			{
 				"favorite": false,
 				"home": true,
-				"primaryTeam": "Minnesota(Ford Field)",
+				"primaryTeam": "Minnesota",
 				"secondaryTeam": "NY Giants",
 				"week": 14,
 				"year": 2010,
@@ -30749,7 +30749,7 @@
 				"winner": false,
 				"winner_ats": false,
 				"ats": null,
-				"gameId": "Minnesota(Ford Field)NY Giants142010",
+				"gameId": "MinnesotaNY Giants142010",
 				"wins_ats": 114,
 				"losses_ats": 119,
 				"ties_ats": 4,

@@ -1,5 +1,8 @@
 <div class = "graph">
 
+  <div class="chartHeader">
+    {{team_filter && cur_team ? cur_team : active_category}}: {{active_type}} - {{cur_year}}
+  </div>
     <!-- the graphs for teams -->
     <div class = "graph-container">
 
@@ -50,6 +53,7 @@
 <div class="leftDash">
 
     <div class="options">
+
       <ul ng-repeat = "cat in graph_options">
         <p ng-click = "changeActiveCategory(cat.category)" ng-class="{active: active_category == cat.category}" class = "category">{{cat.category}}</p>
         <li ng-click="changeActiveType(type)" ng-repeat="type in cat.cat_types" ng-class="{active: (active_type == type && active_category == cat.category)}">
@@ -57,39 +61,12 @@
         </li>
       </ul>
 
-        <div class = "year_dropdown"
-          ng-click="year_dropdown = !year_dropdown">
-          <p style="color: {{teamsMeta[cur_team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[cur_team].hex}};}}">
-            {{cur_year}}
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
-        </p>
-          <div ng-show="year_dropdown">
-            <p ng-click = "changeYear(year)" ng-repeat="year in year_options">
-              {{year}}
-            </p>
-          </div>
-        </div>
-
-
-      <div class = "teams_dropdown"
-        ng-click="teams_dropdown = !teams_dropdown"
-        ng-show="active_category !== 'Teams'">
-          <p style="color: {{teamsMeta[cur_team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[cur_team].hex}};}}">
-          <img src="{{teamsMeta[cur_team].url}}">
-            {{cur_team}} {{teamsMeta[cur_team].nick}}
-            <i class="fa fa-angle-down" aria-hidden="true"></i>
-          </p>
-        <div ng-show="teams_dropdown">
-          <p style="color: {{teamsMeta[team].hex}}; -webkit-text-stroke: 1px {{teamsMeta[team].hex}}; background-color {{teamsMeta[team].rgba}}"
-          ng-show="teams_dropdown" ng-repeat="team in team_options">
-          <img src="{{teamsMeta[team].url}}">
-          {{team}}
-          </p>
-        </div>
+      <div ng-click="toggleSecondary()">
+        <p style="cursor: pointer"> {{showSecondary? 'hide' : 'show'}} {{secondary}} </p>
       </div>
 
-      <div ng-click="toggleSecondary()" class="toggleSecondary">
-        <p ng-class="'active_joe': {{showSecondary}}"> {{showSecondary? 'hide' : 'show'}} {{secondary}} </p>
+      <div>
+        <p ng-click="toggleTeamFilter()" style="cursor: pointer">filter by team</p>
       </div>
 
     </div>
@@ -97,6 +74,30 @@
     <div ng-mouseover="legend = true" ng-mouseleave="legend = false" class="circle">
       <i ng-show = "!legend" class = "fa fa-arrow-left"></i>
       <p ng-show="legend" class="legend">Legend</p>
+    </div>
+
+
+
+    <div class= "teams_dropdown"
+      ng-class = "team_filter ? '_visible' : '_hidden' ">
+        <span ng-repeat = "team in team_options" style="color: {{teamsMeta[team].hex}}; padding: 0px 5px 0px 5px; -webkit-text-stroke: 1px {{teamsMeta[team].hex}};}}">
+          <span ng-click="changeTeam(team)"
+          style="opacity: {{team == cur_team ? '1' : '.1'}}">
+            <img src="{{teamsMeta[team].url}}">
+            {{team}} {{teamsMeta[team].nick}}
+          </span>
+        </span>
+    </div>
+
+    <div class="year_menu">
+      <ul>
+        <li
+         ng-click="changeYear(year)"
+         ng-repeat="year in year_options"
+         ng-class="year === cur_year ? 'currently' : ''">
+          <span>{{year}}</span>
+        </li>
+      </ul>
     </div>
 
 </div>

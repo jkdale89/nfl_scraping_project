@@ -11,16 +11,6 @@ angular.module('Services', ['ngResource'])
     m_year = 950;
 
 
-  self.editHeaderDesc = function(category, subCategory) {
-    d3.select("svg").append("text")
-      .text(category + ": " + subCategory)
-      .attr("font-size", "60px")
-      .attr("stroke", "rgb(221,221,221)")
-      .attr("opacity", ".3")
-      .attr("y", m_top)
-      .attr("x", m_title);
-  };
-
   self.fade = function(obj, animation, speed, opa, yCoord){
     obj.transition()
     .ease(animation)
@@ -42,7 +32,14 @@ angular.module('Services', ['ngResource'])
       .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
       .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex})
       .attr("cursor", "pointer");
-  }
+  };
+
+  self.filterTeam = function(team){
+    if($rootScope.team_filter == true){
+      d3.selectAll('circle')
+      .attr("r", function(d){return d.primaryTeam == team ? 9.5 : ""})
+    }
+  };
 
   //transition this to the result
   self.trans_result = function(data){
@@ -65,21 +62,21 @@ angular.module('Services', ['ngResource'])
 
   self.fill_result = function(obj, data){
     obj.html("<span> Result: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.winningTeam].url + " alt=" + data.winingTeam + ">" + ": </span><span> " + data.winningScore +",</span><span> " +
-    "<span>" + (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.losingTeam].url + ">" + " alt=" + data.losingTeam +  ": " + data.losingScore + "</span>" +
+    "<span>" + (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.losingTeam].url +  " alt=" + data.losingTeam + ">" +  ": " + data.losingScore + "</span>" +
     "<span> (" + data.ats + ")</span>")
     .style("right", "16%")
     .style("top", "17.5%")
   }
 
-  self.editYearDesc = function(year){
-    d3.select("svg").append("text")
-    .text(year)
-    .attr("font-size", "60px")
-    .attr("stroke", "rgb(221,221,221)")
-    .attr("opacity", ".3")
-    .attr("y", m_top)
-    .attr("x", m_year);
-  };
+  // self.editYearDesc = function(year){
+  //   d3.select("svg").append("text")
+  //   .text(year)
+  //   .attr("font-size", "60px")
+  //   .attr("stroke", "rgb(221,221,221)")
+  //   .attr("opacity", ".3")
+  //   .attr("y", m_top)
+  //   .attr("x", m_year);
+  // };
 
   self.stringify = function(obj){
       var n_str = obj.secondaryTeam.replace(" ","").replace(".","") + obj.week;
@@ -91,22 +88,24 @@ angular.module('Services', ['ngResource'])
     if($rootScope.before == true){
       d3.selectAll("circle")
       .transition()
-      .duration(500)
+      .duration(1000)
       .ease("linear")
       .attr("fill", function(d){return d.ats > 0 ? "green" : "red"})
       .attr("stroke", function(d){return d.ats > 0 ? "green" : "red"})
       .attr("cy", Axes.yMapAts)
+      .attr("opacity", 1)
       .delay(function(d,i){return 100 + 25 * d.week + i * 5});
       $rootScope.before = false;
     }
     else if($rootScope.before == false){
       d3.selectAll("circle")
       .transition()
-      .duration(500)
+      .duration(1000)
       .ease("linear")
       .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
       .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex})
       .attr("cy", Axes.yMapPrimary)
+      .attr("opacity", 1)
       .delay(function(d,i){return 100 + 25 * d.week + i * 5});
       $rootScope.before = true;
     }
@@ -128,9 +127,16 @@ angular.module('Services', ['ngResource'])
   self.action_button = d3.select("body").append("div")
     .html(
       "<div class='area_chart'>" +
-      "<i class = 'fa fa-area-chart'></i>" +
+        "<i class = 'fa fa-area-chart'></i>" +
       "</div>"
     );
+
+    self.play_button = d3.select("body").append("div")
+      .html(
+        "<div class='play_button'>" +
+        "<i class = 'fa fa-play-circle'></i>" +
+        "</div>"
+      );
 
   self.spread_label = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -190,13 +196,51 @@ angular.module('Services', ['ngResource'])
   self.yScale = d3.scale.linear().range([$rootScope.height, 0]);
   self.yAxis = d3.svg.axis().scale(self.yScale).orient("left");
 
+  self.yScaleResults = d3.scale.linear().range([$rootScope.height, 0]);
+  self.yAxisResults = d3.svg.axis().scale(self.yScale).orient("left");
+
+
+
   // y favorites utilities
   self.yValueFav = function(d) { return d.spread * -1};
   self.yMapFav = function(d) {return self.yScale(self.yValueFav(d));};
 
+  self.yValueFavSecondary = function(d){ return d.spread};
+  self.yMapFavSecondary = function(d){return self.yScale(self.yValueFavSecondary(d))};
+  // y dog mapping
+  self.yValueDog = function(d) {return d.spread * -1};
+  self.yMapDog = function(d) {return self.yScale(self.yValueDog(d));};
+
+  self.yValueDogSecondary = function(d){return d.spread};
+  self.yMapDogSecondary = function(d) {return self.yScale(self.yValueDogSecondary(d));};
+
+  // y home mapping
+  self.yValueHome = function(d){return d.spread * -1};
+  self.yMapHome = function(d){return self.yScale(self.yValueHome(d))};
+
+  self.yValueHomeSecondary = function(d){return d.spread};
+  self.yMapHomeSecondary = function(d){return self.yScale(self.yValueHomeSecondary(d));}
+  // y away mapping
+  self.yValueAway = function(d){return d.spread * -1};
+  self.yMapAway = function(d){return self.yScale(self.yValueAway(d))};
+
+  self.yValueAwaySecondary = function(d){return d.spread};
+  self.yMapAwaySecondary = function(d){return self.yScale(self.yValueAwaySecondary(d));}
+  // y results mapping
+  self.yValueAts = function(d){return (d.spread * -1) + d.ats};
+  self.yMapAts = function(d){ return self.yScale(self.yValueAts(d))};
+
+
   self.yMapPrimary = function(d){
     if($rootScope.active_type == 'Favorites'){
       return self.yMapFav(d)
+    }
+    else if($rootScope.active_type == 'Underdogs')
+    {
+      return self.yMapDog(d)
+    }
+    else if($rootScope.active_type == 'Away'){
+      return self.yMapAway(d)
     }
     else if($rootScope.active_type == 'Home'){
       return self.yMapHome(d);
@@ -205,32 +249,18 @@ angular.module('Services', ['ngResource'])
 
   self.yMapSecondary = function(){
     if($rootScope.active_type == 'Favorites'){
-      return self.yMapDog;
+      return self.yMapDogSecondary;
     }
     else if($rootScope.active_type == 'Underdogs'){
-      return self.yMapFav
+      return self.yMapFavSecondary;
     }
     else if($rootScope.active_type == 'Home'){
-      return self.yMapAway
+      return self.yMapAwaySecondary;
     }
     else if($rootScope.active_type == 'Away'){
-      return self.yMapHome
+      return self.yMapHomeSecondary;
     };
   };
-
-  self.yValueDog = function(d) {return d.spread};
-  self.yMapDog = function(d) {return self.yScale(self.yValueDog(d));};
-
-  // y home teams utilities
-  self.yValueHome = function(d){return d.spread * -1};
-  self.yMapHome = function(d){return self.yScale(self.yValueHome(d))};
-
-  self.yValueAway = function(d){return d.spread};
-  self.yMapAway = function(d){return self.yScale(self.yValueAway(d))};
-
-  self.yValueAts = function(d){return (d.spread * -1) + d.ats};
-  self.yMapAts = function(d){ return self.yScale(self.yValueAts(d))};
-
 
   // x-axis
   self.init_x_axis = function(name, graph){

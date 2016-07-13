@@ -1,10 +1,26 @@
 
-body {
-  background-color: #f1f1f1;
+body .main{
+  background: rgba(0,0,0,.05);
   position: absolute;
   top: 0px;
   bottom: 0px;
   width: 100%;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+  background: rgba(0,0,0,.05);
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
 }
 
 p {
@@ -236,66 +252,6 @@ p.results {
 }
 
 
-.cur_year {
-  display: block;
-  color: rgba(0,99,99,.8);
-  top: 20px;
-  position: absolute;
-  left: 25%;
-  text-align: center;
-  cursor: pointer;
-}
-
-.cur_year p {
-  display: inline-block;
-  text-align: center;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  background-color: inherit;
-  transition: .3s ease all;
-}
-
-.cur_year p:hover {
-  background-color: rgba(0,99,99,.5);
-  color: white;
-  transition: .3s ease all;
-}
-
-.cur_year p.active {
-  background-color: rgba(0,99,99,.8);
-  color: white;
-  transition: .3s ease all;
-}
-
-.year_dropdown {
-  width: 100%;
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-  color: rgba(0,99,99,.8);
-  font-size: 18px;
-  font-weight: normal;
-  transition: .3s ease all;
-}
-
-.year_dropdown:hover {
-  color: rgba(0,99,99,1);
-  transition: .3s ease all;
-}
-
-.year_dropdown div {
-  position: absolute;
-  cursor: pointer;
-  text-align: center;
-  overflow-y: scroll;
-  width: 100px;
-  margin-top: 0px;
-  margin-left: 50px;
-  border: 1px solid gray;
-  background: white;
-  z-index: 10;
-}
 
 .year_dropdown div p {
   color: rgba(00,99,99,.4);
@@ -312,15 +268,20 @@ p.results {
 
 .teams_dropdown {
   width: 100%;
-  position: relative;
-  width: auto;
+  position: fixed;
+  bottom: 50px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background: white;
+  line-height: 3;
+  border-top: 1px solid rgba(0,0,0,.2);
   color: rgba(00,99,99,.8);
   font-weight: normal;
   padding: 0px;
   font-size: 18px;
   text-align: center;
-  height: auto;
-  margin: 0px;
+  height: 50px;
+  margin-top: 0px;
   transition: .3s ease all;
   cursor: pointer;
 }
@@ -330,14 +291,15 @@ p.results {
     transition: .3s ease all;
 }
 
-.teams_dropdown div p {
+.teams_dropdown div span {
   padding-left: 20%;
   color: black;
+  opacity: .2;
   font-weight: bold;
   padding: 0px;
   text-align: center;
   height: 40px;
-  margin: 0px;
+  margin-top: -100px;
   border-bottom: 1px solid white;
   font-size: 20px;
   line-height: 2;
@@ -352,11 +314,13 @@ p.results {
 }
 
 ._hidden {
-  display: none;
+  opacity: 0;
+  transition: .3s ease all;
 }
 
 ._visible {
-  display: inline;
+  opacity: 1;
+  transition: .3s ease all;
 }
 
 ._minimized {
@@ -417,7 +381,8 @@ svg {
 .options {
   list-style: none;
   position: absolute;
-  top: 25%;
+  top: 20%;
+  padding-left: 2%;
 }
 
 .options ul {
@@ -479,18 +444,39 @@ div .area_chart {
   position: absolute;
   font-size: 24px;
   top: 3.5%;
-  right: 27%;
+  right: 15%;
   border-radius: 5px;
   background-color: rgba(00,99,99,.2);
   color: black;
 }
 
+div .play_button {
+  padding: 5px 15px 5px 15px;
+  position: absolute;
+  font-size: 24px;
+  top: 3.5%;
+  right: 20%;
+  border-radius: 5px;
+  background-color: rgba(00,99,99,.2);
+  color: black;
+  }
+
+div .play_button:hover {
+  color: "rgba(00,99,99,.7)";
+  background: white;
+  transition: .3s linear all;
+  cursor: pointer;
+  color: green;
+  border: 1px solid rgba(00,00,00,.2);
+}
+
 .area_chart:hover {
   color: "rgba(00,99,99,.7)";
   background: white;
-  transition: .3s ease all;
+  transition: .3s linear all;
   cursor: pointer;
   color: green;
+  border: 1px solid rgba(00,00,00,.2);
 }
 
 div .line_chart {
@@ -524,7 +510,7 @@ div .line_chart {
 .circle {
 	width: 100px;
 	height: 100px;
-	background: rgba(00,150,150,1);
+	background: rgba(00,99,99,.3);
 	border-radius: 50%;
   position: absolute;
   right: -50px;
@@ -534,16 +520,21 @@ div .line_chart {
 }
 
 .circle:hover {
-  width: 200px;
-  height: 400px;
-  right: 30px;
-  top: 20%;
+  width: 220px;
+  height: 300px;
+  right: -10px;
+  top: 25%;
   border-radius: 5px;
-  background: white;
-  border: 1px solid black;
-  transition: 1s ease all;
+  background: rgba(00,99,99,.1);
+  border: 1px solid white;
+  transition: .5s ease all;
 }
 
+.circle p {
+  text-align: center;
+  color: black;
+  margin-left: -10px;
+}
 
 
 
@@ -574,27 +565,74 @@ i.fa-arrow-left {
   transition: 1s ease all;
 }
 
-
-.toggleSecondary {
+.activeSecondary {
   cursor: pointer;
+  width: 180px;
+  background: rgba(00,99,99,.5);
+  color: white;
+  padding: 10px;
   transition: .3s ease all;
-  font-size: 16px;
-  padding: 5px;
-  border-radius: 4px;
-  line-height: 3;
-  margin-left: 10px;
-  color: rgba(00,99,99,.6)
-}
-
-.toggleSecondary:hover {
-  color: rgba(00,99,99, 1);
-}
-
-.toggleSecondary p {
   text-align: center;
+  font-size: 16px;
+  border-radius: 4px;
 }
 
-.active_joe {
-  background: #f1f1f1;
+.inactiveSecondary {
+  cursor: pointer;
+  background: white;
+  width: 180px;
+  color: rgba(00,99,99,1);
+  padding: 10px;
+  transition: .3s ease all;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.2);
+}
+
+.year_menu {
+  position: fixed;
+  padding-left: 20%;
+  width: 100%;
+  bottom: 0px;
+  background-color: rgba(00,99,99, .3);
+  height: 50px;
+}
+
+.year_menu ul {
+  width: 100%;
+}
+
+.year_menu > ul > li {
+  display: inline;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: auto;
+  cursor: pointer;
+  color: rgba(00,00,00, .8);
+  font-size: 22px;
+  text-align: center;
+  height: 100%;
+  transition: .3s ease all;
+}
+
+.year_menu > ul > li > span {
+  line-height: 2.5;
+}
+
+.year_menu > ul > li.currently {
+  color: white;
+  height: 100%;
+  transition: .3s ease all;
+  border-radius: 2px;
+}
+
+.chartHeader {
+  font-size: 60px;
+  opacity: .3;
   color: black;
+  transition: .3s ease all;
+  position: absolute;
+  top: 0px;
+  left: 225px;
 }
