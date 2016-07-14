@@ -484,17 +484,17 @@ angular.module('Controllers', [])
 
       Axes.xScale.domain([0, 16]);
       Axes.yScale.domain([-35, 35]);
-      Axes.yScaleRight.domain([-10, 10])
+      Axes.yScaleRight.domain([-15, 15])
 
       Axes.xAxis.tickValues([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]);
       Axes.yAxis.tickValues([-35, -28, -21, -17, -14, -10, -7, -3, 0, 3, 7, 10, 14, 17, 21, 28, 35]);
-      Axes.yAxisSec.tickValues([-10, -5, 0, 5, 10]);
+      Axes.yAxisSec.tickValues([-15, -10, -5, 0, 5, 10, 15]);
 
       Axes.init_x_axis("week", svg);
       Axes.init_y_axis("Spread", svg);
       Axes.init_sec_y_axis("Net Weekly Aggregates", svg);
 
-      var graph = svg.selectAll(".primary").data(change_data).enter().append("circle");
+      var graph = svg.selectAll(".primary").data(change_data).enter().append("g").append("circle");
 
       $rootScope.$watch("cur_team", function(){
         util.filterTeam($rootScope.cur_team);
@@ -509,29 +509,55 @@ angular.module('Controllers', [])
                         0,0,0,0,
                         0,0,0,0];
 
+      // var cumRecordAts = [0,0,0,0,
+      //                   0,0,0,0,
+      //                   0,0,0,0,
+      //                   0,0,0,0];
+
+      var diffAts =     [0,0,0,0,
+                        0,0,0,0,
+                        0,0,0,0,
+                        0,0,0,0];
+
+
+
 
       d3.selectAll("circle").filter(function(d){
         if(d.ats > 0){
           netWinsAts[d.week - 1] ++;
+          diffAts[d.week - 1] += (d.ats / 6);
         }
         else if(d.ats < 0){
           netWinsAts[d.week - 1] --;
+          diffAts[d.week -1] += (d.ats / 6);
         }
       })
 
+  var points = svg.selectAll(".point")
+      .data(diffAts)
+    .enter().append("svg:circle")
+    .attr("class", "joeP")
+       .attr("opacity", "0")
+       .attr("stroke", "black")
+       .attr("fill", "blue")
+       .attr("cx", function(d, i) { return Axes.xScale(i + 1) })
+       .attr("cy", function(d, i) { return Axes.yScaleRight(d) })
+       .attr("r", function(d, i) { return 10});
+
+
 
   var points = svg.selectAll(".point")
-          .data(netWinsAts)
-        .enter().append("svg:circle")
-        .attr("class", "joe")
-           .attr("opacity", "0")
-           .attr("stroke", "black")
-           .attr("fill", function(d, i) { return d > 0 ? "green" : "red" })
-           .attr("cx", function(d, i) { return Axes.xScale(i + 1) })
-           .attr("cy", function(d, i) { return Axes.yScaleRight(d) })
-           .attr("r", function(d, i) { return 10});
+      .data(netWinsAts)
+    .enter().append("svg:circle")
+    .attr("class", "joe")
+       .attr("opacity", "0")
+       .attr("stroke", "black")
+       .attr("fill", function(d, i) { return d > 0 ? "green" : "red" })
+       .attr("cx", function(d, i) { return Axes.xScale(i + 1) })
+       .attr("cy", function(d, i) { return Axes.yScaleRight(d) })
+       .attr("r", function(d, i) { return 10});
 
-           // begin of drawing lines
+   // begin of drawing lines
    var line = d3.svg.line()
        .x(function(d, i){return Axes.xScale(i + 1);})
        .y(function(d, i){return Axes.yScaleRight(d);})
@@ -544,8 +570,17 @@ angular.module('Controllers', [])
        .attr("transform", "translate(0,0)")
        .attr("fill", "none")
        .attr("opacity", "0")
-       .style("stroke-width", 2)
-               .style("stroke", "steelblue")
+       .style("stroke-width", 1)
+               .style("stroke", "black")
+
+   svg.append("path")
+       .attr("d", function(d) { return line(diffAts)})
+       .attr("class", "joeP")
+       .attr("transform", "translate(0,0)")
+       .attr("fill", "none")
+       .attr("opacity", "0")
+       .style("stroke-width", 1)
+               .style("stroke", "black")
    // end of drawing lines
 
       $timeout(function(){
@@ -564,6 +599,11 @@ angular.module('Controllers', [])
             .attr("r", "12.5")
             .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
             .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex});
+
+      d3.selectAll("g").append("text")
+        .text("adfasdfasdfsfs")
+
+
           //populate the spread box
           util.fill_spread(util.spread_label, d);
           //fade in the spread box

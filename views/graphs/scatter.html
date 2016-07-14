@@ -82,7 +82,7 @@
       ng-class = "team_filter ? '_visible' : '_hidden' ">
         <span ng-repeat = "team in team_options" style="color: {{teamsMeta[team].hex}}; padding: 0px 5px 0px 5px; -webkit-text-stroke: 1px {{teamsMeta[team].hex}};}}">
           <span ng-click="changeTeam(team)"
-          style="opacity: {{team == cur_team ? '1' : '.1'}}">
+          style="opacity: {{team == cur_team ? '1' : '.3'}}">
             <img src="{{teamsMeta[team].url}}">
             {{team}} {{teamsMeta[team].nick}}
           </span>

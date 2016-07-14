@@ -32,6 +32,7 @@ angular.module('Services', ['ngResource'])
       .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
       .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex})
       .attr("cursor", "pointer");
+
   };
 
   self.filterTeam = function(team){
@@ -56,16 +57,17 @@ angular.module('Services', ['ngResource'])
     obj.html(
       "<span> Spread: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.primaryTeam].url + ">" + "<span> " + data.spread + " vs </span><span>" +
       (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.secondaryTeam].url + ">" + " " + "</span><span>")
-    .style("right", "13%")
-    .style("top", "3.5%")
+    .style("right", "12.5%")
+    .style("top", function(d){return $rootScope.active_type == 'Favorites' ? "70%" : "7.5%"});
+
   }
 
   self.fill_result = function(obj, data){
     obj.html("<span> Result: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.winningTeam].url + " alt=" + data.winingTeam + ">" + ": </span><span> " + data.winningScore +",</span><span> " +
     "<span>" + (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.losingTeam].url +  " alt=" + data.losingTeam + ">" +  ": " + data.losingScore + "</span>" +
     "<span> (" + data.ats + ")</span>")
-    .style("right", "13%")
-    .style("top", "7.5%")
+    .style("right", "12.5%")
+    .style("top", function(d){return $rootScope.active_type == 'Favorites' ? "78%" : "10%"});
   }
 
   // self.editYearDesc = function(year){
@@ -102,13 +104,25 @@ angular.module('Services', ['ngResource'])
       .transition()
       .duration(1000)
       .ease("linear")
-      .attr("opacity", .15);
+      .attr("opacity", .05);
+
+      d3.selectAll(".primary")
+        .transition()
+        .duration(500)
+        .ease("linear")
+        .attr("opacity", 0);
 
       d3.selectAll(".joe")
         .transition()
         .duration(1000)
         .ease("linear")
         .attr("opacity", 1);
+
+        d3.selectAll(".joeP")
+          .transition()
+          .duration(1000)
+          .ease("linear")
+          .attr("opacity", .5);
 
       $rootScope.graphStatus = "trend";
     }
@@ -123,11 +137,23 @@ angular.module('Services', ['ngResource'])
       .attr("opacity", 1)
       .delay(function(d,i){return 100 + 25 * d.week + i * 5});
 
+      d3.selectAll(".primary")
+        .transition()
+        .duration(500)
+        .ease("linear")
+        .attr("opacity", 1);
+
       d3.selectAll(".joe")
         .transition()
         .duration(1000)
         .ease("linear")
         .attr("opacity", 0);
+
+        d3.selectAll(".joeP")
+          .transition()
+          .duration(1000)
+          .ease("linear")
+          .attr("opacity", 0);
 
       $rootScope.graphStatus = "lines";
     }
@@ -219,7 +245,7 @@ angular.module('Services', ['ngResource'])
   self.yAxis = d3.svg.axis().scale(self.yScale).orient("left");
 
   self.yScaleRight = d3.scale.linear().range([$rootScope.height, 0]);
-  self.yAxisSec = d3.svg.axis().scale(self.yScaleRight).orient("right");
+  self.yAxisSec = d3.svg.axis().scale(self.yScaleRight).orient("left");
 
 
 
@@ -295,6 +321,9 @@ angular.module('Services', ['ngResource'])
       .call(self.xAxis)
     .append("text")
       .attr("class", "label")
+      .style("font-size", "18px")
+      .attr("opacity", .3)
+      .attr("transform", "translate(520, 15)")
       .attr("x", $rootScope.width / 2)
       .attr("y", -6)
       .style("text-anchor", "end")
@@ -304,28 +333,33 @@ angular.module('Services', ['ngResource'])
   // y-axis
   self.init_y_axis = function(name, graph){
     graph.append("g")
-        .attr("class", "y axis")
+        .attr("class", "y axis primary")
         .call(self.yAxis)
       .append("text")
         .attr("class", "label")
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
+        .attr("opacity", .3)
         .style("text-anchor", "end")
+        .style("font-size", "18px")
         .text(name);
   }
 
   self.init_sec_y_axis = function(name, graph){
     graph.append("g")
-        .attr("class", "y axis")
-        .attr("transform", "translate(950)")
-        .attr("fill", "rgba(00,00,00,.3)")
+        .attr("class", "y axis joe")
+        .attr("transform", "translate(0)")
+        .attr("fill", "rgba(00,00,00,.8)")
+        .attr("opacity", 0)
         .call(self.yAxisSec)
       .append("text")
         .attr("class", "label")
-        .attr("transform", "translate(-20)rotate(-90)")
+        .attr("transform", "translate(0)rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
+        .attr("opacity", .3)
+        .style("font-size", "18px")
         .style("text-anchor", "end")
         .text(name);
   }
