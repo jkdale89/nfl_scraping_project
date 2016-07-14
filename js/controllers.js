@@ -520,6 +520,33 @@ angular.module('Controllers', [])
       })
 
 
+  var points = svg.selectAll(".point")
+          .data(netWinsAts)
+        .enter().append("svg:circle")
+        .attr("class", "joe")
+           .attr("opacity", "0")
+           .attr("stroke", "black")
+           .attr("fill", function(d, i) { return d > 0 ? "green" : "red" })
+           .attr("cx", function(d, i) { return Axes.xScale(i + 1) })
+           .attr("cy", function(d, i) { return Axes.yScaleRight(d) })
+           .attr("r", function(d, i) { return 10});
+
+           // begin of drawing lines
+   var line = d3.svg.line()
+       .x(function(d, i){return Axes.xScale(i + 1);})
+       .y(function(d, i){return Axes.yScaleRight(d);})
+       .interpolate("cardinal");
+
+
+   svg.append("path")
+       .attr("d", function(d) { return line(netWinsAts)})
+       .attr("class", "joe")
+       .attr("transform", "translate(0,0)")
+       .attr("fill", "none")
+       .attr("opacity", "0")
+       .style("stroke-width", 2)
+               .style("stroke", "steelblue")
+   // end of drawing lines
 
       $timeout(function(){
         console.log(netWinsAts + "is the array for all the net wins");
@@ -587,7 +614,7 @@ angular.module('Controllers', [])
             .data(change_data)
               .enter().append("circle")
               .attr("class", $rootScope.secondary)
-              .attr("r", function(d){ return d.spread ? 5.5 : 0})
+              .attr("r", function(d){ return (d.spread && $rootScope.showSecondary) ? 5.5 : 0})
               .attr("stroke-width", "1.5")
               .attr("cx", Axes.xMap)
               .attr("cy", Axes.yMapSecondary())

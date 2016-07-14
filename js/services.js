@@ -103,18 +103,32 @@ angular.module('Services', ['ngResource'])
       .duration(1000)
       .ease("linear")
       .attr("opacity", .15);
+
+      d3.selectAll(".joe")
+        .transition()
+        .duration(1000)
+        .ease("linear")
+        .attr("opacity", 1);
+
       $rootScope.graphStatus = "trend";
     }
     else if($rootScope.graphStatus == 'trend'){
       d3.selectAll("circle")
       .transition()
-      .duration(2000)
-      .ease("elastic")
-      .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
-      .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex})
+      .duration(1000)
+      .ease("linear")
+      .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam] ? $rootScope.teamsMeta[d.primaryTeam].hex : ""})
+      .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam] ? $rootScope.teamsMeta[d.primaryTeam].sec_hex : ""})
       .attr("cy", Axes.yMapPrimary)
       .attr("opacity", 1)
       .delay(function(d,i){return 100 + 25 * d.week + i * 5});
+
+      d3.selectAll(".joe")
+        .transition()
+        .duration(1000)
+        .ease("linear")
+        .attr("opacity", 0);
+
       $rootScope.graphStatus = "lines";
     }
   }
