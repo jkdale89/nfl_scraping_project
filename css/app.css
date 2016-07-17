@@ -190,20 +190,6 @@ table {
   border-top: none;
 }
 
-.week {width: 6%; text-align: center;}
-.oppo {width: 12%; text-align: center;}
-.spread{width: 7%; text-align: center}
-.o_u{width: 8%; text-align: center;}
-.ml{width: 6%; text-align: center;}
-.score{width: 9%; text-align: center; }
-.w_l{width: 7%; text-align: center;}
-.ats{width: 6%; text-align: center;}
-.ats_cum{width: 9%; text-align: center;}
-.ats_ytd{width: 8%; text-align: center;}
-.o_u_result{width: 7%; text-align: center;}
-.o_u_ytd{width: 6%; text-align: center;}
-.o_u_ytd_diff{width: 10%; text-align: center}
-
 
 p.matchups {
   width: 45%;
@@ -430,16 +416,6 @@ div .test {
   font-weight: bolder;
 }
 
-.tooltip {
-  background-color: #f1f1f1;
-  color: rgba(0,0,0,1);
-  transition: .2s ease all;
-}
-
-.tooltip span {
-  font-size: 16px;
-}
-
 div .area_chart {
   padding: 5px 10px 5px 10px;
   position: absolute;
@@ -508,7 +484,7 @@ div .line_chart {
   width: 400px;
 }*/
 
-.circle {
+/*.circle {
 	width: 100px;
 	height: 100px;
 	background: rgba(00,99,99,.3);
@@ -518,25 +494,56 @@ div .line_chart {
   top: 43%;
   cursor: pointer;
   transition: .3s ease all;
-}
+}*/
 
-.circle:hover {
-  width: 220px;
-  height: 300px;
-  right: -10px;
-  top: 25%;
+.legendBox {
+  position: absolute;
+  white-space: nowrap;
+  width: 12%;
+  height: 38%;
+  top: 10px;
+  right: 1%;
   border-radius: 5px;
-  background: rgba(00,99,99,.1);
-  border: 1px solid white;
-  transition: .5s ease all;
-}
-
-.circle p {
+  border: 2px solid rgba(0,99,99,.5);
+  color: rgba(0,99,99,.8);
   text-align: center;
-  color: black;
-  margin-left: -10px;
+  background: white;
 }
 
+p .legend {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+#circleTeam{
+  margin-left: 10px;
+  margin-bottom: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: #008E97;
+  border: 1px solid #F58220;
+}
+
+#circleCover{
+  margin-left: 10px;
+  margin-bottom: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: rgba(0,150, 100, .9);
+
+}
+
+#circleNoCover{
+  margin-left: 10px;
+  margin-bottom: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background: rgba(200, 50, 50, .9);
+}
 
 
 ul .filter {
@@ -557,14 +564,6 @@ i.fa-arrow-left {
   display: inherit;
 }
 
-.legend {
-  font-size: 18px;
-  float: top;
-  color: black;
-  position: relative;
-  margin-left: 15%;
-  transition: 1s ease all;
-}
 
 .activeSecondary {
   cursor: pointer;
@@ -636,4 +635,48 @@ i.fa-arrow-left {
   position: absolute;
   top: 0px;
   left: 16%;
+}
+
+.underCon {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  font-size: 48px;
+  color: rgba(150, 30, 40, .5);
+}
+
+.graphContainer {
+  transition: .3s ease all;
+  opacity: 1;
+}
+
+#line1 {
+  height: 2px;
+  margin-top: 10px;
+  margin-left: 8px;
+  width: 25px;
+  background: rgba(0, 50, 200, .6);
+  border: 1px solid rgba(0, 50, 200, .6);
+}
+
+#line2 {
+  height: 2px;
+  margin-top: 10px;
+  margin-left: 8px;
+  width: 25px;
+  background: rgba(0, 50, 200, .6);
+  border: 1px solid rgba(120, 50, 0, .8);
+}
+
+#spread {
+  background-color: rgba(0,0,0,0);
+  min-height: 20px;
+  max-height: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#result {
+  background-color: rgba(0,0,0,0);
+  text-align: center;
 }

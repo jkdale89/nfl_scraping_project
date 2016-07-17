@@ -31,6 +31,7 @@ angular.module('Controllers', [])
 
 
 
+
       $http.get("../working_data/teams_meta.json").then(function(data){
         $rootScope.team_options = Object.keys(data.data);
         $rootScope.ind = $rootScope.team_options.indexOf($rootScope.cur_team);
@@ -48,6 +49,7 @@ angular.module('Controllers', [])
       $rootScope.showSecondary = false;
       $rootScope.graphStatus = "lines";
       $rootScope.team_filter = false;
+      $rootScope.underConstruction = false;
       $rootScope.graph_options = [
         {
           category: "Entire NFL",
@@ -56,21 +58,23 @@ angular.module('Controllers', [])
             "Favorites",
             "Underdogs",
             "Home",
-            "Away",
-            "Over / Under",
-            "Moneyline"
-          ]
-        },
-        {
-          category: "Aggregates",
-          cat_types: [
-            "Moneylines",
-            "Spread",
-            "Over / Under",
-            "Favorites vs Underdogs",
-            "Home vs Away"
+            "Away"
+            // ,
+            // "Over / Under",
+            // "Moneyline"
           ]
         }
+        // ,
+        // {
+        //   category: "Aggregates",
+        //   cat_types: [
+        //     "Moneylines",
+        //     "Spread",
+        //     "Over / Under",
+        //     "Favorites vs Underdogs",
+        //     "Home vs Away"
+        //   ]
+        // }
       ],
       $rootScope.margin = {top: 100, right: 20, bottom: 50, left: 120};
       $rootScope.width = 1060 - $rootScope.margin.left - $rootScope.margin.right;
@@ -91,6 +95,21 @@ angular.module('Controllers', [])
         $rootScope.cur_team = "";
       }
     };
+
+    $rootScope.test = function(str){
+      if(str == 'Home' || str == 'Away' || str == 'Favorites' || str == 'Underdogs'){
+        $rootScope.underConstruction = false;
+        d3.select("circle").transition()
+          .duration(300)
+          .ease("linear")
+          .attr("opacity", 1);
+      }
+      else{
+        d3.select("circle")
+        .attr("visibility", "hidden")
+        $rootScope.underConstruction = true;
+      }
+    }
 
     $rootScope.changeActiveType = function(str){
         $rootScope.active_type = str;
@@ -404,10 +423,8 @@ angular.module('Controllers', [])
         .ease("linear")
         .attr("opacity", 0);
         $timeout(function(){
-          data.remove();
           $scope.newNflChart($rootScope.cur_year);
         },250)
-
       };
   });
 
@@ -420,16 +437,14 @@ angular.module('Controllers', [])
   $rootScope.$watch("active_type", function(){
     var data = d3.selectAll("circle");
       if(data[0].length > 0){
-        console.log(data[0]);
         data
         .transition()
-        .duration(250)
+        .duration(5)
         .ease("linear")
         .attr("opacity", 0);
         $timeout(function(){
-          data.remove();
           $scope.newNflChart($rootScope.cur_year);
-        },250)
+        },100)
       }
   });
 
@@ -439,11 +454,11 @@ angular.module('Controllers', [])
     //grab the current graph
     var graph = d3.selectAll("svg");
     //fade out the old graph
-    util.fade(graph, "linear", 250, 0);
+    util.fade(graph, "linear", 225, 0);
     // remove the old graph after fade ends
       $timeout(function(){
         d3.selectAll("svg").remove()
-      }, 251)
+      }, 551)
 
     .then(function(){
       var
@@ -502,7 +517,7 @@ angular.module('Controllers', [])
       // Initialize the graph
       util.initPrimary(graph, $rootScope.active_type, 8.5);
       // transition to spread coordinates
-      util.fade(d3.selectAll("circle"), "elastic", 1800, 1, Axes.yMapPrimary);
+      util.fade(d3.selectAll("circle"), "linear", 500, 1, Axes.yMapPrimary);
 
       var netWinsAts = [0,0,0,0,
                         0,0,0,0,
@@ -552,7 +567,7 @@ angular.module('Controllers', [])
     .attr("class", "joe")
        .attr("opacity", "0")
        .attr("stroke", "black")
-       .attr("fill", function(d, i) { return d > 0 ? "green" : "red" })
+       .attr("fill", function(d, i) { return d > 0 ? "rgba(0,150, 100, .9)" : "rgba(200, 50, 50, .9)" })
        .attr("cx", function(d, i) { return Axes.xScale(i + 1) })
        .attr("cy", function(d, i) { return Axes.yScaleRight(d) })
        .attr("r", function(d, i) { return 10});
@@ -570,8 +585,8 @@ angular.module('Controllers', [])
        .attr("transform", "translate(0,0)")
        .attr("fill", "none")
        .attr("opacity", "0")
-       .style("stroke-width", 1)
-               .style("stroke", "black")
+       .style("stroke-width", 3)
+               .style("stroke", "rgba(0,50,200,.6)")
 
    svg.append("path")
        .attr("d", function(d) { return line(diffAts)})
@@ -579,30 +594,26 @@ angular.module('Controllers', [])
        .attr("transform", "translate(0,0)")
        .attr("fill", "none")
        .attr("opacity", "0")
-       .style("stroke-width", 1)
-               .style("stroke", "black")
+       .style("stroke-width", 3)
+               .style("stroke", "rgba(120,50,0,.8)")
    // end of drawing lines
 
       $timeout(function(){
         console.log(netWinsAts + "is the array for all the net wins");
       },500);
 
-      d3.selectAll("circle")
+      d3.selectAll("g")
         .on("mouseover", function(d){
           // grab the other side of the line
           util.highlightPartner(d);
           // grab this, make it bigger
-          d3.select(this)
+          d3.select(this).select("circle")
             .transition()
             .ease("elastic")
             .duration("500")
-            .attr("r", "12.5")
+            .attr("r", "14.5")
             .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
             .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex});
-
-      d3.selectAll("g").append("text")
-        .text("adfasdfasdfsfs")
-
 
           //populate the spread box
           util.fill_spread(util.spread_label, d);
@@ -619,7 +630,7 @@ angular.module('Controllers', [])
             .attr("stroke", function(d){ return d.ats > 0 ? "rgb(00,200,100)" : "rgb(150,0,0)"})
             .attr("cy", Axes.yMapAts);
           // move this to the results y coordinate
-          d3.select(this)
+          d3.select(this).select("circle")
             .transition()
             .ease("elastic")
             .duration("1000")
@@ -636,11 +647,13 @@ angular.module('Controllers', [])
         .on("mouseout", function(d){
           // fade out game
           util.fade(util.spread_label, "elastic", 500, 0);
-          d3.select(this)
+          d3.select(this).select("circle")
             .transition()
             .ease("elastic")
             .duration("300")
             .attr("r", "8.5");
+          // d3.select(this).select("text")
+          //   .remove();
           if($rootScope.showSecondary){
             d3.selectAll("." + util.stringify(d))
             .transition()

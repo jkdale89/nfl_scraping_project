@@ -96,19 +96,10 @@
       }
     },
 
-    nflHome = function(){
-      return {
-        restrict: 'E',
-        template: "<div class = 'nfl_home_graph'>the nfl home vs away graph will go here</div>",
-        controller: 'nflHomeGraphCtrl',
-        replace: false
-      }
-    },
-
     nflOu = function(){
       return {
         restrict: 'E',
-        template: "<div class = 'nfl_ou_graph'>the nfl ou</div>",
+        template: "<div>under construction</div>",
         controller: 'nflOuGraphCtrl',
         replace: false
       }
@@ -117,7 +108,7 @@
     nflMl = function(){
       return {
         restrict: 'E',
-        template: "<div class = 'nfl_ml_graph'>the nfl moneyline graph will go here</div>",
+        template: "<div>under construction</div>",
         controller: 'nflMlGraphCtrl',
         replace: false
       }
@@ -126,7 +117,7 @@
     aggMl = function(){
       return {
         restrict: 'E',
-        template: "<div class = 'agg_ml_graph'> the agg ml graph will go here'></div>",
+        template: "<div></div>",
         controller: 'aggMlGraphCtrl',
         replace: false
       }
@@ -135,7 +126,7 @@
     aggAts = function(){
       return {
         restrict: 'E',
-        template: "<div class = 'agg_ats_graph'> the agg ats graph will go here'></div>",
+        template: "<div> </div>",
         controller: 'aggAtsGraphCtrl',
         replace: false
       }
@@ -144,7 +135,7 @@
     aggOu = function(){
       return {
         restrict: 'E',
-        template: "<div class = 'agg_ou_graph'> the agg ou graph will go here'></div>",
+        template: "<div> </div>",
         controller: 'aggOuGraphCtrl',
         replace: false
       }
@@ -179,7 +170,6 @@
       .directive('teamsMl', teamsMl)
     // graphs for entire nfl
       .directive('nflScatter', nflScatter)
-      .directive('nflHome', nflHome)
       .directive('nflOu', nflOu)
       .directive('nflMl', nflMl)
     // graphs for aggregates

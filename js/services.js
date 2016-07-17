@@ -27,8 +27,8 @@ angular.module('Services', ['ngResource'])
       .attr("stroke-width", "1.5")
       .attr("cx", Axes.xMap)
     //Init at the y axis, in order to animate up
-      .attr("cy", Axes.yScale(0))
-      .attr("opacity", "1")
+      .attr("cy", Axes.yScalePrimary)
+      .attr("opacity", "0")
       .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam].hex})
       .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam].sec_hex})
       .attr("cursor", "pointer");
@@ -55,19 +55,15 @@ angular.module('Services', ['ngResource'])
 
   self.fill_spread = function(obj, data){
     obj.html(
-      "<span> Spread: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.primaryTeam].url + ">" + "<span> " + data.spread + " vs </span><span>" +
-      (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.secondaryTeam].url + ">" + " " + "</span><span>")
-    .style("right", "12.5%")
-    .style("top", function(d){return $rootScope.active_type == 'Favorites' ? "70%" : "7.5%"});
+      "<span>" + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.primaryTeam].url + ">" + "<span> " + data.spread + " vs </span><span>" +
+      (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.secondaryTeam].url + ">" + " " + "</span><span>");
 
   }
 
   self.fill_result = function(obj, data){
-    obj.html("<span> Result: " + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.winningTeam].url + " alt=" + data.winingTeam + ">" + ": </span><span> " + data.winningScore +",</span><span> " +
-    "<span>" + (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.losingTeam].url +  " alt=" + data.losingTeam + ">" +  ": " + data.losingScore + "</span>" +
-    "<span> (" + data.ats + ")</span>")
-    .style("right", "12.5%")
-    .style("top", function(d){return $rootScope.active_type == 'Favorites' ? "78%" : "10%"});
+    obj.html("<span>" + (data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.winningTeam].url + ">" + ": </span><span> " + data.winningScore +",</span><span> " +
+    "<span>" + (!data.home ? '@ ' : '') + "<img src=" + $rootScope.teamsMeta[data.losingTeam].url + ">" +  ": " + data.losingScore + "</span>" +
+    "<span> (" + data.ats + ")</span>");
   }
 
   // self.editYearDesc = function(year){
@@ -90,10 +86,10 @@ angular.module('Services', ['ngResource'])
     if($rootScope.graphStatus == "lines"){
       d3.selectAll("circle")
       .transition()
-      .duration(2000)
+      .duration(500)
       .ease("elastic")
-      .attr("fill", function(d){return d.ats > 0 ? "green" : "red"})
-      .attr("stroke", function(d){return d.ats > 0 ? "green" : "red"})
+      .attr("fill", function(d){return d.ats > 0 ? "rgba(0,150, 100, .9)" : "rgba(200, 50, 50, .9)"})
+      .attr("stroke", function(d){return d.ats > 0 ? "rgba(0,150, 100, .9)" : "rgba(200, 50, 50, .9)"})
       .attr("cy", Axes.yMapAts)
       .attr("opacity", 1)
       .delay(function(d,i){return 100 + 25 * d.week + i * 5});
@@ -102,7 +98,7 @@ angular.module('Services', ['ngResource'])
     else if($rootScope.graphStatus == 'results'){
       d3.selectAll("circle")
       .transition()
-      .duration(1000)
+      .duration(500)
       .ease("linear")
       .attr("opacity", .05);
 
@@ -114,15 +110,9 @@ angular.module('Services', ['ngResource'])
 
       d3.selectAll(".joe")
         .transition()
-        .duration(1000)
+        .duration(500)
         .ease("linear")
         .attr("opacity", 1);
-
-        d3.selectAll(".joeP")
-          .transition()
-          .duration(1000)
-          .ease("linear")
-          .attr("opacity", .5);
 
       $rootScope.graphStatus = "trend";
     }
@@ -131,6 +121,28 @@ angular.module('Services', ['ngResource'])
       .transition()
       .duration(1000)
       .ease("linear")
+      .attr("opacity", 0);
+
+      d3.selectAll(".joe")
+        .transition()
+        .duration(1000)
+        .ease("linear")
+        .attr("opacity", 1);
+
+      d3.selectAll(".joeP")
+        .transition()
+        .duration(1000)
+        .ease("linear")
+        .attr("opacity", .5);
+
+      $rootScope.graphStatus = 'predict'
+
+    }
+    else if($rootScope.graphStatus == 'predict'){
+      d3.selectAll("circle")
+      .transition()
+      .duration(1000)
+      .ease("elastic")
       .attr("fill", function(d){return $rootScope.teamsMeta[d.primaryTeam] ? $rootScope.teamsMeta[d.primaryTeam].hex : ""})
       .attr("stroke", function(d){return $rootScope.teamsMeta[d.primaryTeam] ? $rootScope.teamsMeta[d.primaryTeam].sec_hex : ""})
       .attr("cy", Axes.yMapPrimary)
@@ -139,24 +151,25 @@ angular.module('Services', ['ngResource'])
 
       d3.selectAll(".primary")
         .transition()
-        .duration(500)
-        .ease("linear")
+        .duration(1000)
+        .ease("elastic")
         .attr("opacity", 1);
 
       d3.selectAll(".joe")
         .transition()
         .duration(1000)
-        .ease("linear")
+        .ease("elastic")
         .attr("opacity", 0);
 
         d3.selectAll(".joeP")
           .transition()
           .duration(1000)
-          .ease("linear")
+          .ease("elastic")
           .attr("opacity", 0);
 
       $rootScope.graphStatus = "lines";
     }
+
   }
   // self.populate_primary = function(type //fav, dog, home, away)
 
@@ -186,12 +199,10 @@ angular.module('Services', ['ngResource'])
         "</div>"
       );
 
-  self.spread_label = d3.select("body").append("div")
-    .attr("class", "tooltip")
+  self.spread_label = d3.select("#spread").append("div")
     .style("opacity", "0");
 
-  self.result_label =  d3.select("body").append("div")
-    .attr("class", "tooltip")
+  self.result_label =  d3.select("#result").append("div")
     .style("opacity", "0");
 
   self.switchFade = function(type){
@@ -238,8 +249,9 @@ angular.module('Services', ['ngResource'])
   self.xScale = d3.scale.linear().range([0, $rootScope.width]);
   self.xAxis = d3.svg.axis().scale(self.xScale).orient("bottom");
   self.xValue = function(d){ return d.week};
-  self.xMap = function(d) { return self.xScale(self.xValue(d) - shift_left + ((1 - d.spread) * slope_multiplier));};
+  self.xMap = function(d) { return self.xScale(self.xValue(d) - ($rootScope.active_type == 'Favorites' ? shift_left : 0) + ((1 - d.spread) * slope_multiplier));};
 
+  self.xMapText = function(d) { return self.xScale(self.xValue(d) - shift_left - .1 + ((1 - d.spread) * slope_multiplier));};
 
   self.yScale = d3.scale.linear().range([$rootScope.height, 0]);
   self.yAxis = d3.svg.axis().scale(self.yScale).orient("left");
